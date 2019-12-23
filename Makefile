@@ -46,11 +46,11 @@ END = \x1b[0m
 ERASE = \033[2K\r
 
 
-all : lib ${NAME}
+all : $(LIBFT) ${NAME}
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
 ${NAME}: ${OBJ}
-		@@$(CC) $(CFLAGS) $(MINILIBX) $(LIBFT) $(IFLAG) $^ -o $@
+		@@$(CC) $(CFLAGS) $(LIBMINILIBX) $(LIBFT) $(IFLAG) $^ -o $@
 		@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 
 $(LIBFT) :
@@ -72,6 +72,5 @@ clean:
 
 fclean: clean
 	@make -C libft fclean
-	@make -C minilibx_opengl clean
 	@rm -rf $(NAME)
 	@printf "$(BLUE)> Deleted : $(RED)$(NAME)$(END)\n"
