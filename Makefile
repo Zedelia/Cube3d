@@ -25,9 +25,9 @@ OBJ_TEST := ${SRCS:.c=.o} ${TESTS:.c=.o}
 MAIN = main.c
 MAIN_TEST = tests.c
 
-MINILIBX = libraries/minilibx_opengl/libmlx.ma
-PRINTF = libraries/libft/libftprintf.a
-GNL = libraries/libft/gnl.a
+MINILIBX = lib/minilibx_opengl/libmlx.ma
+LBFTPRINTF = lib/libft/libftprintf.a
+GNL = lib/libft/gnl.a
 
 CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
@@ -47,14 +47,14 @@ END = \x1b[0m
 ERASE = \033[2K\r
 
 
-all : $(LIBFT) $(LIBMINILIBX) ${NAME}
+all : $(LIBFTPRINTF) $(LIBMINILIBX) ${NAME}
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
-${NAME}: $(LIBMINILIBX) $(LIBFT) ${OBJ}
-		@@$(CC) $(CFLAGS) $(LIBMINILIBX) $(LIBFT) $(IFLAG) $^ -o $@
+${NAME}: $(LIBMINILIBX) $(LIBFTPRINTF) ${OBJ}
+		@@$(CC) $(CFLAGS) $(LIBMINILIBX) $(LIBFTPRINTF) $(IFLAG) $^ -o $@
 		@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 
-$(LIBFT) :
+$(LIBFTPRINTF) :
 	@make bonus -C libft
 
 libx :

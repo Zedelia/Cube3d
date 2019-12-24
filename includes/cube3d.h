@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/24 11:49:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/24 12:34:57 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,8 +14,8 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "../minilibx_opengl/mlx.h"
-# include "../libft/includes/libft.h"
+# include "../lib/minilibx_opengl/mlx.h"
+# include "../lib/Printf/includes/ft_printf.h"
 # include <math.h>
 # include <stdlib.h>
 # include <fcntl.h>
