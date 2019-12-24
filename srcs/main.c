@@ -6,13 +6,12 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/04/18 03:51:42 by lmarques     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/24 11:59:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/24 16:51:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../includes/cube3d.h"
-#include "../minilibx_opengl/mlx.h"
 
 int     load_xpm(t_mlx *mlx, char *file, t_img *img)
 {
@@ -31,10 +30,9 @@ int exit_propre(void *param)
     exit(0);
 }
 
-
 int	main(void)
 {
-	t_mlx	mlx; 
+	t_mlx	mlx;
 	int		count_w;
 	int		count_h;
 	t_img 	dragon;
