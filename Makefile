@@ -25,12 +25,11 @@ OBJ_TEST := ${SRCS:.c=.o} ${TESTS:.c=.o}
 MAIN = main.c
 MAIN_TEST = tests.c
 
-MINILIBX = lib/minilibx_opengl/libmlx.ma
+LIBMINILIBX = lib/minilibx_opengl/libmlx.a
 LBFTPRINTF = lib/libft/libftprintf.a
-GNL = lib/libft/gnl.a
 
 CC = gcc -g
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -framework OpenGL -framework AppKit
 DFLAGS = -fsanitize=address
 IFLAG = -I ${INCLUDES}
 
@@ -47,31 +46,32 @@ END = \x1b[0m
 ERASE = \033[2K\r
 
 
-all : $(LIBFTPRINTF) $(LIBMINILIBX) ${NAME}
+all : libprintf libx ${NAME}
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
 ${NAME}: $(LIBMINILIBX) $(LIBFTPRINTF) ${OBJ}
 		@@$(CC) $(CFLAGS) $(LIBMINILIBX) $(LIBFTPRINTF) $(IFLAG) $^ -o $@
-		@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+		@printf "\n$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 
-$(LIBFTPRINTF) :
-	@make bonus -C libft
+libprintf :
+	@make -C lib/Printf
 
 libx :
-	@make -C minilibx_opengl
+	@make -C lib/minilibx_opengl
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(SRC_PATH)/%.h libft/libft.a
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(SRC_PATH)/%.h $(LIBFTPRINTF) $(LIBMINILIBX)
 	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(SRC_SUP)
 	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 clean:
-	@make -C libft clean
-	@make -C minilibx_opengl clean
+	@make -C lib/Printf clean
+	@printf "$(BLUE)> Deleted : $(RED)lib .obj$(END)\n"
+	@make -C lib/minilibx_opengl clean
 	@rm -rf $(OBJ_PATH)
-	@printf "$(BLUE)> Deleted : $(RED)$(OBJ_PATH)$(END)\n"
+	@printf "$(BLUE)> Deleted : $(RED)cube3d $(OBJ_PATH)$(END)\n"
 
 fclean: clean
-	@make -C libft fclean
+	@make -C lib/Printf fclean
 	@rm -rf $(NAME)
 	@printf "$(BLUE)> Deleted : $(RED)$(NAME)$(END)\n"
