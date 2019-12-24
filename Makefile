@@ -1,37 +1,31 @@
 
 NAME = cube3d
 
-NAME_TEST = tests
+SRC_PATH = srcs
+SRCS_NAME = main.c
+
+INC_PATH = includes
+INC_FLAGS = -I ${INC_PATH} -I./lib/Printf/includes -I./lib/minilibx_opengl
+
+MKDIR_LST	=
 
 INCLUDES = cube3d
 
-SRC_PATH = srcs
+LIBMINILIBX =  lib/minilibx_opengl/libmlx.a -framework OpenGL 	\
+		-framework AppKit
+LBFTPRINTF = lib/Printf/libftprintf.a
 
-SRCS = main
+REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a
 
-TESTS =
-
-INCLUDES_PATH = includes
-
-INCLUDES := $(patsubst %,includes/%.h,${INCLUDES})
-SRCS := $(patsubst %,srcs/%.c,${SRCS})
-TESTS := $(patsubst %,srcs/%.c,${TESTS})
 
 OBJ_PATH = .objects
-
-OBJ := ${SRCS:.c=.o}
-OBJ_TEST := ${SRCS:.c=.o} ${TESTS:.c=.o}
-
-MAIN = main.c
-MAIN_TEST = tests.c
-
-LIBMINILIBX = lib/minilibx_opengl/libmlx.a
-LBFTPRINTF = lib/libft/libftprintf.a
+OBJ_NAME := ${SRCS_NAME:.c=.o}
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
 CC = gcc -g
-CFLAGS = -Wall -Wextra -Werror -framework OpenGL -framework AppKit
+CFLAGS = -Wall -Wextra -Werror
 DFLAGS = -fsanitize=address
-IFLAG = -I ${INCLUDES}
+
 
 # Colors
 GREY = \x1b[30m
@@ -46,23 +40,24 @@ END = \x1b[0m
 ERASE = \033[2K\r
 
 
-all : libprintf libx ${NAME}
+all : libprintf libx $(NAME)
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
-${NAME}: $(LIBMINILIBX) $(LIBFTPRINTF) ${OBJ}
-		@@$(CC) $(CFLAGS) $(LIBMINILIBX) $(LIBFTPRINTF) $(IFLAG) $^ -o $@
-		@printf "\n$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
+	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST)
+	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
+	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
+
+${NAME}: $(OBJ)
+	@$(CC) $(CFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $^ -o $@
+	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+
 
 libprintf :
 	@make -C lib/Printf
 
 libx :
 	@make -C lib/minilibx_opengl
-
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(SRC_PATH)/%.h $(LIBFTPRINTF) $(LIBMINILIBX)
-	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(SRC_SUP)
-	@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
-	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 clean:
 	@make -C lib/Printf clean
