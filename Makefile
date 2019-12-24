@@ -7,7 +7,7 @@ INCLUDES = cube3d
 
 SRC_PATH = srcs
 
-SRCS =
+SRCS = main
 
 TESTS =
 
@@ -25,8 +25,9 @@ OBJ_TEST := ${SRCS:.c=.o} ${TESTS:.c=.o}
 MAIN = main.c
 MAIN_TEST = tests.c
 
-LIBFT = libft/libft.a
-MINILIBX = minilibx_opengl/libmlx.a
+MINILIBX = libraries/minilibx_opengl/libmlx.ma
+PRINTF = libraries/libft/libftprintf.a
+GNL = libraries/libft/gnl.a
 
 CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
@@ -46,17 +47,17 @@ END = \x1b[0m
 ERASE = \033[2K\r
 
 
-all : $(LIBFT) ${NAME}
+all : $(LIBFT) $(LIBMINILIBX) ${NAME}
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
-${NAME}: ${OBJ}
+${NAME}: $(LIBMINILIBX) $(LIBFT) ${OBJ}
 		@@$(CC) $(CFLAGS) $(LIBMINILIBX) $(LIBFT) $(IFLAG) $^ -o $@
 		@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 
 $(LIBFT) :
 	@make bonus -C libft
 
-$(LIBMINILIBX) :
+libx :
 	@make -C minilibx_opengl
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(SRC_PATH)/%.h libft/libft.a
