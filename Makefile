@@ -4,6 +4,7 @@ NAME = cube3d
 SRC_PATH = srcs
 SRCS_NAME = main.c \
 	img/img_load_xpm.c \
+	img/img_display.c \
 	mlx/mlx_exit.c \
 
 
