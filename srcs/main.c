@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/04/18 03:51:42 by lmarques     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 15:20:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/25 15:27:59 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ int     main()
     t_mlx	mlx;
 	int		count_w;
 	int		count_h;
-	t_img	marousta;
+	t_img	lolilol;
 
 	count_h = -1;
 	mlx.ptr = mlx_init();
@@ -27,7 +27,6 @@ int     main()
 	mlx.img.data = (int *)mlx_get_data_addr(mlx.img.ptr, &mlx.img.bpp, &mlx.img.size_l,
 		&mlx.img.endian);
 
-	t_img	lolilol;
 
 	img_load_xpm(&mlx, "dragon.xpm", &lolilol);
 
@@ -80,11 +79,8 @@ int     main()
 		}
 	}
 
-	printf("%d\n", (int) 0xd7d1bf);
-
 	mlx_put_image_to_window(mlx.ptr, mlx.win, mlx.img.ptr, 0, 0);
-	mlx_put_image_to_window(mlx.ptr, mlx.win, marousta.ptr, 100, 120);
-	mlx_put_image_to_window(mlx.ptr, mlx.win, lolilol.ptr, 100, 150);
+	img_display(&mlx, &lolilol);
 	mlx_display_exit(mlx);
 	mlx_loop(mlx.ptr);
 
