@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   cube3d.h                                         .::    .:/ .      .::   */
+/*   img_load_xpm.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 12:27:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/25 11:03:50 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/25 12:29:09 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../../includes/cube3d.h"
 
-# include "../lib/minilibx_opengl/mlx.h"
-# include "../lib/Printf/includes/ft_printf.h"
-
-# include <math.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
-
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
-
-typedef unsigned long long	t_uintmax;
-typedef unsigned char		t_uchar;
-
-
-# include "struct.h"
-# include "mlx_s.h"
-# include "img.h"
-
-#endif
+t_bool	img_load_xpm(t_mlx *mlx, char *file, t_img *img)
+{
+	if (!(img->ptr = mlx_xpm_file_to_image(mlx->ptr, file, 			\
+								&img->width, &img->height)))
+		return (false_ret(__func__));
+	if (!(img->data = (int *)mlx_get_data_addr(img->ptr, &img->bpp, 	\
+								&img->size_l, &img->endian)))
+		return (false_ret(__func__));
+	return (True);
+}

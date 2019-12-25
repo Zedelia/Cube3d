@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   cube3d.h                                         .::    .:/ .      .::   */
+/*   mlx_s.h                                          .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 12:27:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/25 11:24:42 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/25 12:23:49 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef MLX_S_H
+# define MLX_S_H
 
-# include "../lib/minilibx_opengl/mlx.h"
-# include "../lib/Printf/includes/ft_printf.h"
-
-# include <math.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
-
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
-
-typedef unsigned long long	t_uintmax;
-typedef unsigned char		t_uchar;
+#include "cube3d.h"
 
 
-# include "struct.h"
-# include "mlx_s.h"
-# include "img.h"
+t_bool	mlx_ft_init(t_mlx **mlx);
+int		exit_propre(void *mlx);
 
 #endif

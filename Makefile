@@ -2,12 +2,20 @@
 NAME = cube3d
 
 SRC_PATH = srcs
-SRCS_NAME = main.c
+SRCS_NAME = main.c \
+	img/img_init.c \
+	img/img_load_xpm.c \
+	map/map_init.c \
+	mlx/mlx_ft_init.c \
+	mlx/mlx_exit.c \
+	rays/rays_init.c \
+	utils/false_ret.c
+
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH} -I./lib/Printf/includes -I./lib/minilibx_opengl
 
-MKDIR_LST	=
+MKDIR_LST	= {img,map,maths,mlx,rays,utils}
 
 INCLUDES = cube3d
 
@@ -50,7 +58,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 
 ${NAME}: $(OBJ)
 	@$(CC) $(CFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $^ -o $@
-	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+	@printf "$(ERASE)$(BLUE)\n> $@ : $(GREEN)Success !$(END)\n"
 
 
 libprintf :
