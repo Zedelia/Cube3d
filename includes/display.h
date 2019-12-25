@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 15:34:56 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 15:35:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/25 17:13:26 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,6 @@
 
 #include "cube3d.h"
 
-t_bool	display_exit_on_click(t_mlx mlx);
+t_bool	display_exit_on_click(t_mlx *mlx);
 
 #endif
