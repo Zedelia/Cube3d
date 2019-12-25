@@ -5,13 +5,13 @@ SRC_PATH = srcs
 SRCS_NAME = main.c \
 	img/img_load_xpm.c \
 	img/img_display.c \
-	mlx/mlx_exit.c \
+	display/display_exit.c \
 
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
 
-MKDIR_LST	= {img,map,maths,mlx,rays,utils}
+MKDIR_LST	= {img,map,maths,mlx,rays,utils,display}
 
 INCLUDES = cube3d
 

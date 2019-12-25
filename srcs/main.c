@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/04/18 03:51:42 by lmarques     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 15:27:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/25 15:36:09 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,8 +27,6 @@ int     main()
 	mlx.img.data = (int *)mlx_get_data_addr(mlx.img.ptr, &mlx.img.bpp, &mlx.img.size_l,
 		&mlx.img.endian);
 
-
-	img_load_xpm(&mlx, "dragon.xpm", &lolilol);
 
 	while (++count_h <= (WIN_HEIGHT / 6))
 	{
@@ -81,7 +79,7 @@ int     main()
 
 	mlx_put_image_to_window(mlx.ptr, mlx.win, mlx.img.ptr, 0, 0);
 	img_display(&mlx, &lolilol);
-	mlx_display_exit(mlx);
+	display_exit_on_click(mlx);
 	mlx_loop(mlx.ptr);
 
 	return (0);
