@@ -9,11 +9,10 @@ SRCS_NAME = main.c \
 	mlx/mlx_ft_init.c \
 	mlx/mlx_exit.c \
 	rays/rays_init.c \
-	utils/false_ret.c
 
 
 INC_PATH = includes
-INC_FLAGS = -I ${INC_PATH} -I./lib/Printf/includes -I./lib/minilibx_opengl
+INC_FLAGS = -I ${INC_PATH}
 
 MKDIR_LST	= {img,map,maths,mlx,rays,utils}
 
@@ -22,8 +21,9 @@ INCLUDES = cube3d
 LIBMINILIBX =  lib/minilibx_opengl/libmlx.a -framework OpenGL 	\
 		-framework AppKit
 LBFTPRINTF = lib/Printf/libftprintf.a
+LBFT = lib/Printf/libft/libft.a
 
-REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a
+REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a lib/Printf/libft/libft.a
 
 
 OBJ_PATH = .objects
@@ -57,7 +57,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 ${NAME}: $(OBJ)
-	@$(CC) $(CFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $^ -o $@
+	@$(CC) $(CFLAGS) $(LIBFT) $(LIBMINILIBX) $(LBFTPRINTF) $^ -o $@
 	@printf "$(ERASE)$(BLUE)\n> $@ : $(GREEN)Success !$(END)\n"
 
 
@@ -78,3 +78,7 @@ fclean: clean
 	@make -C lib/Printf fclean
 	@rm -rf $(NAME)
 	@printf "$(BLUE)> Deleted : $(RED)$(NAME)$(END)\n"
+
+re: fclean all
+
+.PHONY: all, clean, fclean, re

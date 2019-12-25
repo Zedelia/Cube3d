@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 12:27:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/25 13:09:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,7 @@
 
 # include "../lib/minilibx_opengl/mlx.h"
 # include "../lib/Printf/includes/ft_printf.h"
+# include "../lib/Printf/libft/includes/libft.h"
 
 # include <math.h>
 # include <stdlib.h>
