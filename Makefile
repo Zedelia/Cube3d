@@ -3,12 +3,8 @@ NAME = cube3d
 
 SRC_PATH = srcs
 SRCS_NAME = main.c \
-	img/img_init.c \
 	img/img_load_xpm.c \
-	map/map_init.c \
-	mlx/mlx_ft_init.c \
 	mlx/mlx_exit.c \
-	rays/rays_init.c \
 
 
 INC_PATH = includes
