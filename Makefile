@@ -8,8 +8,9 @@ SRCS_NAME = main.c \
 	display/display_exit.c \
 	mlx/mlx_init.c \
 	utils/maths.c \
-	rays/rays_init.c
-
+	rays/rays_init.c \
+	rays/rays_setup.c \
+	rays/rays_tab_init.c \
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
