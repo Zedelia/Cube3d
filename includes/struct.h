@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 16:07:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 20:33:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -54,6 +54,7 @@ typedef struct	s_rays
 	double	ox;
 	double	oy;
 }				t_rays;
+
 typedef struct	s_camera
 {
 	double pos_x;
@@ -82,5 +83,9 @@ typedef struct	s_map
 	char	*text_east;
 	char	*text_sprite;
 }				t_map;
+
+// others
+
+
 
 #endif

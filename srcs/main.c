@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/04/18 03:51:42 by lmarques     #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 17:17:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 20:10:54 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,7 +25,7 @@ int     main()
 
 	while (++count_h <= (WIN_HEIGHT / 6))
 	{
-		count_w = -1;
+		count_w = -1; 
 		while (++count_w < WIN_WIDTH)
 		{
 				mlx->img.data[count_h * WIN_WIDTH + count_w] = 0xFF0000 ;

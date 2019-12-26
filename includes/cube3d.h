@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 16:32:57 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 20:48:58 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,9 +28,9 @@
 # define FOV_DEG 60.0
 # define MAP_INFOS "RNsWESFC1"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 8
-# endif
+// # ifndef BUFFER_SIZE
+// #  define BUFFER_SIZE 8
+// # endif
 
 typedef unsigned long long	t_uintmax;
 typedef unsigned char		t_uchar;
