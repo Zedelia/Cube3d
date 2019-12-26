@@ -7,7 +7,6 @@ SRCS_NAME = main.c \
 	img/img_display.c \
 	display/display_exit.c \
 	mlx/mlx_init.c \
-	utils/maths.c \
 	rays/rays_init.c \
 	rays/rays_setup.c \
 	rays/rays_tab_init.c \
@@ -15,22 +14,25 @@ SRCS_NAME = main.c \
 	map/map_free.c \
 	map/map_parser.c \
 	map/map_printf.c \
-	map/parsing/map_init_parsing.c \
-	map/parsing/map_get_info.c \
+	map/map_init_parsing.c \
+	map/map_get_info.c \
+	map/map_get_r.c \
+	utils/utils_maths.c \
+	utils/utils_01.c
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
 
-MKDIR_LST	= {img,map,maths,mlx,rays,utils,display}
+MKDIR_LST = {img,map,maths,mlx,rays,utils,display}
 
 INCLUDES = cube3d
 
-LIBMINILIBX =  lib/minilibx_opengl/libmlx.a -framework OpenGL 	\
-		-framework AppKit
+LIBMINILIBX =  lib/minilibx_opengl/libmlx.a -framework OpenGL -framework AppKit
 LBFTPRINTF = lib/Printf/libftprintf.a
 LBFT = lib/Printf/libft/libft.a
+LIBCUBE3D = cube3d.a
 
-REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a lib/Printf/libft/libft.a
+REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a
 
 
 OBJ_PATH = .objects
@@ -64,9 +66,8 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 ${NAME}: $(OBJ)
-	@$(CC) $(CFLAGS) $(LIBFT) $(LIBMINILIBX) $(LBFTPRINTF) $^ -o $@
+	@$(CC) $(CFLAGS) $(LIBFT) $^ -o $@ $(LIBMINILIBX) $(LBFTPRINTF)
 	@printf "$(ERASE)$(BLUE)\n> $@ : $(GREEN)Success !$(END)\n"
-
 
 libprintf :
 	@make -C lib/Printf

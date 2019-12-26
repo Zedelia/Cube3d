@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 14:23:29 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 17:21:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,7 @@
 
 #include "cube3d.h"
 
-double     degrees_to_radian(double angle_in_degrees);
+double		degrees_to_radian(double angle_in_degrees);
+int			get_str_int_len(char *str);
 
 #endif

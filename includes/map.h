@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 16:40:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 16:50:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,9 +35,9 @@ t_bool				map_init(t_map **map, char *map_file);
 t_bool				map_parser(t_map *map);
 void				map_printf(t_map *map);
 t_bool				map_parser(t_map *map);
+t_bool				map_get_info(t_map *map, char *line);
 
 void				init_map_parser_fct_tab(void);
-int					map_get_index(char *line);
 typedef t_bool		(t_map_parser_fct)(t_map *map , char *line);
 t_map_parser_fct	*g_map_parser_fct[t_size];
 

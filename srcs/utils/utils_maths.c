@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_parser.c                                     .::    .:/ .      .::   */
+/*   maths.c                                          .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 16:54:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/26 14:25:03 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/26 17:21:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	map_parser(t_map *map)
+double     degrees_to_radian(double angle_in_degrees)
 {
-	char	*line;
-	int		result;
-	int 	fd;
-
-	init_map_parser_fct_tab();
-	fd = open(map->map_file, O_RDONLY);
-	while ((result = get_next_line(fd, &line)) == 1)
-	{
-		if (!(map_get_info(map, line)))
-			return (false_ret(__func__));
-		ft_memdel((void**)&line);
-	}
-	if (!(map_get_info(map, line)))
-		return (false_ret(__func__));
-	ft_memdel((void**)&line);
-	return (True);
+    return (angle_in_degrees * (M_PI / 180));
 }
