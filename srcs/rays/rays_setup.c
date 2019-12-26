@@ -7,7 +7,7 @@ t_rays	ray_setup(double angle)
 	double	radian_a;
 
 	radian_a = degrees_to_radian(angle);
-	rays_init(ray);
+	ray = rays_init();
 	ray.x = -sin(radian_a);
 	ray.y = cos(radian_a);
 	return (ray);

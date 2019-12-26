@@ -6,7 +6,7 @@
 /*   By: melodiebos <melodiebos@student.le-101.f    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 12:45:42 by melodiebos  ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 13:57:23 by melodiebos  ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -69,19 +69,19 @@ typedef struct	s_camera
 */
 typedef struct	s_map
 {
-	int		resolution_w;
-	int		resolution_h;
-	char	*texture_nord;
-	char	*texture_sud;
-	char	*texture_ouest;
-	char	*texture_est;
-	char	*texture_sprite;
-	int		couleur_plafond;
-	int		couleur_sol;
-	char	*mapinit;
+	int		r_width;
+	int		r_height;
+	char	*text_north;
+	char	*text_south;
+	char	*text_west;
+	char	*text_east;
+	char	*text_sprite;
+	int		roof;
+	int		floor;
+	char	*map_init;
 	char	**map;
-	int		map_w;
-	int		map_h;
+	int		s_width;
+	int		s_height;
 	void	(*ft_parse_cub[9])(char *str, struct s_map *carte);
 	char	tabindex[9];
 }				t_map;
