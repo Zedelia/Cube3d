@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_init.c                                       .::    .:/ .      .::   */
+/*   map_printf.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
+/*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
 /*   Updated: 2019/12/26 16:04:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
@@ -13,23 +13,22 @@
 
 #include "../../includes/cube3d.h"
 
-t_bool	map_init(t_map **map, char *map_file)
+void	map_printf(t_map *map)
 {
-	if (!(*map = malloc(sizeof(t_map))))
-		return (false_ret(__func__));
-	(*map)->map_file = map_file;
-	(*map)->r_width = 0;
-	(*map)->r_height = 0;
-	(*map)->cell = 0;
-	(*map)->floor = 0;
-	(*map)->s_width = 0;
-	(*map)->s_height = 0;
-	(*map)->text_north = NULL;
-	(*map)->text_south = NULL;
-	(*map)->text_west = NULL;
-	(*map)->text_east = NULL;
-	(*map)->text_sprite = NULL;
-	if (!(map_parser(*map)))
-		return (false_ret(__func__));
-	return (True);
+	if (!map)
+		return ;
+	if (map->map_file)
+		ft_printf(YELLOW"north: %s\n"RESET, map->map_file);
+	ft_printf("r_width: %d\nr_height: %d\ns_width: %d\ns_height: %d\ncell: %d\n floor: %d",
+		map->r_width, map->r_height, map->s_width, map->s_height, map->cell, map->floor);
+	if (map->text_north)
+		ft_printf("north: %s\n", map->text_north);
+	if (map->text_south)
+		ft_printf("north: %s\n", map->text_south);
+	if (map->text_west)
+		ft_printf("north: %s\n", map->text_west);
+	if (map->text_east)
+		ft_printf("north: %s\n", map->text_east);
+	if (map->text_sprite)
+		ft_printf("north: %s\n", map->text_sprite);
 }

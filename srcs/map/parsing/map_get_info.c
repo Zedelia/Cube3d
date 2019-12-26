@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_init.c                                       .::    .:/ .      .::   */
+/*   map_get_info.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 16:04:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/26 16:35:23 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/26 16:46:12 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../../includes/cube3d.h"
 
-t_bool	map_init(t_map **map, char *map_file)
+int		map_get_index(char *line)
 {
-	if (!(*map = malloc(sizeof(t_map))))
-		return (false_ret(__func__));
-	(*map)->map_file = map_file;
-	(*map)->r_width = 0;
-	(*map)->r_height = 0;
-	(*map)->cell = 0;
-	(*map)->floor = 0;
-	(*map)->s_width = 0;
-	(*map)->s_height = 0;
-	(*map)->text_north = NULL;
-	(*map)->text_south = NULL;
-	(*map)->text_west = NULL;
-	(*map)->text_east = NULL;
-	(*map)->text_sprite = NULL;
-	if (!(map_parser(*map)))
+	int	index;
+
+	if (line[0] == 'S' && line[1] == 'O')
+		line[0] = 's';
+	index = ft_index(line[0], MAP_INFOS);
+	return (index);
+}
+
+t_bool	map_get_info(t_map *map, char *line)
+{
+	int 				index;
+	t_map_parser_fct	*fonc;
+
+	index = map_get_index(line);
+	fonc = g_map_parser_fct[index];
+	if (!(fonc(map, line)))
 		return (false_ret(__func__));
 	return (True);
 }

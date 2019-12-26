@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 14:23:34 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 16:32:57 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,6 +26,7 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define FOV_DEG 60.0
+# define MAP_INFOS "RNsWESFC1"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 8
@@ -41,5 +42,6 @@ typedef unsigned char		t_uchar;
 # include "display.h"
 # include "rays.h"
 # include "cube3d_utils.h"
+# include "map.h"
 
 #endif

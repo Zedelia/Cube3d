@@ -11,6 +11,12 @@ SRCS_NAME = main.c \
 	rays/rays_init.c \
 	rays/rays_setup.c \
 	rays/rays_tab_init.c \
+	map/map_init.c \
+	map/map_free.c \
+	map/map_parser.c \
+	map/map_printf.c \
+	map/parsing/map_init_parsing.c \
+	map/parsing/map_get_info.c \
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}

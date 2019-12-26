@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_init.c                                       .::    .:/ .      .::   */
+/*   map_parser.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 16:04:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/26 16:36:58 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	map_init(t_map **map, char *map_file)
+t_bool	map_parser(t_map *map)
 {
-	if (!(*map = malloc(sizeof(t_map))))
-		return (false_ret(__func__));
-	(*map)->map_file = map_file;
-	(*map)->r_width = 0;
-	(*map)->r_height = 0;
-	(*map)->cell = 0;
-	(*map)->floor = 0;
-	(*map)->s_width = 0;
-	(*map)->s_height = 0;
-	(*map)->text_north = NULL;
-	(*map)->text_south = NULL;
-	(*map)->text_west = NULL;
-	(*map)->text_east = NULL;
-	(*map)->text_sprite = NULL;
-	if (!(map_parser(*map)))
-		return (false_ret(__func__));
-	return (True);
+	char	*line;
+	int		result;
+	int 	fd;
+
+	init_map_parser_fct_tab();
+	fd = open(map->map_file, O_RDONLY);
+	while ((result = get_next_line(fd, &line)) == 1)
+	{
+		map_get_info(map, line);
+		ft_memdel((void**)&line);
+
+	}
+
+
+
 }
