@@ -18,6 +18,8 @@ SRCS_NAME = main.c \
 	map/map_get_info.c \
 	map/map_get_text.c \
 	map/map_get_r.c \
+	map/map_get_colors.c \
+	map/map_get_map.c \
 	utils/utils_maths.c \
 	utils/utils_01.c \
 
@@ -67,7 +69,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 ${NAME}: $(OBJ)
-	@$(CC) $(CFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $^ -o $@
+	@$(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $^ -o $@
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 
 
