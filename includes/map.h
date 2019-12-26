@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   mlx_s.h                                          .::    .:/ .      .::   */
+/*   map.h                                            .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/25 11:24:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 14:55:46 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/26 14:57:13 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef MLX_S_H
-# define MLX_S_H
+#ifndef MAP_H
+# define MAP_H
 
 #include "cube3d.h"
 
-t_bool	mlx_ft_init(t_mlx	**mlx);
-void	mlx_free(t_mlx *mlx);
+void  mlx_free(t_mlx *mlx);
+t_bool	map_init(t_map **map)
 
 #endif

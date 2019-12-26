@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   mlx_s.h                                          .::    .:/ .      .::   */
+/*   map_free.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/25 11:24:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 14:55:46 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/26 14:57:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef MLX_S_H
-# define MLX_S_H
+#include "../../includes/cube3d.h"
 
-#include "cube3d.h"
-
-t_bool	mlx_ft_init(t_mlx	**mlx);
-void	mlx_free(t_mlx *mlx);
-
-#endif
+void	map_free(t_map **map)
+{
+	ft_memdel((void **)&(*map)->map_cub);
+	ft_memdel((void **)&(*map)->text_north);
+	ft_memdel((void **)&(*map)->text_south);
+	ft_memdel((void **)&(*map)->text_west);
+	ft_memdel((void **)&(*map)->text_east);
+	ft_memdel((void **)&(*map)->text_sprite);
+}
