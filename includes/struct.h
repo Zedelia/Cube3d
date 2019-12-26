@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   struct.h                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*   By: melodiebos <melodiebos@student.le-101.f    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 14:48:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 12:45:42 by melodiebos  ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -47,6 +47,13 @@ typedef struct	s_vect
 	double	y;
 }				t_vect;
 
+typedef struct	s_rays
+{
+	double	x;
+	double	y;
+	double	ox;
+	double	oy;
+}				t_rays;
 typedef struct	s_camera
 {
 	double pos_x;

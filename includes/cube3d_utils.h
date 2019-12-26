@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   rays_init.c                                      .::    .:/ .      .::   */
+/*   cube3d_utils.h                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: melodiebos <melodiebos@student.le-101.f    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 12:48:52 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 13:05:43 by melodiebos  ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/26 13:16:50 by melodiebos  ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#ifndef CUBE3D_UTILS_H
+# define CUBE3D_UTILS_H
 
-t_bool  rays_init(t_rays rays)
-{
-	rays.x = 0;
-	rays.y = 1;
-	rays.ox = 0;
-	rays.oy = 0 ;
-	return (True);
-}
+#include "cube3d.h"
+
+double     degrees_to_radian(double angle_in_degrees);
+
+#endif

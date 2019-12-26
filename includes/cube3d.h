@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   cube3d.h                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*   By: melodiebos <melodiebos@student.le-101.f    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 15:35:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/26 13:17:23 by melodiebos  ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,6 +25,11 @@
 
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
+# define FOV_DEG 60.0
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 8
+# endif
 
 typedef unsigned long long	t_uintmax;
 typedef unsigned char		t_uchar;
@@ -34,5 +39,7 @@ typedef unsigned char		t_uchar;
 # include "mlx_s.h"
 # include "img.h"
 # include "display.h"
+# include "rays.h"
+# include "cube3d_utils.h"
 
 #endif

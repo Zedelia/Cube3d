@@ -6,7 +6,9 @@ SRCS_NAME = main.c \
 	img/img_load_xpm.c \
 	img/img_display.c \
 	display/display_exit.c \
-	mlx/mlx_init.c
+	mlx/mlx_init.c \
+	utils/maths.c \
+	rays/rays_init.c
 
 
 INC_PATH = includes
