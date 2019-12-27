@@ -20,6 +20,9 @@ SRCS_NAME = main.c \
 	map/map_get_r.c \
 	map/map_get_colors.c \
 	map/map_get_map.c \
+	map/map_get_map_line.c \
+	map/map_tab_init.c \
+	map/map_tab_fill.c \
 	utils/utils_maths.c \
 	utils/utils_01.c \
 	utils/return_func.c

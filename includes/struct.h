@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 21:10:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 20:58:26 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -71,6 +71,8 @@ typedef struct	s_camera
 typedef struct	s_map
 {
 	char	*map_file;
+	char	*line_map;
+	int		**map_tab;
 	int		r_width;
 	int		r_height;
 	int		s_width;

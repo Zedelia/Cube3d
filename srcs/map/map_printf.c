@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 22:08:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 20:07:14 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,4 +31,6 @@ void	map_printf(t_map *map)
 		ft_printf("east: %s\n", map->text_east);
 	if (map->text_sprite)
 		ft_printf("sprite: %s\n", map->text_sprite);
+	if (map->line_map)
+		ft_printf("line_map: %s\n", map->line_map);
 }

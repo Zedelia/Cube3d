@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_free.c                                       .::    .:/ .      .::   */
+/*   map_tab_init.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 21:18:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/27 21:15:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static void	map_free_tab(t_map *map)
+t_bool	map_tab_init(t_map *map)
 {
 	int i;
 
+	if (!(map->map_tab = malloc(map->s_height * sizeof(*(map->map_tab)))))
+		return (return_false(__func__, "[FAIL] malloc"));
 	i = 0;
 	while (i < map->s_height)
 	{
-		ft_memdel((void**)&(map->map_tab[i]));
+		if (!(map->map_tab[i] = malloc(map->s_width * sizeof(int))))
+			return (return_false(__func__, "[FAIL] malloc"));
 		i++;
 	}
-	ft_memdel((void**)&map->map_tab);
-}
-
-void		map_free(t_map **map)
-{
-	map_free_tab(*map);
-	ft_memdel((void **)&(*map)->map_file);
-	ft_memdel((void **)&(*map)->text_north);
-	ft_memdel((void **)&(*map)->text_south);
-	ft_memdel((void **)&(*map)->text_west);
-	ft_memdel((void **)&(*map)->text_east);
-	ft_memdel((void **)&(*map)->text_sprite);
-	ft_memdel((void **)&(*map)->line_map);
+	return (True);
 }
