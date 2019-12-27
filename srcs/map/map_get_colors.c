@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 18:24:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 18:48:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,7 +40,7 @@ t_bool	map_parse_floor(t_map *map, char *line)
 	blue = -1;
 	get_colors(&red, &green, &blue, line);
 	if (red == -1 || green == -1 || blue == -1)
-		return (return_false(__func__, "get RGB floor colors [FAIL]"));
+		return (return_false(__func__, "[FAIL] get RGB floor colors"));
 	map->floor = (red * 65536) + (green * 256) + blue;
 	return (True);
 }
@@ -56,7 +56,7 @@ t_bool	map_parse_cell(t_map *map, char *line)
 	blue = -1;
 	get_colors(&red, &green, &blue, line);
 	if (red == -1 || green == -1 || blue == -1)
-		return (return_false(__func__, "get RGB cell colors [FAIL]"));
+		return (return_false(__func__, "[FAIL] get RGB cell colors"));
 	map->cell = (red * 65536) + (green * 256) + blue;
 	return (True);
 }

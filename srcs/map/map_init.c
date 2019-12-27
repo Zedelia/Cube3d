@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 18:40:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 18:49:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 t_bool	map_init(t_map **map, char *map_file)
 {
 	if (!(*map = malloc(sizeof(t_map))))
-		return (return_false(__func__, "malloc [FAIL]"));
+		return (return_false(__func__, "[FAIL] malloc"));
 	(*map)->map_file = map_file;
 	(*map)->r_width = -1;
 	(*map)->r_height = -1;
@@ -30,6 +30,6 @@ t_bool	map_init(t_map **map, char *map_file)
 	(*map)->text_east = NULL;
 	(*map)->text_sprite = NULL;
 	if (!(map_parser(*map)))
-		return (return_false(__func__, "map parsing [FAIL]"));
+		return (return_false(__func__, "[FAIL] map parsing"));
 	return (True);
 }
