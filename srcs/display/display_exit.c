@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 11:24:08 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 17:13:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 18:21:52 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,6 +22,6 @@ static int display_exit(void *mlx)
 t_bool	display_exit_on_click(t_mlx *mlx)
 {
 	if (!(mlx_hook(mlx->win, 17, 0, &display_exit, &mlx)))
-		return (false_ret(__func__));
+		return (return_false(__func__, "init exit [FAIL]"));
 	return (True);
 }

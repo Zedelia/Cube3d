@@ -22,6 +22,7 @@ SRCS_NAME = main.c \
 	map/map_get_map.c \
 	utils/utils_maths.c \
 	utils/utils_01.c \
+	utils/return_func.c
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}

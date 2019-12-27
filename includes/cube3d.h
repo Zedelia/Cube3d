@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 21:08:56 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 18:15:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,12 +16,13 @@
 
 # include "../lib/minilibx_opengl/mlx.h"
 # include "../lib/Printf/includes/ft_printf.h"
-# include "../lib/Printf/libft/includes/libft.h" 
+# include "../lib/Printf/libft/includes/libft.h"
 
 # include <math.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <errno.h>
 
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
