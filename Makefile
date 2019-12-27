@@ -14,14 +14,14 @@ SRCS_NAME = main.c \
 	map/map_free.c \
 	map/map_parser.c \
 	map/map_printf.c \
-	map/map_init_parsing.c \
-	map/map_get_info.c \
-	map/map_get_text.c \
-	map/map_get_r.c \
-	map/map_get_colors.c \
-	map/map_get_map_line.c \
-	map/map_tab_init.c \
-	map/map_tab_fill.c \
+	map/parsing/map_init_parsing.c \
+	map/parsing/map_get_info.c \
+	map/parsing/map_get_text.c \
+	map/parsing/map_get_r.c \
+	map/parsing/map_get_colors.c \
+	map/parsing/map_get_map_line.c \
+	map/parsing/map_tab_init.c \
+	map/parsing/map_tab_fill.c \
 	utils/utils_maths.c \
 	utils/utils_01.c \
 	utils/return_func.c
@@ -67,7 +67,7 @@ all : libprintf libx $(NAME)
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
-	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST)
+	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
 	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
