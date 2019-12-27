@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 21:10:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 21:38:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 21:51:33 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,12 +29,10 @@ void	map_tab_fill(t_map *map)
 			if (ft_isincharset(map->line_map[i], "012NSEW") == 1)
 			{
 				map->map_tab[h][w] = map->line_map[i] - 48;
-				ft_printf("%c",map->line_map[i] );
 				w++;
 			}
 			i++;
 		}
-			printf("\n");
 		w = 0;
 		h++;
 	}
