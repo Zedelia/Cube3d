@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 20:35:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 21:43:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ t_bool	map_get_map_line(t_map *map, int fd, char *line)
 	if (!(temp = ft_strdup(line)))
 		return (return_false(__func__, "[FAIL] strdup"));
 	ft_memdel((void**)&line);
-	while ((get_next_line(fd, &line)) == 1 && line[0] == '1' && height++)
+	while (get_next_line(fd, &line) && line && line[0] == '1' && height++)
 	{
 		if (!(join = ft_strjoin(temp, line)))
 			return (return_false(__func__, "[FAIL] strjoin"));

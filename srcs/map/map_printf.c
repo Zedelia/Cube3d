@@ -6,12 +6,32 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 20:07:14 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 21:28:32 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
+
+static void 	map_tab_printf(t_map *map)
+{
+	int h;
+	int w;
+
+	h = 0;
+	w = 0;
+	while (h < map->s_height)
+	{
+		while (w < map->s_width)
+		{
+			ft_printf("%d ", map->map_tab[h][w]);
+			w++;
+		}
+		ft_printf("\n");
+		w = 0;
+		h++;
+	}
+}
 
 void	map_printf(t_map *map)
 {
@@ -33,4 +53,6 @@ void	map_printf(t_map *map)
 		ft_printf("sprite: %s\n", map->text_sprite);
 	if (map->line_map)
 		ft_printf("line_map: %s\n", map->line_map);
+	if (map->map_tab)
+		map_tab_printf(map);
 }
