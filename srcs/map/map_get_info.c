@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:35:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 18:48:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 19:04:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@ t_bool	map_get_info(t_map *map, char *line)
 	t_map_parser_fct	*fonc;
 
 	index = map_get_index(line);
-	if (index == 9)
+	if (index == 8)
 		return (True);
 	fonc = g_map_parser_fct[index];
 	if (!(fonc(map, line)))

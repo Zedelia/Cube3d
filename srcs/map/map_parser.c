@@ -6,13 +6,12 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 18:46:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 19:50:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
-
 
 static t_bool	map_parsing_info(t_map *map, int fd, char *line)
 {
@@ -24,9 +23,8 @@ static t_bool	map_parsing_info(t_map *map, int fd, char *line)
 			return (return_false(__func__, NULL));
 		ft_memdel((void**)&line);
 	}
-	if (!(map_get_info(map, line)))
-		return (return_false(__func__, NULL));
-	ft_memdel((void**)&line);
+	if (!(map_get_map_tab(map, fd, line)))
+		return (return_false(__func__, "[FAIL] map's mapping parsing"));
 	return (True);
 }
 
@@ -34,13 +32,14 @@ static t_bool	map_parsing_info(t_map *map, int fd, char *line)
 t_bool	map_parser(t_map *map)
 {
 	char	*line;
-	int		result;
 	int 	fd;
 
+	line = NULL;
 	init_map_parser_fct_tab();
 	fd = open(map->map_file, O_RDONLY);
 	if (!(map_parsing_info(map, fd, line)))
-		return (return_false(__func__, "[FAIL] map info parsing"));
-
+		return (return_false(__func__, "[FAIL] map's info parsing"));
+	// if (!(map_checker(map)))
+	// 	return (return_false(__func__, "[FAIL] map's itegrity compromised"));
 	return (True);
 }

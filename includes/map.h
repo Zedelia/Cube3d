@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 21:13:35 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/27 19:51:02 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,7 +26,6 @@ typedef enum
 	_sp,
 	_floor,
 	_cell,
-	_map,
 	t_size
 }	t_type_map;
 
@@ -35,7 +34,10 @@ t_bool				map_init(t_map **map, char *map_file);
 t_bool				map_parser(t_map *map);
 void				map_printf(t_map *map);
 t_bool				map_parser(t_map *map);
+t_bool				map_checker(t_map *map);
+
 t_bool				map_get_info(t_map *map, char *line);
+t_bool				map_get_map_tab(t_map *map, int fd, char *line)
 
 void				init_map_parser_fct_tab(void);
 typedef t_bool		(t_map_parser_fct)(t_map *map , char *line);
@@ -49,7 +51,6 @@ t_bool				map_parse_ea(t_map *map, char *line);
 t_bool				map_parse_sp(t_map *map, char *line);
 t_bool				map_parse_floor(t_map *map, char *line);
 t_bool				map_parse_cell(t_map *map, char *line);
-t_bool				map_parse_map(t_map *map, char *line);
 
 
 #endif
