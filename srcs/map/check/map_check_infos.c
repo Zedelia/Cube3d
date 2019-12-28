@@ -16,7 +16,7 @@
 t_bool	map_check_infos(t_map *map)
 {
 	if (!(map_check_texture(map)))
-		return (return_false(__func__, "[FAIL] check texture path"));
+		return (return_false(__func__, "[FAIL] check texture"));
 	if (!(map_check_colors(map)))
 		return (return_false(__func__, "[FAIL] check colors"));
 	if (!(map_check_resolution(map)))

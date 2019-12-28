@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 22:03:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 15:58:30 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,17 +16,15 @@
 static void	get_colors(int *red, int *green, int *blue, char *line)
 {
 	int i;
-	int j;
 
 	i = 0;
-	while (ft_isdigit(line[i]) == 0)
+	while (ft_isdigit(line[i]) == False)
 		i++;
-	j = get_str_int_len(&line[i]);
 	*red = ft_atoi(&line[i]);
-	i = get_str_int_len(&line[j]);
-	*green = ft_atoi(&line[j]);
-	i = get_str_int_len(&line[j]);
-	*blue = ft_atoi(&line[j]);
+	i += get_str_int_len(&line[i]) + 1;
+	*green = ft_atoi(&line[i]);
+	i += get_str_int_len(&line[i]) + 1;
+	*blue = ft_atoi(&line[i]);
 }
 
 t_bool	map_parse_floor(t_map *map, char *line)

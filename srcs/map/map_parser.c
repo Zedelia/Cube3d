@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:56:34 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 14:10:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,7 +40,7 @@ t_bool	map_parser(t_map *map)
 	fd = open(map->map_file, O_RDONLY);
 	if (!(map_parsing_info(map, fd, line)))
 		return (return_false(__func__, "[FAIL] map's info parsing"));
-	// if (!(map_check_infos(map)))
-	// 	return (return_false(__func__, "[FAIL] map's itegrity compromised"));
+	if (!(map_check_infos(map)))
+		return (return_false(__func__, "[FAIL] map's itegrity compromised"));
 	return (True);
 }

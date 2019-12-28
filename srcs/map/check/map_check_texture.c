@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 12:33:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:02:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 15:27:25 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ static t_bool	map_check_texture_one(char *texture_path)
 					&& ft_isascii(texture_path[2]))
 		return (True);
 	else
-		return (return_false(__func__, NULL));
+		return (return_false(__func__, "[FAIL] invalid texture path"));
 }
 
 t_bool	map_check_texture(t_map *map)
