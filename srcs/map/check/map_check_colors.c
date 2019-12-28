@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_tab_fill.c                                   .::    .:/ .      .::   */
+/*   map_check_colors.c                               .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/27 21:10:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/28 13:03:00 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/28 13:06:13 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-void	map_tab_fill(t_map *map)
+static t_bool	map_check_colors_one(int color)
 {
-	int w;
-	int h;
-	int i;
+	if (color < 0)
+		return (return_false(__func__, "[FAIL] invalid color"));
+	return (True);
+}
 
-	h = 0;
-	w = 0;
-	i = 0;
-	while (h < map->size_h)
-	{
-		while (w < map->size_w)
-		{
-			if (ft_isincharset(map->line_map[i], "012NSEW") == 1)
-			{
-				map->map_tab[h][w] = map->line_map[i] - 48;
-				w++;
-			}
-			i++;
-		}
-		w = 0;
-		h++;
-	}
+t_bool			map_check_colors(t_map *map)
+{
+	if (!(map_check_colors_one(map->floor)))
+		return (return_false(__func__, "[FAIL] invalid floor color"));
+	if (!(map_check_colors_one(map->cell)))
+		return (return_false(__func__, "[FAIL] invalid cell color"));
+	return (True);
 }

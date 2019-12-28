@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 20:32:35 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 13:48:08 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ int		get_str_int_len(char *str)
 	return (j);
 }
 
-int		occurence_in_charset(char c, char *line)
+int		occur_in_str(char c, char *line)
 {
 	int	occur;
 	int i;

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 18:49:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,8 +22,8 @@ t_bool	map_init(t_map **map, char *map_file)
 	(*map)->r_height = -1;
 	(*map)->cell = -1;
 	(*map)->floor = -1;
-	(*map)->s_width = -1;
-	(*map)->s_height = -1;
+	(*map)->size_w = -1;
+	(*map)->size_h = -1;
 	(*map)->text_north = NULL;
 	(*map)->text_south = NULL;
 	(*map)->text_west = NULL;

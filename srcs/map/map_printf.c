@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 21:45:54 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,9 +21,9 @@ static void 	map_tab_printf(t_map *map)
 	h = 0;
 	w = 0;
 	ft_printf("\nMAP:\n");
-	while (h < map->s_height)
+	while (h < map->size_h)
 	{
-		while (w < map->s_width)
+		while (w < map->size_w)
 		{
 			ft_printf("%d ", map->map_tab[h][w]);
 			w++;
@@ -40,8 +40,8 @@ void	map_printf(t_map *map)
 		return ;
 	if (map->map_file)
 		ft_printf(YELLOW"--- MAP_FILE: %s---\n"RESET, map->map_file);
-	ft_printf("r_width: %d\nr_height: %d\ns_width: %d\ns_height: %d\ncell: %d\nfloor: %d\n",
-		map->r_width, map->r_height, map->s_width, map->s_height, map->cell, map->floor);
+	ft_printf("r_width: %d\nr_height: %d\nsize_w: %d\nsize_h: %d\ncell: %d\nfloor: %d\n",
+		map->r_width, map->r_height, map->size_w, map->size_h, map->cell, map->floor);
 	if (map->text_north)
 		ft_printf("north: %s\n", map->text_north);
 	if (map->text_south)

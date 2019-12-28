@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 20:58:26 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -75,8 +75,8 @@ typedef struct	s_map
 	int		**map_tab;
 	int		r_width;
 	int		r_height;
-	int		s_width;
-	int		s_height;
+	int		size_w;
+	int		size_h;
 	int		cell;
 	int		floor;
 	char	*text_north;

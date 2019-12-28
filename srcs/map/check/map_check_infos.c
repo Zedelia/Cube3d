@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_checker.c                                    .::    .:/ .      .::   */
+/*   map_check_infoss.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/27 21:57:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 22:02:21 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/28 13:54:15 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/28 13:54:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../../includes/cube3d.h"
 
-t_bool	map_checker(t_map *map)
+t_bool	map_check_infos(t_map *map)
 {
 	if (!(map_check_texture(map)))
-		return (return_false(__func__, "[FAIL] invalid texture path"));
+		return (return_false(__func__, "[FAIL] check texture path"));
 	if (!(map_check_colors(map)))
-		return (return_false(__func__, "[FAIL] invalid cell & floor colors"));
+		return (return_false(__func__, "[FAIL] check colors"));
 	if (!(map_check_resolution(map)))
-		return (return_false(__func__, "[FAIL] invalid resolution"));
+		return (return_false(__func__, "[FAIL] check resolution"));
 	if (!(map_check_map(map)))
-		return (return_false(__func__, "[FAIL] invalid map"));
+		return (return_false(__func__, "[FAIL] check map"));
 	return (True);
 }

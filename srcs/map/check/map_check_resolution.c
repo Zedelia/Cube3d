@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_tab_fill.c                                   .::    .:/ .      .::   */
+/*   map_check_resolution.c                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/27 21:10:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/28 13:06:40 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/28 13:08:43 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-void	map_tab_fill(t_map *map)
+t_bool	map_check_resolution(t_map *map)
 {
-	int w;
-	int h;
-	int i;
-
-	h = 0;
-	w = 0;
-	i = 0;
-	while (h < map->size_h)
-	{
-		while (w < map->size_w)
-		{
-			if (ft_isincharset(map->line_map[i], "012NSEW") == 1)
-			{
-				map->map_tab[h][w] = map->line_map[i] - 48;
-				w++;
-			}
-			i++;
-		}
-		w = 0;
-		h++;
-	}
+	if (map->r_width < 0)
+		return (return_false(__func__, "[FAIL] invalid width resolution"));
+	if (map->r_height < 0)
+		return (return_false(__func__, "[FAIL] invalid height resolution"));
+	return (True);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 20:31:27 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 13:48:08 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,6 @@
 double		degrees_to_radian(double angle_in_degrees);
 int			get_str_int_len(char *str);
 t_bool		return_false(const char *namefunc, char const *error_msg);
-int			occurence_in_charset(char c,char *line);
+int			occur_in_str(char c,char *line);
 
 #endif
