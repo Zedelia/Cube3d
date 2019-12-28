@@ -10,9 +10,10 @@ int main(int argc, char *argv[])
 	int ret;
 
 	ret = map_init(&map, argv[1]);
-	ft_printf("RETURN MAP INIT = %d\n", ret);
 	map_printf(map);
-
+	ft_printf("RETURN MAP INIT = %d\n", ret);
+	if (ret != 0)
+		ft_printf(GREEN"[SUCCESS]\n"RESET);
 	return (0)
 ;
 }

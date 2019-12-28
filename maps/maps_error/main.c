@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 15:28:30 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 16:16:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 17:00:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,16 +23,12 @@ int main(int argc, char **argv)
 
 	while (i < argc)
 	{
-		ft_printf(YELLOW"map: %s\n"RESET, argv[i]);
+		ft_printf(YELLOW"\n------> MAP TEST %s <-----\n"RESET, argv[i]);
 		ret = map_init(&map, argv[i]);
 		if (ret == 0)
-			ft_printf(RED"ok: %s\n"RESET, argv[i]);
+			ft_printf(CYAN"ERROR: map non-valid %s\n"RESET, argv[i]);
 		else if (ret != 0)
-		{
-			ft_printf(GREEN"ok: %s\n"RESET, argv[i]);
-			ft_printf(MAGENTA"Error: map shouldn't be validated\n"RESET);
-			return (0);
-		}
+			ft_printf(GREEN"OK: map valid %s\n"RESET, argv[i]);
 		i++;
 	}
 	return (0);
