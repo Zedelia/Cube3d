@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 14:10:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 16:45:50 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,7 +26,6 @@ static t_bool	map_parsing_info(t_map *map, int fd, char *line)
 		return (return_false(__func__, "[FAIL] map's mapping parsing"));
 	if (!(map_tab_init(map)))
 		return (return_false(__func__, "[FAIL] init map two dimensional tab"));
-	map_tab_fill(map);
 	return (True);
 }
 

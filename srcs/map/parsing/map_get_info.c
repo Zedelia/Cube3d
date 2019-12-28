@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:35:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 22:04:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/28 17:16:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,12 +15,15 @@
 
 size_t		map_get_index(char *line)
 {
-	int	index;
-	index = 0;
-	if (line && line[0] == 'S' && line[1] == 'O')
-		line[0] = 's';
+	int i;
+
+	i = 0;
+	while (line[i] && ft_isincharset(line[i], MAP_INFOS) == 0)
+		i++;
+	if (line && line[i] == 'S' && line[i + 1] == 'O')
+		line[i] = 's';
 	if (line)
-		return(ft_index(line[0], MAP_INFOS));
+		return(ft_index(line[i], MAP_INFOS));
 	return (-1);
 }
 
