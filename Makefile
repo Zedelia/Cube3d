@@ -22,6 +22,11 @@ SRCS_NAME = main.c \
 	map/parsing/map_get_map_line.c \
 	map/parsing/map_tab_init.c \
 	map/parsing/map_tab_fill.c \
+	map/check/map_check_colors.c \
+	map/check/map_check_infos.c \
+	map/check/map_check_map.c \
+	map/check/map_check_resolution.c \
+	map/check/map_check_texture.c \
 	utils/utils_maths.c \
 	utils/utils_01.c \
 	utils/return_func.c
