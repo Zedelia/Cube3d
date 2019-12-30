@@ -2,8 +2,7 @@
 NAME = cube3d
 
 SRC_PATH = srcs
-SRCS_NAME = main.c \
-	img/img_load_xpm.c \
+SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
 	display/display_exit.c \
 	mlx/mlx_init.c \
@@ -45,7 +44,6 @@ LIBFT = lib/Printf/libft/libft.a
 
 REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a lib/Printf/libft/libft.a
 
-
 OBJ_PATH = .objects
 OBJ_NAME := ${SRCS_NAME:.c=.o}
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
@@ -53,7 +51,7 @@ OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 DFLAGS = -fsanitize=address
-
+COMPIL = $(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $^ -o $@
 
 # Colors
 GREY = \x1b[30m
@@ -66,10 +64,11 @@ CYAN = \x1b[36m
 WHITE = \x1b[37m
 END = \x1b[0m
 ERASE = \033[2K\r
-
+RESET = \033[0;37m
 
 all : libprintf libx $(NAME)
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
+
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
@@ -77,8 +76,18 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 ${NAME}: $(OBJ)
-	@$(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $^ -o $@
+	@$(COMPIL) mains/main.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+
+
+# Tests
+tmap: $(OBJ)
+	@$(COMPIL) tests/mains/main-maps.c
+	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
+
+tmlx: $(OBJ)
+	@$(COMPIL) tests/mains/main-mlx.c
+	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
 
 
 libprintf :
@@ -90,15 +99,17 @@ libx :
 clean:
 	@make -C lib/Printf clean
 	@printf "$(BLUE)> Deleted : $(RED)lib .obj$(END)\n"
-	@make -C lib/minilibx_opengl clean
 	@rm -rf $(OBJ_PATH)
+	@rm -rf tmap tmlx
 	@printf "$(BLUE)> Deleted : $(RED)cube3d $(OBJ_PATH)$(END)\n"
+	@printf "$(BLUE)> Deleted : $(RED)tests prog $(OBJ_PATH)$(END)\n"
 
 fclean: clean
+	@make -C lib/minilibx_opengl clean
 	@make -C lib/Printf fclean
 	@rm -rf $(NAME)
 	@printf "$(BLUE)> Deleted : $(RED)$(NAME)$(END)\n"
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, tmap, tmlx

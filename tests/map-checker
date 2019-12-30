@@ -1,0 +1,43 @@
+#!/bin/bash
+
+make -C ../ clean
+make -C ../ tmap
+
+fail="\x1b[31m... [FAIL]\033[0;37m \n"
+ok="\x1b[32m ... [OK]\033[0;37m \n"
+
+maps_error_checking() {
+		if [ "$1" ]
+		then
+				printf "INVALID MAP $ok"
+		else
+				printf "$fail -> No Error in $map\n"
+				exit 1
+		fi
+}
+maps_ok_checking() {
+		if [ "$1" ]
+		then
+				printf "$fail -> Error in $map\n"
+				exit 1
+		else
+				printf "VALID MAP $ok"
+		fi
+}
+
+MAPS_ERROR=maps/maps_error/*
+MAPS_OK=maps/maps_ok/*
+
+for map in $MAPS_ERROR
+do
+	rslt="$(.././tmap $map 2>/dev/null)"
+	maps_error_checking $rslt
+done
+
+for map in $MAPS_OK
+do
+	rslt="$(.././tmap $map 2>/dev/null)"
+	maps_ok_checking $rslt
+done
+
+

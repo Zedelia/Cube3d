@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "../includes/cube3d.h"
+#include "../../includes/cube3d.h"
 
 int main(int argc, char *argv[])
 {

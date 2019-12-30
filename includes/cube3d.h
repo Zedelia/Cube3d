@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/27 19:04:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/30 11:01:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,6 +23,8 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <errno.h>
+# include <string.h>
+
 
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
