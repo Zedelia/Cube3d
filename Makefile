@@ -26,9 +26,10 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/check/map_check_map.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
-	utils/utils_maths.c \
 	utils/utils_01.c \
-	utils/return_func.c
+	utils/return_func.c \
+	maths/colors.c \
+	maths/degrees_to_radian.c \
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
@@ -76,7 +77,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 ${NAME}: $(OBJ)
-	@$(COMPIL) mains/main.c
+	@$(COMPIL) tests/mains//main.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 
 

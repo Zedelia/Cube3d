@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   cube3d_utils.h                                   .::    .:/ .      .::   */
+/*   colors.c                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/31 10:15:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2019/12/31 10:13:31 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/31 10:14:09 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef CUBE3D_UTILS_H
-# define CUBE3D_UTILS_H
+#include "../../includes/cube3d.h"
 
-#include "cube3d.h"
+int			color_to_int(t_color c)
+{
+	return ((((c.r > 0xff) ? 0xff : c.r) << 16) |
+			(((c.g > 0xff) ? 0xff : c.g) << 8) |
+			((c.b > 0xff) ? 0xff : c.b));
+}
 
-int			get_str_int_len(char *str);
-t_bool		return_false(const char *namefunc, char const *error_msg);
-int			occur_in_str(char c,char *line);
+t_color		int_to_color(int n)
+{
+	t_color	a;
 
-#endif
+	a.r = (n & 0x00FF0000) >> 16;
+	a.g = (n & 0x0000FF00) >> 8;
+	a.b = (n & 0x000000FF);
+	return (a);
+}

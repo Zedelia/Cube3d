@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/31 11:07:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -86,8 +86,14 @@ typedef struct	s_map
 	char	*text_sprite;
 }				t_map;
 
-// others
-
-
+/*
+** Colors
+*/
+typedef struct	s_color
+{
+	int			r;
+	int			g;
+	int			b;
+}				t_color;
 
 #endif
