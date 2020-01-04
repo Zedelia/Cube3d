@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/03 18:12:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 14:00:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,8 +45,8 @@ typedef unsigned char		t_uchar;
 # include "img.h"
 # include "display.h"
 # include "rays.h"
-# include "cube3d_utils.h"
+# include "utils_c3d.h"
 # include "map.h"
-# include "maths.h"
+# include "camera.h"
 
 #endif
