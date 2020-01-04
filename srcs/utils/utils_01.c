@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 15:52:49 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 12:14:16 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,4 +37,11 @@ int		occur_in_str(char c, char *line)
 		i++;
 	}
 	return (occur);
+}
+
+int		get_tile(t_map *m, int x, int y)
+{
+	if (x < 0 || y < 0 || x > m->map_col || y > m->map_lines - 1)
+		return (0);
+	return (m->tab[y][x]);
 }
