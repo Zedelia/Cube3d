@@ -6,18 +6,21 @@ int main(int argc, char *argv[])
 {
 	(void)argc;
 	// (void)argv;
-	t_map *map;
 	t_mlx *mlx;
 	int ret;
+	int lol;
 
-
-	ret = map_init(&map, argv[1]);
+	mlx_ft_init(&mlx, argv[1]);
 	if (ret != 0)
 		ft_printf(GREEN"[PARSING SUCCESS]\n"RESET);
-	mlx_ft_init(&mlx, map);
-	display_tile(mlx, map);
-	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
-	mlx_loop(mlx->ptr);
-	return (0)
-;
+	map_printf(mlx->map);
+	camera_printf(&mlx->camera);
+	display_tile(mlx, mlx->map);
+	camera_init(mlx);
+
+
+	// mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
+	// display_exit_on_click(mlx);
+	// mlx_loop(mlx->ptr);
+	return (0);
 }
