@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 18:55:49 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/03 16:52:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,12 +18,12 @@ static void	map_free_tab(t_map *map)
 	int i;
 
 	i = 0;
-	while (i < map->size_h)
+	while (i < map->map_lines)
 	{
-		ft_memdel((void**)&(map->map_tab[i]));
+		ft_memdel((void**)&(map->tab[i]));
 		i++;
 	}
-	ft_memdel((void**)&map->map_tab);
+	ft_memdel((void**)&map->tab);
 }
 
 void		map_free(t_map **map)
@@ -35,5 +35,5 @@ void		map_free(t_map **map)
 	ft_memdel((void **)&(*map)->text_west);
 	ft_memdel((void **)&(*map)->text_east);
 	ft_memdel((void **)&(*map)->text_sprite);
-	ft_memdel((void **)&(*map)->line_map);
+	ft_memdel((void **)&(*map)->map_char);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 16:38:57 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/03 16:12:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,9 +31,9 @@ t_bool	map_get_map_line(t_map *map, int fd, char *line)
 			return (return_false(__func__, "[FAIL] strdup"));
 		ft_memdel((void**)&join);
 	}
-	if (!(map->line_map = ft_strjoin(temp, line)))
+	if (!(map->map_char = ft_strjoin(temp, line)))
 		return (return_false(__func__, "[FAIL] strjoin"));
-	map->size_h = height;
+	map->map_lines = height;
 	ft_memdel((void**)&temp);
 	ft_memdel((void**)&line);
 	return (True);

@@ -7,13 +7,17 @@ int main(int argc, char *argv[])
 	(void)argc;
 	// (void)argv;
 	t_map *map;
+	t_mlx *mlx;
 	int ret;
 
+
 	ret = map_init(&map, argv[1]);
-	map_printf(map);
-	ft_printf("RETURN MAP INIT = %d\n", ret);
 	if (ret != 0)
-		ft_printf(GREEN"[SUCCESS]\n"RESET);
+		ft_printf(GREEN"[PARSING SUCCESS]\n"RESET);
+	mlx_ft_init(&mlx, map);
+	display_tile(mlx, map);
+	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
+	mlx_loop(mlx->ptr);
 	return (0)
 ;
 }

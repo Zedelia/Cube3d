@@ -5,6 +5,7 @@ SRC_PATH = srcs
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
 	display/display_exit.c \
+	display/display_tile.c \
 	mlx/mlx_init.c \
 	rays/rays_init.c \
 	rays/rays_setup.c \

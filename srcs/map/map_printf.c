@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:27:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/03 16:52:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,11 +21,11 @@ static void 	map_tab_printf(t_map *map)
 	h = 0;
 	w = 0;
 	ft_printf("\nMAP:\n");
-	while (h < map->size_h)
+	while (h < map->map_lines)
 	{
-		while (w < map->size_w)
+		while (w < map->map_col)
 		{
-			ft_printf("%d ", map->map_tab[h][w]);
+			ft_printf("%d ", map->tab[h][w]);
 			w++;
 		}
 		ft_printf("\n");
@@ -41,7 +41,7 @@ void	map_printf(t_map *map)
 	if (map->map_file)
 		ft_printf(YELLOW"--- MAP_FILE: %s---\n"RESET, map->map_file);
 	ft_printf("r_width: %d\nr_height: %d\nsize_w: %d\nsize_h: %d\ncell: %d\nfloor: %d\n",
-		map->r_width, map->r_height, map->size_w, map->size_h, map->cell, map->floor);
+		map->r_width, map->r_height, map->map_col, map->map_lines, map->cell, map->floor);
 	if (map->text_north)
 		ft_printf("north: %s\n", map->text_north);
 	if (map->text_south)
@@ -52,8 +52,8 @@ void	map_printf(t_map *map)
 		ft_printf("east: %s\n", map->text_east);
 	if (map->text_sprite)
 		ft_printf("sprite: %s\n", map->text_sprite);
-	if (map->line_map)
-		ft_printf("line_map: %s\n", map->line_map);
-	if (map->map_tab)
+	if (map->map_char)
+		ft_printf("map_char: %s\n", map->map_char);
+	if (map->tab)
 		map_tab_printf(map);
 }

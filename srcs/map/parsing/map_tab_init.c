@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 16:33:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/03 16:52:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,12 +17,12 @@ t_bool	map_tab_init(t_map *map)
 {
 	int i;
 
-	if (!(map->map_tab = malloc(map->size_h * sizeof(*(map->map_tab)))))
+	if (!(map->tab = malloc(map->map_lines * sizeof(*(map->tab)))))
 		return (return_false(__func__, "[FAIL] malloc"));
 	i = 0;
-	while (i < map->size_h)
+	while (i < map->map_lines)
 	{
-		if (!(map->map_tab[i] = malloc(map->size_w * sizeof(int))))
+		if (!(map->tab[i] = malloc(map->map_col * sizeof(int))))
 			return (return_false(__func__, "[FAIL] malloc"));
 		i++;
 	}

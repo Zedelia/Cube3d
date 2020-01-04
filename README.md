@@ -9,8 +9,7 @@ TO-DO :
 <br/>
 - map info checker
 ---- > Si la taille de fenêtre demandée dans la map est plus grande que celle de l’écran,la taille de fenêtre doit être celle de l’écran
+- ATTENTION : erreur en cas de lignes vides apres la map +
 ---- > make test
----- > script tests
-- prepare map tests
 - start raycasting
 ...
