@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/03 16:52:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 13:37:35 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,44 +30,21 @@ typedef struct	s_img
     int         width;
 }				t_img;
 
-typedef struct	s_mlx
-{
-	void		*ptr;
-	void		*win;
-	t_img		img;
-}				t_mlx;
-
-/*
-** Field of view and camera
-*/
-
 typedef struct	s_vect
 {
-	double	x;
-	double	y;
+	float	x;
+	float	y;
 }				t_vect;
-
-typedef struct	s_rays
-{
-	double	x;
-	double	y;
-	double	ox;
-	double	oy;
-}				t_rays;
-
 typedef struct	s_camera
 {
-	double pos_x;
-	double pos_y;
-	double angle;
-
-	//direction
-	//FOV
+	float	pos_x;
+	float	pos_y;
+	t_vect	direction;
+	float	rotation_angle;
+	int		turn_direction;
+	int		walk_direction;
 }				t_camera;
 
-/*
-** Map management
-*/
 typedef struct	s_map
 {
 	char	*map_file;
@@ -86,9 +63,23 @@ typedef struct	s_map
 	char	*text_sprite;
 }				t_map;
 
-/*
-** Colors
-*/
+typedef struct	s_mlx
+{
+	void		*ptr;
+	void		*win;
+	t_img		img;
+	t_camera	camera;
+	t_map		*map;
+}				t_mlx;
+
+typedef struct	s_rays
+{
+	float	x;
+	float	y;
+	float	ox;
+	float	oy;
+}				t_rays;
+
 typedef struct	s_color
 {
 	int			r;
