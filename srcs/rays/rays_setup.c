@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:24:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/26 14:24:46 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 14:32:32 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,11 +16,11 @@
 t_rays	ray_setup(double angle)
 {
 	t_rays	ray;
-	double	radian_a;
+	double	angle_radian;
 
-	radian_a = degrees_to_radian(angle);
+	angle_radian = degrees_to_radian(angle);
 	ray = rays_init();
-	ray.x = -sin(radian_a);
-	ray.y = cos(radian_a);
+	ray.x = -sin(angle_radian);
+	ray.y = cos(angle_radian);
 	return (ray);
 }
