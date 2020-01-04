@@ -4,16 +4,15 @@ NAME = cube3d
 SRC_PATH = srcs
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
+	camera/camera_init.c \
+	camera/camera_printf.c \
 	display/display_exit.c \
 	display/display_tile.c \
-	mlx/mlx_init.c \
-	rays/rays_init.c \
-	rays/rays_setup.c \
-	rays/rays_tab_init.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
 	map/map_printf.c \
+	mlx/mlx_init.c \
 	map/parsing/map_init_parsing.c \
 	map/parsing/map_get_info.c \
 	map/parsing/map_get_text.c \
@@ -27,15 +26,19 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/check/map_check_map.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
+	rays/rays_init.c \
+	rays/rays_setup.c \
+	rays/rays_tab_init.c \
+	utils/colors.c \
+	utils/degrees_to_radian.c \
+	utils/rotate_vect.c \
 	utils/utils_01.c \
 	utils/return_func.c \
-	maths/colors.c \
-	maths/degrees_to_radian.c \
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
 
-MKDIR_LST = {img,map,maths,mlx,rays,utils,display}
+MKDIR_LST = {img,map,mlx,rays,utils,display,camera}
 
 INCLUDES = cube3d
 
@@ -80,16 +83,19 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 ${NAME}: $(OBJ)
 	@$(COMPIL) tests/mains//main.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+	@rm -rf .dSYM
 
 
 # Tests
 tmap: $(OBJ)
 	@$(COMPIL) tests/mains/main-maps.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
+	@rm -rf .dSYM
 
 tmlx: $(OBJ)
 	@$(COMPIL) tests/mains/main-mlx.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
+	@rm -rf .dSYM
 
 
 libprintf :
@@ -99,6 +105,7 @@ libx :
 	@make -C lib/minilibx_opengl
 
 clean:
+	@rm -rf .dSYM
 	@make -C lib/Printf clean
 	@printf "$(BLUE)> Deleted : $(RED)lib .obj$(END)\n"
 	@rm -rf $(OBJ_PATH)
