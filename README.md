@@ -7,9 +7,7 @@ Vous devez créer une représentation graphique 3D "réalistique" que nous po
 <br/><br/>
 TO-DO :
 <br/>
-- map info checker
 ---- > Si la taille de fenêtre demandée dans la map est plus grande que celle de l’écran,la taille de fenêtre doit être celle de l’écran
 - ATTENTION : erreur en cas de lignes vides apres la map +
----- > make test
 - start raycasting
 ...

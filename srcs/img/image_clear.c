@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   img.h                                            .::    .:/ .      .::   */
+/*   image_clear.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/25 11:28:07 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 14:46:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/04 14:45:45 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/04 14:46:14 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef IMG_H
-# define IMG_H
+#include "../../includes/cube3d.h"
 
-#include "cube3d.h"
-
-t_bool		img_load_xpm(t_mlx *mlx, char *file, t_img *img);
-t_bool		img_display(t_mlx *mlx, t_img *img);
-void		image_clear(t_img *image);
-
-
-#endif
+void	image_clear(t_img *image)
+{
+	ft_bzero(image->ptr, image->width * image->height * image->bpp);
+}

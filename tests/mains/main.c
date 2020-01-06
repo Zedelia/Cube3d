@@ -11,8 +11,6 @@ int main(int argc, char *argv[])
 	int lol;
 
 	mlx_ft_init(&mlx, argv[1]);
-	if (ret != 0)
-		ft_printf(GREEN"[PARSING SUCCESS]\n"RESET);
 	map_printf(mlx->map);
 	camera_printf(&mlx->camera);
 	display_tile(mlx, mlx->map);

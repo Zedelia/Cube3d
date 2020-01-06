@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 14:00:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 16:27:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,8 +28,8 @@
 
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
-# define FOV_DEG 60.0
-# define TILE_SIZE 60
+# define FOV_DEGREE 60.0
+# define TILE_SIZE 4
 # define MAP_INFOS "RNsWESFC"
 
 // # ifndef BUFFER_SIZE
@@ -38,7 +38,6 @@
 
 typedef unsigned long long	t_uintmax;
 typedef unsigned char		t_uchar;
-
 
 # include "struct.h"
 # include "mlx_s.h"

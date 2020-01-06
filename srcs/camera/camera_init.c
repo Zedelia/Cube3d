@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/04 12:03:43 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 14:33:32 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 16:13:52 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,11 +55,12 @@ static void	get_camera_rotation_angle(t_camera *cam)
 void		camera_init(t_mlx *mlx)
 {
 	get_camera(&mlx->camera, mlx->map);
-	mlx->camera.turn_direction = 0;
-	mlx->camera.walk_direction = 0;
+	// mlx->camera.turn_direction = 0;
+	// mlx->camera.walk_direction = 0;
 	get_camera_rotation_angle(&mlx->camera);
 	mlx->camera.direction.y = 1;
 	rotate_vect(&mlx->camera.direction, mlx->camera.rotation_angle);
+	mlx->camera.nb_rays = mlx->map->r_width / TILE_SIZE;
 	// cam->walk_speed = 100;
 	// cam->turn_speed = degrees_to_radian(35);
 }
