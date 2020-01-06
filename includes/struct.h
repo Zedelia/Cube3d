@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 17:17:46 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 18:54:12 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -53,6 +53,7 @@ typedef struct	s_camera
 	float	pos_y;
 	float	rotation_angle;
 	t_vect	direction;
+	t_rays	ray_tab;
 	int		s_tile;
 	int		turn_direction; // -1 for left, +1 for right
 	int		walk_direction; // -1 for back, +1 for front

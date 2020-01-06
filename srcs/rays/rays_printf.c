@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   camera_printf.c                                  .::    .:/ .      .::   */
+/*   rays_printf.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/04 13:04:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 18:41:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/06 19:00:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,11 +15,31 @@
 
 // attention au printf a supprimer
 
-void	camera_printf(t_camera *cam)
+void	rays_printf(t_rays ray)
 {
-	ft_printf("pos x: %d\n", (int)cam->pos_x);
-	ft_printf("pos y: %d\n", (int)cam->pos_y);
-	printf("direc x: %f\n", cam->direction.x);
-	printf("direc y: %f\n", cam->direction.y);
-	ft_printf("rotation angle: %d\n", (int)cam->rotation_angle);
+	printf("\n\n>>>> RAY :\n");
+	printf("wall-hit-x : %f\n", ray.wall_hit_x);
+	printf("wall-hit-y : %f\n", ray.wall_hit_y);
+	printf("angle : %f\n", ray.angle);
+	printf("distance : %f\n", ray.distance);
+	if (ray.facing_left)
+		ft_printf("FACING LEFT\n");
+	if (ray.facing_right)
+		ft_printf("FACING RIGHT\n");
+	if (ray.facing_down)
+		ft_printf("FACINNG DOWN\n");
+	if (ray.facing_up)
+		ft_printf("UP\n");
+}
+
+void	rays_printf_tab(t_mlx *mlx, t_rays *ray)
+{
+	int i;
+
+	i = 0;
+	while (i < mlx->map->r_width)
+	{
+		rays_printf(*ray);
+		i++;
+	}
 }
