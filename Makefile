@@ -4,8 +4,8 @@ NAME = cube3d
 SRC_PATH = srcs
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
-	cam/cam_init.c \
-	cam/cam_printf.c \
+	camera/camera_init.c \
+	camera/camera_printf.c \
 	display/display_exit.c \
 	display/display_tile.c \
 	map/map_init.c \
@@ -31,10 +31,10 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/rotate_vect.c \
 	utils/utils_01.c \
 	utils/return_func.c \
-	rays/rays_init.c \
-	rays/rays_printf \
-	rays/rays_setup.c \
-	rays/rays_tab_init.c \
+	# rays/rays_init.c \
+	# rays/rays_printf \
+	# rays/rays_setup.c \
+	# rays/rays_tab_init.c \
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}

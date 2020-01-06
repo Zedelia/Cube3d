@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/04 16:31:33 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 19:04:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:06:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,7 +27,8 @@ t_bool	ray_cast_one(t_rays *ray, t_mlx *mlx);
 // find the x-coordonate or the ...
 	x_intercept = mlx->cam.pos_x + (y_intercept - mlx->cam.pos_y) / tan(ray->angle);
 // calculate the increment x step and y step
-	y_step = mlx->cam.s_tile
+	y_step = mlx->cam.s_tile;
+	y_step *= 
 
 }
 
