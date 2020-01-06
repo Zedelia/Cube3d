@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   camera_update_view.c                             .::    .:/ .      .::   */
+/*   cam_update_view.c                             .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -13,8 +13,8 @@
 
 #include "../../includes/cube3d.h"
 
-t_bool	camera_update_view()
+t_bool	cam_update_view()
 {
-	camera.update();
+	cam.update();
 	rays_cat_all();
 }

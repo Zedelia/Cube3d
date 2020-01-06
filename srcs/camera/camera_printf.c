@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   camera_printf.c                                  .::    .:/ .      .::   */
+/*   cam_printf.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -15,7 +15,7 @@
 
 // attention au printf a supprimer
 
-void	camera_printf(t_camera *cam)
+void	cam_printf(t_cam *cam)
 {
 	ft_printf("pos x: %d\n", (int)cam->pos_x);
 	ft_printf("pos y: %d\n", (int)cam->pos_y);

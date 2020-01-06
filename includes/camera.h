@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   camera.h                                         .::    .:/ .      .::   */
+/*   cam.h                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -11,12 +11,12 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef CAMERA_H
-# define CAMERA_H
+#ifndef cam_H
+# define cam_H
 
 #include "cube3d.h"
 
-void		camera_printf(t_camera *cam);
-void		camera_init(t_mlx *mlx);
+void		cam_printf(t_cam *cam);
+void		cam_init(t_mlx *mlx);
 
 #endif

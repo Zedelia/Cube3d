@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/03 16:52:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:04:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,7 +35,7 @@ static t_bool	map_check_integrity(char *map_char)
 	}
 	if ((occur_in_str('N', map_char) + occur_in_str('S', map_char) +
 			occur_in_str('E', map_char) + occur_in_str('W', map_char)) != 1)
-			return (return_false(__func__, "[FAIL] invalid camera position"));
+			return (return_false(__func__, "[FAIL] invalid cam position"));
 	return (True);
 }
 

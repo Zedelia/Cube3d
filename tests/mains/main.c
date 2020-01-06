@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
 
 	mlx_ft_init(&mlx, argv[1]);
 	map_printf(mlx->map);
-	camera_printf(&mlx->camera);
+	cam_printf(&mlx->cam);
 	display_tile(mlx, mlx->map);
-	camera_init(mlx);
+	cam_init(mlx);
 
 
 	// mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);

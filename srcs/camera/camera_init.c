@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   camera_init.c                                    .::    .:/ .      .::   */
+/*   cam_init.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -13,7 +13,7 @@
 
 #include "../../includes/cube3d.h"
 
-static void	get_camera(t_camera *cam, t_map *map)
+static void	get_cam(t_cam *cam, t_map *map)
 {
 	int	x;
 	int	y;
@@ -38,7 +38,7 @@ static void	get_camera(t_camera *cam, t_map *map)
 	cam->rotation_angle = f;
 }
 
-static void	get_camera_rotation_angle(t_camera *cam)
+static void	get_cam_rotation_angle(t_cam *cam)
 {
 	cam->rotation_angle += 48;
 	if (cam->rotation_angle == 78)
@@ -52,13 +52,13 @@ static void	get_camera_rotation_angle(t_camera *cam)
 }
 
 
-void		camera_init(t_mlx *mlx)
+void		cam_init(t_mlx *mlx)
 {
-	get_camera(&mlx->camera, mlx->map);
-	mlx->camera.turn_direction = 0;
-	mlx->camera.walk_direction = 0;
-	get_camera_rotation_angle(&mlx->camera);
-	mlx->camera.direction.y = 1;
-	mlx->camera.s_tile = mlx->map->r_width / mlx->map->map_col;
-	rotate_vect(&mlx->camera, mlx->camera.rotation_angle); // ici on trouve le vecteur directionnel initial
+	get_cam(&mlx->cam, mlx->map);
+	mlx->cam.turn_direction = 0;
+	mlx->cam.walk_direction = 0;
+	get_cam_rotation_angle(&mlx->cam);
+	mlx->cam.direction.y = 1;
+	mlx->cam.s_tile = mlx->map->r_width / mlx->map->map_col;
+	rotate_vect(&mlx->cam, mlx->cam.rotation_angle); // ici on trouve le vecteur directionnel initial
 }

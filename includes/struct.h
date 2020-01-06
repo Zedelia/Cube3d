@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 18:54:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:04:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -47,7 +47,7 @@ typedef struct	s_vect
 	float	y;
 }			t_vect;
 
-typedef struct	s_camera
+typedef struct	s_cam
 {
 	float	pos_x;
 	float	pos_y;
@@ -57,7 +57,7 @@ typedef struct	s_camera
 	int		s_tile;
 	int		turn_direction; // -1 for left, +1 for right
 	int		walk_direction; // -1 for back, +1 for front
-}				t_camera;
+}				t_cam;
 
 typedef struct	s_map
 {
@@ -82,7 +82,7 @@ typedef struct	s_mlx
 	void		*ptr;
 	void		*win;
 	t_img		img;
-	t_camera	camera;
+	t_cam	cam;
 	t_map		*map;
 }				t_mlx;
 

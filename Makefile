@@ -4,8 +4,8 @@ NAME = cube3d
 SRC_PATH = srcs
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
-	camera/camera_init.c \
-	camera/camera_printf.c \
+	cam/cam_init.c \
+	cam/cam_printf.c \
 	display/display_exit.c \
 	display/display_tile.c \
 	map/map_init.c \
@@ -39,7 +39,7 @@ SRCS_NAME = img/img_load_xpm.c \
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
 
-MKDIR_LST = {img,map,mlx,rays,utils,display,camera}
+MKDIR_LST = {img,map,mlx,rays,utils,display,cam}
 
 INCLUDES = cube3d
 

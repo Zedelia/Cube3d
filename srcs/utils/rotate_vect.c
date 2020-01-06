@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/04 12:53:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 17:05:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:04:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	rotate_vect(t_camera *cam, float angle)
+void	rotate_vect(t_cam *cam, float angle)
 {
 	float c;
 	float s;

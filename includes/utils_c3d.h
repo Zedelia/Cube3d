@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 17:03:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 19:04:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,6 +23,6 @@ int			get_tile(t_map *m, int x, int y);
 float		degrees_to_radian(float angle_in_degrees);
 int			color_to_int(t_color c);
 t_color		int_to_color(int n);
-void		rotate_vect(t_camera *cam, float angle);
+void		rotate_vect(t_cam *cam, float angle);
 
 #endif
