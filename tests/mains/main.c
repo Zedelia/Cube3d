@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 	(void)argc;
-	// (void)argv;
+	(void)argv;
 	t_mlx *mlx;
 	int ret;
 	int lol;
