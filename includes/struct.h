@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 16:26:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/06 17:17:46 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,17 @@
 
 #include "cube3d.h"
 
+typedef enum
+{
+	left = -1,
+	right = 1,
+}			t_turn_direction;
+
+typedef enum
+{
+	front = 1,
+	back = -1,
+}			t_walk_direction;
 /*
 ** MLX and IMG management
 */
@@ -34,18 +45,17 @@ typedef struct	s_vect
 {
 	float	x;
 	float	y;
-}				t_vect;
+}			t_vect;
+
 typedef struct	s_camera
 {
 	float	pos_x;
 	float	pos_y;
-	int		nb_rays;
-	t_vect	direction;
 	float	rotation_angle;
+	t_vect	direction;
+	int		s_tile;
 	int		turn_direction; // -1 for left, +1 for right
 	int		walk_direction; // -1 for back, +1 for front
-	float	walk_speed;
-	float	turn_speed;
 }				t_camera;
 
 typedef struct	s_map
@@ -79,11 +89,12 @@ typedef struct	s_rays
 {
 	float	wall_hit_x;
 	float	wall_hit_y;
-	int		texture_hit;
 	float	angle;
 	float	distance;
-	t_bool	facing_left;
+	t_bool	facing_up;
+	t_bool	facing_down;
 	t_bool	facing_right;
+	t_bool	facing_left;
 
 }				t_rays;
 
