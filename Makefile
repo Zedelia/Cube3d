@@ -34,7 +34,8 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/rays_init.c \
 	rays/rays_printf.c \
 	rays/rays_setup.c \
-	rays/rays_cast.c
+	rays/rays_casting.c \
+	rays/rays_tab_rotate.c \
 
 
 INC_PATH = includes

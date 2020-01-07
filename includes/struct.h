@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 11:15:56 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 14:39:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,25 +27,28 @@ typedef enum
 	front = 1,
 	back = -1,
 }			t_walk_direction;
-/*
-** MLX and IMG management
-*/
-typedef struct	s_img
+
+
+
+
+
+typedef struct	s_color
 {
-	void		*ptr;
-	int			*data;
-	int			size_l;
-	int			bpp;
-    int         endian;
-    int         height;
-    int         width;
-}				t_img;
+	int			r;
+	int			g;
+	int			b;
+}				t_color;
+
+
+
+
 
 typedef struct	s_vect
 {
 	float	x;
 	float	y;
 }			t_vect;
+
 
 typedef struct	s_rays
 {
@@ -62,17 +65,37 @@ typedef struct	s_rays
 
 }				t_rays;
 
+
+
+
+
+typedef struct	s_img
+{
+	void		*ptr;
+	int			*data;
+	int			size_l;
+	int			bpp;
+    int         endian;
+    int         height;
+    int         width;
+}				t_img;
+
+
+
 typedef struct	s_cam
 {
 	float	pos_x;
 	float	pos_y;
 	float	rotation_angle;
 	t_vect	direction;
-	t_rays	ray_tab;
+	t_rays	*ray_tab;
 	int		s_tile;
 	int		turn_direction; // -1 for left, +1 for right
 	int		walk_direction; // -1 for back, +1 for front
 }				t_cam;
+
+
+
 
 typedef struct	s_map
 {
@@ -92,21 +115,16 @@ typedef struct	s_map
 	char	*text_sprite;
 }				t_map;
 
+
+
 typedef struct	s_mlx
 {
 	void		*ptr;
 	void		*win;
 	t_img		img;
-	t_cam	cam;
+	t_cam		cam;
 	t_map		*map;
 }				t_mlx;
 
-
-typedef struct	s_color
-{
-	int			r;
-	int			g;
-	int			b;
-}				t_color;
 
 #endif

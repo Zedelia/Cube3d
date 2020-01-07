@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   mlx_s.h                                          .::    .:/ .      .::   */
+/*   rays_casting.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/25 11:24:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 14:32:35 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/04 16:31:33 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/07 14:53:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef MLX_S_H
-# define MLX_S_H
+#include "../../includes/cube3d.h"
 
-#include "cube3d.h"
-
-t_bool	mlx_ft_init(t_mlx **mlx, char *file);
-void	mlx_free(t_mlx *mlx);
-
-#endif
+t_bool	rays_casting(t_mlx *mlx)
+{
+	rays_rotate(mlx);
+	return (True);
+}

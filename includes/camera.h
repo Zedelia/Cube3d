@@ -17,6 +17,6 @@
 #include "cube3d.h"
 
 void		cam_printf(t_cam *cam);
-void		cam_init(t_mlx *mlx);
+t_bool		cam_init(t_mlx *mlx);
 
 #endif
