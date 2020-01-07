@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:24:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 15:07:14 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 16:45:53 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,16 +15,22 @@
 
 void	ray_init_directions(t_rays *ray)
 {
-	if (ray->x >= 0)
+	if (ray->x > 0)
 		ray->facing_right = True;
-	else if (ray->x < 0)
+	else if (ray->x < 0 || ray->x == 0)
 		ray->facing_right = False;
-	ray->facing_left = !ray->facing_right;
-	if (ray->y >= 0)
+	if (ray->x != 0)
+		ray->facing_left = !ray->facing_right;
+	else
+		ray->facing_left = False;
+	if (ray->y > 0)
 		ray->facing_down = True;
-	else if (ray->y < 0)
+	else if (ray->y < 0 || ray->y == 0)
 		ray->facing_down = False;
-	ray->facing_up = !ray->facing_down;
+	if (ray->y != 0)
+		ray->facing_up = !ray->facing_down;
+	else
+		ray->facing_up = False;
 }
 
 t_rays  ray_init(float angle)

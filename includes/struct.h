@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 14:39:28 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 16:30:30 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -86,10 +86,9 @@ typedef struct	s_cam
 {
 	float	pos_x;
 	float	pos_y;
-	float	rotation_angle;
+	int		rotation_angle;
 	t_vect	direction;
 	t_rays	*ray_tab;
-	int		s_tile;
 	int		turn_direction; // -1 for left, +1 for right
 	int		walk_direction; // -1 for back, +1 for front
 }				t_cam;
@@ -104,6 +103,7 @@ typedef struct	s_map
 	int		**tab;
 	int		map_col;
 	int		map_lines;
+	int		tile;
 	int		r_width;
 	int		r_height;
 	int		cell;

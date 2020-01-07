@@ -11,4 +11,6 @@ TO-DO :
 - ATTENTION : erreur en cas de lignes vides apres la map +
 - ATTENTION: QUAND INFO DEJA DANS MAP: check if info already in !! => Test to add in map checker
 - start raycasting
+- ajouter les free dans le retours d'erreurs
+- mettre a jour les free
 ...
