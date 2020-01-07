@@ -6,37 +6,54 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:24:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 18:23:58 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 13:47:27 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-// TODO
-
-static void	rays_init_directions(t_rays *ray, t_vect vect)
+void	ray_init_directions(t_rays *ray)
 {
-	if (vect.x >= 0)
+	if (ray->x >= 0)
 		ray->facing_right = True;
-	else if (vect.x < 0)
+	else if (ray->x < 0)
 		ray->facing_right = False;
 	ray->facing_left = !ray->facing_right;
-	if (vect.y >= 0)
+	if (ray->y >= 0)
 		ray->facing_down = True;
-	else if (vect.y < 0)
+	else if (ray->y < 0)
 		ray->facing_down = False;
 	ray->facing_up = !ray->facing_down;
 }
 
-t_rays  rays_init(t_vect vect, float angle)
+t_rays  ray_init(float angle)
 {
 	t_rays	ray;
 
+	ray.x = -sin(degrees_to_radian(angle));
+	ray.y = cos(degrees_to_radian(angle));
 	ray.wall_hit_x = 0;
 	ray.wall_hit_y = 0;
 	ray.distance = 0;
-	ray.angle = angle;
-	rays_init_directions(&ray, vect);
+	ray.angle = degrees_to_radian(angle);
+	ray_init_directions(&ray);
 	return (ray);
+}
+
+t_bool	rays_tab_init(t_rays *rays, t_mlx *mlx)
+{
+    int	i;
+	float r_angle;
+
+    i = 0;
+    rays[i] = ray_init((-(FOV_DEGREE/2)));
+    i++;
+    while (i < mlx->map->r_width)
+    {
+		r_angle =(i - mlx->map->r_width * 0.5) * FOV_DEGREE / mlx->map->r_width;
+        rays[i] = ray_init(r_angle);
+        i++;
+    }
+    return (True);
 }

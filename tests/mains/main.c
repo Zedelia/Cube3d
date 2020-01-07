@@ -6,16 +6,17 @@ int main(int argc, char *argv[])
 {
 	(void)argc;
 	(void)argv;
-	// t_mlx *mlx;
-	// int ret;
-	// int lol;
-	printf("%lld\n", ft_floor(25/10));
+	t_mlx *mlx;
+	int ret;
+	int lol;
 
-	// mlx_ft_init(&mlx, argv[1]);
-	// map_printf(mlx->map);
-	// cam_printf(&mlx->cam);
-	// display_tile(mlx, mlx->map);
-	// cam_init(mlx);
+	mlx_ft_init(&mlx, argv[1]);
+	t_rays rays[mlx->map->r_width];
+	cam_init(mlx);
+	map_printf(mlx->map);
+	cam_printf(&mlx->cam);
+	rays_tab_init(rays, mlx);
+	rays_printf_tab(mlx, rays);
 
 
 	// mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);

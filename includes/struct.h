@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 19:17:07 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 11:15:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -49,6 +49,8 @@ typedef struct	s_vect
 
 typedef struct	s_rays
 {
+	float	x;
+	float	y;
 	float	wall_hit_x;
 	float	wall_hit_y;
 	float	angle;

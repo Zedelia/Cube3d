@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 19:00:44 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 13:41:08 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,16 +18,18 @@
 void	rays_printf(t_rays ray)
 {
 	printf("\n\n>>>> RAY :\n");
+	printf("x : %f\n", ray.x);
+	printf("y : %f\n", ray.y);
 	printf("wall-hit-x : %f\n", ray.wall_hit_x);
 	printf("wall-hit-y : %f\n", ray.wall_hit_y);
 	printf("angle : %f\n", ray.angle);
 	printf("distance : %f\n", ray.distance);
 	if (ray.facing_left)
-		ft_printf("FACING LEFT\n");
+		ft_printf("FACING LEFT ");
 	if (ray.facing_right)
-		ft_printf("FACING RIGHT\n");
+		ft_printf("FACING RIGHT ");
 	if (ray.facing_down)
-		ft_printf("FACINNG DOWN\n");
+		ft_printf("DOWN\n");
 	if (ray.facing_up)
 		ft_printf("UP\n");
 }
@@ -39,7 +41,7 @@ void	rays_printf_tab(t_mlx *mlx, t_rays *ray)
 	i = 0;
 	while (i < mlx->map->r_width)
 	{
-		rays_printf(*ray);
+		rays_printf(ray[i]);
 		i++;
 	}
 }
