@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:24:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 16:45:53 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/07 17:42:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,8 +39,6 @@ t_rays  ray_init(float angle)
 
 	ray.x = sin(degrees_to_radian(angle));
 	ray.y = -cos(degrees_to_radian(angle));
-	ray.wall_hit_x = 0;
-	ray.wall_hit_y = 0;
 	ray.distance = 0;
 	ray.angle = degrees_to_radian(angle);
 	ray_init_directions(&ray);
