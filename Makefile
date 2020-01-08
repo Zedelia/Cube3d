@@ -31,11 +31,17 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/rotate_vect.c \
 	utils/utils_01.c \
 	utils/return_func.c \
-	rays/rays_init.c \
 	rays/rays_printf.c \
-	rays/rays_setup.c \
+	rays/rays_tab_init.c \
 	rays/rays_casting.c \
-	rays/rays_tab_rotate.c \
+	rays/rays_parser.c \
+	rays/ray_init.c \
+	rays/ray_get_distance.c \
+	rays/ray_get_intersections.c \
+	rays/ray_get_steps.c \
+	rays/ray_get_direction.c \
+	rays/ray_rotate.c \
+
 
 
 INC_PATH = includes

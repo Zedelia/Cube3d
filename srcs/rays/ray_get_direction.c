@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   rays_setup.c                                     .::    .:/ .      .::   */
+/*   ray_get_direction.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 14:24:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 12:02:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/08 13:34:33 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/08 13:35:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-// t_rays	ray_setup(float angle)
-// {
-// 	t_rays	ray;
-// 	float	angle_radian;
-
-// 	angle_radian = degrees_to_radian(angle);
-// 	ray = ray_init();
-// 	ray.x = -sin(angle_radian);
-// 	ray.y = cos(angle_radian);
-// 	return (ray);
-// }
+void	ray_get_direction(t_rays *ray)
+{
+	if (ray->x > 0)
+		ray->facing_right = True;
+	else if (ray->x < 0 || ray->x == 0)
+		ray->facing_right = False;
+	if (ray->x != 0)
+		ray->facing_left = !ray->facing_right;
+	else
+		ray->facing_left = False;
+	if (ray->y > 0)
+		ray->facing_down = True;
+	else if (ray->y < 0 || ray->y == 0)
+		ray->facing_down = False;
+	if (ray->y != 0)
+		ray->facing_up = !ray->facing_down;
+	else
+		ray->facing_up = False;
+}

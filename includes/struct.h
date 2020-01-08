@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 19:28:17 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 13:14:59 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,31 +39,33 @@ typedef struct	s_color
 	int			b;
 }				t_color;
 
-
-
-
-
 typedef struct	s_vect
 {
 	float	x;
 	float	y;
-}			t_vect;
+}				t_vect;
+
+typedef struct	s_fst_hit
+{
+	float	x;
+	float	y;
+	t_vect	steps;
+}				t_fst_hit;
 
 
 typedef struct	s_rays
 {
-	float	x;
-	float	y;
-	float	angle;
-	float	distance;
-	t_vect	wall_hit;
-	t_vect	y_fst_hit;
-	t_vect	x_fst_hit;
-	t_vect	delta;
-	t_bool	facing_up;
-	t_bool	facing_down;
-	t_bool	facing_right;
-	t_bool	facing_left;
+	float		x;
+	float		y;
+	float		angle;
+	float		distance;
+	t_vect		wall_hit;
+	t_fst_hit	hz_fst_hit;
+	t_fst_hit	vt_fst_hit;
+	t_bool		facing_up;
+	t_bool		facing_down;
+	t_bool		facing_right;
+	t_bool		facing_left;
 
 }				t_rays;
 

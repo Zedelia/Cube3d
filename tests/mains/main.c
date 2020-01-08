@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 
 	mlx_ft_init(&mlx, argv[1]);
 	map_printf(mlx->map);
+
 	cam_printf(&mlx->cam);
 	rays_printf_tab(mlx, mlx->cam.ray_tab);
 	rays_casting(mlx);

@@ -61,6 +61,6 @@ t_bool		cam_init(t_mlx *mlx)
 	mlx->cam.direction.y = 1;
 	rotate_vect(&mlx->cam, mlx->cam.rotation_angle); // ici on trouve le vecteur directionnel initial
 	if(!(rays_tab_init(mlx)))
-		return (return_false(__func__, "[FAIL] init ray tab"));
+	return (return_false(__func__, "[FAIL] init ray tab"));
 	return (True);
 }

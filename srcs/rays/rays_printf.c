@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 16:08:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 13:31:19 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,8 +21,8 @@ void	rays_printf(t_rays ray)
 	printf("x : %f\n", ray.x);
 	printf("y : %f\n", ray.y);
 	printf("Vecteur((%f,%f))\n",ray.x,ray.y);
-	printf("wall-hit-x : %f\n", ray.wall_hit_x);
-	printf("wall-hit-y : %f\n", ray.wall_hit_y);
+	printf("wall-hit-x : %f\n", ray.wall_hit.x);
+	printf("wall-hit-y : %f\n", ray.wall_hit.y);
 	printf("angle : %f\n", ray.angle);
 	printf("distance : %f\n", ray.distance);
 	if (ray.facing_left)
