@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 18:12:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 20:12:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -57,6 +57,7 @@ typedef struct	s_wall_hit
 {
 	t_vect	hz_hit;
 	t_vect	vt_hit;
+	// TODO ici rajouter les distance hz et vt 
 	t_bool	vt;
 	t_bool	hz;
 	t_bool	sprite;

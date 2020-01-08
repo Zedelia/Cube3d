@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   render.h                                         .::    .:/ .      .::   */
+/*   display.h                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -11,12 +11,12 @@
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef render_H
-# define render_H
+#ifndef display_H
+# define display_H
 
 #include "cube3d.h"
 
-t_bool	render_exit_on_click(t_mlx *mlx);
-t_bool	render_tile(t_mlx *mlx, t_map *map);
+t_bool	display_exit_on_click(t_mlx *mlx);
+t_bool	display_tile(t_mlx *mlx, t_map *map);
 
 #endif

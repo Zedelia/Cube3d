@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   img_render.c                                    .::    .:/ .      .::   */
+/*   display_exit.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/25 15:24:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/25 15:28:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/08 17:45:33 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/08 17:45:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	img_render(t_mlx *mlx, t_img *img)
+static int display_exit(void *mlx)
 {
-	img_load_xpm(mlx, "dragon.xpm", img);
-	mlx_put_image_to_window(mlx->ptr, mlx->win, img->ptr, img->width, img->height);
+    (void)mlx;
+    exit(0);
+}
+
+t_bool	display_exit_on_click(t_mlx *mlx)
+{
+	if (!(mlx_hook(mlx->win, 17, 0, &display_exit, &mlx)))
+		return (return_false(__func__, "[FAIL] exit"));
 	return (True);
 }
