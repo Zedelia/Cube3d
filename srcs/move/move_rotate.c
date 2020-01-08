@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   rays_parser.c                                    .::    .:/ .      .::   */
+/*   move_rotate.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/07 16:33:08 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/07 16:34:42 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/08 18:06:48 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/08 18:21:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	rays_parser(t_mlx *mlx)
+void	move_right(t_mlx *mlx)
 {
-	t_rays *r;
-	int		i;
 
-	i = 0;
-	r = mlx->cam.ray_tab;
-	while (i < mlx->map->r_width)
-	{
-		ray_rotate(&r[i], mlx);
-		ray_get_distance(&r[i], mlx);
-		i++;
-	}
-	return (True);
+}
+
+void	move_left(t_mlx *mlx)
+{
+
+}
+
+void	move_forward_backward(int keycode, t_mlx *mlx)
+{
+
+
+}
+
+void	move_lateral(int keycode, t_mlx *mlx)
+{
+}
+
+void	key_move(int keycode, t_mlx *mlx)
+{
+
 }

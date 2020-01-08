@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 13:38:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 15:35:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 19:40:58 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,8 @@ static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 		x_intr = 0;
 	else
 	{
-		x_intr = ft_floor(mlx->cam.pos.x / mlx->map->tile) * mlx->map->tile;
+		// TODO  A TESTER
+		x_intr = ft_floor(mlx->cam.pos.x);
 		if (r->facing_right == True)
 			x_intr += mlx->map->tile;
 		else if (r->facing_left == True)
@@ -44,7 +45,7 @@ static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 		y_intr = 0;
 	else
 	{
-		y_intr = ft_floor(mlx->cam.pos.y / mlx->map->tile) * mlx->map->tile;
+		y_intr = ft_floor(mlx->cam.pos.y);
 		if (r->facing_up == True)
 			y_intr -= mlx->map->tile;
 		else if (r->facing_down == True)

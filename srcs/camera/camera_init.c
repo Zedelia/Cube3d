@@ -33,8 +33,8 @@ static void	get_cam(t_cam *cam, t_map *map)
 			break ;
 		y++;
 	}
-	cam->pos.x = x;
-	cam->pos.y = y;
+	cam->pos.x = x; // * map->tile - 0.5 * map->tile;
+	cam->pos.y = y; // * map->tile - 0.5 * map->tile;
 	cam->rotation_angle = f;
 }
 
@@ -61,6 +61,6 @@ t_bool		cam_init(t_mlx *mlx)
 	mlx->cam.direction.y = 1;
 	rotate_vect(&mlx->cam, mlx->cam.rotation_angle); // ici on trouve le vecteur directionnel initial
 	if(!(rays_tab_init(mlx)))
-	return (return_false(__func__, "[FAIL] init ray tab"));
+		return (return_false(__func__, "[FAIL] init ray tab"));
 	return (True);
 }

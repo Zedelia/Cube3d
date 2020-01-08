@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   rays_casting.c                                   .::    .:/ .      .::   */
+/*   render_exit.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/04 16:31:33 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 17:27:16 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/08 17:45:33 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/08 17:45:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	rays_casting(t_mlx *mlx)
+static int render_exit(void *mlx)
 {
-	t_rays *r;
-	int		i;
+    (void)mlx;
+    exit(0);
+}
 
-	i = 0;
-	r = mlx->cam.ray_tab;
-	while (i < mlx->map->r_width)
-	{
-		ray_rotate(&r[i], mlx);
-		ray_get_distance(&r[i], mlx);
-		i++;
-	}
+t_bool	render_exit_on_click(t_mlx *mlx)
+{
+	if (!(mlx_hook(mlx->win, 17, 0, &render_exit, &mlx)))
+		return (return_false(__func__, "[FAIL] exit"));
 	return (True);
 }

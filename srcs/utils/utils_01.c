@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 12:14:16 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 20:00:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,3 +45,29 @@ int		get_tile(t_map *m, int x, int y)
 		return (0);
 	return (m->tab[y][x]);
 }
+
+void	ft_pixel_put(t_mlx *mlx, int x, int y, int color)
+{
+	if (x >= mlx->map->r_width || y >= mlx->map->r_height || x < 0 || y < 0 )
+		return ;
+	mlx->img.data[y * mlx->map->r_width + x] = color;
+}
+
+void	draw_pix(t_mlx *mlx, t_vect v, int size_obj)
+{
+	int y = -size_obj / 2;
+	int x;
+	int tile = mlx->map->tile;
+
+	while (y < size_obj / 2)
+	{
+		x = -size_obj / 2;
+		while (x < size_obj / 2)
+		{
+			ft_pixel_put(mlx, (v.x + 0.5) * tile + x, (v.y + 0.5) * tile + y, 0x000000);
+			x++;
+		}
+		y++;
+	}
+}
+
