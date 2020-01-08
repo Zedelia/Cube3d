@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 17:06:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 17:23:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,8 +30,6 @@ typedef enum
 
 
 
-
-
 typedef struct	s_color
 {
 	int			r;
@@ -45,12 +43,14 @@ typedef struct	s_vect
 	float	y;
 }				t_vect;
 
+
+
+
 typedef struct	s_fst_hit
 {
 	float	x;
 	float	y;
 	t_vect	steps;
-	t_bool	sprite;
 }				t_fst_hit;
 
 typedef struct	s_wall_hit
@@ -59,6 +59,7 @@ typedef struct	s_wall_hit
 	t_vect	vt_hit;
 	t_bool	vt;
 	t_bool	hz;
+	t_bool	sprite;
 }				t_wall_hit;
 
 

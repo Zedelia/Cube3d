@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:48:53 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 17:07:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 17:18:53 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ static void ray_get_vt_wall_hit(t_rays *r, t_mlx *mlx)
 
 	to_check.x = r->vt_fst_inter.x;
 	to_check.y = r->vt_fst_inter.x;
-	while (there_is_a_wall_at(to_check, mlx) == False)
+	while (there_is_a_wall_at(r, to_check, mlx) == False)
 	{
 		to_check.x += r->vt_fst_inter.steps.x;
 		to_check.y += r->vt_fst_inter.steps.y;
@@ -34,7 +34,7 @@ static void ray_get_hz_wall_hit(t_rays *r, t_mlx *mlx)
 
 	to_check.x = r->hz_fst_inter.x;
 	to_check.y = r->hz_fst_inter.x;
-	while (there_is_a_wall_at(to_check, mlx) == False)
+	while (there_is_a_wall_at(r, to_check, mlx) == False)
 	{
 		to_check.x += r->hz_fst_inter.steps.x;
 		to_check.y += r->hz_fst_inter.steps.y;
