@@ -27,10 +27,12 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
 	utils/colors.c \
-	utils/angles.c \
 	utils/rotate_vect.c \
+	utils/angles.c \
 	utils/utils_01.c \
 	utils/return_func.c \
+	utils/there_is_a_wall_at.c \
+	utils/distance_obstacle_cam.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/rays_casting.c \
@@ -41,6 +43,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_get_steps.c \
 	rays/ray_get_direction.c \
 	rays/ray_rotate.c \
+	rays/ray_get_walls_hit.c \
 
 
 
@@ -83,7 +86,6 @@ RESET = \033[0;37m
 all : libprintf libx $(NAME)
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
 
-
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
 	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
@@ -92,19 +94,19 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 ${NAME}: $(OBJ)
 	@$(COMPIL) tests/mains/main.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
-	@rm -rf .dSYM
+	@rm -rf *.dSYM
 
 
 # Tests
 tmap: $(OBJ)
 	@$(COMPIL) tests/mains/main-maps.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
-	@rm -rf .dSYM
+	@rm -rf *.dSYM
 
 tmlx: $(OBJ)
 	@$(COMPIL) tests/mains/main-mlx.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
-	@rm -rf .dSYM
+	@rm -rf *.dSYM
 
 
 libprintf :
@@ -114,7 +116,7 @@ libx :
 	@make -C lib/minilibx_opengl
 
 clean:
-	@rm -rf .dSYM
+	@rm -rf *.dSYM
 	@make -C lib/Printf clean
 	@printf "$(BLUE)> Deleted : $(RED)lib .obj$(END)\n"
 	@rm -rf $(OBJ_PATH)

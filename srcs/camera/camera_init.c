@@ -33,8 +33,8 @@ static void	get_cam(t_cam *cam, t_map *map)
 			break ;
 		y++;
 	}
-	cam->pos_x = x;
-	cam->pos_y = y;
+	cam->pos.x = x;
+	cam->pos.y = y;
 	cam->rotation_angle = f;
 }
 

@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   rays_tab_init.c                                  .::    .:/ .      .::   */
+/*   there_is_a_wall_at.c                             .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/08 13:32:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 15:43:33 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/08 16:25:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	rays_tab_init(t_mlx *mlx)
+t_bool	there_is_a_wall_at(t_vect v, t_mlx *mlx )
 {
-    int		i;
-	float	r_angle;
+	int	index_x;
+	int index_y;
 
-    i = 0;
-	if(!(mlx->cam.ray_tab = malloc(sizeof(t_rays) * mlx->map->r_width)))
-		return (return_false(__func__, "[FAIL] malloc rays tab"));
-    mlx->cam.ray_tab[i] = ray_init((-(FOV_DEGREE/2)), mlx->cam.pos);
-    i++;
-    while (i < mlx->map->r_width)
-    {
-		r_angle =(i - mlx->map->r_width * 0.5) * FOV_DEGREE / mlx->map->r_width;
-        mlx->cam.ray_tab[i] = ray_init(r_angle, mlx->cam.pos);
-        i++;
-    }
-    return (True);
+	if (v.x < 0 || v.x > mlx->map->r_width || v.y < 0 || v.y > mlx->map->r_height)
+		return (True);
+	index_x = ft_floor(v.x / mlx->map->tile);
+	index_y = ft_floor(v.y / mlx->map->tile);
+	if (mlx->map->tab[index_y][index_y] != 0)
+		return (True);
+	return (False);
 }

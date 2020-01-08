@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 13:14:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 17:06:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,7 +50,16 @@ typedef struct	s_fst_hit
 	float	x;
 	float	y;
 	t_vect	steps;
+	t_bool	sprite;
 }				t_fst_hit;
+
+typedef struct	s_wall_hit
+{
+	t_vect	hz_hit;
+	t_vect	vt_hit;
+	t_bool	vt;
+	t_bool	hz;
+}				t_wall_hit;
 
 
 typedef struct	s_rays
@@ -59,9 +68,9 @@ typedef struct	s_rays
 	float		y;
 	float		angle;
 	float		distance;
-	t_vect		wall_hit;
-	t_fst_hit	hz_fst_hit;
-	t_fst_hit	vt_fst_hit;
+	t_fst_hit	hz_fst_inter;
+	t_fst_hit	vt_fst_inter;
+	t_wall_hit	wall;
 	t_bool		facing_up;
 	t_bool		facing_down;
 	t_bool		facing_right;
@@ -88,8 +97,7 @@ typedef struct	s_img
 
 typedef struct	s_cam
 {
-	float	pos_x;
-	float	pos_y;
+	t_vect	pos;
 	int		rotation_angle;
 	t_vect	direction;
 	t_rays	*ray_tab;
