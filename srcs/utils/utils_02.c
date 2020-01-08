@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   there_is_a_wall_at.c                             .::    .:/ .      .::   */
+/*   utils_02.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 17:21:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 20:32:06 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,4 +31,24 @@ t_bool	there_is_a_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 		return (True);
 	}
 	return (False);
+}
+
+float	distance_obstacle_cam(t_vect obs, t_vect cam_pos)
+{
+	float dist;
+
+	dist = sqrt((cam_pos.x - obs.x) * (cam_pos.x - obs.x)
+					+ (cam_pos.y - obs.y) * (cam_pos.y - obs.y));
+	return (dist);
+}
+
+void	rotate_vect(t_cam *cam, float angle)
+{
+	float c;
+	float s;
+
+	c = cos(degrees_to_radian(angle));
+	s = sin(degrees_to_radian(angle));
+	cam->direction.x = cam->pos.x * c -  s * cam->pos.y;
+	cam->direction.y = cam->pos.x * s + cam->pos.y * c;
 }

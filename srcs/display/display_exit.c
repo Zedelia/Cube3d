@@ -16,7 +16,7 @@
 static int display_exit(void *mlx)
 {
     (void)mlx;
-    exit(0);
+    exit(EXIT_SUCCESS);
 }
 
 t_bool	display_exit_on_click(t_mlx *mlx)

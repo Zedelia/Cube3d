@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 19:54:57 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/08 20:34:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,7 +26,7 @@ void		rotate_vect(t_cam *cam, float angle);
 t_bool		there_is_a_wall_at(t_rays *r, t_vect v, t_mlx *mlx);
 float		distance_obstacle_cam(t_vect obs, t_vect cam_pos);
 float		degrees_to_radian(float angle_in_degrees);
-void	ft_pixel_put(t_mlx *mlx, int x, int y, int color);
-void	draw_pix(t_mlx *mlx, t_vect v, int size_obj);
+void		ft_pixel_put(t_mlx *mlx, int x, int y, int color);
+void		draw_pix(t_mlx *mlx, t_vect v, int size_obj);
 
 #endif

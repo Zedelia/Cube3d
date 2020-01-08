@@ -28,12 +28,10 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
 	utils/colors.c \
-	utils/rotate_vect.c \
 	utils/angles.c \
 	utils/utils_01.c \
+	utils/utils_02.c \
 	utils/return_func.c \
-	utils/there_is_a_wall_at.c \
-	utils/distance_obstacle_cam.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \
@@ -42,7 +40,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_get_intersections.c \
 	rays/ray_get_steps.c \
 	rays/ray_get_direction.c \
-	rays/ray_1_rotate.c \
+	rays/ray_rotate.c \
 	rays/ray_get_walls_hit.c \
 
 
