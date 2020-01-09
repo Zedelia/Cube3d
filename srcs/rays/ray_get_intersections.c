@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 19:36:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/09 20:02:13 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,14 +18,8 @@ static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 	float	y_intr;
 	float	x_intr;
 
-	if (r->facing_right == False && r->facing_left == False)
-		x_intr = 0;
-	else
-	{
-		x_intr = ft_floor(mlx->cam.pos.x);
-		if (r->facing_right == True)
-			x_intr += 1;
-	}
+	x_intr = (int)mlx->cam.pos.x;
+	x_intr += 1;
 	if (!(y_intr = (x_intr - mlx->cam.pos.x) / tan(M_PI * 0.5 - r->angle)))
 		return (return_false(__func__, "[FAIL] ray first hit not found"));
 	y_intr = y_intr < 0 ? -y_intr : y_intr;
@@ -40,14 +34,9 @@ static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 	float	y_intr;
 	float	x_intr;
 
-	if (r->facing_up == False && r->facing_down == False)
-		y_intr = 0;
-	else
-	{
-		y_intr = ft_floor(mlx->cam.pos.y);
-		if (r->facing_down == True)
-			y_intr += 1;
-	}
+	y_intr = (int)mlx->cam.pos.y;
+	if (r->facing_down == True)
+		y_intr += 1;
 	if (!(x_intr = ((y_intr - mlx->cam.pos.y) / tan(M_PI * 0.5 - r->angle))))
 		return (return_false(__func__, "[FAIL] ray first hit not found"));
 	x_intr = x_intr < 0 ? -x_intr : x_intr;

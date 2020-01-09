@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 13:32:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 19:02:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/09 19:56:50 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,6 +28,7 @@ t_bool	rays_tab_init(t_mlx *mlx)
     {
 		r_angle =(i - mlx->map->r_width * 0.5) * FOV_DEGREE / mlx->map->r_width;
         mlx->cam.ray_tab[i] = ray_init(r_angle, mlx->cam.pos);
+		ray_get_distance(&mlx->cam.ray_tab[i], mlx);
         i++;
     }
 
