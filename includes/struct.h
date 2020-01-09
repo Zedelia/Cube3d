@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 20:12:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/09 12:02:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,19 +16,6 @@
 
 #include "cube3d.h"
 
-typedef enum
-{
-	left = -1,
-	right = 1,
-}			t_turn_direction;
-
-typedef enum
-{
-	front = 1,
-	back = -1,
-}			t_walk_direction;
-
-
 
 typedef struct	s_color
 {
@@ -37,12 +24,17 @@ typedef struct	s_color
 	int			b;
 }				t_color;
 
+typedef struct	s_move
+{
+	float		x;
+	float		y;
+}				t_move;
+
 typedef struct	s_vect
 {
 	float	x;
 	float	y;
 }				t_vect;
-
 
 
 
@@ -57,7 +49,6 @@ typedef struct	s_wall_hit
 {
 	t_vect	hz_hit;
 	t_vect	vt_hit;
-	// TODO ici rajouter les distance hz et vt 
 	t_bool	vt;
 	t_bool	hz;
 	t_bool	sprite;

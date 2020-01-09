@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   move.h                                           .::    .:/ .      .::   */
+/*   display_update.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/08 19:46:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 10:36:34 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/09 11:13:22 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/09 11:14:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
+#include "../../includes/cube3d.h"
 
-#ifndef MOVE_H
-# define MOVE_H
+// TODO mettre a jour une fois le rendu done
 
-#include "cube3d.h"
-
-int		move_keydown(int key, t_mlx *mlx);
-t_bool	move_apply(t_move *move, t_mlx *mlx);
-
-#endif
+void	display_update(t_mlx *mlx)
+{
+	display_tile(mlx, mlx->map);
+	draw_pix(mlx, mlx->cam.pos, 10);
+	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
+}

@@ -8,7 +8,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	camera/camera_printf.c \
 	display/display_exit.c \
 	display/display_tile.c \
-	display/display_player.c \
+	display/display_update.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
@@ -27,6 +27,8 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/check/map_check_map.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
+	move/move_apply.c \
+	move/move_keydown.c \
 	utils/colors.c \
 	utils/angles.c \
 	utils/utils_01.c \
@@ -40,15 +42,15 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_get_intersections.c \
 	rays/ray_get_steps.c \
 	rays/ray_get_direction.c \
-	rays/ray_rotate.c \
 	rays/ray_get_walls_hit.c \
+	rays/ray_rotate.c \
 
 
 
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
 
-MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display}
+MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move}
 
 INCLUDES = cube3d
 
