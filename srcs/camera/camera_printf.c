@@ -17,8 +17,8 @@
 
 void	cam_printf(t_cam *cam)
 {
-	ft_printf("pos x: %d\n", (int)cam->pos.x);
-	ft_printf("pos y: %d\n", (int)cam->pos.y);
+	printf("pos x: %f\n", cam->pos.x);
+	printf("pos y: %f\n", cam->pos.y);
 	printf("direc x: %f\n", cam->direction.x);
 	printf("direc y: %f\n", cam->direction.y);
 	ft_printf("rotation angle: %d\n", (int)cam->rotation_angle);
