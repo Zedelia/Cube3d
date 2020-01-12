@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 14:55:45 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/12 16:16:20 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,6 +32,7 @@
 # define TURN_SPEED 0.10000
 # define WALK_SPEED 0.10000
 # define MAP_INFOS "RNsWESFC"
+# define PI 3.14159265359
 
 // # ifndef BUFFER_SIZE
 // #  define BUFFER_SIZE 8

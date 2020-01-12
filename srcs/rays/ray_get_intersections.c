@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 20:02:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/12 15:31:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,8 +18,14 @@ static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 	float	y_intr;
 	float	x_intr;
 
-	x_intr = (int)mlx->cam.pos.x;
-	x_intr += 1;
+	if (r->facing_left == False && r->facing_right == False)
+		x_intr = 0;
+	else
+	{
+		x_intr = (int)mlx->cam.pos.x;
+		if (r->facing_left == True)
+			x_intr += 1;
+	}
 	if (!(y_intr = (x_intr - mlx->cam.pos.x) / tan(M_PI * 0.5 - r->angle)))
 		return (return_false(__func__, "[FAIL] ray first hit not found"));
 	y_intr = y_intr < 0 ? -y_intr : y_intr;
@@ -34,9 +40,14 @@ static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 	float	y_intr;
 	float	x_intr;
 
-	y_intr = (int)mlx->cam.pos.y;
-	if (r->facing_down == True)
-		y_intr += 1;
+	if (r->facing_up == False && r->facing_down == False)
+		y_intr = 0;
+	else
+	{
+		y_intr = (int)mlx->cam.pos.y;
+		if (r->facing_down == True)
+			y_intr += 1;
+	}
 	if (!(x_intr = ((y_intr - mlx->cam.pos.y) / tan(M_PI * 0.5 - r->angle))))
 		return (return_false(__func__, "[FAIL] ray first hit not found"));
 	x_intr = x_intr < 0 ? -x_intr : x_intr;
@@ -48,10 +59,8 @@ static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 
 t_bool	ray_get_intersections(t_rays *r, t_mlx *mlx)
 {
-	if (!(ray_get_fst_horizontal_intersection(r, mlx)))
-		return (return_false(__func__, "[FAIL] ray first hz inter not found"));
-	if (!(ray_get_fst_vertical_intersection(r, mlx)))
-		return (return_false(__func__, "[FAIL] ray first vt inter not found"));
+	ray_get_fst_horizontal_intersection(r, mlx);
+	ray_get_fst_vertical_intersection(r, mlx);
 	ray_get_steps(r, mlx);
 	return (True);
 }
