@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 17:53:30 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 19:00:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,14 +26,15 @@ typedef struct	s_color
 
 typedef struct	s_move
 {
-	float		walk;
-	float		turn;
+	float		x;
+	float		y;
 }				t_move;
 
 typedef struct	s_vect
 {
 	float	x;
 	float	y;
+	int		color;
 }				t_vect;
 
 
