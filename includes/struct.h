@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 17:05:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 10:59:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,6 +42,7 @@ typedef struct	s_fst_hit
 {
 	float	x;
 	float	y;
+	float	dist;
 	t_vect	steps;
 }				t_fst_hit;
 

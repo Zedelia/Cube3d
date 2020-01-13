@@ -6,12 +6,18 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 17:09:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 11:20:22 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
+
+
+int 	arrondi(float nombre)
+{
+	return (nombre + 0.5);
+}
 
 t_bool	utils_there_is_a_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 {
@@ -20,8 +26,8 @@ t_bool	utils_there_is_a_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 
 	if (v.x < 0 || v.x > mlx->map->r_width || v.y < 0 || v.y > mlx->map->r_height)
 		return (True);
-	index_x = ft_floor(v.x / mlx->map->tile);
-	index_y = ft_floor(v.y / mlx->map->tile);
+	index_x = v.x;
+	index_y = v.y;
 	if (mlx->map->tab[index_y][index_x] != 0 && mlx->map->tab[index_y][index_x]  < 21)
 	{
 		if (mlx->map->tab[index_y][index_y] == 1)

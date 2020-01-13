@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/12 15:57:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/13 13:02:49 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,10 +28,10 @@ void	rays_printf(t_rays ray)
 	printf("steps y: %f steps x: %f\n\n", ray.vt_fst_inter.steps.y, ray.vt_fst_inter.steps.x);
 
 
-	printf("hz wall-hit-x : %f\n", ray.wall.hz_hit.x);
-	printf("hz wall-hit-y : %f\n", ray.wall.hz_hit.y);
-	printf("vt wall-hit-x : %f\n", ray.wall.vt_hit.x);
-	printf("vt wall-hit-y : %f\n", ray.wall.vt_hit.y);
+	// printf("hz wall-hit-x : %f\n", ray.wall.hz_hit.x);
+	// printf("hz wall-hit-y : %f\n", ray.wall.hz_hit.y);
+	// printf("vt wall-hit-x : %f\n", ray.wall.vt_hit.x);
+	// printf("vt wall-hit-y : %f\n", ray.wall.vt_hit.y);
 	printf("angle : %f\n", ray.angle);
 	printf("distance : %f\n", ray.distance);
 	if (ray.facing_left)
