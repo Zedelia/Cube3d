@@ -44,6 +44,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_get_direction.c \
 	rays/ray_get_walls_hit.c \
 	rays/ray_rotate.c \
+	display/display_rays.c
 
 
 

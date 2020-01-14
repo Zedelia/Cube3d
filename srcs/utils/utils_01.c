@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 20:00:17 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/14 18:36:25 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -64,7 +64,7 @@ void	draw_pix(t_mlx *mlx, t_vect v, int size_obj)
 		x = -size_obj / 2;
 		while (x < size_obj / 2)
 		{
-			ft_pixel_put(mlx, (v.x + 0.5) * tile + x, (v.y + 0.5) * tile + y, 0x000000);
+			ft_pixel_put(mlx, (v.x) * tile + x, (v.y) * tile + y, 0x000000);
 			x++;
 		}
 		y++;
