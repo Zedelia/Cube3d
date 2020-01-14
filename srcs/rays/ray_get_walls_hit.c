@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:58 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 11:07:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/14 14:27:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 static void ray_get_vt_wall_hit(t_rays *r, t_mlx *mlx)
 {
 	t_vect	to_check;
-
+// TODO  verifier que cette fonction attention selon direction du rayon
 	to_check.x = r->vt_fst_inter.x;
 	to_check.y = r->vt_fst_inter.y;
 	while (utils_there_is_a_wall_at(r, to_check, mlx) == False)
