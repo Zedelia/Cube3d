@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 18:50:32 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/14 12:30:22 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define FOV_DEGREE 60.0
-# define TURN_SPEED 0.0001
+# define TURN_SPEED 0.1
 # define WALK_SPEED 0.1
 # define MAP_INFOS "RNsWESFC"
 # define PI 3.14159265359

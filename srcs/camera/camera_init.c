@@ -41,13 +41,13 @@ static void	get_cam(t_cam *cam, t_map *map)
 static void	get_cam_rotation_angle(t_cam *cam)
 {
 	cam->rotation_angle += 48;
-	if (cam->rotation_angle == 78)
+	if (cam->rotation_angle == 'S')
 		cam->rotation_angle = 90;
-	else if (cam->rotation_angle == 83)
+	else if (cam->rotation_angle == 'N')
 		cam->rotation_angle = 270;
-	else if (cam->rotation_angle == 69)
+	else if (cam->rotation_angle == 'E')
 		cam->rotation_angle = 0;
-	else if (cam->rotation_angle == 87)
+	else if (cam->rotation_angle == 'W')
 		cam->rotation_angle = 180;
 }
 

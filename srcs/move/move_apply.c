@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/13 18:24:09 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/14 12:28:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,7 +32,7 @@ t_bool	move_apply(t_move *move, t_mlx *mlx)
 {
 	if (wall_here(move, mlx) == False)
 	{
-		mlx->cam.rotation_angle = move->x * TURN_SPEED;
+		// mlx->cam.rotation_angle = move->x * TURN_SPEED;
 		mlx->cam.pos.x += WALK_SPEED * move->x;
 		mlx->cam.pos.y += WALK_SPEED * move->y;
 	}

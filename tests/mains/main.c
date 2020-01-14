@@ -13,7 +13,10 @@ int main(int argc, char *argv[])
 
 	mlx_ft_init(&mlx, argv[1]);
 	display_tile(mlx, mlx->map);
-	rays_casting(mlx);
+	rays_printf_tab(mlx, mlx->cam.ray_tab);
+	printf("\n****************/************/**********\n\n");
+	// rays_casting(mlx);
+	// rays_printf_tab(mlx, mlx->cam.ray_tab);
 	display_update(mlx);
 	display_exit_on_click(mlx);
 	mlx_key_hook(mlx->win, &move_keydown, mlx);
