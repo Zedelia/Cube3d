@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 16:08:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/15 16:20:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,11 +24,10 @@ t_bool	utils_there_is_a_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 	int	index_x;
 	int index_y;
 
-	if (v.x < 0 || v.x > mlx->map->map_lines || v.y < 0 || v.y > mlx->map->map_col)
+	if (v.x < 0 || v.x > mlx->map->map_lines - 1 || v.y < 0 || v.y > mlx->map->map_col - 1)
 		return (True);
 	index_x = v.x;
 	index_y = v.y;
-	printf("%d - %d\n\n", index_x, index_y);
 	if (mlx->map->tab[index_y][index_x] != 0 && mlx->map->tab[index_y][index_x]  < 21)
 	{
 		if (mlx->map->tab[index_y][index_y] == 1)
