@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 11:13:22 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/14 19:40:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/15 16:02:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,11 +17,11 @@
 
 void	display_update(t_mlx *mlx)
 {
+	rays_casting(mlx);
 	display_tile(mlx, mlx->map);
 	draw_pix(mlx, mlx->cam.pos, 10);
 	display_rays(mlx, mlx->cam.ray_tab);
 	rays_printf_tab(mlx, mlx->cam.ray_tab);
-	printf("\n\n ANGLE : %d\n\n", mlx->cam.rotation_angle);
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 }
 

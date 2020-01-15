@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:19:35 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/14 19:12:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/15 16:01:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,7 @@ t_bool	ray_rotate(t_rays *r, t_mlx *mlx)
 	float temp_x;
 
 	temp_x = r->x;
+	r->angle += degrees_to_radian(mlx->cam.rotation_angle);
 	a = degrees_to_radian(mlx->cam.rotation_angle);
 	r->x = r->x * cos(a) - r->y * sin(a);
 	r->y = temp_x * sin(a) + r->y * cos(a);
