@@ -21,12 +21,23 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 // TODO supprimer cette merde
 	tile_size = map->tile;
 
+	while (index_x < tile_size - 1)
+	{
+		mlx->img.data[((l * tile_size) + index_y) * map->r_width + (index_x + c * tile_size)] = 0xFFFFFF;
+		index_x++;
+	}
+	index_y = 1;
 	while (index_y < tile_size)
 	{
 		index_x = 0;
-		while (index_x < tile_size)
+		while (index_x < tile_size - 1)
 		{
 			mlx->img.data[((l * tile_size) + index_y) * map->r_width + (index_x + c * tile_size)] = color;
+			index_x++;
+		}
+		if ( index_x == tile_size - 1)
+		{
+			mlx->img.data[((l * tile_size) + index_y) * map->r_width + (index_x + c * tile_size)] = 0xFFFFFF;
 			index_x++;
 		}
 		index_y++;

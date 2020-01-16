@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 13:32:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 16:01:20 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/15 19:31:30 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,6 +31,5 @@ t_bool	rays_tab_init(t_mlx *mlx)
 		ray_get_distance(&mlx->cam.ray_tab[i], mlx);
         i++;
     }
-	rays_printf_tab(mlx, mlx->cam.ray_tab);
     return (True);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:23:44 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/09 15:29:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 12:53:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,5 +28,6 @@ t_bool	ray_get_distance(t_rays *r, t_mlx *mlx);
 t_bool	ray_get_intersections(t_rays *r, t_mlx *mlx);
 t_bool 	ray_get_steps(t_rays *r, t_mlx *mx);
 t_bool	ray_get_walls_hit(t_rays *r, t_mlx * mlx);
+t_bool	ray_hits_wall_at(t_rays *r, t_vect v, t_mlx *mlx);
 
 #endif

@@ -6,13 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/14 17:55:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 16:38:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 13:06:04 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
+// TODO refaire les boucle while
 
 t_bool	display_rays_vt(t_mlx *mlx, t_rays r)
 {
@@ -73,7 +74,8 @@ t_bool	display_rays_y(t_mlx *mlx, t_rays r)
 	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * mlx->map->tile;
 	temp_y = mlx->cam.pos.y * mlx->map->tile;
 	// while (!mlx->map->tab[temp_y / mlx->map->tile][(int)((temp_y - b) / (a * mlx->map->tile))])
-	while (mlx->map->tab[temp_y / mlx->map->tile][(int)((temp_y - b) / (a * mlx->map->tile))] != mlx->map->tab[(int)wall.y][(int)wall.x])
+	while (mlx->map->tab[temp_y / mlx->map->tile][(int)((temp_y - b) / (a * mlx->map->tile))]
+				!= 1)
 	{
 		ft_pixel_put(mlx, (temp_y - b) / a, temp_y, 0x000000AA);
 		if (r.y > 0)
@@ -124,6 +126,8 @@ t_bool	display_rays(t_mlx *mlx, t_rays *r)
 	i = 0;
 	while (i < mlx->map->r_width)
 	{
+	if (i == mlx->map->r_width / 2)
+	{
 		if (!r[i].x)
 			display_rays_vt(mlx, r[i]);
 		else if (!r[i].y)
@@ -132,6 +136,7 @@ t_bool	display_rays(t_mlx *mlx, t_rays *r)
 			display_rays_x(mlx, r[i]);
 		else
 			display_rays_y(mlx, r[i]);
+	}
 	i++;
 	}
 	return (True);

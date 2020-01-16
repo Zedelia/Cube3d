@@ -6,21 +6,12 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 17:44:06 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 10:44:06 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
-
-float	utils_dist_obstacle_cam(t_vect obs, t_vect cam_pos)
-{
-	float dist;
-
-	dist = sqrt((cam_pos.x - obs.x) * (cam_pos.x - obs.x)
-					+ (cam_pos.y - obs.y) * (cam_pos.y - obs.y));
-	return (dist);
-}
 
 t_bool	ray_get_distance(t_rays *r, t_mlx *mlx)
 {
