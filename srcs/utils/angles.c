@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:25:03 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/12 16:16:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:24:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-float     degrees_to_radian(float angle_in_degrees)
+double     degrees_to_radian(double angle_in_degrees)
 {
     return (angle_in_degrees * (PI / 180));
 }

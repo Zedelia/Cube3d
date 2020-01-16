@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 12:57:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 19:17:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:24:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,8 +15,8 @@
 
 static t_bool get_hz_step(t_rays *r)
 {
-	float y_step;
-	float x_step;
+	double y_step;
+	double x_step;
 
 	y_step = r->facing_up ? -1 : 1;
 	if (r->angle)
@@ -34,8 +34,8 @@ static t_bool get_hz_step(t_rays *r)
 
 static t_bool get_vt_step(t_rays *r)
 {
-	float y_step;
-	float x_step;
+	double y_step;
+	double x_step;
 
 	x_step = r->facing_left ? -1 : 1;
 	if (r->angle)

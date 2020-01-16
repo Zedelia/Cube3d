@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/14 18:36:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:45:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -57,7 +57,7 @@ void	draw_pix(t_mlx *mlx, t_vect v, int size_obj)
 {
 	int y = -size_obj / 2;
 	int x;
-	int tile = mlx->map->tile;
+	int tile = mlx->map->tile / 4;
 
 	while (y < size_obj / 2)
 	{

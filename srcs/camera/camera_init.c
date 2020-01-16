@@ -15,9 +15,9 @@
 
 static void	get_cam(t_cam *cam, t_map *map)
 {
-	float	x;
-	float	y;
-	float	f;
+	double	x;
+	double	y;
+	double	f;
 
 	y = 0;
 	while (y < map->map_lines)

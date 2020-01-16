@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 13:28:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:23:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,13 +25,13 @@ void	rays_printf(t_rays ray)
 	printf("hz fst inter x %f\nhz fst inter y %f\n", ray.hz_fst_inter.x, ray.hz_fst_inter.y);
 	printf("steps y: %f steps x: %f\n\n", ray.hz_fst_inter.steps.y, ray.hz_fst_inter.steps.x);
 
-	// printf("vt fst inters x %f\nvt fst inter y %f\n", ray.vt_fst_inter.x, ray.vt_fst_inter.y);
-	// printf("steps y: %f steps x: %f\n\n", ray.vt_fst_inter.steps.y, ray.vt_fst_inter.steps.x);
+	printf("vt fst inters x %f\nvt fst inter y %f\n", ray.vt_fst_inter.x, ray.vt_fst_inter.y);
+	printf("steps y: %f steps x: %f\n\n", ray.vt_fst_inter.steps.y, ray.vt_fst_inter.steps.x);
 
 	printf("\nhz wall-hit-x : %f\n", ray.wall.hz_hit.x);
 	printf("hz wall-hit-y : %f\n", ray.wall.hz_hit.y);
-	// printf("\nvt wall-hit-x : %f\n", ray.wall.vt_hit.x);
-	// printf("vt wall-hit-y : %f\n\n", ray.wall.vt_hit.y);
+	printf("\nvt wall-hit-x : %f\n", ray.wall.vt_hit.x);
+	printf("vt wall-hit-y : %f\n\n", ray.wall.vt_hit.y);
 
 	printf("angle : %f\n", ray.angle);
 	printf("distance : %f\n", ray.distance);

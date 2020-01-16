@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 13:10:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:24:49 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,14 +14,14 @@
 #include "../../includes/cube3d.h"
 
 
-int 	arrondi(float nombre)
+int 	arrondi(double nombre)
 {
 	return (nombre + 0.5);
 }
 
-float	utils_dist_obstacle_cam(t_vect obs, t_vect cam_pos)
+double	utils_dist_obstacle_cam(t_vect obs, t_vect cam_pos)
 {
-	float dist;
+	double dist;
 
 	dist = sqrt((cam_pos.x - obs.x) * (cam_pos.x - obs.x)
 					+ (cam_pos.y - obs.y) * (cam_pos.y - obs.y));
@@ -48,9 +48,9 @@ t_bool	utils_there_is_a_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 	return (False);
 }
 
-void	rotate_vect(t_vect *r, float angle)
+void	rotate_vect(t_vect *r, double angle)
 {
-	float c;
+	double c;
 
 	c = degrees_to_radian(angle);
 	r->x = r->x * cos(c) - r->y * sin(c);

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 13:32:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 19:31:30 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:24:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 t_bool	rays_tab_init(t_mlx *mlx)
 {
     int		i;
-	float	r_angle;
+	double	r_angle;
 
     i = 0;
 	if(!(mlx->cam.ray_tab = malloc(sizeof(t_rays) * mlx->map->r_width)))

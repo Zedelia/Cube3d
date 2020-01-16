@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/14 18:05:58 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:24:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,23 +26,23 @@ typedef struct	s_color
 
 typedef struct	s_move
 {
-	float		x;
-	float		y;
+	double		x;
+	double		y;
 }				t_move;
 
 typedef struct	s_vect
 {
-	float	x;
-	float	y;
+	double	x;
+	double	y;
 }				t_vect;
 
 
 
 typedef struct	s_fst_hit
 {
-	float	x;
-	float	y;
-	float	dist;
+	double	x;
+	double	y;
+	double	dist;
 	t_vect	steps;
 }				t_fst_hit;
 
@@ -58,10 +58,10 @@ typedef struct	s_wall_hit
 
 typedef struct	s_rays
 {
-	float		x;
-	float		y;
-	float		angle;
-	float		distance;
+	double		x;
+	double		y;
+	double		angle;
+	double		distance;
 	t_fst_hit	hz_fst_inter;
 	t_fst_hit	vt_fst_inter;
 	t_wall_hit	wall;

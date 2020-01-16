@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 13:36:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 16:24:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 {
 	t_vect	inter;
-	float 	x_temp;
+	double 	x_temp;
 
 	if (r->facing_left == False && r->facing_right == False)
 	{
@@ -44,7 +44,7 @@ static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 {
 	t_vect	inter;
-	float	y_temp;
+	double	y_temp;
 
 	if (r->facing_up == False && r->facing_down == False)
 	{
@@ -60,10 +60,8 @@ static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 	}
 	y_temp = !(inter.y - mlx->cam.pos.y) ? 0.0001 : inter.y - mlx->cam.pos.y;
 	inter.x = y_temp / tan(M_PI * 0.5 - r->angle);
-		printf("\n\n\npos x %f | inter x %f |\n",mlx->cam.pos.x, inter.x );
 	inter.x = inter.x > 0 ? inter.x : -inter.x;
 	inter.x = (r->facing_left == True) ? mlx->cam.pos.x - inter.x : mlx->cam.pos.x + inter.x;
-	printf("\n\n\npos x %f | inter x %f |\n",mlx->cam.pos.x, inter.x );
 	r->hz_fst_inter.x = inter.x;
 	r->hz_fst_inter.y = inter.y;
 	r->hz_fst_inter.dist = utils_dist_obstacle_cam(inter, mlx->cam.pos);

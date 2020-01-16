@@ -19,7 +19,7 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 	int index_y = 0;
 	int tile_size;
 // TODO supprimer cette merde
-	tile_size = map->tile;
+	tile_size = map->tile / 4;
 
 	while (index_x < tile_size - 1)
 	{
