@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   display.h                                        .::    .:/ .      .::   */
+/*   display_walls.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/09 14:41:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:17:50 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/16 18:17:53 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef display_H
-# define display_H
+#include "../../includes/cube3d.h"
 
-#include "cube3d.h"
+// TODO mettre a jour une fois le rendu done
 
-t_bool	display_exit_on_click(t_mlx *mlx);
-t_bool	display_tile(t_mlx *mlx, t_map *map);
-t_bool	display_walls(t_mlx *mlx);
-t_bool	display_rays(t_mlx *mlx, t_rays *r);
-
-void	display_update(t_mlx *mlx);
-
-#endif
+t_bool	display_walls(t_mlx *mlx)
+{
+	int x = 0;
+	int y = 0;
+	while (x < (mlx->map->r_width))
+	{
+	y = mlx->map->r_height / 2 - mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2;
+		while (y < mlx->map->r_height / 2 + mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2)
+		{
+			ft_pixel_put(mlx, x, y,0x320085 );
+			y++;
+		}
+		x++;
+	}
+	return (True);
+}

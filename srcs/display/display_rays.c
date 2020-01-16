@@ -6,25 +6,23 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/14 17:55:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 17:06:34 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 18:00:25 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-// TODO refaire les boucle while
-
-t_bool	display_rays_vt(t_mlx *mlx, t_rays r)
+static t_bool	display_rays_vt(t_mlx *mlx, t_rays r, int color)
 {
 	int temp_y;
 	int i;
 
 	i = 0;
 	temp_y = mlx->cam.pos.y * (mlx->map->tile / 4);
-	while (!mlx->map->tab[temp_y * ( 4 / mlx->map->tile)][(int)mlx->cam.pos.x])
+	while (i < r.distance * (mlx->map->tile / 4))
 	{
-		ft_pixel_put(mlx, mlx->cam.pos.x * (mlx->map->tile / 4), temp_y, 0x000000AA);
+		ft_pixel_put(mlx, mlx->cam.pos.x * (mlx->map->tile / 4), temp_y, color);
 		if (r.y > 0)
 			temp_y++;
 		else
@@ -34,16 +32,16 @@ t_bool	display_rays_vt(t_mlx *mlx, t_rays r)
 	return (True);
 }
 
-t_bool	display_rays_hz(t_mlx *mlx, t_rays r)
+static t_bool	display_rays_hz(t_mlx *mlx, t_rays r, int color)
 {
 	int temp_x;
 	int i;
 
 	i = 0;
 	temp_x = mlx->cam.pos.x * (mlx->map->tile / 4);
-	while (!mlx->map->tab[(int)mlx->cam.pos.y][temp_x * ( 4 / mlx->map->tile)])
+	while (i < r.distance * (mlx->map->tile / 4))
 	{
-		ft_pixel_put(mlx, temp_x, mlx->cam.pos.y * (mlx->map->tile / 4), 0x000000AA);
+		ft_pixel_put(mlx, temp_x, mlx->cam.pos.y * (mlx->map->tile / 4), color);
 		if (r.x > 0)
 			temp_x++;
 		else
@@ -53,30 +51,22 @@ t_bool	display_rays_hz(t_mlx *mlx, t_rays r)
 	return (True);
 }
 
-t_bool	display_rays_y(t_mlx *mlx, t_rays r)
+static t_bool	display_rays_y(t_mlx *mlx, t_rays r, int color)
 {
 	double a;
 	double b;
 	int temp_y;
 	int i;
-	t_vect 	wall;
 
 	a = r.y / r.x;
 	if (!a)
 		return (True);
-	wall.x = r.wall.vt ? r.wall.vt_hit.x : r.wall.hz_hit.x ;
-	wall.y = r.wall.vt ? r.wall.vt_hit.y : r.wall.hz_hit.y ;
-	wall.x = wall.x < 0 ? 0 : wall.x;
-	wall.x = wall.x > mlx->map->map_col ? mlx->map->map_col - 1 : wall.x;
-	wall.y = wall.y < 0 ? 0 : wall.y;
-	wall.y = wall.y > mlx->map->map_lines ?  mlx->map->map_lines - 1 : wall.y;
 	i = 0;
 	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / 4);
 	temp_y = mlx->cam.pos.y * (mlx->map->tile / 4);
-	// while (!mlx->map->tab[temp_y * ( 4 / mlx->map->tile)][(int)((temp_y - b) / (a * (mlx->map->tile / 4)))])
 	while (i < r.distance * (mlx->map->tile / 4))
 	{
-		ft_pixel_put(mlx, (temp_y - b) / a, temp_y, 0x000000AA);
+		ft_pixel_put(mlx, (temp_y - b) / a, temp_y, color);
 		if (r.y > 0)
 			temp_y++;
 		else
@@ -87,28 +77,20 @@ t_bool	display_rays_y(t_mlx *mlx, t_rays r)
 
 }
 
-t_bool	display_rays_x(t_mlx *mlx, t_rays r)
+static t_bool	display_rays_x(t_mlx *mlx, t_rays r, int color)
 {
 	double a;
 	double b;
 	int temp_x;
 	int i;
-	t_vect	wall;
 
 	a = r.y / r.x;
-	wall.x = r.wall.vt ? r.wall.vt_hit.x : r.wall.hz_hit.x ;
-	wall.y = r.wall.vt ? r.wall.vt_hit.y : r.wall.hz_hit.y ;
-	wall.x = wall.x < 0 ? 0 : wall.x;
-	wall.x = wall.x > mlx->map->map_col ? mlx->map->map_col - 1 : wall.x;
-	wall.y = wall.y < 0 ? 0 : wall.y;
-	wall.y = wall.y > mlx->map->map_lines ?  mlx->map->map_lines - 1 : wall.y;
 	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / 4);
 	i = 0;
 	temp_x = mlx->cam.pos.x * (mlx->map->tile / 4) ;
-	// while (!mlx->map->tab[(int)((a * temp_x + b) * ( 4 / mlx->map->tile))][(int)temp_x * ( 4 / mlx->map->tile)])
 	while (i < r.distance * (mlx->map->tile / 4))
 	{
-		ft_pixel_put(mlx, temp_x, (a * temp_x + b), 0x000000AA);
+		ft_pixel_put(mlx, temp_x, (a * temp_x + b), color);
 		if (r.x > 0)
 			temp_x++;
 		else
@@ -121,18 +103,20 @@ t_bool	display_rays_x(t_mlx *mlx, t_rays r)
 t_bool	display_rays(t_mlx *mlx, t_rays *r)
 {
 	int i;
+	int color;
 
+	color = 0x000000AA;
 	i = 0;
 	while (i < mlx->map->r_width)
 	{
 		if (!r[i].x)
-			display_rays_vt(mlx, r[i]);
+			display_rays_vt(mlx, r[i], color);
 		else if (!r[i].y)
-			display_rays_hz(mlx, r[i]);
+			display_rays_hz(mlx, r[i], color);
 		else if (fabs(r[i].x) >= fabs(r[i].y))
-			display_rays_x(mlx, r[i]);
+			display_rays_x(mlx, r[i], color);
 		else
-			display_rays_y(mlx, r[i]);
+			display_rays_y(mlx, r[i], color);
 		i++;
 	}
 	return (True);

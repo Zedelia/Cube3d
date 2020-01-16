@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 18:11:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 11:28:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 18:33:35 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,14 @@ t_bool	return_false(const char *namefunc, char const *error_msg)
 	perror(namefunc);
 	if (error_msg)
 		ft_printf(RED"Error"RESET"\n-> %s\n\n", error_msg);
+	exit(EXIT_FAILURE);
+	return (False);
+}
+
+t_bool	return_no_map()
+{
+	ft_printf(RED"");
+	ft_printf(RED"Error"RESET"\n-> Please, precise a map in order to launch the prog\n\n");
 	exit(EXIT_FAILURE);
 	return (False);
 }

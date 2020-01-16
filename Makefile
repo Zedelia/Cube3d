@@ -9,6 +9,8 @@ SRCS_NAME = img/img_load_xpm.c \
 	display/display_exit.c \
 	display/display_tile.c \
 	display/display_update.c \
+	display/display_rays.c \
+	display/display_walls.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
@@ -44,7 +46,6 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_get_direction.c \
 	rays/ray_get_walls_hit.c \
 	rays/ray_rotate.c \
-	display/display_rays.c \
 	rays/ray_wall_detection.c \
 
 
