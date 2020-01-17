@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 19:50:29 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:46:32 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 11:57:45 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,10 +39,12 @@
 #  define K_NUM_MINUS	78
 #  define K_NUM_ENTER	76
 #  define K_NUM_0		82
-#  define K_UP			119
-#  define K_DOWN		115
-#  define K_LEFT		97
-#  define K_RIGHT		100
+#  define K_UP			13
+#  define K_DOWN		1
+#  define K_LEFT		0
+#  define K_RIGHT		2
+#	define K_TURN_RIGHT 124
+# define K_TURN_LEFT	 123
 #  define K_DIGIT_1		18
 #  define K_L			37
 

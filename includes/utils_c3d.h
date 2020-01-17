@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:09:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 10:53:18 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,7 @@
 #include "cube3d.h"
 
 t_bool		return_false(const char *namefunc, char const *error_msg);
+t_bool	return_no_map();
 t_color		int_to_color(int n);
 int			color_to_int(t_color c);
 int			get_str_int_len(char *str);

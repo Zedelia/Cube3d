@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:23:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 11:56:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,6 +28,7 @@ typedef struct	s_move
 {
 	double		x;
 	double		y;
+	double		r;
 }				t_move;
 
 typedef struct	s_vect
