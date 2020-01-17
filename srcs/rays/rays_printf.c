@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:27:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 15:50:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@
 void	rays_printf(t_rays ray)
 {
 	printf("\n*****-----------------------------*****\n");
-	printf("\n\n>>>> RAY :\n");
+	printf(">>>> RAY :\n");
 	printf("x : %f\n", ray.x);
 	printf("y : %f\n", ray.y);
 	printf("Vecteur((%f,%f))\n",ray.x,ray.y);

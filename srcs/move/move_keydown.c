@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:43:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 11:57:35 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/17 15:02:50 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,6 +19,7 @@ int		move_keydown(int key, t_mlx *mlx)
 
 	move.x = 0;
 	move.y = 0;
+	move.r = 0;
 	if (key == K_ESC)
 		exit(EXIT_SUCCESS);
 	if (key == K_LEFT)

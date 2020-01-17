@@ -17,7 +17,7 @@
 
 void	cam_printf(t_cam *cam)
 {
-	printf("pos x: %f\n", cam->pos.x);
+	printf("\n\n CAM ------->\npos x: %f\n", cam->pos.x);
 	printf("pos y: %f\n", cam->pos.y);
 	printf("direc x: %f\n", cam->direction.x);
 	printf("direc y: %f\n", cam->direction.y);
