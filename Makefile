@@ -50,19 +50,19 @@ SRCS_NAME = img/img_load_xpm.c \
 
 
 
+INCLUDES = cube3d
 INC_PATH = includes
 INC_FLAGS = -I ${INC_PATH}
+REBUILD_DEPENDENCIES = includes/*.h
 
 MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move}
 
-INCLUDES = cube3d
 
 LIBMINILIBX =  lib/minilibx_opengl/libmlx.a -framework OpenGL 	\
 		-framework AppKit
 LIBFTPRINTF = lib/Printf/libftprintf.a
 LIBFT = lib/Printf/libft/libft.a
 
-REBUILD_DEPENDENCIES = includes/cube3d.h lib/Printf/libftprintf.a lib/Printf/libft/libft.a
 
 OBJ_PATH = .objects
 OBJ_NAME := ${SRCS_NAME:.c=.o}
@@ -71,7 +71,7 @@ OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 DFLAGS = -fsanitize=address
-COMPIL = $(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $^ -o $@
+COMPIL = $(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
 
 # Colors
 GREY = \x1b[30m
@@ -86,13 +86,15 @@ END = \x1b[0m
 ERASE = \033[2K\r
 RESET = \033[0;37m
 
-all : libprintf libx $(NAME)
-	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
-
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
-	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
 	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
+
+all : makedir libprintf libx $(NAME)
+	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
+
+makedir:
+	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
 
 ${NAME}: $(OBJ)
 	@$(COMPIL) tests/mains/main.c
@@ -110,7 +112,6 @@ tmlx: $(OBJ)
 	@$(COMPIL) tests/mains/main-mlx.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
 	@rm -rf *.dSYM
-
 
 libprintf :
 	@make -C lib/Printf
