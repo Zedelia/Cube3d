@@ -1,7 +1,12 @@
 
+##					##
+##	 VARIABLES		##
+##					##
+
 NAME = cube3d
 
 SRC_PATH = srcs
+
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
 	camera/camera_init.c \
@@ -49,31 +54,28 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_wall_detection.c \
 
 
+MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move}
 
 INCLUDES = cube3d
 INC_PATH = includes
-INC_FLAGS = -I ${INC_PATH}
-REBUILD_DEPENDENCIES = includes/*.h
 
-MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move}
+OBJ_PATH = .objects
+OBJ_NAME := ${SRCS_NAME:.c=.o}
+OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
+##					##
+##	 LIBRAIRIES		##
+##					##
 
 LIBMINILIBX =  lib/minilibx_opengl/libmlx.a -framework OpenGL 	\
 		-framework AppKit
 LIBFTPRINTF = lib/Printf/libftprintf.a
 LIBFT = lib/Printf/libft/libft.a
 
+##					##
+##		COLORS		##
+##					##
 
-OBJ_PATH = .objects
-OBJ_NAME := ${SRCS_NAME:.c=.o}
-OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
-
-CC = gcc -g
-CFLAGS = -Wall -Wextra -Werror
-DFLAGS = -fsanitize=address
-COMPIL = $(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
-
-# Colors
 GREY = \x1b[30m
 RED = \x1b[31m
 GREEN = \x1b[32m
@@ -82,13 +84,47 @@ BLUE = \x1b[34m
 PURPLE = \x1b[35m
 CYAN = \x1b[36m
 WHITE = \x1b[37m
+RESET = \033[0;37m
+ORANGE = \033[38;5;214m
+PINK = \033[38;5;197m
 END = \x1b[0m
 ERASE = \033[2K\r
-RESET = \033[0;37m
+
+
+##					##
+##		FONTS		##
+##					##
+
+END			=	\033[0m
+BOLD		=	\033[1m
+R_BOLD		=	\033[21m
+BLINK		=	\033[5m
+R_BLINK		=	\033[25m
+UNDERLINE	=	\033[4m
+R_UNDERLINE	=	\033[24m
+
+
+##					##
+## COMPIL SHORTCUT	##
+##					##
+
+CC = gcc -g
+CFLAGS = -Wall -Wextra -Werror
+DFLAGS = -fsanitize=address
+
+INC_FLAGS = -I ${INC_PATH}
+REBUILD_DEPENDENCIES = includes/*.h
+
+COMPIL = $(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
+
+
+##					##
+##		RULES		##
+##					##
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
-	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
+	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<$(ERASE)"
 
 all : makedir libprintf libx $(NAME)
 	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
@@ -98,11 +134,20 @@ makedir:
 
 ${NAME}: $(OBJ)
 	@$(COMPIL) tests/mains/main.c
+	@echo "\n\n$(YELLOW)| ->		$(NAME):" "$(RESET)|\033[42m     $(BOLD)L O A D I N G$(R_BOLD)     $(RESET)|\n\n" #| pv -qL 15
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
 	@rm -rf *.dSYM
+	@echo "\n$(BOLD)$(GREEN)	   _____________________________"
+	@echo "	|>                               <|"
+	@echo "	|>	   ┌─┐ ┬ ┬┌─┐┌─┐         <|"
+	@echo "	|>	   │   │ ││-|├-	         <|"
+	@echo "	|>	   └─┘ └─┘┴─┘└─┘ _3D     <|"
+	@echo "	|>                               <|"
+	@echo "	   __________________$(BLINK)$(ORANGE)is ready$(R_BLINK)$(GREEN)____$(RESET)\n\n"
 
 
-# Tests
+# 	Tests 	#
+
 tmap: $(OBJ)
 	@$(COMPIL) tests/mains/main-maps.c
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
@@ -113,11 +158,16 @@ tmlx: $(OBJ)
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
 	@rm -rf *.dSYM
 
+
+
 libprintf :
 	@make -C lib/Printf
 
 libx :
 	@make -C lib/minilibx_opengl
+
+
+# 	clean 	#
 
 clean:
 	@rm -rf *.dSYM
@@ -133,6 +183,7 @@ fclean: clean
 	@make -C lib/Printf fclean
 	@rm -rf $(NAME)
 	@printf "$(BLUE)> Deleted : $(RED)$(NAME)$(END)\n"
+	@echo "$(YELLOW)| ->		FCLEAN: DONE\n$(RESET)"
 
 re: fclean all
 
