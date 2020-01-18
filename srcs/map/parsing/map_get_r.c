@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:48:39 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 22:52:49 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 23:01:41 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,6 +24,8 @@ static char		*check_between_digit(char *line)
 			return (NULL);
 		i++;
 	}
+	while (line[i] && ft_isdigit(line[i]) == True)
+		i++;
 	return (&line[i]);
 }
 
@@ -37,17 +39,16 @@ static t_bool		check_incorrect_inputs(char c, char *line)
 	i++;
 	if (!(line = check_between_digit(&line[i])))
 		return (return_false(__func__, "[FAIL] wrong input in resolution"));
-	while (line[i] && ft_isdigit(line[i]) == True)
-		i++;
 	if (!(line = check_between_digit(&line[i])))
 		return (return_false(__func__, "[FAIL] wrong input in resolution"));
-	while (line[i] && ft_isdigit(line[i]) == True)
+	while (line[i])
+	{
+		if (line[i] > 32)
+			return (return_false(__func__, "[FAIL] wrong input in resolution"));
 		i++;
-	if (!(line = check_between_digit(&line[i])))
-		return (return_false(__func__, "[FAIL] wrong input in resolution"));
+	}
 	return (True);
 }
-
 
 t_bool	map_parse_r(t_map *map, char *line)
 {

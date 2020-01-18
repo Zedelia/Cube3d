@@ -1,8 +1,8 @@
-   R          6000 3200
+   R          6000    3200
       NO ./textures/brick.xpm
-      SO          ./textures/grass.xpm
+      SO       ./textures/grass.xpm
 WE        ./textures/metal.xpm
-EA ./textures/stone.xpm
+  EA         ./textures/stone.xpm
 
                C   225, 30,  0
 
@@ -12,7 +12,7 @@ S ./textures/wood.xpm
 
 
 
-	  	F 220, 100,0  ---
+	  	F 220, 100,0
 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
