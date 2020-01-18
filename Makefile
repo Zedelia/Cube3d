@@ -41,6 +41,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/utils_01.c \
 	utils/utils_02.c \
 	utils/return_func.c \
+	utils/utils_math_dist.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \

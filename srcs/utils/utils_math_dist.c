@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   utils_02.c                                       .::    .:/ .      .::   */
+/*   utils_math_dist.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 13:11:07 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/18 13:10:13 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/18 13:17:18 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-
-int 	arrondi(double nombre)
+double	dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist)
 {
-	return (nombre + 0.5);
+	double	ok_dist;
+	double	angle;
+
+	angle = r.angle - mlx->cam.ray_tab[mlx->map->r_width / 2].angle;
+	ok_dist = dist * cos(angle);
+	return (ok_dist);
 }
 
-void	rotate_vect(t_vect *r, double angle)
+double	ray_math_dist(t_vect hit, t_mlx *mlx)
 {
-	double c;
+	double dist;
 
-	c = degrees_to_radian(angle);
-	r->x = r->x * cos(c) - r->y * sin(c);
-	r->y = r->x * sin(c) + r->y * cos(c);
+	dist = sqrt((mlx->cam.pos.x - hit.x) * (mlx->cam.pos.x - hit.x)
+					+ (mlx->cam.pos.y - hit.y) * (mlx->cam.pos.y - hit.y));
+	return (dist);
 }

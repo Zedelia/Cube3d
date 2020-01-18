@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 10:53:18 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 13:20:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,16 +17,17 @@
 #include "cube3d.h"
 
 t_bool		return_false(const char *namefunc, char const *error_msg);
-t_bool	return_no_map();
+t_bool		return_no_map();
 t_color		int_to_color(int n);
 int			color_to_int(t_color c);
 int			get_str_int_len(char *str);
 int			occur_in_str(char c,char *line);
 int			get_tile(t_map *m, int x, int y);
 void		rotate_vect(t_vect *v, double angle);
-double		utils_dist_obstacle_cam(t_vect obs, t_vect cam_pos);
 double		degrees_to_radian(double angle_in_degrees);
 void		ft_pixel_put(t_mlx *mlx, int x, int y, int color);
 void		draw_pix(t_mlx *mlx, t_vect v, int size_obj);
+double		ray_math_dist(t_vect hit, t_mlx *mlx);
+double		dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist);
 
 #endif

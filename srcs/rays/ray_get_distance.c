@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 16:24:29 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 13:20:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,17 +21,17 @@ t_bool	ray_get_distance(t_rays *r, t_mlx *mlx)
 	if (!(ray_get_intersections(r, mlx)))
 		return (return_false(__func__, "[FAIL] rays/grid intersec not found"));
 	ray_get_walls_hit(r, mlx);
-	hz_distance = utils_dist_obstacle_cam(r->wall.hz_hit, mlx->cam.pos);
-	vt_distance = utils_dist_obstacle_cam(r->wall.vt_hit, mlx->cam.pos);
+	hz_distance = ray_math_dist(r->wall.hz_hit, mlx);
+	vt_distance = ray_math_dist(r->wall.vt_hit, mlx);
 	if (hz_distance < vt_distance)
 	{
-		r->distance = hz_distance;
+		r->distance = dist_correct_fish_eye(*r, mlx, hz_distance);
 		r->wall.hz = True;
 		r->wall.vt = False;
 	}
 	else
 	{
-		r->distance = vt_distance;
+		r->distance = dist_correct_fish_eye(*r, mlx, vt_distance);
 		r->wall.vt = True;
 		r->wall.hz = False;
 	}
