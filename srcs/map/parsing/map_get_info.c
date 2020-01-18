@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:35:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 18:35:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 18:40:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,11 @@ size_t		map_get_index(char *line)
 	int i;
 
 	i = 0;
-	while (line[i] && ft_isincharset(line[i], MAP_INFOS) == 0)
+	while (line[i]  && ft_isincharset(line[i], MAP_INFOS) == 0)
+	// && line[i] == ' '
+	// if ft_isincharset(line[i], MAP_INFOS) == 0
+	//  error : non authorized character
+
 		i++;
 	if (line && line[i] == 'S' && line[i + 1] == 'O')
 		line[i] = 's';
