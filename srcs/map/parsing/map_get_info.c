@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:35:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 18:40:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 21:56:16 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,17 +17,28 @@
 // dans les map_parse ajouter la verifications que c'est bien SO NO etc
 // ajouter les verifications qu'il n'y a pas de caracteres intruts dans la map
 
+
+static char	 *check_incorrect_inputs(char *line)
+{
+	int i;
+
+	i = 0;
+	while (line[i] && ft_isincharset(line[i], MAP_INFOS) == 0)
+	{
+		if (line[i] > 32 && line [i + 1])
+			return (NULL);
+		i++;
+	}
+	return (&line[i]);
+}
+
 size_t		map_get_index(char *line)
 {
 	int i;
 
 	i = 0;
-	while (line[i]  && ft_isincharset(line[i], MAP_INFOS) == 0)
-	// && line[i] == ' '
-	// if ft_isincharset(line[i], MAP_INFOS) == 0
-	//  error : non authorized character
-
-		i++;
+	if (!(line = check_incorrect_inputs(line)))
+		return (return_false(__func__, "[FAIL] inputs before identifier"));
 	if (line && line[i] == 'S' && line[i + 1] == 'O')
 		line[i] = 's';
 	if (line)

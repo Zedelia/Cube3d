@@ -6,18 +6,13 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 15:55:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 22:28:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-
-int 	arrondi(double nombre)
-{
-	return (nombre + 0.5);
-}
 
 void	rotate_vect(t_vect *r, double angle)
 {
@@ -33,6 +28,8 @@ int		get_str_int_len(char *str)
 	int j;
 
 	j = 0;
+	while (ft_isdigit(str[j]) == 0)
+		j++;
 	while (ft_isdigit(str[j]) == 1)
 		j++;
 	return (j);
