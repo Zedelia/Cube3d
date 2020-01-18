@@ -1,13 +1,13 @@
 R 6000 3200
-      NO ./path_to_the_north_texture
-      SO          ./path_to_the_south_texture
-WE        ./path_to_the_west_texture
-EA ./path_to_the_east_texture
+      NO ./textures/brick.xpm
+      SO          ./textures/grass.xpm
+WE        ./textures/metal.xpm
+EA ./textures/stone.xpm
 C          225,30,0
 
 
 
-S ./path_to_the_sprite_texture
+S ./textures/wood.xpm
 
 
 

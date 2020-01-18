@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 14:34:51 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 17:29:09 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,14 +15,14 @@
 
 // TODO mettre a jour les couleurs pour les textures
 
-static int		display_wall_color(t_rays r)
+static int		give_wall_color(t_rays r)
 {
-	int	north;
-	int south;
-	int west;
-	int east;
+	int north;
+	int	south;
+	int	west;
+	int	east;
 
-	north = 0x82cbf6;
+	north = 0xb140ac;
 	south = 0xa5ffa7;
 	west = 0xf64a8a;
 	east = 0xffcf40;
@@ -48,7 +48,10 @@ t_bool	display_walls(t_mlx *mlx)
 	y = mlx->map->r_height / 2 - mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2;
 		while (y < mlx->map->r_height / 2 + mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2)
 		{
-			color = display_wall_color(mlx->cam.ray_tab[x]);
+			// display_text_column
+			color = give_wall_color(mlx->cam.ray_tab[x]);
+			if (!color)
+				rays_printf(mlx->cam.ray_tab[x]);
 			ft_pixel_put(mlx, x, y,color);
 			y++;
 		}

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 11:13:22 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 14:11:29 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 17:25:59 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 
 void	display_update(t_mlx *mlx)
 {
-	// TODO a supprimer une fois que la map d'adaptera
+	// TODO a supprimer une fois que la map d'adaptera et remplacer par le roof et floor
 	int x = 0;
 	int y = 0;
 	while (x < mlx->map->r_width)
@@ -28,10 +28,12 @@ void	display_update(t_mlx *mlx)
 		}
 		x++;
 	}
+	// display ceiling
+	// display floor
 	rays_casting(mlx);
 	display_walls(mlx);
 	display_mini_map(mlx, mlx->map);
-	draw_pix(mlx, mlx->cam.pos, 10);
+	ft_draw_pix(mlx, mlx->cam.pos, 10);
 	display_rays(mlx, mlx->cam.ray_tab);
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 }

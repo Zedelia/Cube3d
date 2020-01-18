@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 16:36:06 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 17:58:32 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,10 +29,11 @@ typedef enum
 	t_size
 }	t_type_map;
 
-void 				mlx_free(t_mlx *mlx);
+
 void				map_printf(t_map *map);
-t_bool				map_init(t_map **map, char *map_file);
+t_bool				map_init(t_map **map, char *map_file, t_mlx *mlx);
 t_bool				map_parser(t_map *map);
+t_bool				map_textures_init(t_map *map, t_mlx *mlx);
 
 /*
 ** create 2D map tab

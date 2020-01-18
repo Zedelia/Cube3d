@@ -16,6 +16,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	display/display_update.c \
 	display/display_rays.c \
 	display/display_walls.c \
+	display/display_textures.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
@@ -34,12 +35,13 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/check/map_check_map.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
+	map/map_textures_init.c \
 	move/move_apply.c \
 	move/move_keydown.c \
 	utils/colors.c \
 	utils/angles.c \
-	utils/utils_01.c \
-	utils/utils_02.c \
+	utils/utils_draw.c \
+	utils/utils_miscellaneous.c \
 	utils/return_func.c \
 	utils/utils_math_dist.c \
 	rays/rays_printf.c \

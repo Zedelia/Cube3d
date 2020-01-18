@@ -1,21 +1,55 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   img_display.c                                    .::    .:/ .      .::   */
+/*   utils_miscellaneous.c                            .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/25 15:24:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 15:42:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/18 15:55:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool		img_display(t_mlx *mlx, t_img *img, char *file)
+
+int 	arrondi(double nombre)
 {
-	img_load_xpm(mlx, file, img);
-	mlx_put_image_to_window(mlx->ptr, mlx->win, img->ptr, img->width, img->height);
-	return (True);
+	return (nombre + 0.5);
+}
+
+void	rotate_vect(t_vect *r, double angle)
+{
+	double c;
+
+	c = degrees_to_radian(angle);
+	r->x = r->x * cos(c) - r->y * sin(c);
+	r->y = r->x * sin(c) + r->y * cos(c);
+}
+
+int		get_str_int_len(char *str)
+{
+	int j;
+
+	j = 0;
+	while (ft_isdigit(str[j]) == 1)
+		j++;
+	return (j);
+}
+
+int		occur_in_str(char c, char *line)
+{
+	int	occur;
+	int i;
+
+	i = 0;
+	occur = 0;
+	while (line[i])
+	{
+		if (line[i] == c)
+			occur++;
+		i++;
+	}
+	return (occur);
 }

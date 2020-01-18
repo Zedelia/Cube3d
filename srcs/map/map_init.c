@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/15 16:20:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 17:58:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	map_init(t_map **map, char *map_file)
+t_bool	map_init(t_map **map, char *map_file, t_mlx *mlx)
 {
 	if (!(*map = malloc(sizeof(t_map))))
 		return (return_false(__func__, "[FAIL] malloc"));
@@ -32,5 +32,7 @@ t_bool	map_init(t_map **map, char *map_file)
 	if (!(map_parser(*map)))
 		return (return_false(__func__, "[FAIL] map parsing"));
 	(*map)->tile = (*map)->r_width / (*map)->map_col;
+	map_printf(*map);
+	map_textures_init(*map, mlx);
 	return (True);
 }

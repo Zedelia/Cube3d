@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 15:21:28 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 17:52:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -75,9 +75,6 @@ typedef struct	s_rays
 }				t_rays;
 
 
-
-
-
 typedef struct	s_img
 {
 	void		*ptr;
@@ -100,7 +97,9 @@ typedef struct	s_cam
 }				t_cam;
 
 
-
+// TODO
+// ca cest vriament degueulasse !!!
+// Mettre le nom du fichier des textures dans la structure image directement
 
 typedef struct	s_map
 {
@@ -115,10 +114,15 @@ typedef struct	s_map
 	int		cell;
 	int		floor;
 	char	*text_north;
+	t_img	north;
 	char	*text_south;
+	t_img	south;
 	char	*text_west;
+	t_img	west;
 	char	*text_east;
+	t_img	east;
 	char	*text_sprite;
+	t_img	sprite;
 }				t_map;
 
 

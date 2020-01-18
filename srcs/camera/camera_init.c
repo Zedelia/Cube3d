@@ -25,7 +25,7 @@ static void	get_cam(t_cam *cam, t_map *map)
 		x = 0;
 		while (x < map->map_col)
 		{
-			if ((f = get_tile(map, x, y)) > 2)
+			if ((f = ft_get_tile(map, x, y)) > 2)
 				break ;
 			x++;
 		}
