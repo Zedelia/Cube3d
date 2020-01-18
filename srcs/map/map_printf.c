@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/08 19:32:20 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 14:12:46 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,7 +40,7 @@ void	map_printf(t_map *map)
 		return ;
 	if (map->map_file)
 		ft_printf(YELLOW"--- MAP_FILE: %s---\n"RESET, map->map_file);
-	ft_printf("r_width: %d\nr_height: %d\nsize_w: %d\nsize_h: %d\ncell: %d\nfloor: %d\n",
+	ft_printf("r_width: %d\nr_height: %d\nmap-col: %d\nmap-lines: %d\ncell: %d\nfloor: %d\n",
 		map->r_width, map->r_height, map->map_col, map->map_lines, map->cell, map->floor);
 	if (map->text_north)
 		ft_printf("north: %s\n", map->text_north);

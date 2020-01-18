@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 12:45:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 14:17:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,6 @@ static t_bool	wall_here(t_move move, t_mlx *mlx)
 
 	x = move.x;
 	y = move.y;
-	printf("\n y check %d - x check %d\n", y, x);
 	if (x < 0 || x > mlx->map->map_col - 1 || y < 0 || y > mlx->map->map_lines - 1)
 		return (True);
 	if (mlx->map->tab[y][x] !=0	&& mlx->map->tab[y][x] < 21)
@@ -35,7 +34,6 @@ static t_bool to_check_hz(t_move *move, t_rays mid, t_mlx *mlx)
 
 	go_up = (((mid.facing_up && move->y < 0) || (mid.facing_down && move->y > 0)) && !move->vt);
 	delta = go_up ? -0.5 : 0;
-	printf("GO UP %d\n", go_up);
 	move->x = mlx->cam.pos.x + WALK_SPEED * mid.x;
 	move->y = mlx->cam.pos.y + WALK_SPEED * mid.y + delta;
 	if (wall_here(*move, mlx) == False)

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   display_tile.c                                    .::    .:/ .      .::   */
+/*   display_mini_map.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
@@ -17,28 +17,28 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 {
 	int index_x = 0;
 	int index_y = 0;
-	int tile_size;
-// TODO supprimer cette merde
+	int tile_s;
+// TODO recoder cette merde, enlever les contours blancs une fois tout finit et reduire les fonctions avec pixel_put
 
-	tile_size = map->tile / 4;
+	tile_s = map->tile / 4;
 
-	while (index_x < tile_size - 1)
+	while (index_x < tile_s - 1) // contours blancs
 	{
-		mlx->img.data[((l * tile_size) + index_y) * map->r_width + (index_x + c * tile_size)] = 0xFFFFFF;
+		ft_pixel_put(mlx, (index_x + c * tile_s), ((l * tile_s) + index_y), 0xFFFFFF);
 		index_x++;
 	}
 	index_y = 1;
-	while (index_y < tile_size)
+	while (index_y < tile_s)
 	{
 		index_x = 0;
-		while (index_x < tile_size - 1)
+		while (index_x < tile_s - 1)
 		{
-			mlx->img.data[((l * tile_size) + index_y) * map->r_width + (index_x + c * tile_size)] = color;
+			mlx->img.data[((l * tile_s) + index_y) * map->r_width + (index_x + c * tile_s)] = color;
 			index_x++;
 		}
-		if ( index_x == tile_size - 1)
+		if ( index_x == tile_s - 1) // coutour blanc
 		{
-			mlx->img.data[((l * tile_size) + index_y) * map->r_width + (index_x + c * tile_size)] = 0xFFFFFF;
+			mlx->img.data[((l * tile_s) + index_y) * map->r_width + (index_x + c * tile_s)] = 0xFFFFFF;
 			index_x++;
 		}
 		index_y++;
@@ -47,7 +47,7 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 }
 
 
-t_bool	display_tile(t_mlx *mlx, t_map *map)
+t_bool	display_mini_map(t_mlx *mlx, t_map *map)
 {
 	int l = 0;
 	int c = 0;

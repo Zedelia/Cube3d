@@ -12,7 +12,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	camera/camera_init.c \
 	camera/camera_printf.c \
 	display/display_exit.c \
-	display/display_tile.c \
+	display/display_mini_map.c \
 	display/display_update.c \
 	display/display_rays.c \
 	display/display_walls.c \
