@@ -6,12 +6,16 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:35:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 17:16:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 18:35:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
+
+// TODO
+// dans les map_parse ajouter la verifications que c'est bien SO NO etc
+// ajouter les verifications qu'il n'y a pas de caracteres intruts dans la map
 
 size_t		map_get_index(char *line)
 {
