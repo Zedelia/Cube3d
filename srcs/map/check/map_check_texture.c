@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 12:33:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 15:27:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 23:31:25 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,10 +17,17 @@
 
 static t_bool	map_check_texture_one(char *texture_path)
 {
+	int i;
+
+	i = 0;
 	if (!texture_path)
 		return (return_false(__func__, "[FAIL] no texture"));
-	if (texture_path[0] == '.' && texture_path[1] == '/'
-					&& ft_isascii(texture_path[2]))
+	if (texture_path[0] == '.' && texture_path[1] == '/')
+	{
+		while (texture_path[i] && texture_path[i] > 32 && texture_path[i] < 127)
+			i++;
+	}
+	if (!texture_path[i])
 		return (True);
 	else
 		return (return_false(__func__, "[FAIL] invalid texture path"));
@@ -28,15 +35,10 @@ static t_bool	map_check_texture_one(char *texture_path)
 
 t_bool	map_check_texture(t_map *map)
 {
-	if (!(map_check_texture_one(map->text_north)))
-		return (return_false(__func__, "[FAIL] invalid texture path - north"));
-	if (!(map_check_texture_one(map->text_south)))
-		return (return_false(__func__, "[FAIL] invalid texture path - south"));
-	if (!(map_check_texture_one(map->text_west)))
-		return (return_false(__func__, "[FAIL] invalid texture path - west"));
-	if (!(map_check_texture_one(map->text_east)))
-		return (return_false(__func__, "[FAIL] invalid texture path - east"));
-	if (!(map_check_texture_one(map->text_sprite)))
-		return (return_false(__func__, "[FAIL] invalid texture path - sprite"));
+	map_check_texture_one(map->text_north);
+	map_check_texture_one(map->text_south);
+	map_check_texture_one(map->text_west);
+	map_check_texture_one(map->text_east);
+	map_check_texture_one(map->text_sprite);
 	return (True);
 }

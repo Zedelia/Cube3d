@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 23:24:54 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 23:34:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -51,7 +51,7 @@ int		occur_in_str(char c, char *line)
 	return (occur);
 }
 
-t_bool	check_textures(char a, char b, char *line)
+t_bool	ft_check_incorrect_input_text(char a, char b, char *line)
 {
 	int start;
 

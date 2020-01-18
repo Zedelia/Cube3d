@@ -1,6 +1,5 @@
 #!/bin/bash
 
-make -C ../ clean
 make -C ../ tmap
 
 fail="\x1b[31m... [FAIL]\033[0;37m \n"

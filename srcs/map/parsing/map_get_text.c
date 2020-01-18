@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 19:49:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 23:24:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 23:33:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ t_bool	map_parse_no(t_map *map, char *line)
 	int start;
 
 	start = 0;
-	check_textures('N', 'O', line);
+	ft_check_incorrect_input_text('N', 'O', line);
 	while (line[start] && line[start] != '.')
 		start++;
 	if (!(map->text_north = strdup(&line[start])))
@@ -31,7 +31,7 @@ t_bool	map_parse_so(t_map *map, char *line)
 	int start;
 
 	start = 0;
-	check_textures('s', 'O', line);
+	ft_check_incorrect_input_text('s', 'O', line);
 	while (line[start] && line[start] != '.')
 		start++;
 	if (!(map->text_south = strdup(&line[start])))
@@ -44,7 +44,7 @@ t_bool	map_parse_we(t_map *map, char *line)
 	int start;
 
 	start = 0;
-	check_textures('W', 'E', line);
+	ft_check_incorrect_input_text('W', 'E', line);
 	while (line[start] && line[start] != '.')
 		start++;
 	if (!(map->text_west = strdup(&line[start])))
@@ -57,7 +57,7 @@ t_bool	map_parse_ea(t_map *map, char *line)
 	int start;
 
 	start = 0;
-	check_textures('E', 'A', line);
+	ft_check_incorrect_input_text('E', 'A', line);
 	while (line[start] && line[start] != '.')
 		start++;
 	if (!(map->text_east = strdup(&line[start])))
@@ -70,7 +70,7 @@ t_bool	map_parse_sp(t_map *map, char *line)
 	int start;
 
 	start = 0;
-	check_textures('S', 0, line);
+	ft_check_incorrect_input_text('S', 0, line);
 	while (line[start] && line[start] != '.')
 		start++;
 	if (!(map->text_sprite = strdup(&line[start])))

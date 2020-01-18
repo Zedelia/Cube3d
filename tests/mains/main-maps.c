@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 15:28:30 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/30 14:35:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/18 23:43:02 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,8 +20,9 @@ int main(int argc, char **argv)
 	int ret;
 	(void)argc;
 	t_map *map;
+	t_mlx m;
 
-	ret = map_init(&map, argv[1]);
+	ret = map_init(&map, argv[1], &m);
 	if (ret != 0)
 		exit(EXIT_SUCCESS);
 	exit(EXIT_FAILURE);
