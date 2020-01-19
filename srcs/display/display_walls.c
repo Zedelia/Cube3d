@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 17:29:09 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 14:46:13 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -48,10 +48,7 @@ t_bool	display_walls(t_mlx *mlx)
 	y = mlx->map->r_height / 2 - mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2;
 		while (y < mlx->map->r_height / 2 + mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2)
 		{
-			// display_text_column
 			color = give_wall_color(mlx->cam.ray_tab[x]);
-			if (!color)
-				rays_printf(mlx->cam.ray_tab[x]);
 			ft_pixel_put(mlx, x, y,color);
 			y++;
 		}

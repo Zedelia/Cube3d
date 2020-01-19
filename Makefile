@@ -17,6 +17,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	display/display_rays.c \
 	display/display_walls.c \
 	display/display_textures.c \
+	display/display_floor_roof.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
