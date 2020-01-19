@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 13:39:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:26:21 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,8 +18,7 @@ t_bool	ray_get_distance(t_rays *r, t_mlx *mlx)
 	double	hz_distance;
 	double	vt_distance;
 
-	if (!(ray_get_intersections(r, mlx)))
-		return (return_false(__func__, "[FAIL] rays/grid intersec not found"));
+	ray_get_intersections(r, mlx);
 	ray_get_walls_hit(r, mlx);
 	hz_distance = ray_math_dist(r->wall.hz_hit, mlx);
 	vt_distance = ray_math_dist(r->wall.vt_hit, mlx);

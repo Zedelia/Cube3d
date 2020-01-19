@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:03:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/28 13:06:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:19:40 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,9 +22,7 @@ static t_bool	map_check_colors_one(int color)
 
 t_bool			map_check_colors(t_map *map)
 {
-	if (!(map_check_colors_one(map->floor)))
-		return (return_false(__func__, "[FAIL] invalid floor color"));
-	if (!(map_check_colors_one(map->cell)))
-		return (return_false(__func__, "[FAIL] invalid cell color"));
+	map_check_colors_one(map->floor);
+	map_check_colors_one(map->cell);
 	return (True);
 }

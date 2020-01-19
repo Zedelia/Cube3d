@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 12:33:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 23:31:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:21:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-// (?) on part du principe qu'un path c'est un . suivit d'un / suivit d'une chaine
+// TODO (?) on part du principe qu'un path c'est un . suivit d'un / suivit d'une chaine
 
 static t_bool	map_check_texture_one(char *texture_path)
 {
