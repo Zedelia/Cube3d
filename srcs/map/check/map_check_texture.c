@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 12:33:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 13:21:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:36:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,10 +35,10 @@ static t_bool	map_check_texture_one(char *texture_path)
 
 t_bool	map_check_texture(t_map *map)
 {
-	map_check_texture_one(map->text_north);
-	map_check_texture_one(map->text_south);
-	map_check_texture_one(map->text_west);
-	map_check_texture_one(map->text_east);
-	map_check_texture_one(map->text_sprite);
+	map_check_texture_one(map->north.file);
+	map_check_texture_one(map->south.file);
+	map_check_texture_one(map->west.file);
+	map_check_texture_one(map->east.file);
+	map_check_texture_one(map->sprite.file);
 	return (True);
 }

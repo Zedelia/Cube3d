@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 17:52:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:33:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -79,6 +79,7 @@ typedef struct	s_img
 {
 	void		*ptr;
 	int			*data;
+	char		*file;
 	int			size_l;
 	int			bpp;
     int         endian;
@@ -113,15 +114,10 @@ typedef struct	s_map
 	int		r_height;
 	int		cell;
 	int		floor;
-	char	*text_north;
 	t_img	north;
-	char	*text_south;
 	t_img	south;
-	char	*text_west;
 	t_img	west;
-	char	*text_east;
 	t_img	east;
-	char	*text_sprite;
 	t_img	sprite;
 }				t_map;
 

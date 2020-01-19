@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/03 16:52:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:35:46 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,10 +30,11 @@ void		map_free(t_map **map)
 {
 	map_free_tab(*map);
 	ft_memdel((void **)&(*map)->map_file);
-	ft_memdel((void **)&(*map)->text_north);
-	ft_memdel((void **)&(*map)->text_south);
-	ft_memdel((void **)&(*map)->text_west);
-	ft_memdel((void **)&(*map)->text_east);
-	ft_memdel((void **)&(*map)->text_sprite);
+	// TODO function free image
+	// img_free((*map)->north)
+	// img_free((*map)->north)
+	// img_free((*map)->north)
+	// img_free((*map)->north)
+
 	ft_memdel((void **)&(*map)->map_char);
 }
