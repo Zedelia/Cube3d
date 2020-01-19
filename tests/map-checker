@@ -35,7 +35,7 @@ done
 
 for map in $MAPS_OK
 do
-	rslt="$(.././tmap $map 2>/dev/null)"
+	rslt="$(.././tmap $map 2> file)"
 	maps_ok_checking $rslt
 done
 

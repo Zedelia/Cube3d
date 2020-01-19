@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 16:34:38 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 14:36:02 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:11:40 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,12 +20,16 @@ t_bool map_tab_fill(t_map *map)
 	int i;
 
 	h = 0;
-	w = 0;
 	i = 0;
 	while (map->map_char[i] && h < map->map_lines)
 	{
+		w = 0;
 		while (map->map_char[i] && w < map->map_col)
 		{
+			if (map->map_char[i] > 32 && !ft_isincharset(map->map_char[i], "012NSEW"))
+				return (return_false(__func__, "[FAIL] wrong input in map"));
+			if (map->map_char[i] == '\n' && map->map_char[i + 1] == '\n')
+				return (return_false(__func__, "[FAIL] empty lines in map"));
 			if (ft_isincharset(map->map_char[i], "012NSEW") == 1)
 			{
 				map->tab[h][w] = map->map_char[i] - 48;
@@ -33,10 +37,7 @@ t_bool map_tab_fill(t_map *map)
 			}
 			i++;
 		}
-		w = 0;
 		h++;
 	}
-	if (h != map->map_lines)
-		return (return_false(__func__, "[FAIL] empty lines in map"));
 	return (True);
 }

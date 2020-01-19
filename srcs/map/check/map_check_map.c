@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/06 19:04:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/19 13:14:40 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -67,11 +67,8 @@ static t_bool	map_check_walls(t_map *map)
 
 t_bool	map_check_map(t_map *map)
 {
-	if (!(map_check_map_size(map)))
-		return (return_false(__func__, "[FAIL] invalid map size"));
-	if (!(map_check_integrity(map->map_char)))
-		return (return_false(__func__, "[FAIL] invalid map"));
-	if (!(map_check_walls(map)))
-		return (return_false(__func__, "[FAIL] map isn't closed"));
+	map_check_walls(map);
+	map_check_map_size(map);
+	map_check_integrity(map->map_char);
 	return (True);
 }
