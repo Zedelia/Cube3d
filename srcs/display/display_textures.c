@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 15:56:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 13:27:20 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 14:04:54 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -44,7 +44,9 @@ t_bool	 draw_wall_vt_hit(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 	double	offset_y;
 
 	offset_x = (r.wall.vt_hit.y - (int)r.wall.hz_hit.y) * map->east.width;
-	while ((offset_x = ft_abs(offset_x)) > map->east.height)
+	if (r.facing_up)
+		offset_x = map->east.width - offset_x;
+	while ((offset_x = ft_abs(offset_x)) > map->east.width)
 		offset_x = map->east.height - offset_x;
 	top = map->r_height / 2 - map->r_height / r.distance / 2;;
 	bottom = map->r_height / 2 + map->r_height / r.distance / 2;

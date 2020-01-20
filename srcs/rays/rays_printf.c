@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 12:35:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 13:30:18 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,8 +50,8 @@ void	rays_printf_tab(t_mlx *mlx, t_rays *ray)
 	int i;
 	(void)mlx;
 	i = 0;
-	printf("fst ray");
-	rays_printf(ray[0]);
+	// printf("fst ray");
+	// rays_printf(ray[0]);
 	printf("\nmid ray");
 	rays_printf(ray[mlx->map->r_width / 2]);
 	// printf("\nlast ray");
