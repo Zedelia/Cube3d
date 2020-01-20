@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 18:29:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 20:41:19 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,7 +31,7 @@ static t_bool to_check_hz(t_move *move, t_rays mid, t_mlx *mlx)
 {
 	double	delta_y;
 
-	delta_y = WALK_SPEED * mid.x < 0 ? 0.5 : -0.5;
+	delta_y = WALK_SPEED * mid.y < 0 ? -0.5 : 0.5;
 	move->x = mlx->cam.pos.x + WALK_SPEED * mid.x;
 	move->y = mlx->cam.pos.y + WALK_SPEED * mid.y + delta_y;
 	if (wall_here(*move, mlx) == False)
@@ -46,7 +46,7 @@ static t_bool to_check_vt(t_move *move, t_rays mid, t_mlx *mlx)
 {
 	double	delta_x;
 
-	delta_x = WALK_SPEED * mid.x < 0 ? -0.5 : 0.5;
+	delta_x = WALK_SPEED * mid.x < 0 ? 0.5 : -0.5;
 	move->x = mlx->cam.pos.x + WALK_SPEED * mid.x + delta_x;
 	move->y = mlx->cam.pos.y + WALK_SPEED * mid.y;
 	if (wall_here(*move, mlx) == False)
