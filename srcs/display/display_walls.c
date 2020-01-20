@@ -5,54 +5,46 @@
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 14:46:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/18 15:56:48 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/20 19:21:49 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-// TODO mettre a jour les couleurs pour les textures
-
-static int		give_wall_color(t_rays r)
+t_bool	walls_cases(t_rays temp, t_mlx *mlx, int x)
 {
-	int north;
-	int	south;
-	int	west;
-	int	east;
-
-	north = 0xb140ac;
-	south = 0xa5ffa7;
-	west = 0xf64a8a;
-	east = 0xffcf40;
-	if (r.facing_up && r.wall.hz)
-		return(north);
-	if (r.facing_down && r.wall.hz)
-		return(south);
-	if (r.facing_left && r.wall.vt)
-		return(west);
-	if (r.facing_right && r.wall.vt)
-		return(east);
-	return (0);
+	if (temp.facing_up && temp.wall.hz)
+		display_wall_hz(temp, mlx->map, mlx->map->north, mlx, x);
+	else if (temp.facing_down && temp.wall.hz)
+		display_wall_hz(temp, mlx->map, mlx->map->south, mlx, x);
+	else if (temp.facing_left && temp.wall.vt)
+		display_wall_vt(temp, mlx->map, mlx->map->west, mlx, x);
+	else if (temp.facing_right && temp.wall.vt)
+		display_wall_vt(temp, mlx->map, mlx->map->east, mlx, x);
+	return (True);
 }
 
-t_bool	display_walls(t_mlx *mlx)
+t_bool	 display_walls(t_mlx *mlx)
 {
-	int x = 0;
-	int y = 0;
-	int	color;
+	int x;
+	t_rays temp;
 
+	x = 0;
 	while (x < (mlx->map->r_width))
 	{
-	y = mlx->map->r_height / 2 - mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2;
-		while (y < mlx->map->r_height / 2 + mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2)
+		temp = mlx->cam.ray_tab[x];
+		walls_cases(temp, mlx, x);
+		if (temp.wall.sprite)
 		{
-			color = give_wall_color(mlx->cam.ray_tab[x]);
-			ft_pixel_put(mlx, x, y,color);
-			y++;
+			if (temp.wall.hz)
+				display_sprite_hz(temp, mlx->map, mlx->map->sprite, mlx, x);
+			if (temp.wall.vt)
+				display_sprite_vt(temp, mlx->map, mlx->map->sprite, mlx, x);
 		}
 		x++;
+
 	}
 	return (True);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:24:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 17:32:24 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 19:02:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,6 +22,7 @@ t_rays  ray_init(double angle, t_vect cam_pos)
 	ray.y = -cos(angle);
 	ray.distance = 0;
 	ray.angle = angle;
+	ray.wall.sprite = False;
 	ray_get_direction(&ray);
 	return (ray);
 }

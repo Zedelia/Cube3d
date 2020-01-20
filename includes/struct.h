@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 13:33:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 19:01:53 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,6 +55,7 @@ typedef struct	s_wall_hit
 	t_bool	vt;
 	t_bool	hz;
 	t_bool	sprite;
+	t_vect	sp;
 }				t_wall_hit;
 
 
@@ -67,6 +68,7 @@ typedef struct	s_rays
 	t_fst_hit	hz_fst_inter;
 	t_fst_hit	vt_fst_inter;
 	t_wall_hit	wall;
+
 	t_bool		facing_up;// N
 	t_bool		facing_down; //S
 	t_bool		facing_right; // E
