@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 13:19:39 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 14:06:26 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,10 +33,7 @@ int		ft_pixel_get_color(t_img img, int x, int y)
 	int color;
 
 	if (x >= img.width || y >= img.height || x < 0 || y < 0 )
-	{
-		printf("x %d | y %d\n", x, y);
-		return (0x0) ;
-	}
+		return (0x0);
 	color = img.data[y * img.width + x];
 	return (color);
 }

@@ -1,14 +1,14 @@
 R				 1920 1080
 
 
-NO      ./path_to_the_north_texture
-SO ./path_to_the_south_texture
+NO      ./textures/text-01.xpm
+SO ./textures/text-02.xpm
 C 						      225,30,0
-EA ./path_to_the_east_texture
+EA ./textures/text-04.xpm
 
-S ./path_to_the_sprite_texture
+S ./textures/brick.xpm
 F 220,100,    0
-WE ./path_to_the_west_texture
+WE ./textures/text-05.xpm
 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1       1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
