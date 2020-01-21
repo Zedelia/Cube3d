@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 19:46:17 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 19:55:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -63,6 +63,7 @@ typedef struct	s_fst_hit
 	double	dist;
 	t_vect	steps;
 }				t_fst_hit;
+
 
 typedef struct	s_wall_hit
 {
