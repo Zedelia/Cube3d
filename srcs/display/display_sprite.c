@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 16:19:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 18:44:04 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,26 +14,44 @@
 #include "../../includes/cube3d.h"
 
 // ca devrait beaucoup changer ici
+// t_bool	draw_sprite(t_sprite sprite, t_mlx *mlx, int x)
+// {
+// 	int 	y;
+// 	double	angle;
+// 	int		start_px;
+// 	int		sp_top;
+// 	int		sp_bot;
+// 	int		offset_x;
 
-t_bool	draw_sprite(t_sprite sp)
-{
-	
-}
+// 	angle = M_PI * 0.25 - sprite.ray_hit_angle;
+// 	start_px = tan(angle) * sprite.dist;
+// 	start_px = sprite.x * mlx->map->tile - start_px;
+// 	sp_top = mlx->map->r_height * 0.5 - mlx->map->r_height / sprite.dist * 0.5;
+// 	sp_bot =  mlx->map->r_height * 0.5 + mlx->map->r_height / sprite.dist * 0.5;
+// 	y = sp_top;
+// 	while ()
+// 	while (y < sp_bot)
+// 	{
+// 		ft_pixel_put(mlx, x, y, ft_pixel_get_color(mlx->map->sprite, offset_x, offset_y));
+// 	}
 
-t_bool	display_sprite(t_mlx *mlx)
-{
-	int i;
+// }
 
-	i = 0;
-	while (i < mlx->map->map_sprites)
-	{
-		if (mlx->map->sprite_tab[i].visible == 1)
-			draw_sprite(mlx->map->sprite_tab[i]);
-		i++;
-	}
+// t_bool	display_sprite(t_mlx *mlx)
+// {
+// 	int i;
 
-	return (True);
-}
+// 	i = 0;
+// 	ft_sort_sprite(mlx->map->sprite_tab, mlx->map->map_sprites);
+// 	while (i < mlx->map->map_sprites)
+// 	{
+// 		if (mlx->map->sprite_tab[i].visible == 1)
+// 			draw_sprite();
+// 		i++;
+// 	}
+
+// 	return (True);
+// }
 
 
 

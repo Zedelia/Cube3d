@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 13:33:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 18:01:14 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,7 +27,6 @@ t_bool	map_tab_init(t_map *map)
 			return (return_false(__func__, "[FAIL] malloc"));
 		i++;
 	}
-	map_sprites_tab_init(map);
-	map_tabs_fill(map);
+	map_tab_fill(map);
 	return (True);
 }

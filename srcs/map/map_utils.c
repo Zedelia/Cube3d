@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 13:12:14 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:06:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 18:05:57 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -46,7 +46,7 @@ size_t		map_get_index(char *line)
 }
 
 /*
-** Math how many lines (== [y]) in the 2D map AND Count Sprites number
+** Math how many lines (== [y]) in the 2D map
 */
 
 // REVIEW you can code better than this shit
@@ -55,10 +55,8 @@ int		math_tab_lines(t_map *map, char *map_char)
 {
 	int i;
 	int j;
-	int s;
 
 	j = 0;
-	s = 0;
 	i = ft_strlen(map_char) - 1;
 	while (i > -1)
 	{
@@ -66,13 +64,10 @@ int		math_tab_lines(t_map *map, char *map_char)
 			&& !ft_isincharset(map_char[i], MAP_INPUTS)
 				&& !ft_isincharset(map_char[i], SPRITES))
 			return (return_false(__func__, "[FAIL] wrong input in map"));
-		if (ft_isincharset(map_char[i], SPRITES))
-			s++;
 		if (ft_isincharset(map->map_char[i], MAP_INPUTS)
 			|| ft_isincharset(map_char[i], SPRITES))
 			j++;;
 		i--;
 	}
-	map->map_sprites = s;
 	return (j / map->map_col);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:57:17 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 18:43:27 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,12 +38,21 @@ typedef struct	s_vect
 	double	y;
 }				t_vect;
 
+typedef struct	s_pos
+{
+	int	x;
+	int	y;
+}				t_pos;
+
+typedef struct s_sprite	t_sprite;
+
 typedef struct	s_sprite
 {
-	int		x;
-	int		y;
-	double	dist;
-	t_bool	visible;
+	int			x;
+	int			y;
+	double		dist;
+	double		ray_hit_angle;
+	t_sprite	*next;
 }				t_sprite;
 
 
@@ -70,12 +79,13 @@ typedef struct	s_rays
 {
 	double		x;
 	double		y;
+	int			id;
 	double		angle;
 	double		distance;
 	t_fst_hit	hz_fst_inter;
 	t_fst_hit	vt_fst_inter;
 	t_wall_hit	wall;
-
+	t_sprite	*sprite;
 	t_bool		facing_up;// N
 	t_bool		facing_down; //S
 	t_bool		facing_right; // E
@@ -112,8 +122,6 @@ typedef struct	s_map
 	char		*map_file;
 	char		*map_char;
 	int			**tab;
-	t_sprite	*sprite_tab;
-	int			map_sprites;
 	int			map_col;
 	int			map_lines;
 	int			tile;

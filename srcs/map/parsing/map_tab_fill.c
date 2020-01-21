@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_tabs_fill.c                                   .::    .:/ .      .::   */
+/*   map_tab_fill.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 16:34:38 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 13:28:51 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 18:54:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-t_bool map_tabs_fill(t_map *map)
+t_bool map_tab_fill(t_map *map)
 {
 	int x;
 	int y;
@@ -38,13 +38,6 @@ t_bool map_tabs_fill(t_map *map)
 			if (ft_isincharset(map->map_char[i], MAP_INPUTS)
 					|| ft_isincharset(map->map_char[i], SPRITES))
 			{
-				if (ft_isincharset(map->map_char[i], SPRITES))
-				{
-					map->sprite_tab[s].y = y;
-					map->sprite_tab[s].x = x;
-					map->sprite_tab[s].dist = 0;
-					s++;
-				}
 				map->tab[y][x] = map->map_char[i] - 48;
 				x++;
 			}

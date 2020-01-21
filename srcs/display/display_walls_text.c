@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 19:09:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 19:10:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 17:43:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,9 +16,9 @@
 t_bool	display_wall_hz(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 {
 	int y;
-	double bottom;
-	double top;
-	double offset_x;
+	double	bottom;
+	double	top;
+	double 	offset_x;
 	double	offset_y;
 
 	offset_x = (r.wall.hz_hit.x - (int)r.wall.hz_hit.x) * img.width;
