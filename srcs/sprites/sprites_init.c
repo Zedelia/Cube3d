@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 17:57:50 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 18:52:29 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 19:25:58 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,6 +25,7 @@ void		sprite_add_one(t_rays *r, t_sprite *new)
 	}
 	else
 		r->sprite = new;
+	temp = NULL;
 }
 
 t_bool	sprites_init(t_rays *r, t_pos pos, t_mlx *mlx)

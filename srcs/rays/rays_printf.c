@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 15:00:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 19:01:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,6 +14,25 @@
 #include "../../includes/cube3d.h"
 
 // REVIEW attention au printf a supprimer
+
+
+void	ray_printf_sprite(t_rays *r)
+{
+	t_sprite *temp;
+	int i;
+
+	temp = r->sprite;
+	if (temp)
+	{
+		i = 1;
+		while (temp)
+		{	printf("SPRITE %d: \n", i);
+			printf("sprite x : %d\n sprite y: %d\nsprite dist: %f\n\n", temp->x, temp->y, temp->dist);
+			temp = temp->next;
+			i++;
+		}
+	}
+}
 
 void	rays_printf(t_rays ray)
 {
@@ -44,7 +63,11 @@ void	rays_printf(t_rays ray)
 		ft_printf("DOWN\n");
 	if (ray.facing_up)
 		ft_printf("UP\n");
+	if (ray.sprite)
+		ray_printf_sprite(&ray);
 }
+
+
 
 void	rays_printf_tab(t_mlx *mlx, t_rays *ray)
 {
