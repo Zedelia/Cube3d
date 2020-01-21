@@ -18,7 +18,8 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 	int index_x = 0;
 	int index_y = 0;
 	int tile_s;
-// TODO recoder cette merde, enlever les contours blancs une fois tout finit et reduire les fonctions avec pixel_put
+// TODO recoder cette merde, enlever les contours blancs une fois tout finit
+//      et reduire les fonctions avec pixel_put
 
 	tile_s = map->tile / MINI_MAP_SCALE;
 
@@ -69,5 +70,7 @@ t_bool	display_mini_map(t_mlx *mlx, t_map *map)
 		c = 0;
 		l++;
 	}
+	ft_draw_pix(mlx, mlx->cam.pos, 10);
+	display_rays(mlx, mlx->cam.ray_tab);
 	return (True);
 }

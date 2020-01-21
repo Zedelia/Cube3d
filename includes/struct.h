@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 13:03:32 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 14:57:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,6 +38,13 @@ typedef struct	s_vect
 	double	y;
 }				t_vect;
 
+typedef struct	s_sprite
+{
+	int		x;
+	int		y;
+	double	dist;
+	t_bool	visible;
+}				t_sprite;
 
 
 typedef struct	s_fst_hit
@@ -100,16 +107,13 @@ typedef struct	s_cam
 }				t_cam;
 
 
-// TODO
-// ca cest vriament degueulasse !!!
-// Mettre le nom du fichier des textures dans la structure image directement
-
 typedef struct	s_map
 {
 	char		*map_file;
 	char		*map_char;
 	int			**tab;
-	t_fst_hit	*sprite_tab;
+	t_sprite	*sprite_tab;
+	int			map_sprites;
 	int			map_col;
 	int			map_lines;
 	int			tile;

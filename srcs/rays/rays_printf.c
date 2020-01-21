@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/06 18:40:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 11:28:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 15:00:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,8 +34,6 @@ void	rays_printf(t_rays ray)
 	// printf("\nvt wall-hit-x : %f\n", ray.wall.vt_hit.x);
 	// printf("vt wall-hit-y : %f\n\n", ray.wall.vt_hit.y);
 
-	if (ray.wall.sprite)
-		 printf("sprite dist : %f\n\n",ray.wall.sp.dist);
 	printf("angle : %f\n", ray.angle);
 	printf("distance : %f\n", ray.distance);
 	if (ray.facing_left)

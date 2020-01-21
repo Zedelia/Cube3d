@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_tab_init.c                                   .::    .:/ .      .::   */
+/*   ray_hit_sprite.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 13:33:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/21 14:06:37 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/21 15:59:21 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../../../includes/cube3d.h"
+#include "../../includes/cube3d.h"
 
-t_bool	map_tab_init(t_map *map)
+t_bool	ray_hit_sprite(t_rays r, int index_y, int index_x, t_mlx *mlx)
 {
 	int i;
+	double dist;
 
-	if (!(map->tab = malloc(map->map_lines * sizeof(*(map->tab)))))
-		return (return_false(__func__, "[FAIL] malloc"));
 	i = 0;
-	map->map_lines = math_tab_lines(map, map->map_char);
-	while (i < map->map_lines)
+	while (i < mlx->map->map_sprites)
 	{
-		if (!(map->tab[i] = malloc(map->map_col * sizeof(int))))
-			return (return_false(__func__, "[FAIL] malloc"));
+		if (mlx->map->sprite_tab[i].x == index_x && mlx->map->sprite_tab[i].y == index_y)
+		{
+			mlx->map->sprite_tab[i].visible = True;
+			dist = ft_math_dist(index_x, index_y, mlx);
+			dist = dist_correct_fish_eye(r, mlx, mlx->map->sprite_tab[i].dist);
+			if (dist > mlx->map->sprite_tab[i].dist)
+				mlx->map->sprite_tab[i].dist = dist;
+		}
 		i++;
 	}
-	map_sprites_tab_init(map);
-	map_tabs_fill(map);
 	return (True);
 }

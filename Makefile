@@ -27,19 +27,21 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/map_printf.c \
 	mlx/mlx_init.c \
 	map/parsing/map_init_parsing.c \
-	map/parsing/map_get_info.c \
 	map/parsing/map_get_text.c \
 	map/parsing/map_get_r.c \
 	map/parsing/map_get_colors.c \
 	map/parsing/map_get_map_line.c \
+	map/parsing/map_get_line_info.c \
 	map/parsing/map_tab_init.c \
 	map/parsing/map_tabs_fill.c \
+	map/parsing/map_sprites_tab_init.c \
 	map/check/map_check_colors.c \
 	map/check/map_check_infos.c \
 	map/check/map_check_map.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
 	map/map_textures_init.c \
+	map/map_utils.c \
 	move/move_apply.c \
 	move/move_keydown.c \
 	utils/colors.c \
@@ -48,6 +50,8 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/utils_miscellaneous.c \
 	utils/return_func.c \
 	utils/utils_math_dist.c \
+	utils/ft_sprites_init.c \
+	rays/ray_hit_sprite.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \

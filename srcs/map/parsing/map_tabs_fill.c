@@ -37,15 +37,17 @@ t_bool map_tabs_fill(t_map *map)
 			// 	return (return_false(__func__, "[FAIL] wrong input in map"));
 			if (ft_isincharset(map->map_char[i], MAP_INPUTS)
 					|| ft_isincharset(map->map_char[i], SPRITES))
-				map->tab[y][x++] = map->map_char[i] - 48;
-			if (ft_isincharset(map->map_char[i], SPRITES))
 			{
-				map->sprite_tab[s].y = y;
-				map->sprite_tab[s].x = x;
-				map->sprite_tab[s].dist = 0;
-				s++;
+				if (ft_isincharset(map->map_char[i], SPRITES))
+				{
+					map->sprite_tab[s].y = y;
+					map->sprite_tab[s].x = x;
+					map->sprite_tab[s].dist = 0;
+					s++;
+				}
+				map->tab[y][x] = map->map_char[i] - 48;
+				x++;
 			}
-
 			i++;
 		}
 		y++;
