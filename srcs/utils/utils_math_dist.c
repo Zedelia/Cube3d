@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 13:10:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 13:17:18 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 12:55:43 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,11 +23,11 @@ double	dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist)
 	return (ok_dist);
 }
 
-double	ray_math_dist(t_vect hit, t_mlx *mlx)
+double	ft_math_dist(double hit_x, double hit_y, t_mlx *mlx)
 {
 	double dist;
 
-	dist = sqrt((mlx->cam.pos.x - hit.x) * (mlx->cam.pos.x - hit.x)
-					+ (mlx->cam.pos.y - hit.y) * (mlx->cam.pos.y - hit.y));
+	dist = sqrt((mlx->cam.pos.x - hit_x) * (mlx->cam.pos.x - hit_x)
+					+ (mlx->cam.pos.y - hit_y) * (mlx->cam.pos.y - hit_y));
 	return (dist);
 }

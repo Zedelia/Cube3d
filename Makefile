@@ -33,7 +33,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/parsing/map_get_colors.c \
 	map/parsing/map_get_map_line.c \
 	map/parsing/map_tab_init.c \
-	map/parsing/map_tab_fill.c \
+	map/parsing/map_tabs_fill.c \
 	map/check/map_check_colors.c \
 	map/check/map_check_infos.c \
 	map/check/map_check_map.c \

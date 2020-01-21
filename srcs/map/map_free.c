@@ -6,12 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 13:35:46 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 13:06:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
+
+// TODO free sprite_tab
 
 static void	map_free_tab(t_map *map)
 {

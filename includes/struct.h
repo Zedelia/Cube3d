@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 19:01:53 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 13:03:32 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -54,8 +54,8 @@ typedef struct	s_wall_hit
 	t_vect	vt_hit;
 	t_bool	vt;
 	t_bool	hz;
-	t_bool	sprite;
-	t_vect	sp;
+	// t_bool	sprite;
+	// t_fst_hit	sp;
 }				t_wall_hit;
 
 
@@ -93,10 +93,10 @@ typedef struct	s_img
 
 typedef struct	s_cam
 {
-	t_vect	pos;
-	int		rotation_angle;
-	t_vect	direction;
-	t_rays	*ray_tab;
+	t_vect		pos;
+	int			rotation_angle;
+	t_vect		direction;
+	t_rays		*ray_tab;
 }				t_cam;
 
 
@@ -106,21 +106,22 @@ typedef struct	s_cam
 
 typedef struct	s_map
 {
-	char	*map_file;
-	char	*map_char;
-	int		**tab;
-	int		map_col;
-	int		map_lines;
-	int		tile;
-	int		r_width;
-	int		r_height;
-	int		cell;
-	int		floor;
-	t_img	north;
-	t_img	south;
-	t_img	west;
-	t_img	east;
-	t_img	sprite;
+	char		*map_file;
+	char		*map_char;
+	int			**tab;
+	t_fst_hit	*sprite_tab;
+	int			map_col;
+	int			map_lines;
+	int			tile;
+	int			r_width;
+	int			r_height;
+	int			cell;
+	int			floor;
+	t_img		north;
+	t_img		south;
+	t_img		west;
+	t_img		east;
+	t_img		sprite;
 }				t_map;
 
 

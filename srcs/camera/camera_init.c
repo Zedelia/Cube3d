@@ -13,7 +13,7 @@
 
 #include "../../includes/cube3d.h"
 
-static void	get_cam(t_cam *cam, t_map *map)
+static void	get_cam_pos(t_cam *cam, t_map *map)
 {
 	double	x;
 	double	y;
@@ -55,7 +55,7 @@ static void	get_cam_rotation_angle(t_cam *cam)
 
 t_bool		cam_init(t_mlx *mlx)
 {
-	get_cam(&mlx->cam, mlx->map);
+	get_cam_pos(&mlx->cam, mlx->map);
 	get_cam_rotation_angle(&mlx->cam);
 	mlx->cam.direction.y = 1;
 	rotate_vect(&mlx->cam.direction, mlx->cam.rotation_angle); // ici on trouve le vecteur directionnel initial

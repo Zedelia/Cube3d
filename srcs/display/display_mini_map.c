@@ -20,7 +20,7 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 	int tile_s;
 // TODO recoder cette merde, enlever les contours blancs une fois tout finit et reduire les fonctions avec pixel_put
 
-	tile_s = map->tile / 4;
+	tile_s = map->tile / MINI_MAP_SCALE;
 
 	while (index_x < tile_s - 1) // contours blancs
 	{

@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 13:13:49 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 13:18:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-t_bool	map_get_map_line(t_map *map, int fd, char *line)
+t_bool	map_get_map_in_one_line(t_map *map, int fd, char *line)
 {
 	char	*temp;
 	char	*join;

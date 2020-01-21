@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 20:41:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 10:58:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -66,13 +66,11 @@ t_bool	move_apply(t_move *move, t_mlx *mlx)
 		mlx->cam.rotation_angle = move->r * TURN_SPEED;
 	else if (move->y)
 	{
-		move->vt = False;
 		move->y > 0 ? ray_rotate(&mid, 180) : ray_rotate(&mid, 0);
 		to_check_hz(move, mid, mlx);
 	}
 	else if (move->x)
 	{
-		move->vt = True;
 		move->x > 0 ? ray_rotate(&mid, 90) : ray_rotate(&mid, -90);
 		to_check_vt(move, mid, mlx);
 	}

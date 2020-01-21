@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 15:56:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 19:21:49 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 12:45:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	walls_cases(t_rays temp, t_mlx *mlx, int x)
+static t_bool	walls_cases(t_rays temp, t_mlx *mlx, int x)
 {
 	if (temp.facing_up && temp.wall.hz)
 		display_wall_hz(temp, mlx->map, mlx->map->north, mlx, x);
@@ -36,15 +36,9 @@ t_bool	 display_walls(t_mlx *mlx)
 	{
 		temp = mlx->cam.ray_tab[x];
 		walls_cases(temp, mlx, x);
-		if (temp.wall.sprite)
-		{
-			if (temp.wall.hz)
-				display_sprite_hz(temp, mlx->map, mlx->map->sprite, mlx, x);
-			if (temp.wall.vt)
-				display_sprite_vt(temp, mlx->map, mlx->map->sprite, mlx, x);
-		}
+		// if (temp.wall.sprite)
+		// 	display_sprite(temp, mlx->map, mlx->map->sprite, mlx, x);
 		x++;
-
 	}
 	return (True);
 }

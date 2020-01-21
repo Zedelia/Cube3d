@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 12:39:16 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 13:18:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,12 +17,12 @@ static t_bool	map_parsing_info(t_map *map, int fd, char *line)
 {
 	while ((get_next_line(fd, &line)) == 1 && line[0] != '1')
 	{
-		if (!(map_get_info(map, line)))
+		if (!(map_get_line_info(map, line)))
 			return (return_false(__func__, NULL));
 		ft_memdel((void**)&line);
 	}
 	map->map_col = occur_in_str('1', line);
-	map_get_map_line(map, fd, line);
+	map_get_map_in_one_line(map, fd, line);
 	map_tab_init(map);
 	return (True);
 }

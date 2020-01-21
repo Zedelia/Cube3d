@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 13:16:46 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 11:17:21 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,7 +37,7 @@ static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 	inter.y = (r->facing_up == True) ? mlx->cam.pos.y - inter.y : mlx->cam.pos.y + inter.y;
 	r->vt_fst_inter.x = inter.x;
 	r->vt_fst_inter.y = inter.y;
-	r->vt_fst_inter.dist = ray_math_dist(inter, mlx);
+	r->vt_fst_inter.dist = ft_math_dist(inter.x, inter.y, mlx);
 	return (True);
 }
 
@@ -64,7 +64,7 @@ static t_bool	ray_get_fst_horizontal_intersection(t_rays *r, t_mlx *mlx)
 	inter.x = (r->facing_left == True) ? mlx->cam.pos.x - inter.x : mlx->cam.pos.x + inter.x;
 	r->hz_fst_inter.x = inter.x;
 	r->hz_fst_inter.y = inter.y;
-	r->hz_fst_inter.dist = ray_math_dist(inter, mlx);
+	r->hz_fst_inter.dist = ft_math_dist(inter.x, inter.y, mlx);
 	return (True);
 }
 

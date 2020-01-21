@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   display_update.c                                 .::    .:/ .      .::   */
+/*   map_tab_sprites.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/09 11:13:22 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 11:25:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/21 12:59:26 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/21 13:25:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../../includes/cube3d.h"
+#include "../../../includes/cube3d.h"
 
-void	display_update(t_mlx *mlx)
+t_bool	map_sprites_tab_init(t_map *map)
 {
-	display_roof(mlx);
-	display_floor(mlx);
-	rays_casting(mlx);
-	display_walls(mlx);
-	display_mini_map(mlx, mlx->map);
+	t_fst_hit *sprite_tab;
+	int sp_max;
+	int i;
 
-	rays_printf_tab(mlx, mlx->cam.ray_tab);
-
-	ft_draw_pix(mlx, mlx->cam.pos, 10);
-	display_rays(mlx, mlx->cam.ray_tab);
-	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
+	sp_max = (map->map_col - 1) * (map->map_lines - 1);
+	if (!(sprite_tab = malloc(sizeof(t_fst_hit) * sp_max)))
+		return (return_false(__func__, "[FAIL] sprite_tab malloc"));
+	i = 0;
+	while (i < sp_max)
+	{
+		sprite_tab[i].x = 0;
+		sprite_tab[i].y = 0;
+		sprite_tab[i].dist = -1;
+		i++;
+	}
+	map->sprite_tab = sprite_tab;
+	return (True);
 }
-
-
-
