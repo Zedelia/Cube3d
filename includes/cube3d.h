@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 18:28:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 19:42:12 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,6 +38,8 @@
 # define MAP_INPUTS "01NSEW"
 # define SPRITES "2"
 # define PI 3.14159265359
+# define ROOF_COLOR 0x8074F9
+# define FLOOR_COLOR 0x9ACD32
 
 // # ifndef BUFFER_SIZE
 // #  define BUFFER_SIZE 8
