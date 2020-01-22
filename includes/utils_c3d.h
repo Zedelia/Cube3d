@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 18:51:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 14:09:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,6 +31,6 @@ double		ft_math_dist(double hit_x, double hit_y, t_mlx *mlx);
 double		dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist);
 int			ft_pixel_get_color(t_img img, int x, int y);
 t_bool		ft_check_incorrect_input_text(char a, char b, char *line);
-void		ft_sort_sprite(t_sprite *tab, int size);
+int 		check_color(t_img img, t_vect set, t_bool up);
 
 #endif

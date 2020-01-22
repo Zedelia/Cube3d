@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 11:13:22 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 20:14:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 14:00:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,9 +15,6 @@
 
 void	display_update(t_mlx *mlx)
 {
-	// TODO display roof au moment des walls pour gagner en opti
-	// display_roof(mlx);
-	// display_floor(mlx);
 	rays_casting(mlx);
 	display_walls(mlx);
 	display_mini_map(mlx, mlx->map);

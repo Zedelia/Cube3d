@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 18:43:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 14:09:14 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,20 +38,18 @@ int		ft_pixel_get_color(t_img img, int x, int y)
 	return (color);
 }
 
-// TODO METTRE EN PLACE ceci en changeant les variables de display_walls
+int check_color(t_img img, t_vect set, t_bool up)
+{
+	int color;
 
-// int check_color(t_img img, int x, int y, t_bool up? )
-// {
-// 	int color;
-
-// 	if ((color = ft_pixel_get_color(img, x, y)) == -1)
-// 	{
-// 		if (up? )
-// 			return (couleurduciel);
-// 		return (couleurdusol);
-// 	}
-// 	return (color);
-// }
+	if ((color = ft_pixel_get_color(img, set.x, set.y)) == -1)
+	{
+		if (up)
+			return (ROOF_COLOR);
+		return (FLOOR_COLOR);
+	}
+	return (color);
+}
 
 void	ft_draw_pix(t_mlx *mlx, t_vect v, int size_obj)
 {

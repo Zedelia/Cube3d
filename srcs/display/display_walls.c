@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 15:56:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 20:22:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 14:00:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,7 +37,7 @@ t_bool	 display_walls(t_mlx *mlx)
 		mlx->cam.ray_tab[x].x_id = x;
 		temp = mlx->cam.ray_tab[x];
 		walls_cases(temp, mlx);
-		display_sprites(&temp, mlx);
+		// display_sprites(&temp, mlx);
 		x++;
 	}
 	return (True);
