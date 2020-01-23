@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 12:55:14 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 15:36:17 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -46,7 +46,6 @@ t_bool	ray_get_distance(t_rays *r, t_mlx *mlx)
 		r->wall.vt = True;
 		r->wall.hz = False;
 	}
-	// ray_get_distance_sprite(r, mlx);
 	return (True);
 }
 

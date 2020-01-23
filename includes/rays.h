@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:23:44 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:37:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 15:57:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@ t_bool 	ray_get_steps(t_rays *r, t_mlx *mx);
 t_bool	ray_get_walls_hit(t_rays *r, t_mlx * mlx);
 t_bool	ray_hits_vt_wall_at(t_rays *r, t_vect v, t_mlx *mlx);
 t_bool	ray_hits_hz_wall_at(t_rays *r, t_vect v, t_mlx *mlx);
-t_bool	ray_hit_sprite(t_rays r, int index_y, int index_x, t_mlx *mlx);
+t_bool	ray_hit_sprite(t_rays *r, t_vect_int wall, t_mlx *mlx, t_vect v);
 
 
 #endif

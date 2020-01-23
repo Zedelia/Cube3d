@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 13:28:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 16:51:50 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,52 +15,47 @@
 
 // ca devrait beaucoup changer ici
 
-// t_bool	draw_sprite(t_sprite sp)
-// {
+t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
+{
+	t_fromto	sprite;
+	int	x;
+	int	y;
+	int i;
 
-// }
+	sprite.from = 0;
+	sprite.to = img.width;
+	if (sp.r_before.distance < sp.dist)
+		sprite.from = ft_abs((sp.fst_hit.x - (int)sp.fst_hit.x) * img.width);
+	if (sp.r_after.distance < sp.dist)
+		sprite.to = ft_abs((int)sp.last_hit.x + 1 - sp.last_hit.x * img.width);
+	y = mlx->map->r_height * 0.5 - mlx->map->r_height / sp.dist * 0.5;
+	x = (tan(degrees_to_radian(60) - sp.r_before.angle) * sp.dist) *mlx->map->tile;
+	i = 0;
+	while (i < img.height)
+	{
+		while (sprite.from < sprite.to)
+		{
+			ft_pixel_put(mlx, x, y, ft_pixel_get_color(img, sprite.from, i));
+			sprite.from++;
+			x++;
+		}
+		y++;
+		i++;
+	}
+	return (True);
+}
 
-// t_bool	display_sprite(t_mlx *mlx)
-// {
-// 	int i;
+t_bool	display_sprite(t_mlx *mlx)
+{
+	int i;
 
-// 	i = 0;
-// 	while (i < mlx->map->map_sprites)
-// 	{
-// 		if (mlx->map->sprite_tab[i].visible == 1)
-// 			draw_sprite(mlx->map->sprite_tab[i]);
-// 		i++;
-// 	}
+	i = 0;
+	while (i < mlx->map->map_sprites)
+	{
+		if (mlx->map->sprite_tab[i].visible == 1)
+			draw_sprite(mlx->map->sprite_tab[i], mlx->map->sprite, mlx);
+		i++;
+	}
 
-// 	return (True);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// int y;
-	// double bottom;
-	// double top;
-	// double offset_x;
-	// double	offset_y;
-
-	// offset_x = (r.wall.sp.x - (int)r.wall.sp.x) * img.width;
-	// offset_x = ft_abs(offset_x);
-	// top = map->r_height * 0.5 - map->r_height / r.wall.sp.dist * 0.5;
-	// bottom = map->r_height * 0.5 + map->r_height / r.wall.sp.dist * 0.5;
-	// y = top;
-	// while (y < bottom)
-	// {
-	// 	offset_y = (y - top) * ((double)img.height / (bottom - top));
-	// 	ft_pixel_put(mlx, x, y, ft_pixel_get_color(img, offset_x, offset_y));
-	// 	y++;
-	// }
+	return (True);
+}

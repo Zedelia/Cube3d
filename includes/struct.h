@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:57:17 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 16:57:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,7 @@
 
 #include "cube3d.h"
 
+// typedef struct s_rays	t_rays;
 
 typedef struct	s_color
 {
@@ -38,13 +39,19 @@ typedef struct	s_vect
 	double	y;
 }				t_vect;
 
-typedef struct	s_sprite
+typedef struct	s_vect_int
 {
-	int		x;
-	int		y;
-	double	dist;
-	t_bool	visible;
-}				t_sprite;
+	int	x;
+	int	y;
+}				t_vect_int;
+
+typedef struct	s_fromto
+{
+	int	from;
+	int	to;
+}				t_fromto;
+
+
 
 
 typedef struct	s_fst_hit
@@ -72,6 +79,7 @@ typedef struct	s_rays
 	double		y;
 	double		angle;
 	double		distance;
+	int			id;
 	t_fst_hit	hz_fst_inter;
 	t_fst_hit	vt_fst_inter;
 	t_wall_hit	wall;
@@ -83,6 +91,17 @@ typedef struct	s_rays
 
 }				t_rays;
 
+typedef struct	s_sprite
+{
+	int		x;
+	int		y;
+	double	dist;
+	t_rays  r_before;
+	t_vect	fst_hit;
+	t_rays	r_after;
+	t_vect	last_hit;
+	t_bool	visible;
+}				t_sprite;
 
 typedef struct	s_img
 {

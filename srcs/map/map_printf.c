@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:59:27 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 16:55:35 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -44,7 +44,8 @@ static void 	map_tab_printf(t_map *map)
 	while (i < map->map_sprites)
 	{
 		temp = map->sprite_tab[i];
-		printf("\nsp x: %d | sp y: %d\ndist: %f\nvisible? %d", temp.x, temp.y, temp.dist, temp.visible);
+		printf("\nsp x: %d | sp y: %d\ndist: %f\nvisible? %d\n", temp.x, temp.y, temp.dist, temp.visible);
+		printf("ray before id : %d\nray after id : %d\n", temp.r_before.id, temp.r_after.id );
 		i++;
 	}
 }
