@@ -1,14 +1,14 @@
 R				 1920 1080
 
 
-NO      ./textures/text-01.xpm
-SO ./textures/text-02.xpm
+NO      ./textures/pokemon-collection/text-01.xpm
+SO ./textures/pokemon-collection/text-02.xpm
 C 						      225,30,0
-EA ./textures/text-04.xpm
+EA ./textures/pokemon-collection/text-04.xpm
 
 S ./textures/sprite.xpm
 F 220,100,    0
-WE ./textures/text-05.xpm
+WE ./textures/pokemon-collection/text-03.xpm
 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 2 0 0 0 0 0 0 0 0 0 0 2 0 1

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 16:19:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 13:28:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,25 +15,25 @@
 
 // ca devrait beaucoup changer ici
 
-t_bool	draw_sprite(t_sprite sp)
-{
-	
-}
+// t_bool	draw_sprite(t_sprite sp)
+// {
 
-t_bool	display_sprite(t_mlx *mlx)
-{
-	int i;
+// }
 
-	i = 0;
-	while (i < mlx->map->map_sprites)
-	{
-		if (mlx->map->sprite_tab[i].visible == 1)
-			draw_sprite(mlx->map->sprite_tab[i]);
-		i++;
-	}
+// t_bool	display_sprite(t_mlx *mlx)
+// {
+// 	int i;
 
-	return (True);
-}
+// 	i = 0;
+// 	while (i < mlx->map->map_sprites)
+// 	{
+// 		if (mlx->map->sprite_tab[i].visible == 1)
+// 			draw_sprite(mlx->map->sprite_tab[i]);
+// 		i++;
+// 	}
+
+// 	return (True);
+// }
 
 
 

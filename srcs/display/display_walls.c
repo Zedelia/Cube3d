@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/18 15:56:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 16:20:32 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/23 13:29:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,6 +38,5 @@ t_bool	 display_walls(t_mlx *mlx)
 		walls_cases(temp, mlx, x);
 		x++;
 	}
-	display_sprite(mlx);
 	return (True);
 }
