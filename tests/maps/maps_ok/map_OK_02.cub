@@ -6,7 +6,7 @@ SO ./textures/pokemon-collection/text-02.xpm
 C 						      225,30,0
 EA ./textures/pokemon-collection/text-04.xpm
 
-S ./textures/sprite.xpm
+S ./textures/sprite1.xpm
 F 220,100,    0
 WE ./textures/pokemon-collection/text-03.xpm
 
