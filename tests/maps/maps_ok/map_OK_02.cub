@@ -1,14 +1,14 @@
 R				 1920 1080
 
 
-NO      ./textures/pokemon-collection/text-01.xpm
-SO ./textures/pokemon-collection/text-02.xpm
+NO      ./textures/candies-collection/text-01.xpm
+SO ./textures/candies-collection/text-02.xpm
 C 						      225,30,0
-EA ./textures/pokemon-collection/text-04.xpm
+EA ./textures/candies-collection/text-04.xpm
 
 S ./textures/sprite1.xpm
 F 220,100,    0
-WE ./textures/pokemon-collection/text-03.xpm
+WE ./textures/candies-collection/text-03.xpm
 
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 2 0 0 0 0 0 0 0 0 0 0 2 0 1

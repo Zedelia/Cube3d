@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/24 11:13:52 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 11:17:44 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 15:27:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,7 +25,7 @@ void	sprite_sort_tab(t_sprite *tab, int size)
 	{
 		while (j < size - 1)
 		{
-			if (tab[j].dist > tab[j + 1].dist)
+			if (tab[j].dist < tab[j + 1].dist)
 			{
 				temp[j] = tab[j];
 				tab[j] = tab[j + 1];

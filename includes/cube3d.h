@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 10:58:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 12:26:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,6 +26,7 @@
 # include <errno.h>
 # include <string.h>
 
+// TODO : floor anf roof color
 
 # define WIN_WIDTH 5120 / 2
 # define WIN_HEIGHT 2880 / 2

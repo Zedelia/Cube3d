@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 11:17:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 16:00:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,41 +17,64 @@
 
 t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
 {
-	int	x = 0;
-	int	y = 0;
-	int i = 0;
-	int j = 0;
-	int color;
+	int 		color;
+	double 		sp_size;
+	t_fromto 	x;
+	t_fromto 	y;
+	t_vect_int 	pixput;
+	t_vect 	pixget;
+	int 	start;
 
-	(void)mlx;
-	(void)sp;
-	// sprite.from = 0;
-	// sprite.to = img.width;
-	// if (sp.r_before.distance < sp.dist)
-	// 	sprite.from = ft_abs((sp.fst_hit.x - (int)sp.fst_hit.x) * img.width);
-	// if (sp.r_after.distance < sp.dist)
-	// 	sprite.to = ft_abs((int)sp.last_hit.x + 1 - sp.last_hit.x * img.width);
-	// y = mlx->map->r_height * 0.5 - mlx->map->r_height / sp.dist * 0.5;
-	// x = (tan(degrees_to_radian(60) - sp.r_before.angle) * sp.dist) *mlx->map->tile;
-	// i = 0;
-	// printf("sprite from %d\nsprite to %d\nx %d | y %d\nimgheigt %d\n\n", sprite.from, sprite.to,x,y, img.height);
-	while (i < img.height)
+
+
+	sp_size = mlx->map->r_height / sp.dist;
+	x.from = sp.r_before.id ;
+	x.to = sp.r_after.id + 1;
+	y.from = mlx->map->r_height * 0.5 - sp_size * 0.5;
+	y.to = mlx->map->r_height * 0.5 + sp_size * 0.5;
+	pixput.y = y.from;
+	pixput.x = x.from;
+	start = (sp.r_after.id == (mlx->map->r_width - 1)) ? img.width - (sp.r_after.id - sp.r_before.id) : 0;
+	start = (sp.r_before.id == 0) ? img.width - sp.r_after.id  : 0;
+	while (pixput.y < y.to)
 	{
-		j= 0;
-		x = 0;
-		while (j < img.width)
+		pixput.x = x.from ;
+		pixget.y = (pixput.y - y.from) * img.height / (y.to - y.from);
+		pixget.x = start;
+		while (pixput.x < x.to)
 		{
-			if ((color = ft_pixel_get_color(img, j, i)) > 0)
-				ft_pixel_put(mlx, x, y, color );
-			j++;
-			x++;
+			pixget.x += tan(sp.r_before.angle) * sp.dist;
+			// printf("COUCOU %f\n", pixget.x);
+			if((color = ft_pixel_get_color(img, pixget.x, pixget.y)) >= 0)
+				ft_pixel_put(mlx, pixput.x, pixput.y, color);
+			pixput.x++;
+			pixget.x++;
 		}
-		y++;
-		i++;
+		pixput.y++;
+		pixget.y++;
 	}
-	// printf("sprite from %d\nsprite to %d\nx %d | y %d\nimgheigt %d\n\n", sprite.from, sprite.to,x,y, img.height);
 	return (True);
 }
+
+
+
+// 	while (getpix.y < img.height)
+// 	{
+// 		getpix.x = sprite.from;
+// 		print.x = screen.x;
+// 		while (getpix.x < sprite.to)
+// 		{
+// 			if ((color = ft_pixel_get_color(img, getpix.x, getpix.y)) > 0)
+// 				ft_pixel_put(mlx, print.x, screen.y, color );
+// 			getpix.x++;
+// 			print.x++;
+// 		}
+// 		screen.y++;
+// 		getpix.y++;
+// 	}
+// 	// printf("sprite from %d\nsprite to %d\nx %d | y %d\nimgheigt %d\n\n", sprite.from, sprite.to,x,y, img.height);
+// 	return (True);
+// }
 
 t_bool	display_sprite(t_mlx *mlx)
 {
