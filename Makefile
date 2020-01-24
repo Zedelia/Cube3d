@@ -34,7 +34,6 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/parsing/map_get_line_info.c \
 	map/parsing/map_tab_init.c \
 	map/parsing/map_tabs_fill.c \
-	map/parsing/map_sprites_tab_init.c \
 	map/check/map_check_colors.c \
 	map/check/map_check_infos.c \
 	map/check/map_check_map.c \
@@ -50,7 +49,6 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/utils_miscellaneous.c \
 	utils/return_func.c \
 	utils/utils_math_dist.c \
-	utils/ft_sprites_init.c \
 	rays/ray_hit_sprite.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
@@ -63,9 +61,13 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/ray_get_walls_hit.c \
 	rays/ray_rotate.c \
 	rays/ray_wall_detection.c \
+	sprites/sprites_init.c \
+	sprites/sprites_tab_init.c \
+	sprites/sprite_get_dist.c \
+	sprites/sprite_get_ray_hits.c
 
 
-MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move}
+MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move,sprites}
 
 INCLUDES = cube3d
 INC_PATH = includes

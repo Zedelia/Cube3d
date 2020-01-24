@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 11:13:22 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 17:23:44 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 11:10:53 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ void	display_update(t_mlx *mlx)
 	display_mini_map(mlx, mlx->map);
 	display_sprite(mlx);
 
-	map_sprite_tab_printf(mlx->map);
+	sprite_tab_printf(mlx->map);
 
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 }

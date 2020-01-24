@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 12:57:51 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 10:58:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,5 +55,6 @@ typedef unsigned char		t_uchar;
 # include "camera.h"
 # include "move.h"
 # include "keys.h"
+# include "sprites.h"
 
 #endif

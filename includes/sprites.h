@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   map_tab_init.c                                   .::    .:/ .      .::   */
+/*   sprites.h                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 11:12:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/24 10:58:12 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/24 11:08:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "../../../includes/cube3d.h"
+#ifndef SPRITES_H
+# define SPRITES_H
 
-t_bool	map_tab_init(t_map *map)
-{
-	int i;
+#include "cube3d.h"
 
-	if (!(map->tab = malloc(map->map_lines * sizeof(*(map->tab)))))
-		return (return_false(__func__, "[FAIL] malloc"));
-	i = 0;
-	map->map_lines = math_tab_lines(map, map->map_char);
-	while (i < map->map_lines)
-	{
-		if (!(map->tab[i] = malloc(map->map_col * sizeof(int))))
-			return (return_false(__func__, "[FAIL] malloc"));
-		i++;
-	}
-	sprites_tab_init(map);
-	map_tabs_fill(map);
-	return (True);
-}
+t_bool				sprites_tab_init(t_map *map);
+t_bool				sprites_init(t_map *map);
+void 				sprite_tab_printf(t_map *map);
+t_bool				sprite_get_ray_hits(t_rays r, t_mlx *mlx, t_vect v, int i);
+t_bool				sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i);
+
+#endif
