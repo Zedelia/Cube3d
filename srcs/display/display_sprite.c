@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 17:34:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 10:52:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,6 +21,7 @@ t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
 	int	y = 0;
 	int i = 0;
 	int j = 0;
+	int color;
 
 	(void)mlx;
 	(void)sp;
@@ -40,7 +41,8 @@ t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
 		x = 0;
 		while (j < img.width)
 		{
-			ft_pixel_put(mlx, x, y, ft_pixel_get_color(img, j, i));
+			if ((color = ft_pixel_get_color(img, j, i)) > 0)
+				ft_pixel_put(mlx, x, y, color );
 			j++;
 			x++;
 		}
