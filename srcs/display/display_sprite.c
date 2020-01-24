@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 16:00:11 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/24 17:16:05 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,7 +26,6 @@ t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
 	int 	start;
 
 
-
 	sp_size = mlx->map->r_height / sp.dist;
 	x.from = sp.r_before.id ;
 	x.to = sp.r_after.id + 1;
@@ -43,12 +42,11 @@ t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
 		pixget.x = start;
 		while (pixput.x < x.to)
 		{
-			pixget.x += tan(sp.r_before.angle) * sp.dist;
+			pixget.x += ft_abs(tan(sp.r_after.angle) * sp.dist);
 			// printf("COUCOU %f\n", pixget.x);
 			if((color = ft_pixel_get_color(img, pixget.x, pixget.y)) >= 0)
 				ft_pixel_put(mlx, pixput.x, pixput.y, color);
 			pixput.x++;
-			pixget.x++;
 		}
 		pixput.y++;
 		pixget.y++;
