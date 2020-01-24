@@ -64,7 +64,8 @@ SRCS_NAME = img/img_load_xpm.c \
 	sprites/sprites_init.c \
 	sprites/sprites_tab_init.c \
 	sprites/sprite_get_dist.c \
-	sprites/sprite_get_ray_hits.c
+	sprites/sprite_get_ray_hits.c \
+	sprites/sprite_sort_tab.c
 
 
 MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move,sprites}

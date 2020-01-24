@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   sprites.h                                        .::    .:/ .      .::   */
+/*   sprite_sort_tab.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/24 10:58:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 11:16:06 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/24 11:13:52 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/24 11:17:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef SPRITES_H
-# define SPRITES_H
+#include "../../includes/cube3d.h"
 
-#include "cube3d.h"
+void	sprite_sort_tab(t_sprite *tab, int size)
+{
+	int i;
+	int j;
+	t_sprite temp[size];
 
-t_bool				sprites_tab_init(t_map *map);
-t_bool				sprites_init(t_map *map);
-void 				sprite_tab_printf(t_map *map);
-t_bool				sprite_get_ray_hits(t_rays r, t_mlx *mlx, t_vect v, int i);
-t_bool				sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i);
-void				sprite_sort_tab(t_sprite *tab, int size);
-
-#endif
+	i = 0;
+	j = 0;
+	while (i < size - 1)
+	{
+		while (j < size - 1)
+		{
+			if (tab[j].dist > tab[j + 1].dist)
+			{
+				temp[j] = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = temp[j];
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+}
