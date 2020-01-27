@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/27 19:34:57 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 19:42:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -99,9 +99,9 @@ t_bool 	draws_sprite_column(t_vect inter, t_sprite *sp, t_mlx *mlx, t_rays r)
 // dist entre inter et position
 //	r_height / dist
 	// inter_norm = norm_vect(inter);
-	// d_inter = dist_correct_fish_eye(*r, mlx, ft_math_dist(inter.x, inter.y, mlx));
+	 d_inter = dist_correct_fish_eye(r, mlx, ft_math_dist(inter.x, inter.y, mlx));
 
-	d_inter = sqrt((sp->mid_ray.x) * (sp->mid_ray.x) + (sp->mid_ray.y) * (sp->mid_ray.y));
+	// d_inter = sqrt((sp->mid_ray.x) * (sp->mid_ray.x) + (sp->mid_ray.y) * (sp->mid_ray.y));
 	scrn_y.from = mlx->map->r_height * 0.5 - mlx->map->r_height / d_inter * 0.5;
 	scrn_y.to = mlx->map->r_height * 0.5 + mlx->map->r_height / d_inter * 0.5;
 	printf("%f\n", d_inter);
