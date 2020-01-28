@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/24 10:58:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 16:11:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 16:17:08 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,9 +25,9 @@ t_bool	sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i);
 void	sprite_get_line_seg(t_sprite *sp, t_mlx *mlx);
 void	sprite_ray_create_line(t_rays *r, t_mlx *mlx);
 void	sprite_find_mid_ray(t_sprite *sp, t_mlx *mlx);
-t_bool 	sprite_draw_column_fstart(t_sprite *sp, t_mlx *mlx, t_rays r);
+t_bool 	sprite_draw_column_from_start(t_sprite *sp, t_mlx *mlx, t_rays r);
 t_bool	sprite_draw(t_sprite *sp, t_mlx *mlx);
-t_bool 	sprite_draw_column_fend(t_sprite *sp, t_mlx *mlx, t_rays r);
+t_bool 	sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r);
 
 
 #endif

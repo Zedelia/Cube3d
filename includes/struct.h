@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 16:08:42 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 17:20:46 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,6 +58,13 @@ typedef struct	s_fromto
 	int	to;
 }				t_fromto;
 
+typedef struct	s_utils
+{
+	int		y;
+	int		color;
+	double 	dist_inter;
+	double	delta;
+}				t_utils;
 
 
 
@@ -169,6 +176,5 @@ typedef struct	s_mlx
 	t_cam		cam;
 	t_map		*map;
 }				t_mlx;
-
 
 #endif

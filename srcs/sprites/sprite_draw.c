@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:39:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 16:12:34 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 17:45:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static void		get_fst_last_printed_ray(t_sprite *sp, t_mlx *mlx)
+static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 {
 	int i;
 
@@ -42,21 +42,19 @@ static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 	i = sp->fst_ray_print;
 	while (i <= sp->last_ray_print)
 	{
-		if (sp->fst_ray_print > mlx->map->r_width / 2)
-			sprite_draw_column_fstart(sp, mlx, mlx->cam.ray_tab[i]);
-		else if (sp->fst_ray_print <= mlx->map->r_width / 2)
-			sprite_draw_column_fend(sp, mlx, mlx->cam.ray_tab[i]);
+		if (sp->fst_ray_print > mlx->map->r_width / 5)
+			sprite_draw_column_from_start(sp, mlx, mlx->cam.ray_tab[i]);
+		else if (sp->fst_ray_print <= mlx->map->r_width / 5)
+			sprite_draw_column_from_end(sp, mlx, mlx->cam.ray_tab[i]);
 		i++;
 	}
 	return (True);
 }
 
-
-
 t_bool	sprite_draw(t_sprite *sp, t_mlx *mlx)
 {
 	sprite_get_line_seg(sp, mlx);
-	get_fst_last_printed_ray(sp, mlx);
+	get_fst_last_printed_rays(sp, mlx);
 	sprite_draw_columns(sp, mlx);
 	return (True);
 }

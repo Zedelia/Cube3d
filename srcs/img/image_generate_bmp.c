@@ -1,21 +1,15 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   sprite_ray_create_line.c                         .::    .:/ .      .::   */
+/*   image_generate_bmp.c                             .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/28 11:25:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 16:53:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/28 17:14:20 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/28 17:20:35 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	sprite_ray_create_line(t_rays *r, t_mlx *mlx)
-{
-	r->line_eq.a = r->y;
-	r->line_eq.b = -r->x;
-	r->line_eq.c = r->x * (mlx->cam.pos.y + 0.5) - r->y * (mlx->cam.pos.x + 0.5);
-}
