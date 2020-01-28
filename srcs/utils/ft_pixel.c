@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:27:35 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:28:16 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 13:40:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,20 +27,22 @@ int		ft_pixel_get_color(t_img img, int x, int y)
 	if (x >= img.width || y >= img.height || x < 0 || y < 0)
 		return (-1);
 	color = img.data[y * img.width + x];
+	if ((color >> 24) & 0xff)
+	{
+		return (-1);
+	}
 	return (color);
 }
 
-// TODO METTRE EN PLACE ceci en changeant les variables de display_walls
+int		get_right_color(t_img img, int x, int y, t_bool up)
+{
+	int color;
 
-// int check_color(t_img img, int x, int y, t_bool up? )
-// {
-// 	int color;
-
-// 	if ((color = ft_pixel_get_color(img, x, y)) == -1)
-// 	{
-// 		if (up? )
-// 			return (couleurduciel);
-// 		return (couleurdusol);
-// 	}
-// 	return (color);
-// }
+	if ((color = ft_pixel_get_color(img, x, y)) == -1)
+	{
+		if (up)
+			return (ROOF_COLOR);
+		return (FLOOR_COLOR);
+	}
+	return (color);
+}

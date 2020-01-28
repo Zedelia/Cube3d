@@ -11,6 +11,8 @@ SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
 	camera/camera_init.c \
 	camera/camera_printf.c \
+	camera/camera_get_pos.c \
+	camera/camera_get_rotation_angle.c \
 	display/display_exit.c \
 	display/display_mini_map.c \
 	display/display_update.c \

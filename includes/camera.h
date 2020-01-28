@@ -18,5 +18,7 @@
 
 void		cam_printf(t_cam *cam);
 t_bool		cam_init(t_mlx *mlx);
+void		cam_get_rotation_angle(t_cam *cam);
+void		cam_get_pos(t_cam *cam, t_map *map);
 
 #endif

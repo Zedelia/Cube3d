@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 19:09:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:19:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 12:05:26 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,6 +55,7 @@ t_bool	 display_wall_vt(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 	while (y < bottom)
 	{
 		offset.y = (y - top) * ((double)img.height / (bottom - top));
+		get_right_color(img, r.id, y, r.facing_up);
 		ft_pixel_put(mlx, x, y,ft_pixel_get_color(img, offset.x, offset.y));
 		y++;
 	}

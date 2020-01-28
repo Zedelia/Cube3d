@@ -6,35 +6,57 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:39:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:40:16 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 16:12:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	is_inter_in_seg(t_vect inter, t_sprite *sp)
+static void		get_fst_last_printed_ray(t_sprite *sp, t_mlx *mlx)
 {
-	return (((inter.x <= sp->p2.x && inter.x >= sp->p1.x) 		\
-				|| (inter.x <= sp->p1.x && inter.x >= sp->p2.x)) 	\
-			&& ((inter.y <= sp->p2.y && inter.y >= sp->p1.y) 		\
-				|| (inter.y <= sp->p1.y && inter.y >= sp->p2.y)));
+	int i;
+
+	i = sp->r_before.id;
+	while (i <= sp->r_after.id)
+	{
+		if (mlx->cam.ray_tab[i].distance > sp->dist)
+		{
+			sprite_ray_create_line(&mlx->cam.ray_tab[i], mlx);
+			mlx->cam.ray_tab[i].inter_sprite = line_inter_line(sp->line_eq, mlx->cam.ray_tab[i].line_eq);
+			if (is_inter_in_seg(mlx->cam.ray_tab[i].inter_sprite, sp) == True)
+			{
+				if (sp->fst_ray_print == -1)
+					sp->fst_ray_print = mlx->cam.ray_tab[i].id;
+				sp->last_ray_print = mlx->cam.ray_tab[i].id;
+			}
+		}
+		i++;
+	}
 }
+
+static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
+{
+	int i;
+
+	i = sp->fst_ray_print;
+	while (i <= sp->last_ray_print)
+	{
+		if (sp->fst_ray_print > mlx->map->r_width / 2)
+			sprite_draw_column_fstart(sp, mlx, mlx->cam.ray_tab[i]);
+		else if (sp->fst_ray_print <= mlx->map->r_width / 2)
+			sprite_draw_column_fend(sp, mlx, mlx->cam.ray_tab[i]);
+		i++;
+	}
+	return (True);
+}
+
+
 
 t_bool	sprite_draw(t_sprite *sp, t_mlx *mlx)
 {
-	t_vect	inter;
-	int i;
-
 	sprite_get_line_seg(sp, mlx);
-	i = sp->r_before.id;
-	while (i < sp->r_after.id)
-	{
-		sprite_ray_create_line(&mlx->cam.ray_tab[i], mlx);
-		inter = line_inter_line(sp->line_eq, mlx->cam.ray_tab[i].line_eq);
-		if (is_inter_in_seg(inter, sp) == True)
-			sprite_draw_column(inter, sp, mlx, mlx->cam.ray_tab[i]);
-		i++;
-	}
+	get_fst_last_printed_ray(sp, mlx);
+	sprite_draw_columns(sp, mlx);
 	return (True);
 }

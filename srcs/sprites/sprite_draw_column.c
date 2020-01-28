@@ -6,35 +6,58 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:38:34 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:39:18 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 16:13:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool 	sprite_draw_column(t_vect inter, t_sprite *sp, t_mlx *mlx, t_rays r)
+t_bool 	sprite_draw_column_fstart(t_sprite *sp, t_mlx *mlx, t_rays r)
 {
-	double	inter_size;
-	double	d_inter;
-	double 	pixgetx;
-	int 		y;
-	t_fromto scrn_y;
-	(void)sp;
 
-	inter_size = sqrt(inter.y * inter.y + inter.x * inter.x);
-// dist entre inter et position
-//	r_height / dist
-	// inter_norm = norm_vect(inter);
-	pixgetx = (inter_size + 0.5) * mlx->map->sprite.width;
-	d_inter = dist_correct_fish_eye(r, mlx, ft_math_dist(inter.x, inter.y, mlx));
+	double		d_inter;
+	t_vect 		pixget;
+	int 		y;
+	t_fromto 	scrn_y;
+	int			color;
+
+
+	d_inter = dist_correct_fish_eye(r, mlx, ft_math_dist(r.inter_sprite.x, r.inter_sprite.y, mlx));
 	scrn_y.from = mlx->map->r_height * 0.5 - mlx->map->r_height / d_inter * 0.5;
 	scrn_y.to = mlx->map->r_height * 0.5 + mlx->map->r_height / d_inter * 0.5;
 	y = scrn_y.from;
+	pixget.x = (float)(r.id - sp->fst_ray_print) * mlx->map->sprite.height * d_inter / mlx->map->r_height;
 	while (y < scrn_y.to)
 	{
-		// offset_y = (y - top) * ((double)img.height / (bottom - top));
-		ft_pixel_put(mlx, r.id, y, 0x5493cf);
+		pixget.y = (float)(y - scrn_y.from) * mlx->map->sprite.height * d_inter / mlx->map->r_height;
+		if ((color = ft_pixel_get_color(mlx->map->sprite, pixget.x, pixget.y)) != -1)
+			ft_pixel_put(mlx, r.id, y, color);
+		y++;
+	}
+	return (True);
+}
+
+t_bool 	sprite_draw_column_fend(t_sprite *sp, t_mlx *mlx, t_rays r)
+{
+
+	double		d_inter;
+	t_fromto 	scrn_y;
+	t_vect 		pixget;
+	int 		y;
+	int			color;
+
+
+	d_inter = dist_correct_fish_eye(r, mlx, ft_math_dist(r.inter_sprite.x, r.inter_sprite.y, mlx));
+	scrn_y.from = mlx->map->r_height * 0.5 - mlx->map->r_height / d_inter * 0.5;
+	scrn_y.to = mlx->map->r_height * 0.5 + mlx->map->r_height / d_inter * 0.5;
+	y = scrn_y.from;
+	pixget.x = (float)(sp->last_ray_print - r.id) * mlx->map->sprite.height * d_inter / mlx->map->r_height;
+	while (y < scrn_y.to)
+	{
+		pixget.y = (float)(y - scrn_y.from) * mlx->map->sprite.height * d_inter / mlx->map->r_height;
+		if ((color = ft_pixel_get_color(mlx->map->sprite, pixget.x, pixget.y)) != -1)
+			ft_pixel_put(mlx, r.id, y, color);
 		y++;
 	}
 	return (True);
