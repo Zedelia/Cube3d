@@ -48,7 +48,10 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/utils_draw.c \
 	utils/utils_miscellaneous.c \
 	utils/return_func.c \
-	utils/utils_math_dist.c \
+	utils/math_dist.c \
+	utils/ft_pixel.c \
+	utils/line_inter_line.c \
+	utils/norm_vect.c \
 	rays/ray_hit_sprite.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
@@ -65,7 +68,12 @@ SRCS_NAME = img/img_load_xpm.c \
 	sprites/sprites_tab_init.c \
 	sprites/sprite_get_dist.c \
 	sprites/sprite_get_ray_hits.c \
-	sprites/sprite_sort_tab.c
+	sprites/sprite_sort_tab.c \
+	sprites/sprite_get_line_seg.c \
+	sprites/sprite_draw_column.c \
+	sprites/sprite_draw.c \
+	sprites/sprite_ray_create_line.c \
+	sprites/sprite_find_mid_ray.c \
 
 
 MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move,sprites}

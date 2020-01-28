@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   utils_math_dist.c                                .::    .:/ .      .::   */
+/*   norm_vect.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/18 13:10:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:34:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/28 11:32:07 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/28 11:32:16 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-double	dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist)
+t_vect 	norm_vect(t_vect v)
 {
-	double	ok_dist;
-	double	angle;
+	t_vect v_norm;
+	double v_size;
 
-	angle = r.angle - mlx->cam.ray_tab[mlx->map->r_width / 2].angle;
-	ok_dist = dist * cos(angle);
-	return (ok_dist);
-}
-
-double	ft_math_dist(double hit_x, double hit_y, t_mlx *mlx)
-{
-	double dist;
-
-	dist = sqrt((mlx->cam.pos.x - hit_x) * (mlx->cam.pos.x - hit_x)
-					+ (mlx->cam.pos.y - hit_y) * (mlx->cam.pos.y - hit_y));
-	return (dist);
+	v_size = sqrt(v.y * v.y + v.x * v.x);
+	v_norm.x = v.x / v_size;
+	v_norm.y = v.y / v_size;
+	return (v_norm);
 }

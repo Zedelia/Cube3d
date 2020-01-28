@@ -1,4 +1,4 @@
-t_bool	draw_sprite(t_sprite sp, t_img img, t_mlx *mlx)
+t_bool	sprite_draw(t_sprite sp, t_img img, t_mlx *mlx)
 {
 	t_fromto	sprite;
 	t_vect_int	screen;

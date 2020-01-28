@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   sprite_get_ray_hits.c                            .::    .:/ .      .::   */
+/*   math_dist.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/24 11:03:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 10:49:50 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/18 13:10:13 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/28 11:29:14 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	sprite_get_ray_hits(t_rays r, t_mlx *mlx, t_vect v, int i)
+double	dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist)
 {
-	// TODO SUPPRIMER LES fst et lst hit
-	if (mlx->map->sprite_tab[i].r_before.id == -1)
-	{
-		mlx->map->sprite_tab[i].r_before = r;
-		mlx->map->sprite_tab[i].fst_hit.x = v.x;
-		mlx->map->sprite_tab[i].fst_hit.x = v.y;
-	}
-	mlx->map->sprite_tab[i].r_after = r;
-	mlx->map->sprite_tab[i].last_hit.x = v.x;
-	mlx->map->sprite_tab[i].last_hit.y = v.y;
-	return (True);
+	double	ok_dist;
+	double	angle;
+
+	angle = r.angle - mlx->cam.ray_tab[mlx->map->r_width / 2].angle;
+	ok_dist = dist * cos(angle);
+	return (ok_dist);
+}
+
+double	ft_math_dist(double hit_x, double hit_y, t_mlx *mlx)
+{
+	double dist;
+
+	dist = sqrt((mlx->cam.pos.x - hit_x) * (mlx->cam.pos.x - hit_x)
+					+ (mlx->cam.pos.y - hit_y) * (mlx->cam.pos.y - hit_y));
+	return (dist);
 }
