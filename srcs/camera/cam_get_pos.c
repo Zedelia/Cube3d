@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   display_sprite.c                                 .::    .:/ .      .::   */
+/*   cam_get_pos.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/01/20 15:01:55 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:43:27 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/01/28 11:54:24 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/01/28 11:55:04 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	display_sprite(t_mlx *mlx)
+void	cam_get_pos(t_cam *cam, t_map *map)
 {
-	int i;
+	double	x;
+	double	y;
+	double	f;
 
-	i = 0;
-	sprite_sort_tab(mlx->map->sprite_tab, mlx->map->map_sprites);
-	while (i < mlx->map->map_sprites)
+	y = 0;
+	while (y < map->map_lines)
 	{
-		if (mlx->map->sprite_tab[i].visible == 1)
-			sprite_draw(&mlx->map->sprite_tab[i], mlx);
-		i++;
+		x = 0;
+		while (x < map->map_col)
+		{
+			if ((f = ft_get_tile(map, x, y)) > 2)
+				break ;
+			x++;
+		}
+		if (f > 2)
+			break ;
+		y++;
 	}
-
-	return (True);
+	cam->pos.x = x + 0.2;
+	cam->pos.y = y + 0.2;
+	cam->rotation_angle = f;
 }

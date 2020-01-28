@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:29:02 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 11:45:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,10 +22,12 @@ int		ft_get_tile(t_map *m, int x, int y)
 
 void	ft_draw_pix(t_mlx *mlx, t_vect v, int size_obj)
 {
-	int y = -size_obj / 2;
+	int y;
 	int x;
-	int tile = mlx->map->tile / 4;
+	int tile;
 
+	x = mlx->map->tile / MINI_MAP_SCALE;
+	y = -size_obj / 2;
 	while (y < size_obj / 2)
 	{
 		x = -size_obj / 2;
@@ -37,4 +39,3 @@ void	ft_draw_pix(t_mlx *mlx, t_vect v, int size_obj)
 		y++;
 	}
 }
-

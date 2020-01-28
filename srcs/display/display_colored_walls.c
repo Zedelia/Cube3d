@@ -6,14 +6,12 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 15:08:24 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/28 11:50:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
-
-// TODO mettre a jour les couleurs pour les textures
 
 static int		give_wall_color(t_rays r)
 {

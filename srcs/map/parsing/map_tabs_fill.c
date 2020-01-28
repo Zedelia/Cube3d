@@ -28,13 +28,6 @@ t_bool map_tabs_fill(t_map *map)
 		x = 0;
 		while (map->map_char[i] && x < map->map_col)
 		{
-			// NOTE this part has already be done in math_tab_lines
-			// REVIEW to be deleted after tests
-
-			// if (map->map_char[i] > 32
-			// 	&& !ft_isincharset(map->map_char[i], MAP_INPUTS)
-			// 		&& !ft_isincharset(map->map_char[i], SPRITES))
-			// 	return (return_false(__func__, "[FAIL] wrong input in map"));
 			if (ft_isincharset(map->map_char[i], MAP_INPUTS)
 					|| ft_isincharset(map->map_char[i], SPRITES))
 			{
