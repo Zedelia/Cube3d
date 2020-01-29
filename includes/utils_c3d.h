@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 15:38:45 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 16:48:29 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,6 +20,7 @@ t_bool		return_false(const char *namefunc, char const *error_msg);
 t_bool		return_no_map();
 t_color		int_to_color(int n);
 int			color_to_int(t_color c);
+int			shade_color(int color, double dist);
 int			get_str_int_len(char *str);
 int			occur_in_str(char c,char *line);
 int			ft_get_tile(t_map *m, int x, int y);

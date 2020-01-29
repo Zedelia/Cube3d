@@ -6,12 +6,21 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:21:21 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 16:53:42 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 15:48:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
+
+void	sprite_find_mid_ray(t_sprite *sp, t_mlx *mlx)
+{
+	t_rays mid_r;
+
+	mid_r.x = mlx->cam.pos.x - sp->x;
+	mid_r.y = mlx->cam.pos.y - sp->y;
+	sp->mid_ray = mid_r;
+}
 
 void	sprite_get_line_seg(t_sprite *sp, t_mlx *mlx)
 {

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 12:15:11 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 18:50:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,9 +28,11 @@ int		get_str_int_len(char *str)
 	int j;
 
 	j = 0;
-	while (ft_isdigit(str[j]) == 0)
+	while (str[j] && ft_isdigit(str[j]) == 0)
 		j++;
-	while (ft_isdigit(str[j]) == 1)
+	while (str[j] && ft_isdigit(str[j]) == 1)
+		j++;
+	while (str[j] && ft_isdigit(str[j]) == 0)
 		j++;
 	return (j);
 }

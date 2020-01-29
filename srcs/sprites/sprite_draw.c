@@ -6,12 +6,19 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:39:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 14:45:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 16:16:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
+
+void			sprite_ray_create_line(t_rays *r, t_mlx *mlx)
+{
+	r->line_eq.a = r->y;
+	r->line_eq.b = -r->x;
+	r->line_eq.c = r->x * (mlx->cam.pos.y + 0.5) - r->y * (mlx->cam.pos.x + 0.5);
+}
 
 static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 {
@@ -37,12 +44,14 @@ static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 
 static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 {
-	int i;
+	int		i;
+	double 	end;
 
 	i = sp->fst_ray_print;
-	while (i <= sp->last_ray_print)
+
+		end = sp->last_ray_print;
+	while (i <= end)
 	{
-		printf("%d\n", i);
 		if (sp->fst_ray_print > mlx->map->r_width / 2)
 			sprite_draw_column_from_start(sp, mlx, mlx->cam.ray_tab[i]);
 		else if (sp->fst_ray_print <= mlx->map->r_width / 2)

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 15:23:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 15:57:57 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 15:10:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,6 +26,8 @@ t_bool	sprites_init(t_map *map)
 		map->sprite_tab[i].r_after.id = -1;
 		map->sprite_tab[i].fst_ray_print = -1;
 		map->sprite_tab[i].last_ray_print = -1;
+		map->sprite_tab[i].start = -1;
+
 		i++;
 	}
 	return (True);
