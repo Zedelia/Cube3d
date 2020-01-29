@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:27:35 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 13:40:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 19:15:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,15 +34,14 @@ int		ft_pixel_get_color(t_img img, int x, int y)
 	return (color);
 }
 
-int		get_right_color(t_img img, int x, int y, t_bool up)
+int		get_right_color(t_img img, t_mlx *mlx, t_vect offset, int y)
 {
 	int color;
 
-	if ((color = ft_pixel_get_color(img, x, y)) == -1)
+	if ((color = ft_pixel_get_color(img, offset.x, offset.y)) == -1)
 	{
-		if (up)
-			return (ROOF_COLOR);
-		return (FLOOR_COLOR);
+		return (ft_pixel_get_color(mlx->img, mlx->map->r_width / 2, y));
+
 	}
 	return (color);
 }

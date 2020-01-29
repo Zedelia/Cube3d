@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:39:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 16:16:07 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/29 20:16:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -48,8 +48,7 @@ static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 	double 	end;
 
 	i = sp->fst_ray_print;
-
-		end = sp->last_ray_print;
+	end = sp->last_ray_print;
 	while (i <= end)
 	{
 		if (sp->fst_ray_print > mlx->map->r_width / 2)

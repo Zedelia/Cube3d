@@ -22,24 +22,13 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 //      et reduire les fonctions avec pixel_put
 
 	tile_s = map->tile / MINI_MAP_SCALE;
-
-	while (index_x < tile_s - 1) // contours blancs
-	{
-		ft_pixel_put(mlx, (index_x + c * tile_s), ((l * tile_s) + index_y), 0xFFFFFF);
-		index_x++;
-	}
-	index_y = 1;
+	index_y = 0;
 	while (index_y < tile_s)
 	{
 		index_x = 0;
-		while (index_x < tile_s - 1)
+		while (index_x < tile_s)
 		{
 			mlx->img.data[((l * tile_s) + index_y) * map->r_width + (index_x + c * tile_s)] = color;
-			index_x++;
-		}
-		if ( index_x == tile_s - 1) // coutour blanc
-		{
-			mlx->img.data[((l * tile_s) + index_y) * map->r_width + (index_x + c * tile_s)] = 0xFFFFFF;
 			index_x++;
 		}
 		index_y++;
@@ -70,7 +59,7 @@ t_bool	display_mini_map(t_mlx *mlx, t_map *map)
 		c = 0;
 		l++;
 	}
-	ft_draw_pix(mlx, mlx->cam.pos, 10);
+	ft_draw_pix(mlx, mlx->cam.pos, 5);
 	display_rays(mlx, mlx->cam.ray_tab);
 	return (True);
 }
