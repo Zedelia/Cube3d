@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
 		return (return_no_map());
 	mlx_ft_init(&mlx, argv[1]);
 	display_update(mlx);
+
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 	display_exit_on_click(mlx);
-
 	mlx_hook(mlx->win, 2, 0, &move_keydown, mlx);
 	mlx_loop(mlx->ptr);
 	return (0);

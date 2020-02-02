@@ -1,22 +1,20 @@
-R 700 703
-NO./path_to_the_north_texture
-SO./path_to_the_south_texture
-WE./path_to_the_west_texture
-EA./path_to_the_east_texture
-C225,30,0
+R 700 500
 
 
+NO ./textures/metal-flowers-collection/text-05.xpm
+SO ./textures/metal-flowers-collection/text-06.xpm
+C 						157,23,88
+EA ./textures/metal-flowers-collection/text-07.xpm
 
-S./path_to_the_sprite_texture
-
-
-
-		F220,100,0
-
-11111111111
-10000000001
-10000010001
-10000N00001
-10000100001
-10000000001
-11111111111
+S ./textures/sprite4.xpm
+F 212, 238, 255
+WE ./textures/metal-flowers-collection/text-08.xpm
+1111111111111111
+1020000000020001
+1000001200002001
+10200N0000000001
+1002010000000201
+1000000020000201
+1000000120000201
+1000000120000201
+1111111111111111

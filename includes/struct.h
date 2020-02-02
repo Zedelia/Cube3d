@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 15:12:14 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/02 21:32:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -109,6 +109,7 @@ typedef struct	s_sprite
 	int		x;
 	int		y;
 	double	dist;
+	double	img_w;
 	double	start;
 	t_rays 	mid_ray;
 	t_vect	line_vect;
@@ -116,6 +117,8 @@ typedef struct	s_sprite
 	t_vect	line_norm_v;
 	t_vect	p1;
 	t_vect  p2;
+	t_rays  r_fst_hit;
+	t_rays	r_last_hit;
 	t_rays  r_before;
 	t_rays	r_after;
 	int		fst_ray_print;
