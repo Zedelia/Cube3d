@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 13:14:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 13:28:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,7 +29,8 @@ static t_bool	map_check_integrity(char *map_char)
 	i = 0;
 	while (map_char[i])
 	{
-		if (ft_isincharset(map_char[i], "012NSEW ") != 1)
+		if (ft_isincharset(map_char[i], MAP_INPUTS) != 1
+				&& ft_isincharset(map_char[i], SPRITES) != 1)
 			return (return_false(__func__, "[FAIL] invalid char in map"));
 		i++;
 	}
@@ -49,17 +50,17 @@ static t_bool	map_check_walls(t_map *map)
 	while (w < map->map_col)
 	{
 		if (map->tab[0][w] != 1)
-			return (return_false(__func__, "[FAIL] map isn't closed on top"));
+			return (return_false(__func__, "[FAIL] map isn't closed"));
 		if (map->tab[map->map_lines - 1][w] != 1)
-			return (return_false(__func__, "[FAIL] map isnt closed on bottom"));
+			return (return_false(__func__, "[FAIL] map isnt closed"));
 		w++;
 	}
 	while (h < map->map_lines)
 	{
 		if (map->tab[h][0] != 1)
-			return (return_false(__func__, "[FAIL] map isn't closed on left"));
+			return (return_false(__func__, "[FAIL] map isn't closed"));
 		if (map->tab[h][map->map_col - 1] != 1)
-			return (return_false(__func__, "[FAIL] map isn't closed on right"));
+			return (return_false(__func__, "[FAIL] map isn't closed"));
 		h++;
 	}
 	return (True);

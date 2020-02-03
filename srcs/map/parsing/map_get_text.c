@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 19:49:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/19 13:33:58 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 14:43:19 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -67,13 +67,25 @@ t_bool	map_parse_ea(t_map *map, char *line)
 
 t_bool	map_parse_sp(t_map *map, char *line)
 {
-	int start;
+	int 	start;
+	t_img 	*tab[4];
+	int i;
 
 	start = 0;
 	ft_check_incorrect_input_text('S', 0, line);
 	while (line[start] && line[start] != '.')
 		start++;
-	if (!(map->sprite.file = strdup(&line[start])))
+	i = 0;
+	tab[0] = &map->sprite;
+	tab[1] = &map->sprite1;
+	tab[2] = &map->sprite2;
+	tab[3] = &map->sprite3;
+	while (tab[i]->file != NULL)
+		i++;
+	if (i > 3)
+		return (return_false(__func__,
+				"[FAIL] sorry, only 4 types of sprites allowed"));
+	if (!(tab[i]->file = strdup(&line[start])))
 		return (return_false(__func__, "[FAIL] strdup"));
 	return (True);
 }

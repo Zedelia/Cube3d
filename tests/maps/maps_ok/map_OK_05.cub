@@ -6,20 +6,20 @@ SO ./textures/pokemon-collection/text-02.xpm
 C 						157,23,88
 EA ./textures/pokemon-collection/text-03.xpm
 
-S ./textures/sprite.xpm
+S ./textures/sprite4.xpm
 F 212, 238, 255
 WE ./textures/pokemon-collection/text-04.xpm
 
-X ./textures/sprite1.xpm
-Y ./textures/sprite2.xpm
-Z ./textures/sprite3.xpm
+S ./textures/sprite1.xpm
+S ./textures/sprite2.xpm
+S ./textures/sprite3.xpm
 
 1111111111111111
-1100010000000001
-1002001200002001
+1100010005000501
+1002001203002001
 10200N0020011001
 1002011100000201
-1000000020000001
+1030000002000401
 1000200000011001
-1000000000000001
+1000300050000301
 1111111111111111

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 11:17:21 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 14:03:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,7 +32,6 @@ static t_bool	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 	}
 	x_temp = !(inter.x - mlx->cam.pos.x) ? 0.0001 : inter.x - mlx->cam.pos.x;
 	inter.y = x_temp * tan(M_PI * 0.5 - r->angle);
-
 	inter.y = inter.y > 0 ? inter.y : -inter.y;
 	inter.y = (r->facing_up == True) ? mlx->cam.pos.y - inter.y : mlx->cam.pos.y + inter.y;
 	r->vt_fst_inter.x = inter.x;

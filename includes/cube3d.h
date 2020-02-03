@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 12:58:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 14:08:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,9 +35,9 @@
 # define WALK_SPEED 0.3
 # define MINI_MAP_SCALE 4
 
-# define MAP_INFOS "RNsWESFCXYZ"
+# define MAP_INFOS "RNsWESFC"
 # define MAP_INPUTS "01NSEW"
-# define SPRITES "2"
+# define SPRITES "3245"
 
 # define ROOF_COLOR 0x0F52BA
 # define FLOOR_COLOR 0xFF007F

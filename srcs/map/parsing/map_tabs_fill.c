@@ -13,7 +13,22 @@
 
 #include "../../../includes/cube3d.h"
 
-t_bool map_tabs_fill(t_map *map)
+static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map)
+{
+	if (a == '2')
+		sp->img = &map->sprite;
+	else if (a == '3')
+		sp->img = &map->sprite1;
+	else if (a == '4')
+		sp->img = &map->sprite2;
+	else if (a == '5')
+		sp->img = &map->sprite3;
+	else
+		return (return_false(__func__, "[FAIL] wronf input in map"));
+	return (True);
+}
+
+t_bool 			map_tabs_fill(t_map *map)
 {
 	int x;
 	int y;
@@ -35,7 +50,7 @@ t_bool map_tabs_fill(t_map *map)
 				{
 					map->sprite_tab[s].y = y;
 					map->sprite_tab[s].x = x;
-					map->sprite_tab[s].dist = 0;
+					get_sprite_img(map->map_char[i], &map->sprite_tab[s], map);
 					s++;
 				}
 				map->tab[y][x] = map->map_char[i] - 48;
