@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 13:12:14 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 14:06:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 13:06:04 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -48,8 +48,6 @@ size_t		map_get_index(char *line)
 /*
 ** Math how many lines (== [y]) in the 2D map AND Count Sprites number
 */
-
-// REVIEW you can code better than this shit
 
 int		math_tab_lines(t_map *map, char *map_char)
 {

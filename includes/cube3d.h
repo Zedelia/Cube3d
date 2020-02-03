@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 19:36:51 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 15:45:19 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,7 +37,7 @@
 
 # define MAP_INFOS "RNsWESFC"
 # define MAP_INPUTS "01NSEW"
-# define SPRITES "2"
+# define SPRITES "3245"
 
 # define ROOF_COLOR 0x0F52BA
 # define FLOOR_COLOR 0xFF007F

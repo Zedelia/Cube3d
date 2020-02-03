@@ -53,7 +53,7 @@ t_bool	display_mini_map(t_mlx *mlx, t_map *map)
 			if (map->tab[l][c] == 2)
 				display_color_cub(mlx, map, l, c, 0xff33fc);
 			if (map->tab[l][c] > 2)
-				display_color_cub(mlx, map, l, c, 0x4aff33);
+				display_color_cub(mlx, map, l, c, 0x79d4e7);
 			c++;
 		}
 		c = 0;
