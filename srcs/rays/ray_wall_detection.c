@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 12:49:45 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 14:48:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 15:38:32 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ t_bool	ray_hits_vt_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 		return (True);
 	if (mlx->map->tab[index.y][index.x] == 1)
 		return (True);
-	if (ft_isincharset(mlx->map->tab[index.y][index.x], SPRITES))
+	if (mlx->map->tab[index.y][index.x] >=2 && mlx->map->tab[index.y][index.x] < 6)
 		ray_hit_sprite(r, index, mlx, v);
 	return (False);
 }
@@ -39,10 +39,7 @@ t_bool	ray_hits_hz_wall_at(t_rays *r, t_vect v, t_mlx *mlx)
 	if (mlx->map->tab[index.y][index.x] == 1)
 		return (True);
 	if (mlx->map->tab[index.y][index.x] >=2 && mlx->map->tab[index.y][index.x] < 6)
-	{
-		printf("%d || %c\n",mlx->map->tab[index.y][index.x] ,mlx->map->tab[index.y][index.x] + 48);
 		ray_hit_sprite(r, index, mlx, v);
-	}
 	return (False);
 }
 

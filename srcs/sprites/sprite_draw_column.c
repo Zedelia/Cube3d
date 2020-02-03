@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:38:34 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 14:51:50 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/03 15:39:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -64,8 +64,8 @@ t_bool 	sprite_draw_column_from_start(t_sprite *sp, t_mlx *mlx, t_rays r)
 		pixget.y = (float)(utils.y - scrn_y.from) * sp->img->height * utils.dist_inter / mlx->map->r_height;
 		if ((utils.color = ft_pixel_get_color(*sp->img, pixget.x, pixget.y)) >= 0)
 			ft_pixel_put(mlx, r.id, utils.y, utils.color);
-		else
-			ft_pixel_put(mlx, r.id, utils.y, 0x00);
+		// else
+		// 	ft_pixel_put(mlx, r.id, utils.y, 0x00);
 		utils.y++;
 	}
 	sp->start++;
@@ -92,8 +92,8 @@ t_bool 	sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r)
 		pixget.y = (float)(utils.y - scrn_y.from) * sp->img->height * utils.dist_inter / mlx->map->r_height;
 		if ((utils.color = ft_pixel_get_color(*sp->img, sp->img->width - pixget.x, pixget.y)) >= 0 )
 			ft_pixel_put(mlx, r.id, utils.y, utils.color);
-		else
-			ft_pixel_put(mlx, r.id, utils.y, 0x00);
+		// else
+		// 	ft_pixel_put(mlx, r.id, utils.y, 0x00);
 		utils.y++;
 	}
 	sp->start++;

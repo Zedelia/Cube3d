@@ -1,10 +1,12 @@
-R 700 500
+R 1200 800
 
 
 NO ./textures/pokemon-collection/text-01.xpm
 SO ./textures/pokemon-collection/text-02.xpm
 C 						157,23,88
 EA ./textures/pokemon-collection/text-03.xpm
+EA ./textures/pokemon-collection/text-03.xpm
+
 
 S ./textures/sprite4.xpm
 F 212, 238, 255
