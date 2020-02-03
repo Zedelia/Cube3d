@@ -1,20 +1,25 @@
 R 700 500
 
 
-NO ./textures/metal-flowers-collection/text-05.xpm
-SO ./textures/metal-flowers-collection/text-06.xpm
+NO ./textures/pokemon-collection/text-01.xpm
+SO ./textures/pokemon-collection/text-02.xpm
 C 						157,23,88
-EA ./textures/metal-flowers-collection/text-07.xpm
+EA ./textures/pokemon-collection/text-03.xpm
 
-S ./textures/sprite4.xpm
+S ./textures/sprite.xpm
 F 212, 238, 255
-WE ./textures/metal-flowers-collection/text-08.xpm
+WE ./textures/pokemon-collection/text-04.xpm
+
+X ./textures/sprite1.xpm
+Y ./textures/sprite2.xpm
+Z ./textures/sprite3.xpm
+
 1111111111111111
-1020000000020001
-1000001200002001
-10200N0000000001
-1002010000000201
-1000000020000201
-1000000120000201
-1000000120000201
+1100010000000001
+1002001200002001
+10200N0020011001
+1002011100000201
+1000000020000001
+1000200000011001
+1000000000000001
 1111111111111111
