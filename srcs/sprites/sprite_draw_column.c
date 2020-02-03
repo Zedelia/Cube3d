@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:38:34 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 12:51:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/02 22:28:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -57,7 +57,6 @@ t_bool 	sprite_draw_column_from_start(t_sprite *sp, t_mlx *mlx, t_rays r)
 	scrn_y.from = mlx->map->r_height * 0.5 - mlx->map->r_height / utils.dist_inter * 0.5;
 	scrn_y.to = mlx->map->r_height * 0.5 + mlx->map->r_height / utils.dist_inter * 0.5;
 	utils.y = scrn_y.from;
-
 	pixget.x = (float)(r.id - sp->fst_ray_print) * mlx->map->sprite.height * utils.dist_inter / mlx->map->r_height;
 	while (utils.y < scrn_y.to)
 	{
@@ -82,10 +81,6 @@ t_bool 	sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r)
 	scrn_y.from = mlx->map->r_height * 0.5 - mlx->map->r_height / utils.dist_inter * 0.5;
 	scrn_y.to = mlx->map->r_height * 0.5 + mlx->map->r_height / utils.dist_inter * 0.5;
 	utils.y = scrn_y.from;
-	// if (sp->start == -1 && sp->last_ray_print - sp->fst_ray_print > mlx->map->sprite.width)
-	// {
-	// 	sp->start = sp->fst_ray_print + mlx->map->sprite.width;
-	// }
 	pixget.x = (float)(sp->last_ray_print - r.id) * mlx->map->sprite.height * utils.dist_inter / mlx->map->r_height;
 	while (utils.y < scrn_y.to)
 	{
