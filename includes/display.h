@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 14:41:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:20:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 11:47:06 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,5 +35,7 @@ t_bool		display_sprite(t_mlx *mlx);
 
 t_bool		display_roof(t_mlx *mlx);
 t_bool		display_floor(t_mlx *mlx);
+
+t_bool		display_health_bar(t_mlx *mlx);
 
 #endif

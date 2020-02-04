@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 13:28:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 15:37:18 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,8 @@ static t_bool	map_check_integrity(char *map_char)
 	while (map_char[i])
 	{
 		if (ft_isincharset(map_char[i], MAP_INPUTS) != 1
-				&& ft_isincharset(map_char[i], SPRITES) != 1)
+				&& ft_isincharset(map_char[i], SPRITES) != 1
+					&& map_char[i] != ' ')
 			return (return_false(__func__, "[FAIL] invalid char in map"));
 		i++;
 	}
