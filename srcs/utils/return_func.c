@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 18:11:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/17 10:52:57 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 09:38:41 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,4 +29,15 @@ t_bool	return_no_map()
 	ft_printf(RED"Error"RESET"\n-> Please, precise a map in order to launch the prog\n\n");
 	exit(EXIT_FAILURE);
 	return (False);
+}
+
+t_bool	file_exists(const char *filename)
+{
+    FILE *file;
+    if ((file = fopen(filename, "r")))
+	{
+        fclose(file);
+        return (True);
+    }
+    return (return_false(__func__, "[FAIL] Map doesn't exists"));
 }

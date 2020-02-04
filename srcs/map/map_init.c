@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:30:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 14:33:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 09:43:56 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,10 @@ t_bool	map_init(t_map **map, char *map_file, t_mlx *mlx)
 	(*map)->sprite1.file = NULL;
 	(*map)->sprite2.file = NULL;
 	(*map)->sprite3.file = NULL;
+	(*map)->west.file = NULL;
+	(*map)->east.file = NULL;
+	(*map)->north.file = NULL;
+	(*map)->south.file = NULL;
 	map_parser(*map);
 	(*map)->tile = (*map)->r_width / (*map)->map_col;
 	map_textures_init(*map, mlx);

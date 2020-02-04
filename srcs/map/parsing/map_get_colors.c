@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 18:49:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 09:55:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,6 +61,8 @@ t_bool	map_parse_floor(t_map *map, char *line)
 	t_color	colors;
 	int i;
 
+	if (map->floor != -1)
+		return (return_false(__func__, "[FAIL] info provided several times"));
 	i = 0;
 	colors = get_colors(line);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255
@@ -75,6 +77,8 @@ t_bool	map_parse_cell(t_map *map, char *line)
 	t_color	colors;
 	int i;
 
+	if (map->cell != -1)
+		return (return_false(__func__, "[FAIL] info provided several times"));
 	i = 0;
 	colors = get_colors(line);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255

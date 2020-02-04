@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 12:33:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 13:56:24 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 09:56:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,7 @@ static t_bool	map_check_texture_one(char *texture_path)
 
 	i = 0;
 	if (!texture_path)
-		return (return_false(__func__, "[FAIL] no texture"));
+		return (return_false(__func__, "[FAIL] a texture is missing"));
 	if (texture_path[0] == '.' && texture_path[1] == '/')
 	{
 		while (texture_path[i] && texture_path[i] > 32 && texture_path[i] < 127)

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/02 20:51:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 09:35:30 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,5 +36,6 @@ t_bool		ft_check_incorrect_input_text(char a, char b, char *line);
 t_vect		line_inter_line(t_line l1, t_line l2);
 t_vect 		norm_vect(t_vect v);
 t_bool		is_inter_in_seg(t_vect inter, t_sprite *sp);
+t_bool		file_exists(const char *filename);
 
 #endif

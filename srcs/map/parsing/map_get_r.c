@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:48:39 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/18 23:01:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/04 09:50:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -54,6 +54,8 @@ t_bool	map_parse_r(t_map *map, char *line)
 {
 	size_t	i;
 
+	if (map->r_width != -1 || map->r_height != -1)
+		return (return_false(__func__, "[FAIL] info provided several times"));
 	i = 1;
 	check_incorrect_inputs('R', line);
 	while (ft_isdigit(line[i]) == 0)

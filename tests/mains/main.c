@@ -10,6 +10,10 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 		return (return_no_map());
+	if (!argv[1])
+	// ici mettre les instructions dans le return
+		return (return_false(__func__, "[FAIL] provide map file"));
+	file_exists(argv[1]);
 	mlx_ft_init(&mlx, argv[1]);
 	display_update(mlx);
 
