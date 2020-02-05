@@ -6,24 +6,26 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/04 16:12:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/05 13:53:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-static t_bool 	check_incorrect_inputs(char *line)
+static t_bool 	check_incorrect_inputs(char *line, t_bool end)
 {
 	int i;
 	int coma;
 
 	i = 0;
 	coma = 0;
-	while (line[i] && ft_isdigit(line[i]) == False)
+	while (line[i])
 	{
 		if (line[i] == ',')
 			coma += 1;
+		while (end == False && ft_isdigit(line[i]))
+			i++;
 		if ((line[i] > 32 && line[i] != ',') || coma > 1)
 			return (return_false(__func__, "[FAIL] incorrect input in colors"));
 		i++;
@@ -43,16 +45,16 @@ static t_color	get_colors(char *line)
 	while (ft_isincharset(line[i], MAP_INFOS) == False)
 		i++;
 	i++;
-	check_incorrect_inputs(&line[i]);
+	check_incorrect_inputs(&line[i], False);
 	colors.r = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
-	check_incorrect_inputs(&line[i]);
+	check_incorrect_inputs(&line[i], False);
 	colors.g = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
-	check_incorrect_inputs(&line[i]);
+	check_incorrect_inputs(&line[i], False);
 	colors.b = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
-	check_incorrect_inputs(&line[i]);
+	check_incorrect_inputs(&line[i], True);
 	return (colors);
 }
 

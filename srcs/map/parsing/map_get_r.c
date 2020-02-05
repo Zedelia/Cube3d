@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:48:39 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/04 09:50:28 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/05 13:27:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -41,6 +41,7 @@ static t_bool		check_incorrect_inputs(char c, char *line)
 		return (return_false(__func__, "[FAIL] wrong input in resolution"));
 	if (!(line = check_between_digit(&line[i])))
 		return (return_false(__func__, "[FAIL] wrong input in resolution"));
+	i = 0;
 	while (line[i])
 	{
 		if (line[i] > 32)

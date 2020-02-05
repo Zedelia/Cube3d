@@ -17,14 +17,18 @@ static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map)
 {
 	if (a == '2')
 		sp->img = &map->sprite;
-	else if (a == '3')
+	if (a == '3' && map->sprite1.ptr)
 		sp->img = &map->sprite1;
-	else if (a == '4')
+	else
+		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
+	if (a == '4')
 		sp->img = &map->sprite2;
-	else if (a == '5')
+	else
+		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
+	if (a == '5')
 		sp->img = &map->sprite3;
 	else
-		return (return_false(__func__, "[FAIL] wronf input in map"));
+		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
 	return (True);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 18:11:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/04 09:38:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/05 13:09:33 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,11 +33,19 @@ t_bool	return_no_map()
 
 t_bool	file_exists(const char *filename)
 {
-    FILE *file;
+    FILE	*file;
+	int 	i;
+
+	i = 0;
     if ((file = fopen(filename, "r")))
 	{
         fclose(file);
-        return (True);
+		while (filename[i])
+			i++;
+		i--;
+		if (filename[i] == 'b' && filename[i - 1] == 'u'
+				&& filename[i - 2] == 'c')
+			return (True);
     }
-    return (return_false(__func__, "[FAIL] Map doesn't exists"));
+	return (return_false(__func__, "[FAIL] Map doesn't exists"));
 }

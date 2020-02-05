@@ -1,4 +1,4 @@
- R          1200    800 x
+  R          1200    800
       NO ./textures/silver-collection/text-01.xpm
       SO       ./textures/silver-collection/text-02.xpm
 WE        ./textures/silver-collection/text-03.xpm
@@ -6,7 +6,7 @@ WE        ./textures/silver-collection/text-03.xpm
 
         	       C   254, 1,  1
 
-
+d
 
 S ./textures/sprite3.xpm
 
@@ -27,3 +27,7 @@ S ./textures/sprite3.xpm
 10000000002001111111111111111111111111111111000000001
 10000000000000011111111111111111111111111100000000001
 11111111111111111111111111111111111111111111111111111
+
+111
+121
+111
