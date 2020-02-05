@@ -19,15 +19,15 @@ static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map)
 		sp->img = &map->sprite;
 	if (a == '3' && map->sprite1.ptr)
 		sp->img = &map->sprite1;
-	else
+	else if (a == '3')
 		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
-	if (a == '4')
+	if (a == '4' && map->sprite2.ptr)
 		sp->img = &map->sprite2;
-	else
+	else if (a == '4' )
 		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
-	if (a == '5')
+	if (a == '5' && map->sprite3.ptr)
 		sp->img = &map->sprite3;
-	else
+	else if (a == '5')
 		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
 	return (True);
 }

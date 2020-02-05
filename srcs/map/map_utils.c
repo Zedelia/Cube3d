@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 13:12:14 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 13:06:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/05 16:06:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,7 @@ char	 *check_incorrect_inputs_before_indicator(char *line)
 	i = 0;
 	while (line[i] && ft_isincharset(line[i], MAP_INFOS) == 0)
 	{
-		if (line[i] > 32 && line [i + 1])
+		if (line[i] > 32)
 			return (NULL);
 		i++;
 	}
