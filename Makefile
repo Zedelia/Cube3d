@@ -23,7 +23,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	display/display_sprite.c \
 	display/display_colored_walls.c \
 	display/display_sprite.c \
-	map/map_init.c \
+	map/map_init_free.c \
 	map/map_free.c \
 	map/map_parser.c \
 	map/map_printf.c \

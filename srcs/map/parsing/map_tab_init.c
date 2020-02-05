@@ -6,12 +6,18 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 14:36:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/05 18:34:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
+
+t_bool	map_tab_get_col_max(t_map *map)
+{
+	int	i;
+
+}
 
 t_bool	map_tab_init(t_map *map)
 {

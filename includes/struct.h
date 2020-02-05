@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/04 11:40:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/05 18:18:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,6 @@
 
 #include "cube3d.h"
 
-// typedef struct s_rays	t_rays;
 
 typedef struct	s_color
 {
@@ -139,8 +138,6 @@ typedef struct	s_sprite
 }				t_sprite;
 
 
-
-
 typedef struct	s_cam
 {
 	t_vect		pos;
@@ -149,6 +146,13 @@ typedef struct	s_cam
 	t_rays		*ray_tab;
 }				t_cam;
 
+typedef struct	s_maparse
+{
+	char		*line;
+	int			column;
+	int			id;
+	t_maparse	*next;
+}				t_maparse;
 
 typedef struct	s_map
 {
@@ -156,6 +160,7 @@ typedef struct	s_map
 	char		*map_char;
 	int			**tab;
 	t_sprite	*sprite_tab;
+	t_mapline	*lines;
 	int			map_sprites;
 	int			map_col;
 	int			map_lines;
@@ -173,7 +178,6 @@ typedef struct	s_map
 	t_img		sprite2;
 	t_img		sprite3;
 }				t_map;
-
 
 
 typedef struct	s_mlx
