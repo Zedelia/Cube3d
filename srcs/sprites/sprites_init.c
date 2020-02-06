@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 15:23:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/02 21:17:24 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ t_bool	sprites_init(t_map *map)
 	int i;
 
 	i = 0;
-	while (map->sprite_tab && i < map->map_sprites)
+	while (map->sprite_tab && i < map->nb_sprites)
 	{
 		map->sprite_tab[i].visible = False;
 		map->sprite_tab[i].dist = -1;

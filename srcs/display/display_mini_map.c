@@ -42,9 +42,9 @@ t_bool	display_mini_map(t_mlx *mlx, t_map *map)
 	int l = 0;
 	int c = 0;
 
-	while (l < map->map_lines)
+	while (l < map->nb_lines)
 	{
-		while (c < map->map_col )
+		while (c < map->nb_col )
 		{
 			if (map->tab[l][c] == 1)
 				display_color_cub(mlx, map, l, c, 0xffba33);

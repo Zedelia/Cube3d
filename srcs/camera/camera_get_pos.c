@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:54:24 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 12:10:07 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,10 +20,10 @@ void	cam_get_pos(t_cam *cam, t_map *map)
 	double	f;
 
 	y = 0;
-	while (y < map->map_lines)
+	while (y < map->nb_lines)
 	{
 		x = 0;
-		while (x < map->map_col)
+		while (x < map->nb_col)
 		{
 			if ((f = ft_get_tile(map, x, y)) > 2)
 				break ;

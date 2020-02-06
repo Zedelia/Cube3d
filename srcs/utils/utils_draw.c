@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 12:07:11 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 
 int		ft_get_tile(t_map *m, int x, int y)
 {
-	if (x < 0 || y < 0 || x > m->map_col || y > m->map_lines - 1)
+	if (x < 0 || y < 0 || x > m->nb_col || y > m->nb_lines - 1)
 		return (0);
 	return (m->tab[y][x]);
 }

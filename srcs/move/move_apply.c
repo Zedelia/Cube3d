@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 10:58:39 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,7 @@ static t_bool	wall_here(t_move move, t_mlx *mlx)
 
 	x = move.x;
 	y = move.y;
-	if (x < 0 || x > mlx->map->map_col - 1 || y < 0 || y > mlx->map->map_lines - 1)
+	if (x < 0 || x > mlx->map->nb_col - 1 || y < 0 || y > mlx->map->nb_lines - 1)
 		return (True);
 	if (mlx->map->tab[y][x] == 1)
 		return (True);

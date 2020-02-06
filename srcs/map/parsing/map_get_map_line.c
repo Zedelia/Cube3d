@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 15:32:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -80,19 +80,19 @@ static void		map_add_line(t_maparse *list, t_maparse *tmp)
 		list = tmp;
 }
 
-t_bool			map_get_map_lines(t_map *map, int fd, char *line)
+t_bool			map_get_nb_lines(t_map *map, int fd, char *line)
 {
 	t_maparse 	*tmp;
 
-	map->map_lines = 1;
+	map->nb_lines = 1;
 	tmp = NULL;
-	map_line_init(&tmp, line, map->map_lines);
+	map_line_init(&tmp, line, map->nb_lines);
 	map->lines = tmp;
 	while (get_next_line(fd, &line) && line[0] == '1')
 	{
-		map_line_init(&tmp, line, map->map_lines);
+		map_line_init(&tmp, line, map->nb_lines);
 		map_add_line(map->lines, tmp);
-		map->map_lines++;
+		map->nb_lines++;
 	}
 	if (line[0] == '0')
 		return (return_false(__func__, "[FAIL] map isn't closed on left"));

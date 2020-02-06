@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 12:01:34 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -43,7 +43,7 @@ t_bool				map_textures_init(t_map *map, t_mlx *mlx);
 ** create 2D map tab and save sprites position
 */
 
-t_bool				map_get_map_lines(t_map *map, int fd, char *line);
+t_bool				map_get_nb_lines(t_map *map, int fd, char *line);
 t_bool				map_tab_init(t_map *map);
 
 

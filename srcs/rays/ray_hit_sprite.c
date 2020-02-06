@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 14:06:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 13:33:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ t_bool	ray_hit_sprite(t_rays *r, t_vect_int wall, t_mlx *mlx, t_vect v)
 	int i;
 
 	i = 0;
-	while (i < mlx->map->map_sprites)
+	while (i < mlx->map->nb_sprites)
 	{
 		if (mlx->map->sprite_tab[i].x == wall.x && mlx->map->sprite_tab[i].y == wall.y)
 		{

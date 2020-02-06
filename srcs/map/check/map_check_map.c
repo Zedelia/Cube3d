@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 15:26:02 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,9 +15,9 @@
 
 static t_bool	map_check_map_size(t_map *map)
 {
-	if (map->map_col < 3)
+	if (map->nb_col < 3)
 		return (return_false(__func__, "[FAIL] invalid map width"));
-	if (map->map_lines < 3)
+	if (map->nb_lines < 3)
 		return (return_false(__func__, "[FAIL] invalid map height"));
 	return (True);
 }
@@ -58,19 +58,19 @@ static t_bool	map_check_walls(t_map *map)
 
 	w = 0;
 	h = 0;
-	while (w < map->map_col)
+	while (w < map->nb_col)
 	{
 		if (map->tab[0][w] != 1)
 			return (return_false(__func__, "[FAIL] map isn't closed"));
-		if (map->tab[map->map_lines - 1][w] != 1)
+		if (map->tab[map->nb_lines - 1][w] != 1)
 			return (return_false(__func__, "[FAIL] map isnt closed"));
 		w++;
 	}
-	while (h < map->map_lines)
+	while (h < map->nb_lines)
 	{
 		if (map->tab[h][0] != 1)
 			return (return_false(__func__, "[FAIL] map isn't closed"));
-		if (map->tab[h][map->map_col - 1] != 1)
+		if (map->tab[h][map->nb_col - 1] != 1)
 			return (return_false(__func__, "[FAIL] map isn't closed"));
 		h++;
 	}

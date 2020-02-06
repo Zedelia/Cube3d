@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/03 15:25:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,9 +21,9 @@ static void 	map_tab_printf(t_map *map)
 	h = 0;
 	w = 0;
 	ft_printf("\nMAP:\n");
-	while (h < map->map_lines)
+	while (h < map->nb_lines)
 	{
-		while (w < map->map_col)
+		while (w < map->nb_col)
 		{
 			ft_printf("%d ", map->tab[h][w]);
 			w++;
@@ -41,7 +41,7 @@ static void 	map_tab_printf(t_map *map)
 
 	i = 0;
 	ft_printf("\n\nSPRITES:\n");
-	while (i < map->map_sprites)
+	while (i < map->nb_sprites)
 	{
 		temp = map->sprite_tab[i];
 		printf("\nsp x: %d | sp y: %d\ndist: %f\nvisible? %d\n", temp.x, temp.y, temp.dist, temp.visible);
@@ -64,7 +64,7 @@ void	map_printf(t_map *map)
 	if (map->map_file)
 		ft_printf(YELLOW"--- MAP_FILE: %s---\n"RESET, map->map_file);
 	ft_printf("r_width: %d\nr_height: %d\nmap-col: %d\nmap-lines: %d\ncell: %d\nfloor: %d\n",
-		map->r_width, map->r_height, map->map_col, map->map_lines, map->cell, map->floor);
+		map->r_width, map->r_height, map->nb_col, map->nb_lines, map->cell, map->floor);
 	if (map->north.file)
 		ft_printf("north: %s\n", map->north.file);
 	if (map->south.file)

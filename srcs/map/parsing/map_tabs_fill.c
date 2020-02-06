@@ -57,7 +57,7 @@ static void			parse_line(t_maparse *line, t_map *map, int y)
 		}
 		i++;
 	}
-	while (x < map->map_col)
+	while (x < map->nb_col)
 	{
 		map->tab[y][x] = 1;
 		x++;
@@ -75,7 +75,7 @@ t_bool 			map_tabs_fill(t_map *map)
 	y = 0;
 	s = 0;
 	temp = map->lines;
-	while (temp && y < map->map_lines)
+	while (temp && y < map->nb_lines)
 	{
 		parse_line(temp, map, y);
 		temp = temp->next;
