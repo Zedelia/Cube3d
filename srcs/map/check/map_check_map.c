@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/05 15:59:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 15:26:02 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,22 +22,32 @@ static t_bool	map_check_map_size(t_map *map)
 	return (True);
 }
 
-static t_bool	map_check_integrity(char *map_char)
+static t_bool	map_check_integrity(t_maparse *lines)
 {
-	int i;
+	int 		i;
+	int			pos;
+	t_maparse 	*tmp;
 
-	i = 0;
-	while (map_char[i])
+	tmp = lines;
+	pos = 0;
+	while (tmp)
 	{
-		if (ft_isincharset(map_char[i], MAP_INPUTS) != 1
-				&& ft_isincharset(map_char[i], SPRITES) != 1
-					&& map_char[i] != ' ')
-			return (return_false(__func__, "[FAIL] invalid char in map"));
-		i++;
+		i = 0;
+		while (tmp->line[i])
+		{
+			if (ft_isincharset(tmp->line[i], MAP_INPUTS) != 1
+					&& ft_isincharset(tmp->line[i], SPRITES) != 1
+						&& tmp->line[i] != ' ')
+				return (return_false(__func__, "[FAIL] invalid char in map"));
+			i++;
+		}
+		if ((occur_in_str('N', tmp->line) || occur_in_str('S', tmp->line) ||
+				occur_in_str('E', tmp->line) || occur_in_str('W', tmp->line)))
+			pos++;
+		tmp = tmp->next;
 	}
-	if ((occur_in_str('N', map_char) + occur_in_str('S', map_char) +
-			occur_in_str('E', map_char) + occur_in_str('W', map_char)) != 1)
-			return (return_false(__func__, "[FAIL] invalid cam position"));
+	if (pos != 1)
+		return (return_false(__func__, "[FAIL] invalid cam position"));
 	return (True);
 }
 
@@ -71,6 +81,6 @@ t_bool	map_check_map(t_map *map)
 {
 	map_check_walls(map);
 	map_check_map_size(map);
-	map_check_integrity(map->map_char);
+	map_check_integrity(map->lines);
 	return (True);
 }

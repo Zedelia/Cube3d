@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/05 18:18:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 11:54:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -148,10 +148,11 @@ typedef struct	s_cam
 
 typedef struct	s_maparse
 {
-	char		*line;
-	int			column;
-	int			id;
-	t_maparse	*next;
+	char				*line;
+	int					columns;
+	int					id;
+	int					sp;
+	struct	s_maparse	*next;
 }				t_maparse;
 
 typedef struct	s_map
@@ -160,7 +161,7 @@ typedef struct	s_map
 	char		*map_char;
 	int			**tab;
 	t_sprite	*sprite_tab;
-	t_mapline	*lines;
+	t_maparse	*lines;
 	int			map_sprites;
 	int			map_col;
 	int			map_lines;

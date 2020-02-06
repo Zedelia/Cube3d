@@ -32,36 +32,53 @@ static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map)
 	return (True);
 }
 
+static void			parse_line(t_maparse *line, t_map *map, int y)
+{
+	int i;
+	int x;
+	static int s = 0;
+
+	i = 0;
+	x = 0;
+	while (line->line[i])
+	{
+		if (ft_isincharset(line->line[i], SPRITES))
+		{
+			map->sprite_tab[s].y = y;
+			map->sprite_tab[s].x = x;
+			get_sprite_img(line->line[i], &map->sprite_tab[s], map);
+			s++;
+		}
+		if (ft_isincharset(line->line[i], MAP_INPUTS)
+				|| ft_isincharset(line->line[i], SPRITES))
+		{
+			map->tab[y][x] = line->line[i] - 48;
+			x++;
+		}
+		i++;
+	}
+	while (x < map->map_col)
+	{
+		map->tab[y][x] = 1;
+		x++;
+	}
+}
+
 t_bool 			map_tabs_fill(t_map *map)
 {
-	int x;
-	int y;
-	int i;
-	int s;
+	t_maparse 	*temp;
+	int 		s;
+	int 		i;
+	int			y;
 
-	y = 0;
 	i = 0;
+	y = 0;
 	s = 0;
-	while (map->map_char[i] && y < map->map_lines)
+	temp = map->lines;
+	while (temp && y < map->map_lines)
 	{
-		x = 0;
-		while (map->map_char[i] && x < map->map_col)
-		{
-			if (ft_isincharset(map->map_char[i], MAP_INPUTS)
-					|| ft_isincharset(map->map_char[i], SPRITES))
-			{
-				if (ft_isincharset(map->map_char[i], SPRITES))
-				{
-					map->sprite_tab[s].y = y;
-					map->sprite_tab[s].x = x;
-					get_sprite_img(map->map_char[i], &map->sprite_tab[s], map);
-					s++;
-				}
-				map->tab[y][x] = map->map_char[i] - 48;
-				x++;
-			}
-			i++;
-		}
+		parse_line(temp, map, y);
+		temp = temp->next;
 		y++;
 	}
 	return (True);
