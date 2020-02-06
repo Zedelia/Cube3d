@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 15:20:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/06 15:32:59 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -94,12 +94,8 @@ t_bool			map_get_map_lines(t_map *map, int fd, char *line)
 		map_add_line(map->lines, tmp);
 		map->map_lines++;
 	}
-	// tmp = map->lines;
-	// while (tmp)
-	// {
-	// 	printf("%d\n", tmp->id);
-	// 	tmp = tmp->next;
-	// }
+	if (line[0] == '0')
+		return (return_false(__func__, "[FAIL] map isn't closed on left"));
 	ft_memdel((void*)line);
 	map_check_end_file(fd, line);
 	return (True);
