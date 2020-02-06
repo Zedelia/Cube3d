@@ -2,7 +2,7 @@
       NO ./textures/silver-collection/text-01.xpm
       SO       ./textures/silver-collection/text-02.xpm
 WE        ./textures/silver-collection/text-03.xpm
-  E         .textures/silver-collection/text-04.xpm
+  EA         ./textures/silver-collection/text-04.xpm
 
         	       C   254, 1,  1
 
