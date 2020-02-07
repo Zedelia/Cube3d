@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 13:32:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/23 16:59:51 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:33:59 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,7 @@ t_bool	rays_tab_init(t_mlx *mlx)
 
     i = 0;
 	if(!(mlx->cam.ray_tab = malloc(sizeof(t_rays) * mlx->map->r_width)))
-		return (return_false(__func__, "[FAIL] malloc rays tab"));
+		return (return_false(__func__, "[FAIL] malloc rays tab", mlx));
 	dist_ref = tan(degrees_to_radian(FOV_DEGREE) * 0.5);
     while (i < mlx->map->r_width)
     {

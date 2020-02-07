@@ -13,26 +13,26 @@
 
 #include "../../../includes/cube3d.h"
 
-static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map)
+static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map, t_mlx *mlx)
 {
 	if (a == '2')
 		sp->img = &map->sprite;
 	if (a == '3' && map->sprite1.file)
 		sp->img = &map->sprite1;
 	else if (a == '3')
-		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
+		return (return_false(__func__, "[FAIL] wrong sprite identifier", mlx));
 	if (a == '4' && map->sprite2.file)
 		sp->img = &map->sprite2;
 	else if (a == '4' )
-		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
+		return (return_false(__func__, "[FAIL] wrong sprite identifier", mlx));
 	if (a == '5' && map->sprite3.file)
 		sp->img = &map->sprite3;
 	else if (a == '5')
-		return (return_false(__func__, "[FAIL] wrong sprite identifier"));
+		return (return_false(__func__, "[FAIL] wrong sprite identifier", mlx));
 	return (True);
 }
 
-static void			parse_line(t_maparse *line, t_map *map, int y)
+static void			parse_line(t_maparse *line, t_map *map, int y, t_mlx *mlx)
 {
 	int i;
 	int x;
@@ -46,7 +46,7 @@ static void			parse_line(t_maparse *line, t_map *map, int y)
 		{
 			map->sprite_tab[s].y = y;
 			map->sprite_tab[s].x = x;
-			get_sprite_img(line->line[i], &map->sprite_tab[s], map);
+			get_sprite_img(line->line[i], &map->sprite_tab[s], map, mlx);
 			s++;
 		}
 		if (ft_isincharset(line->line[i], MAP_INPUTS)
@@ -64,7 +64,7 @@ static void			parse_line(t_maparse *line, t_map *map, int y)
 	}
 }
 
-t_bool 			map_tabs_fill(t_map *map)
+t_bool 			map_tabs_fill(t_map *map, t_mlx *mlx)
 {
 	t_maparse 	*temp;
 	int 		s;
@@ -77,7 +77,7 @@ t_bool 			map_tabs_fill(t_map *map)
 	temp = map->lines;
 	while (temp && y < map->nb_lines)
 	{
-		parse_line(temp, map, y);
+		parse_line(temp, map, y, mlx);
 		temp = temp->next;
 		y++;
 	}

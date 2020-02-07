@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/06 16:08:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 11:40:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 11:56:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,7 +30,7 @@ void	map_init_text(t_map **map)
 t_bool	map_init(t_map **map, char *map_file, t_mlx *mlx)
 {
 	if (!(*map = malloc(sizeof(t_map))))
-		return (return_false(__func__, "[FAIL] map malloc"));
+		return (return_false(__func__, "[FAIL] map malloc", mlx));
 	(*map)->map_file = map_file;
 	(*map)->r_width = -1;
 	(*map)->r_height = -1;

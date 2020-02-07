@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 18:50:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:29:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -51,21 +51,4 @@ int		occur_in_str(char c, char *line)
 		i++;
 	}
 	return (occur);
-}
-
-t_bool	ft_check_incorrect_input_text(char a, char b, char *line)
-{
-	int start;
-
-	start = 0;
-	while (line[start] != a && line[start])
-		start++;
-	if (line[start + 1] && b && line[start + 1] != b)
-		return (return_false(__func__, "[FAIL] wrong texture identifier"));
-	start += b ? 2 : 1;
-	while (line[start] < 33 && line[start])
-		start++;
-	if (line[start] != '.')
-		return (return_false(__func__, "[FAIL] wrong texture input"));
-	return (True);
 }

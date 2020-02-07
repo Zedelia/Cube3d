@@ -22,6 +22,6 @@ static int display_exit(void *mlx)
 t_bool	display_exit_on_click(t_mlx *mlx)
 {
 	if (!(mlx_hook(mlx->win, 17, 0, &display_exit, &mlx)))
-		return (return_false(__func__, "[FAIL] exit"));
+		return (return_false(__func__, "[FAIL] exit", mlx));
 	return (True);
 }

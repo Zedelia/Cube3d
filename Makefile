@@ -28,21 +28,21 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/map_parser.c \
 	map/map_printf.c \
 	mlx/mlx_init.c \
+	mlx/mlx_free.c \
 	map/parsing/map_init_parsing.c \
 	map/parsing/map_get_text.c \
 	map/parsing/map_get_r.c \
 	map/parsing/map_get_colors.c \
 	map/parsing/map_get_map_line.c \
-	map/parsing/map_get_line_info.c \
 	map/parsing/map_tab_init.c \
 	map/parsing/map_tabs_fill.c \
+	map/check/map_check_others.c \
 	map/check/map_check_colors.c \
 	map/check/map_check_infos.c \
 	map/check/map_check_map.c \
 	map/check/map_check_resolution.c \
 	map/check/map_check_texture.c \
 	map/map_textures_init.c \
-	map/map_utils.c \
 	move/move_apply.c \
 	move/move_keydown.c \
 	utils/colors.c \

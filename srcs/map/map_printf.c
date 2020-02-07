@@ -6,33 +6,33 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:08:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:40:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static void 	map_tab_printf(t_map *map)
-{
-	int h;
-	int w;
+// static void 	map_tab_printf(t_map *map)
+// {
+// 	int h;
+// 	int w;
 
-	h = 0;
-	w = 0;
-	ft_printf("\nMAP:\n");
-	while (h < map->nb_lines)
-	{
-		while (w < map->nb_col)
-		{
-			ft_printf("%d ", map->tab[h][w]);
-			w++;
-		}
-		ft_printf("\n");
-		w = 0;
-		h++;
-	}
-}
+// 	h = 0;
+// 	w = 0;
+// 	ft_printf("\nMAP:\n");
+// 	while (h < map->nb_lines)
+// 	{
+// 		while (w < map->nb_col)
+// 		{
+// 			ft_printf("%d ", map->tab[h][w]);
+// 			w++;
+// 		}
+// 		ft_printf("\n");
+// 		w = 0;
+// 		h++;
+// 	}
+// }
 
  void 	sprite_tab_printf(t_map *map)
 {
@@ -75,8 +75,8 @@ void	map_printf(t_map *map)
 		ft_printf("east: %s\n", map->east.file);
 	if (map->sprite.file)
 		ft_printf("sprite: %s\n", map->sprite.file);
-	if (map->map_char)
-		ft_printf("map_char: %s\n", map->map_char);
-	if (map->tab)
-		map_tab_printf(map);
+	// if (map->map_char)
+	// 	ft_printf("map_char: %s\n", map->map_char);
+	// if (map->tab)
+	// 	map_tab_printf(map);
 }

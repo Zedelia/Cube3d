@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 19:09:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/29 19:16:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 11:50:47 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,7 +26,7 @@ t_bool	display_wall_hz(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 	top = map->r_height * 0.5 - map->r_height / r.distance * 0.5;
 	bottom = map->r_height * 0.5 + map->r_height / r.distance * 0.5;
 	if (r.distance == 0 || bottom - top == 0)
-		return (return_false(__func__, "[FAIL] can't divide by 0"));
+		return (return_false(__func__, "[FAIL] can't divide by 0", mlx));
 	y = top;
 	while (y < bottom)
 	{
@@ -52,7 +52,7 @@ t_bool	 display_wall_vt(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 	top = map->r_height * 0.5 - map->r_height / r.distance * 0.5;
 	bottom = map->r_height * 0.5 + map->r_height / r.distance * 0.5;
 	if (r.distance == 0 || bottom - top == 0)
-		return (return_false(__func__, "[FAIL] can't divide by 0"));
+		return (return_false(__func__, "[FAIL] can't divide by 0", mlx));
 	y = top;
 	while (y < bottom)
 	{

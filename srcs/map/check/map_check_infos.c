@@ -13,11 +13,11 @@
 
 #include "../../../includes/cube3d.h"
 
-t_bool	map_check_infos(t_map *map)
+t_bool	map_check_infos(t_map *map, t_mlx *mlx)
 {
-	map_check_texture(map);
-	map_check_colors(map);
-	map_check_resolution(map);
-	map_check_map(map);
+	map_check_texture(map, mlx);
+	map_check_colors(map, mlx);
+	map_check_resolution(map, mlx);
+	map_check_map(map, mlx);
 	return (True);
 }

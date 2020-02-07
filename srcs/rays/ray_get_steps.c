@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 12:57:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:27:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:35:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static t_bool get_hz_step(t_rays *r)
+static void get_hz_step(t_rays *r)
 {
 	double y_step;
 	double x_step;
@@ -27,12 +27,9 @@ static t_bool get_hz_step(t_rays *r)
 	x_step *= r->facing_right && x_step < 0 ? -1 : 1;
 	r->hz_fst_inter.steps.x = x_step;
 	r->hz_fst_inter.steps.y = y_step;
-	if (!y_step)
-		return (return_false(__func__, "[FAIL] ray hz step not found"));
-	return (True);
 }
 
-static t_bool get_vt_step(t_rays *r)
+static void get_vt_step(t_rays *r)
 {
 	double y_step;
 	double x_step;
@@ -46,9 +43,6 @@ static t_bool get_vt_step(t_rays *r)
 	y_step *= r->facing_down && y_step < 0 ? -1 : 1;
 	r->vt_fst_inter.steps.x = x_step;
 	r->vt_fst_inter.steps.y = y_step;
-	if (!x_step)
-		return (return_false(__func__, "[FAIL] ray hz step not found"));
-	return (True);
 }
 
 t_bool ray_get_steps(t_rays *r, t_mlx *mlx)

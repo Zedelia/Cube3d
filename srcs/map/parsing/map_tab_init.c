@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 21:10:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:41:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,21 +32,21 @@ static void		map_tab_get_col_and_sp(t_map *map)
 	map->nb_col = col_max;
 }
 
-t_bool	map_tab_init(t_map *map)
+t_bool	map_tab_init(t_map *map, t_mlx *mlx)
 {
 	int i;
 
 	map_tab_get_col_and_sp(map);
 	if (!(map->tab = malloc(map->nb_lines * sizeof(*(map->tab)))))
-		return (return_false(__func__, "[FAIL] malloc"));
+		return (return_false(__func__, "[FAIL] malloc", mlx));
 	i = 0;
 	while (i < map->nb_lines)
 	{
 		if (!(map->tab[i] = malloc(map->nb_col * sizeof(int))))
-			return (return_false(__func__, "[FAIL] malloc"));
+			return (return_false(__func__, "[FAIL] malloc", mlx));
 		i++;
 	}
-	sprites_tab_init(map);
-	map_tabs_fill(map);
+	sprites_tab_init(map, mlx);
+	map_tabs_fill(map, mlx);
 	return (True);
 }

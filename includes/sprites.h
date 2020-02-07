@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/24 10:58:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 16:17:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:33:35 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 
 #include "cube3d.h"
 
-t_bool	sprites_tab_init(t_map *map);
+t_bool	sprites_tab_init(t_map *map, t_mlx *mlx);
 t_bool	sprites_init(t_map *map);
 void 	sprite_tab_printf(t_map *map);
 void	sprite_sort_tab(t_sprite *tab, int size);
