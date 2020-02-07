@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 11:54:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 15:52:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,6 +58,7 @@ static t_bool	map_check_walls(t_map *map, t_mlx *mlx)
 
 	w = 0;
 	h = 0;
+		map_printf(mlx->map);
 	while (w < map->nb_col)
 	{
 		if (map->tab[0][w] != 1)

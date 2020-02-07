@@ -138,7 +138,7 @@ DFLAGS = -fsanitize=address
 INC_FLAGS = -I ${INC_PATH}
 REBUILD_DEPENDENCIES = includes/*.h
 
-COMPIL = $(CC) $(DFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
+COMPIL = $(CC) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
 
 
 ##					##

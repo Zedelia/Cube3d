@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:13:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 16:41:12 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -48,11 +48,11 @@ static t_bool	map_line_init(t_maparse **m_line, char *line, int id, t_mlx *mlx)
 	return (True);
 }
 
-static void		map_add_line(t_maparse *list, t_maparse *tmp)
+static void		map_add_line(t_maparse **list, t_maparse *tmp)
 {
 	t_maparse 	*temp;
 
-	temp = list;
+	temp = *list;
 	if (temp)
 	{
 		while (temp->next)
@@ -60,26 +60,25 @@ static void		map_add_line(t_maparse *list, t_maparse *tmp)
 		temp->next = tmp;
 	}
 	else
-		list = tmp;
+		*list = tmp;
 }
 
 t_bool			map_get_map_lines(t_map *map, int fd, char *line, t_mlx *mlx)
 {
 	t_maparse 	*tmp;
 
-	map->nb_lines = 1;
+	map->nb_lines = 0;
 	tmp = NULL;
-	map_line_init(&tmp, line, map->nb_lines, mlx);
-	map->lines = tmp;
-	while (get_next_line(fd, &line) && line[0] == '1')
+	while (line[0] == '1')
 	{
 		map_line_init(&tmp, line, map->nb_lines, mlx);
-		map_add_line(map->lines, tmp);
+		map_add_line(&map->lines, tmp);
 		map->nb_lines++;
+		free(line);
+		get_next_line(fd, &line);
 	}
-	if (line[0] == '0')
-		return (return_false(__func__, "[FAIL] map isn't closed on left", mlx));
-	ft_memdel((void*)line);
+	free(line);
+	line = NULL;
 	map_check_end_file(fd, line, mlx);
 	return (True);
 }

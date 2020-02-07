@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:38:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 16:13:13 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,11 +24,12 @@ static t_bool 	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
 	{
 		if (line[i] == ',')
 			coma += 1;
-		while (end == False && ft_isdigit(line[i]))
+		while (line[i] && end == False && ft_isdigit(line[i]))
 			i++;
-		if ((line[i] > 32 && line[i] != ',') || coma > 1)
+		if ((line[i] > 32 && !ft_isdigit(line[i]) && line[i] != ',') || coma > 1)
 			return (return_false(__func__, "[FAIL] incorrect input in colors", mlx));
-		i++;
+		if (line[i])
+			i++;
 	}
 	return (True);
 }
@@ -48,13 +49,10 @@ static t_color	get_colors(char *line, t_mlx *mlx)
 	check_incorrect_inputs(&line[i], False, mlx);
 	colors.r = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
-	check_incorrect_inputs(&line[i], False, mlx);
 	colors.g = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
-	check_incorrect_inputs(&line[i], False, mlx);
 	colors.b = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
-	check_incorrect_inputs(&line[i], True, mlx);
 	return (colors);
 }
 
