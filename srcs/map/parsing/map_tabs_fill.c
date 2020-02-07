@@ -51,17 +51,11 @@ static void			parse_line(t_maparse *line, t_map *map, int y, t_mlx *mlx)
 		}
 		if (ft_isincharset(line->line[i], MAP_INPUTS)
 				|| ft_isincharset(line->line[i], SPRITES))
-		{
-			map->tab[y][x] = line->line[i] - 48;
-			x++;
-		}
+			map->tab[y][x++] = line->line[i] - 48;
 		i++;
 	}
 	while (x < map->nb_col)
-	{
-		map->tab[y][x] = 1;
-		x++;
-	}
+		map->tab[y][x++] = 1;
 }
 
 t_bool 			map_tabs_fill(t_map *map, t_mlx *mlx)

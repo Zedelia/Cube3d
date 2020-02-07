@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:40:44 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 12:50:20 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,7 +34,7 @@ typedef enum
 */
 
 void				map_printf(t_map *map);
-void				map_free(t_map **map);
+void				map_free(t_map *map);
 
 t_bool				map_init(t_map **map, char *map_file, t_mlx *mlx);
 t_bool				map_parser(t_mlx *mlx);

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 13:08:50 by melodiebos   #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:32:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 15:11:45 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,6 @@ int			color_to_int(t_color c);
 int			shade_color(int color, double dist);
 int			get_str_int_len(char *str);
 int			occur_in_str(char c,char *line);
-int			ft_get_tile(t_map *m, int x, int y);
 void		rotate_vect(t_vect *v, double angle);
 double		degrees_to_radian(double angle_in_degrees);
 void		ft_pixel_put(t_mlx *mlx, int x, int y, int color);
