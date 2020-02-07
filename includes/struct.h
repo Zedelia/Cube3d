@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/06 16:17:23 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/07 11:15:43 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -157,9 +157,9 @@ typedef struct	s_maparse
 
 typedef struct	s_map
 {
-	char		*map_file; //
-	int			**tab; //
-	t_sprite	*sprite_tab; //
+	char		*map_file;
+	int			**tab;
+	t_sprite	*sprite_tab;
 	t_maparse	*lines;
 	int			nb_sprites;
 	int			nb_col;

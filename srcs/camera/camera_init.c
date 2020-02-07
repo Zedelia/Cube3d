@@ -15,6 +15,7 @@
 
 t_bool		cam_init(t_mlx *mlx)
 {
+	mlx->cam.ray_tab = NULL;
 	cam_get_pos(&mlx->cam, mlx->map);
 	cam_get_rotation_angle(&mlx->cam);
 	mlx->cam.direction.y = 1;
