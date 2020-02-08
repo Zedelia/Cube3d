@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 19:09:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 11:50:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:34:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,53 +15,52 @@
 
 t_bool	display_wall_hz(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 {
-	int 	y;
-	double	bottom;
-	double	top;
-	t_vect	offset;
-	int 	color;
+	int			i;
+	t_fromto	y;
+	t_vect		offset;
+	int			color;
 
-	offset.x = (r.wall.hz_hit.x - (int)r.wall.hz_hit.x) * img.width;
-	offset.x = ft_abs(offset.x);
-	top = map->r_height * 0.5 - map->r_height / r.distance * 0.5;
-	bottom = map->r_height * 0.5 + map->r_height / r.distance * 0.5;
-	if (r.distance == 0 || bottom - top == 0)
+	offset.x = ft_abs((r.wall.hz_hit.x - (int)r.wall.hz_hit.x) * img.width);
+	y.from = map->r_height * 0.5 - map->r_height / r.distance * 0.5;
+	y.to = map->r_height * 0.5 + map->r_height / r.distance * 0.5;
+	if (r.distance == 0 || y.to - y.from == 0)
 		return (return_false(__func__, "[FAIL] can't divide by 0", mlx));
-	y = top;
-	while (y < bottom)
+	i = y.from;
+	while (i < y.to)
 	{
-		offset.y = (y - top) * ((double)img.height / (bottom - top));
-		if ((color = get_right_color(img, mlx, offset, y)) != -1)
-			ft_pixel_put(mlx, x, y, shade_color(color, r.distance > DIST_MAX ? 1 : r.distance / DIST_MAX));
-		y++;
+		offset.y = (i - y.from) * ((double)img.height / (y.to - y.from));
+		if ((color = get_right_color(img, mlx, offset, i)) != -1)
+			ft_pixel_put(mlx, x, i,
+					shade_color(color,
+					r.distance > DIST_MAX ? 1 : r.distance / DIST_MAX));
+		i++;
 	}
 	return (True);
 }
 
 t_bool	 display_wall_vt(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x)
 {
-	int 	y;
-	double	bottom;
-	double	top;
-	t_vect	offset;
-	int 	color;
+	int			i;
+	t_fromto	y;
+	t_vect		offset;
+	int			color;
 
 	offset.x = ((r.wall.vt_hit.y - (int)r.wall.vt_hit.y) * img.width);
 	while ((offset.x = ft_abs(offset.x)) > img.width)
 		offset.x = img.height - offset.x;
-	top = map->r_height * 0.5 - map->r_height / r.distance * 0.5;
-	bottom = map->r_height * 0.5 + map->r_height / r.distance * 0.5;
-	if (r.distance == 0 || bottom - top == 0)
+	y.from = map->r_height * 0.5 - map->r_height / r.distance * 0.5;
+	y.to = map->r_height * 0.5 + map->r_height / r.distance * 0.5;
+	if (r.distance == 0 || y.to - y.from == 0)
 		return (return_false(__func__, "[FAIL] can't divide by 0", mlx));
-	y = top;
-	while (y < bottom)
+	i = y.from;
+	while (i < y.to)
 	{
-		offset.y = (y - top) * ((double)img.height / (bottom - top));
-		if ((color = get_right_color(img, mlx, offset, y)) != -1)
-		ft_pixel_put(mlx, x, y, 											\
-				shade_color(color, 	\
+		offset.y = (i - y.from) * ((double)img.height / (y.to - y.from));
+		if ((color = get_right_color(img, mlx, offset, i)) != -1)
+		ft_pixel_put(mlx, x, i,
+				shade_color(color,
 				r.distance > DIST_MAX ? 1 : r.distance / DIST_MAX));
-		y++;
+		i++;
 	}
 	return (True);
 }

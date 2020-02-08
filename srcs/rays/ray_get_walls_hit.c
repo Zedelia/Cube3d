@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:58 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 17:54:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:50:21 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -43,7 +43,7 @@ static void ray_get_hz_wall_hit(t_rays *r, t_mlx *mlx)
 	r->wall.hz_hit.y = to_check.y;
 }
 
-t_bool	ray_get_walls_hit(t_rays *r, t_mlx *mlx)
+t_bool		ray_get_walls_hit(t_rays *r, t_mlx *mlx)
 {
 	ray_get_hz_wall_hit(r, mlx);
 	ray_get_vt_wall_hit(r, mlx);

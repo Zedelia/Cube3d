@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 12:57:12 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:35:38 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:50:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static void get_hz_step(t_rays *r)
+static void 	get_hz_step(t_rays *r)
 {
 	double y_step;
 	double x_step;
@@ -29,7 +29,7 @@ static void get_hz_step(t_rays *r)
 	r->hz_fst_inter.steps.y = y_step;
 }
 
-static void get_vt_step(t_rays *r)
+static void 	get_vt_step(t_rays *r)
 {
 	double y_step;
 	double x_step;
@@ -45,7 +45,7 @@ static void get_vt_step(t_rays *r)
 	r->vt_fst_inter.steps.y = y_step;
 }
 
-t_bool ray_get_steps(t_rays *r, t_mlx *mlx)
+t_bool			ray_get_steps(t_rays *r, t_mlx *mlx)
 {
 	(void)mlx;
 

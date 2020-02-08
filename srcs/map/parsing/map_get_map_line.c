@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 16:41:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:42:18 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,15 +36,15 @@ static t_bool		strlen_spcount(t_maparse *line, t_mlx *mlx)
 	return (True);
 }
 
-static t_bool	map_line_init(t_maparse **m_line, char *line, int id, t_mlx *mlx)
+static t_bool	map_line_init(t_maparse **self, char *line, int id, t_mlx *mlx)
 {
-	if (!(*m_line = malloc(sizeof(t_maparse))))
+	if (!(*self = malloc(sizeof(t_maparse))))
 		return (return_false(__func__, "[FAIL] malloc", mlx));
-	if (!((*m_line)->line = ft_strdup(line)))
+	if (!((*self)->line = ft_strdup(line)))
 			return (return_false(__func__, "[FAIL] strdup", mlx));
-	(*m_line)->next = NULL;
-	strlen_spcount((*m_line), mlx);
-	(*m_line)->id = id;
+	(*self)->next = NULL;
+	strlen_spcount((*self), mlx);
+	(*self)->id = id;
 	return (True);
 }
 

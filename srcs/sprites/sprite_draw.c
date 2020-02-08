@@ -6,18 +6,19 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:39:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/02 22:30:21 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:56:41 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void			sprite_ray_create_line(t_rays *r, t_mlx *mlx)
+static void		sprite_ray_create_line(t_rays *r, t_mlx *mlx)
 {
 	r->line_eq.a = r->y;
 	r->line_eq.b = -r->x;
-	r->line_eq.c = r->x * (mlx->cam.pos.y + 0.5) - r->y * (mlx->cam.pos.x + 0.5);
+	r->line_eq.c = r->x * (mlx->cam.pos.y + 0.5)
+			- r->y * (mlx->cam.pos.x + 0.5);
 }
 
 static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
@@ -30,7 +31,8 @@ static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 		if (mlx->cam.ray_tab[i].distance > sp->dist)
 		{
 			sprite_ray_create_line(&mlx->cam.ray_tab[i], mlx);
-			mlx->cam.ray_tab[i].inter_sprite = line_inter_line(sp->line_eq, mlx->cam.ray_tab[i].line_eq);
+			mlx->cam.ray_tab[i].inter_sprite
+					= line_inter_line(sp->line_eq, mlx->cam.ray_tab[i].line_eq);
 			if (is_inter_in_seg(mlx->cam.ray_tab[i].inter_sprite, sp) == True)
 			{
 				if (sp->fst_ray_print == -1)
@@ -46,7 +48,7 @@ static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 {
 	int		i;
 	double 	end;
-	double mid;
+	double 	mid;
 
 	mid = sp->fst_ray_print + (sp->last_ray_print-sp->fst_ray_print) * 0.5;
 	i = sp->fst_ray_print;
@@ -66,7 +68,7 @@ static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 	return (True);
 }
 
-t_bool	sprite_draw(t_sprite *sp, t_mlx *mlx)
+t_bool			sprite_draw(t_sprite *sp, t_mlx *mlx)
 {
 	sprite_get_line_seg(sp, mlx);
 	get_fst_last_printed_rays(sp, mlx);

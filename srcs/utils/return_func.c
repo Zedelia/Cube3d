@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 18:11:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:32:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 12:00:09 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 
 t_bool	return_false(const char *namefunc, char const *error_msg, t_mlx * mlx)
 {
-	ft_printf(RED""); // TODO free les malloc
+	ft_printf(RED"");
 	perror(namefunc);
 	if (error_msg)
 		ft_printf(RED"Error"RESET"\n-> %s\n\n", error_msg);

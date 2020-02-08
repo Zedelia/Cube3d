@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/31 10:13:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/04 16:12:05 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:59:51 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,7 +28,7 @@ t_color		int_to_color(int n)
 	return (a);
 }
 
-int		shade_color(int color, double ratio)
+int			shade_color(int color, double ratio)
 {
 	t_color	rgb;
 	int		new_color;

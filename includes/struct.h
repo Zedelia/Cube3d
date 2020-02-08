@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 11:15:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 12:03:12 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -174,9 +174,9 @@ typedef struct	s_map
 	t_img		west;
 	t_img		east;
 	t_img		sprite;
-	t_img		sprite1;
-	t_img		sprite2;
-	t_img		sprite3;
+	t_img		sp1;
+	t_img		sp2;
+	t_img		sp3;
 }				t_map;
 
 

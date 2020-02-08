@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/28 11:50:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:24:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,14 +37,17 @@ static int		give_wall_color(t_rays r)
 
 t_bool	display_colored_walls(t_mlx *mlx)
 {
-	int x = 0;
-	int y = 0;
+	int x;
+	int y;
 	int	color;
+	int h;
 
+	x = 0;
+	h = mlx->map->r_height;
 	while (x < (mlx->map->r_width))
 	{
-	y = mlx->map->r_height / 2 - mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2;
-		while (y < mlx->map->r_height / 2 + mlx->map->r_height / mlx->cam.ray_tab[x].distance / 2)
+	y = h / 2 - h / mlx->cam.ray_tab[x].distance / 2;
+		while (y < h / 2 + h / mlx->cam.ray_tab[x].distance / 2)
 		{
 			color = give_wall_color(mlx->cam.ray_tab[x]);
 			ft_pixel_put(mlx, x, y,color);

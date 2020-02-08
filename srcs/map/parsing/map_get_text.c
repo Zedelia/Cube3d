@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 19:49:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:31:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:47:33 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,8 @@ t_bool	map_parse_no(t_map *map, char *line, t_mlx *mlx)
 	int start;
 
 	if (map->north.file != NULL)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__,
+				"[FAIL] info provided several times", mlx));
 	start = 0;
 	map_check_incorrect_input_text('N', 'O', line, mlx);
 	while (line[start] && line[start] != '.')
@@ -33,7 +34,8 @@ t_bool	map_parse_so(t_map *map, char *line, t_mlx *mlx)
 	int start;
 
 	if (map->south.file != NULL)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__,
+				"[FAIL] info provided several times", mlx));
 	start = 0;
 	map_check_incorrect_input_text('s', 'O', line, mlx);
 	while (line[start] && line[start] != '.')
@@ -48,7 +50,8 @@ t_bool	map_parse_we(t_map *map, char *line, t_mlx *mlx)
 	int start;
 
 	if (map->west.file != NULL)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__,
+				"[FAIL] info provided several times", mlx));
 	start = 0;
 	map_check_incorrect_input_text('W', 'E', line, mlx);
 	while (line[start] && line[start] != '.')
@@ -63,7 +66,8 @@ t_bool	map_parse_ea(t_map *map, char *line, t_mlx *mlx)
 	int start;
 
 	if (map->east.file != NULL)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__,
+				"[FAIL] info provided several times", mlx));
 	start = 0;
 	map_check_incorrect_input_text('E', 'A', line, mlx);
 	while (line[start] && line[start] != '.')
@@ -85,9 +89,9 @@ t_bool	map_parse_sp(t_map *map, char *line, t_mlx *mlx)
 		start++;
 	i = 0;
 	tab[0] = &map->sprite;
-	tab[1] = &map->sprite1;
-	tab[2] = &map->sprite2;
-	tab[3] = &map->sprite3;
+	tab[1] = &map->sp1;
+	tab[2] = &map->sp2;
+	tab[3] = &map->sp3;
 	while (tab[i]->file != NULL)
 		i++;
 	if (i > 3)

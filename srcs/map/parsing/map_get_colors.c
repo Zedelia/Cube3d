@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 16:13:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:40:43 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,8 +26,9 @@ static t_bool 	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
 			coma += 1;
 		while (line[i] && end == False && ft_isdigit(line[i]))
 			i++;
-		if ((line[i] > 32 && !ft_isdigit(line[i]) && line[i] != ',') || coma > 1)
-			return (return_false(__func__, "[FAIL] incorrect input in colors", mlx));
+		if ((line[i] > 32 && !ft_isdigit(line[i]) && line[i] != ',')
+				|| coma > 1)
+			return (return_false(__func__, "[FAIL] incorrect colors", mlx));
 		if (line[i])
 			i++;
 	}
@@ -62,7 +63,7 @@ t_bool	map_parse_floor(t_map *map, char *line, t_mlx *mlx)
 	int i;
 
 	if (map->floor != -1)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__, "[FAIL] several times same info ", mlx));
 	i = 0;
 	colors = get_colors(line, mlx);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255
@@ -78,7 +79,7 @@ t_bool	map_parse_cell(t_map *map, char *line, t_mlx *mlx)
 	int i;
 
 	if (map->cell != -1)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__, "[FAIL] several times same info", mlx));
 	i = 0;
 	colors = get_colors(line, mlx);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255

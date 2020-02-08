@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/07 12:10:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:31:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:37:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-char	 		*map_check_incorrect_inputs_before_indicator(char *line)
+char	 *map_check_incorrect_inputs_before_indicator(char *line)
 {
 	int i;
 
@@ -27,7 +27,7 @@ char	 		*map_check_incorrect_inputs_before_indicator(char *line)
 	return (&line[i]);
 }
 
-t_bool 	map_check_end_file(int fd, char *line, t_mlx *mlx)
+t_bool	map_check_end_file(int fd, char *line, t_mlx *mlx)
 {
 	int i ;
 
@@ -37,7 +37,8 @@ t_bool 	map_check_end_file(int fd, char *line, t_mlx *mlx)
 		while (line[i])
 		{
 			if (line[i] > 32)
-				return (return_false(__func__, "[FAIL] map isn't the EOF", mlx));
+				return (return_false(__func__,
+						"[FAIL] map isn't the EOF", mlx));
 		}
 		ft_memdel((void**)&line);
 	}
