@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:48:39 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 15:43:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:43:03 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-static char		*check_between_digit(char *line)
+static char			*check_between_digit(char *line)
 {
 	int i;
 
@@ -45,18 +45,20 @@ static t_bool		check_incorrect_inputs(char c, char *line, t_mlx *mlx)
 	while (line[i])
 	{
 		if (line[i] > 32)
-			return (return_false(__func__, "[FAIL] wrong input in resolution", mlx));
+			return (return_false(__func__,
+					"[FAIL] wrong input in resolution", mlx));
 		i++;
 	}
 	return (True);
 }
 
-t_bool	map_parse_r(t_map *map, char *line, t_mlx *mlx)
+t_bool				map_parse_r(t_map *map, char *line, t_mlx *mlx)
 {
 	size_t	i;
 
 	if (map->r_width != -1 || map->r_height != -1)
-		return (return_false(__func__, "[FAIL] info provided several times", mlx));
+		return (return_false(__func__,
+				"[FAIL] info provided several times", mlx));
 	i = 1;
 	check_incorrect_inputs('R', line, mlx);
 	while (ft_isdigit(line[i]) == 0)

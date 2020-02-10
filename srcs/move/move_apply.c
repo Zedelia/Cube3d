@@ -6,7 +6,11 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
+<<<<<<< HEAD
 /*   Updated: 2020/02/10 14:37:33 by mbos        ###    #+. /#+    ###.fr     */
+=======
+/*   Updated: 2020/02/08 11:48:19 by mbos        ###    #+. /#+    ###.fr     */
+>>>>>>> norme
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +24,8 @@ static t_bool	wall_here(t_move move, t_mlx *mlx)
 
 	x = move.x;
 	y = move.y;
-	if (x < 0 || x > mlx->map->nb_col - 1 || y < 0 || y > mlx->map->nb_lines - 1)
+	if (x < 0 || x > mlx->map->nb_col - 1
+			|| y < 0 || y > mlx->map->nb_lines - 1)
 		return (True);
 	if (mlx->map->tab[y][x] == 1)
 		return (True);
@@ -57,7 +62,7 @@ static t_bool to_check_vt(t_move *move, t_rays mid, t_mlx *mlx)
 	return (True);
 }
 
-t_bool	move_apply(t_move *move, t_mlx *mlx)
+t_bool		move_apply(t_move *move, t_mlx *mlx)
 {
 	t_rays 	mid;
 

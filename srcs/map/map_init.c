@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/06 16:08:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 16:16:48 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:47:33 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,9 +18,9 @@ void	map_init_text(t_map **map)
 {
 	(*map)->sprite_tab = NULL;
 	(*map)->sprite.file = NULL;
-	(*map)->sprite1.file = NULL;
-	(*map)->sprite2.file = NULL;
-	(*map)->sprite3.file = NULL;
+	(*map)->sp1.file = NULL;
+	(*map)->sp2.file = NULL;
+	(*map)->sp3.file = NULL;
 	(*map)->west.file = NULL;
 	(*map)->east.file = NULL;
 	(*map)->north.file = NULL;

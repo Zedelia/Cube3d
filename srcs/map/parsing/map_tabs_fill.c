@@ -17,26 +17,26 @@ static t_bool	get_sprite_img(char a, t_sprite *sp, t_map *map, t_mlx *mlx)
 {
 	if (a == '2')
 		sp->img = &map->sprite;
-	if (a == '3' && map->sprite1.file)
-		sp->img = &map->sprite1;
+	if (a == '3' && map->sp1.file)
+		sp->img = &map->sp1;
 	else if (a == '3')
 		return (return_false(__func__, "[FAIL] wrong sprite identifier", mlx));
-	if (a == '4' && map->sprite2.file)
-		sp->img = &map->sprite2;
+	if (a == '4' && map->sp2.file)
+		sp->img = &map->sp2;
 	else if (a == '4' )
 		return (return_false(__func__, "[FAIL] wrong sprite identifier", mlx));
-	if (a == '5' && map->sprite3.file)
-		sp->img = &map->sprite3;
+	if (a == '5' && map->sp3.file)
+		sp->img = &map->sp3;
 	else if (a == '5')
 		return (return_false(__func__, "[FAIL] wrong sprite identifier", mlx));
 	return (True);
 }
 
-static void			parse_line(t_maparse *line, t_map *map, int y, t_mlx *mlx)
+static void		parse_line(t_maparse *line, t_map *map, int y, t_mlx *mlx)
 {
-	int i;
-	int x;
-	static int s = 0;
+	int			i;
+	int			x;
+	static int 	s = 0;
 
 	i = 0;
 	x = 0;
@@ -58,7 +58,7 @@ static void			parse_line(t_maparse *line, t_map *map, int y, t_mlx *mlx)
 		map->tab[y][x++] = 1;
 }
 
-t_bool 			map_tabs_fill(t_map *map, t_mlx *mlx)
+t_bool 		map_tabs_fill(t_map *map, t_mlx *mlx)
 {
 	t_maparse 	*temp;
 	int 		s;

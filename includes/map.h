@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:50:20 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 13:14:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -83,7 +83,7 @@ t_bool				map_check_texture(t_map *map, t_mlx *mlx);
 
 char		*map_check_incorrect_inputs_before_indicator(char *line);
 t_bool 		map_check_end_file(int fd, char *line, t_mlx *mlx);
-t_bool	map_check_incorrect_input_text(char a, char b, char *line, t_mlx *mlx);
+t_bool		map_check_incorrect_input_text(char a, char b, char *line, t_mlx *mlx);
 
 /*
 ** Free map

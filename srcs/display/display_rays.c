@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/14 17:55:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:00:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 11:43:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -53,10 +53,10 @@ static t_bool	display_rays_hz(t_mlx *mlx, t_rays r, int color)
 
 static t_bool	display_rays_y(t_mlx *mlx, t_rays r, int color)
 {
-	double a;
-	double b;
-	int temp_y;
-	int i;
+	double	a;
+	double	b;
+	int		temp_y;
+	int		i;
 
 	a = r.y / r.x;
 	if (!a)
@@ -74,20 +74,19 @@ static t_bool	display_rays_y(t_mlx *mlx, t_rays r, int color)
 		i++;
 	}
 	return (True);
-
 }
 
 static t_bool	display_rays_x(t_mlx *mlx, t_rays r, int color)
 {
-	double a;
-	double b;
-	int temp_x;
-	int i;
+	double	a;
+	double	b;
+	int		temp_x;
+	int		i;
 
 	a = r.y / r.x;
 	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / 4);
 	i = 0;
-	temp_x = mlx->cam.pos.x * (mlx->map->tile / 4) ;
+	temp_x = mlx->cam.pos.x * (mlx->map->tile / 4);
 	while (i < r.distance * (mlx->map->tile / 4))
 	{
 		ft_pixel_put(mlx, temp_x, (a * temp_x + b), color);
@@ -100,7 +99,7 @@ static t_bool	display_rays_x(t_mlx *mlx, t_rays r, int color)
 	return (True);
 }
 
-t_bool	display_rays(t_mlx *mlx, t_rays *r)
+t_bool			display_rays(t_mlx *mlx, t_rays *r)
 {
 	int i;
 	int color;

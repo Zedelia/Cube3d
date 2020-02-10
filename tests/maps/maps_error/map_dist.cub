@@ -10,9 +10,9 @@ F 212, 238, 255
 WE ./textures/pokemon-collection/text-04.xpm
 EA ./textures/pokemon-collection/text-03.xpm
 
-S ./textures/sprite1.xpm
-S ./textures/sprite2.xpm
-S ./textures/sprite3.xpm
+S ./textures/sp1.xpm
+S ./textures/sp2.xpm
+S ./textures/sp3.xpm
 
 1111111111111111111111111111111111111111111111111111111111111111111111111111111
 1000000000000000000000000111100000000000000000000000000000000000000000000000001

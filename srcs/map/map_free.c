@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 13:08:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/08 11:47:19 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static void	map_free_tab(t_map *map)
+static void			map_free_tab(t_map *map)
 {
 	int i;
 
@@ -29,19 +29,19 @@ static void	map_free_tab(t_map *map)
 	}
 }
 
-static void		map_free_all_text(t_map *map)
+static void			map_free_all_text(t_map *map)
 {
 	ft_memdel((void**)&map->west.file);
 	ft_memdel((void**)&map->east.file);
 	ft_memdel((void**)&map->north.file);
 	ft_memdel((void**)&map->south.file);
 	ft_memdel((void**)&map->sprite.file);
-	ft_memdel((void**)&map->sprite1.file);
-	ft_memdel((void**)&map->sprite1.file);
-	ft_memdel((void**)&map->sprite1.file);
+	ft_memdel((void**)&map->sp1.file);
+	ft_memdel((void**)&map->sp1.file);
+	ft_memdel((void**)&map->sp1.file);
 }
 
-static void		map_free_lines(t_maparse **lines)
+static void			map_free_lines(t_maparse **lines)
 {
 	t_maparse	*tmp;
 
@@ -54,7 +54,7 @@ static void		map_free_lines(t_maparse **lines)
 	lines = NULL;
 }
 
-void	map_free(t_map *map)
+void				map_free(t_map *map)
 {
 	if (map)
 	{

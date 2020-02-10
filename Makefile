@@ -54,7 +54,6 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/ft_pixel.c \
 	utils/line_inter_line.c \
 	utils/norm_vect.c \
-	rays/ray_hit_sprite.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \
