@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/28 13:09:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 12:04:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:25:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,26 +24,25 @@ static t_bool	map_check_map_size(t_map *map, t_mlx *mlx)
 
 static t_bool	map_check_integrity(t_maparse *lines, t_mlx *mlx)
 {
-	int 		i;
+	int			i;
 	int			pos;
-	t_maparse 	*tmp;
+	t_maparse	*tmp;
 
 	tmp = lines;
 	pos = 0;
 	while (tmp)
 	{
-		i = 0;
-		while (tmp->line[i])
+		i = -1;
+		while (tmp->line[++i])
 		{
 			if (ft_isincharset(tmp->line[i], MAP_INPUTS) != 1
 					&& ft_isincharset(tmp->line[i], SPRITES) != 1
-						&& tmp->line[i] != ' ')
-				return (return_false(__func__,
-						"[FAIL] invalid char in map", mlx));
-			i++;
+					&& tmp->line[i] != ' ')
+				return (return_false(__func__, "[FAIL] bad char in map", mlx));
 		}
-		if ((occur_in_str('N', tmp->line) || occur_in_str('S', tmp->line) ||
-				occur_in_str('E', tmp->line) || occur_in_str('W', tmp->line)))
+		if ((occur_in_str('N', tmp->line) || occur_in_str('S', tmp->line)
+				|| occur_in_str('E', tmp->line)
+				|| occur_in_str('W', tmp->line)))
 			pos++;
 		tmp = tmp->next;
 	}
@@ -78,7 +77,7 @@ static t_bool	map_check_walls(t_map *map, t_mlx *mlx)
 	return (True);
 }
 
-t_bool	map_check_map(t_map *map, t_mlx *mlx)
+t_bool			map_check_map(t_map *map, t_mlx *mlx)
 {
 	map_check_walls(map, mlx);
 	map_check_map_size(map, mlx);

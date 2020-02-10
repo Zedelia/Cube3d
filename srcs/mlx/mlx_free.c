@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 15:02:58 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:56:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void  mlx_free(t_mlx *mlx)
+void	mlx_free(t_mlx *mlx)
 {
 	map_free(mlx->map);
 	ft_memdel((void **)mlx->cam.ray_tab);

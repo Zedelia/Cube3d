@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:22:51 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/02 20:51:42 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 17:19:13 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,7 +28,7 @@ t_vect		line_inter_line(t_line l1, t_line l2)
 	return (result);
 }
 
-t_bool	is_inter_in_seg(t_vect inter, t_sprite *sp)
+t_bool		is_inter_in_seg(t_vect inter, t_sprite *sp)
 {
 	return (((inter.x <= sp->p2.x && inter.x >= sp->p1.x) 		\
 				|| (inter.x <= sp->p1.x && inter.x >= sp->p2.x)) 	\

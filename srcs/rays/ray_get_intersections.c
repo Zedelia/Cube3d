@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:21:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:50:06 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 17:04:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 static void	ray_get_fst_vertical_intersection(t_rays *r, t_mlx *mlx)
 {
 	t_vect	inter;
-	double 	x_temp;
+	double	x_temp;
 
 	if (r->facing_left == False && r->facing_right == False)
 	{

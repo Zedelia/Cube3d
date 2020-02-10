@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 15:07:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:45:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:53:57 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,13 +23,13 @@ static size_t		map_get_index(char *line, t_mlx *mlx)
 	if (line && line[i] == 'S' && line[i + 1] == 'O')
 		line[i] = 's';
 	if (line)
-		return(ft_index(line[i], MAP_INFOS));
+		return (ft_index(line[i], MAP_INFOS));
 	return (-1);
 }
 
 static t_bool		map_get_line_info(t_map *map, char *line, t_mlx *mlx)
 {
-	size_t 				index;
+	size_t				index;
 	t_map_parser_fct	*fonc;
 
 	index = map_get_index(line, mlx);
@@ -41,7 +41,6 @@ static t_bool		map_get_line_info(t_map *map, char *line, t_mlx *mlx)
 	return (True);
 }
 
-
 static t_bool		map_parsing_info(t_mlx *mlx, int fd, char *line)
 {
 	while ((get_next_line(fd, &line)) == 1 && line[0] != '1')
@@ -52,19 +51,19 @@ static t_bool		map_parsing_info(t_mlx *mlx, int fd, char *line)
 	}
 	map_textures_init(mlx->map, mlx);
 	map_get_map_lines(mlx->map, fd, line, mlx);
+	map_tab_init(mlx->map, mlx);
 	return (True);
 }
 
 t_bool				map_parser(t_mlx *mlx)
 {
 	char	*line;
-	int 	fd;
+	int		fd;
 
 	line = NULL;
 	init_map_parser_fct_tab();
 	fd = open(mlx->map->map_file, O_RDONLY);
 	map_parsing_info(mlx, fd, line);
-	map_tab_init(mlx->map, mlx);
 	map_check_infos(mlx->map, mlx);
 	return (True);
 }

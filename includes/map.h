@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:56:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 13:14:44 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 18:29:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,7 +14,7 @@
 #ifndef MAP_H
 # define MAP_H
 
-#include "cube3d.h"
+# include "cube3d.h"
 
 typedef enum
 {
@@ -30,7 +30,7 @@ typedef enum
 }	t_type_map;
 
 /*
-** Init variables
+** Init map and its variables
 */
 
 void				map_printf(t_map *map);
@@ -44,9 +44,8 @@ t_bool				map_textures_init(t_map *map, t_mlx *mlx);
 ** create 2D map tab and save sprites position
 */
 
-t_bool				map_get_map_lines(t_map *map, int fd, char *line, t_mlx *mlx);
+t_bool				map_get_map_lines(t_map *map, int fd, char *l, t_mlx *mlx);
 t_bool				map_tab_init(t_map *map, t_mlx *mlx);
-
 
 t_bool				map_tabs_fill(t_map *map, t_mlx *mlx);
 
@@ -55,7 +54,7 @@ t_bool				map_tabs_fill(t_map *map, t_mlx *mlx);
 */
 
 void				init_map_parser_fct_tab(void);
-typedef t_bool		(t_map_parser_fct)(t_map *map , char *line, t_mlx *mlx);
+typedef t_bool		(t_map_parser_fct)(t_map *map, char *line, t_mlx *mlx);
 t_map_parser_fct	*g_map_parser_fct[t_size];
 
 t_bool				map_parse_r(t_map *map, char *line, t_mlx *mlx);
@@ -81,14 +80,9 @@ t_bool				map_check_texture(t_map *map, t_mlx *mlx);
 ** Map utils function
 */
 
-char		*map_check_incorrect_inputs_before_indicator(char *line);
-t_bool 		map_check_end_file(int fd, char *line, t_mlx *mlx);
-t_bool		map_check_incorrect_input_text(char a, char b, char *line, t_mlx *mlx);
-
-/*
-** Free map
-*/
-
-// TODO free map function
+char				*map_check_incorrect_inputs_before_indicator(char *line);
+t_bool				map_check_end_file(int fd, char *line, t_mlx *mlx);
+t_bool				map_check_incorrect_input_text(char a, char b, char *line,
+							t_mlx *mlx);
 
 #endif

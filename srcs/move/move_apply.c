@@ -6,11 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 10:33:03 by mbos         #+#   ##    ##    #+#       */
-<<<<<<< HEAD
-/*   Updated: 2020/02/10 14:37:33 by mbos        ###    #+. /#+    ###.fr     */
-=======
-/*   Updated: 2020/02/08 11:48:19 by mbos        ###    #+. /#+    ###.fr     */
->>>>>>> norme
+/*   Updated: 2020/02/10 16:58:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,7 +28,7 @@ static t_bool	wall_here(t_move move, t_mlx *mlx)
 	return (False);
 }
 
-static t_bool to_check_hz(t_move *move, t_rays mid, t_mlx *mlx)
+static t_bool	to_check_hz(t_move *move, t_rays mid, t_mlx *mlx)
 {
 	double	delta_y;
 
@@ -47,7 +43,7 @@ static t_bool to_check_hz(t_move *move, t_rays mid, t_mlx *mlx)
 	return (True);
 }
 
-static t_bool to_check_vt(t_move *move, t_rays mid, t_mlx *mlx)
+static t_bool	to_check_vt(t_move *move, t_rays mid, t_mlx *mlx)
 {
 	double	delta_x;
 
@@ -62,9 +58,9 @@ static t_bool to_check_vt(t_move *move, t_rays mid, t_mlx *mlx)
 	return (True);
 }
 
-t_bool		move_apply(t_move *move, t_mlx *mlx)
+t_bool			move_apply(t_move *move, t_mlx *mlx)
 {
-	t_rays 	mid;
+	t_rays	mid;
 
 	mid = mlx->cam.ray_tab[mlx->map->r_width / 2];
 	if (move->r)

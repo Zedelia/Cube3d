@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:40:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:50:40 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-static t_bool 	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
+static t_bool	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
 {
 	int i;
 	int coma;
@@ -37,7 +37,7 @@ static t_bool 	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
 
 static t_color	get_colors(char *line, t_mlx *mlx)
 {
-	int 	i;
+	int		i;
 	t_color	colors;
 
 	i = 0;
@@ -57,10 +57,10 @@ static t_color	get_colors(char *line, t_mlx *mlx)
 	return (colors);
 }
 
-t_bool	map_parse_floor(t_map *map, char *line, t_mlx *mlx)
+t_bool			map_parse_floor(t_map *map, char *line, t_mlx *mlx)
 {
 	t_color	colors;
-	int i;
+	int		i;
 
 	if (map->floor != -1)
 		return (return_false(__func__, "[FAIL] several times same info ", mlx));
@@ -73,10 +73,10 @@ t_bool	map_parse_floor(t_map *map, char *line, t_mlx *mlx)
 	return (True);
 }
 
-t_bool	map_parse_cell(t_map *map, char *line, t_mlx *mlx)
+t_bool			map_parse_cell(t_map *map, char *line, t_mlx *mlx)
 {
-	t_color	colors;
-	int i;
+	t_color		colors;
+	int			i;
 
 	if (map->cell != -1)
 		return (return_false(__func__, "[FAIL] several times same info", mlx));

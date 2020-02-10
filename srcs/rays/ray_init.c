@@ -6,18 +6,18 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:24:48 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 15:00:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 17:03:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_rays  ray_init(double angle, t_vect cam_pos)
+t_rays		ray_init(double angle, t_vect cam_pos)
 {
 	t_rays	ray;
-	(void)cam_pos;
 
+	(void)cam_pos;
 	ray.x = sin(angle);
 	ray.y = -cos(angle);
 	ray.distance = 0;

@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 20:11:04 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:42:18 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:49:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-static t_bool		strlen_spcount(t_maparse *line, t_mlx *mlx)
+static t_bool	strlen_spcount(t_maparse *line, t_mlx *mlx)
 {
 	int i;
 
@@ -41,7 +41,7 @@ static t_bool	map_line_init(t_maparse **self, char *line, int id, t_mlx *mlx)
 	if (!(*self = malloc(sizeof(t_maparse))))
 		return (return_false(__func__, "[FAIL] malloc", mlx));
 	if (!((*self)->line = ft_strdup(line)))
-			return (return_false(__func__, "[FAIL] strdup", mlx));
+		return (return_false(__func__, "[FAIL] strdup", mlx));
 	(*self)->next = NULL;
 	strlen_spcount((*self), mlx);
 	(*self)->id = id;
@@ -50,7 +50,7 @@ static t_bool	map_line_init(t_maparse **self, char *line, int id, t_mlx *mlx)
 
 static void		map_add_line(t_maparse **list, t_maparse *tmp)
 {
-	t_maparse 	*temp;
+	t_maparse	*temp;
 
 	temp = *list;
 	if (temp)
@@ -65,7 +65,7 @@ static void		map_add_line(t_maparse **list, t_maparse *tmp)
 
 t_bool			map_get_map_lines(t_map *map, int fd, char *line, t_mlx *mlx)
 {
-	t_maparse 	*tmp;
+	t_maparse	*tmp;
 
 	map->nb_lines = 0;
 	tmp = NULL;
@@ -77,8 +77,8 @@ t_bool			map_get_map_lines(t_map *map, int fd, char *line, t_mlx *mlx)
 		free(line);
 		get_next_line(fd, &line);
 	}
+	map_check_end_file(fd, line, mlx);
 	free(line);
 	line = NULL;
-	map_check_end_file(fd, line, mlx);
 	return (True);
 }

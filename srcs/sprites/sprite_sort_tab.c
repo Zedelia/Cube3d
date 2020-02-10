@@ -6,18 +6,18 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/24 11:13:52 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/24 15:27:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 17:14:42 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	sprite_sort_tab(t_sprite *tab, int size)
+void		sprite_sort_tab(t_sprite *tab, int size)
 {
-	int i;
-	int j;
-	t_sprite temp[size];
+	int			i;
+	int			j;
+	t_sprite	temp[size];
 
 	i = 0;
 	j = 0;

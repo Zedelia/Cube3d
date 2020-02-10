@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/08 11:25:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 13:04:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:10:45 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 static t_bool	display_color_cub(t_mlx *mlx, int l, int c, int color)
 {
 	t_vect_int	index;
-	int 		tile_s;
+	int			tile_s;
 
 	tile_s = mlx->map->tile / MINI_MAP_SCALE;
 	index.y = 0;
@@ -33,7 +33,6 @@ static t_bool	display_color_cub(t_mlx *mlx, int l, int c, int color)
 	}
 	return (True);
 }
-
 
 t_bool			display_mini_map(t_mlx *mlx, t_map *map)
 {

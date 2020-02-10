@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:48:39 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:43:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:45:23 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,15 +38,14 @@ static t_bool		check_incorrect_inputs(char c, char *line, t_mlx *mlx)
 		i++;
 	i++;
 	if (!(line = check_between_digit(&line[i])))
-		return (return_false(__func__, "[FAIL] wrong input in resolution", mlx));
+		return (return_false(__func__, "[FAIL] bad input in resolution", mlx));
 	if (!(line = check_between_digit(&line[0])))
-		return (return_false(__func__, "[FAIL] wrong input in resolution", mlx));
+		return (return_false(__func__, "[FAIL] bad input in resolution", mlx));
 	i = 0;
 	while (line[i])
 	{
 		if (line[i] > 32)
-			return (return_false(__func__,
-					"[FAIL] wrong input in resolution", mlx));
+			return (return_false(__func__, "[FAIL] char in resolution", mlx));
 		i++;
 	}
 	return (True);
@@ -57,8 +56,7 @@ t_bool				map_parse_r(t_map *map, char *line, t_mlx *mlx)
 	size_t	i;
 
 	if (map->r_width != -1 || map->r_height != -1)
-		return (return_false(__func__,
-				"[FAIL] info provided several times", mlx));
+		return (return_false(__func__, "[FAIL] info several times", mlx));
 	i = 1;
 	check_incorrect_inputs('R', line, mlx);
 	while (ft_isdigit(line[i]) == 0)

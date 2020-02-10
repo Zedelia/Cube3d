@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:39:49 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:56:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 17:16:34 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,8 +31,8 @@ static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 		if (mlx->cam.ray_tab[i].distance > sp->dist)
 		{
 			sprite_ray_create_line(&mlx->cam.ray_tab[i], mlx);
-			mlx->cam.ray_tab[i].inter_sprite
-					= line_inter_line(sp->line_eq, mlx->cam.ray_tab[i].line_eq);
+			mlx->cam.ray_tab[i].inter_sprite = line_inter_line(sp->line_eq,
+					mlx->cam.ray_tab[i].line_eq);
 			if (is_inter_in_seg(mlx->cam.ray_tab[i].inter_sprite, sp) == True)
 			{
 				if (sp->fst_ray_print == -1)
@@ -47,10 +47,10 @@ static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 {
 	int		i;
-	double 	end;
-	double 	mid;
+	double	end;
+	double	mid;
 
-	mid = sp->fst_ray_print + (sp->last_ray_print-sp->fst_ray_print) * 0.5;
+	mid = sp->fst_ray_print + (sp->last_ray_print - sp->fst_ray_print) * 0.5;
 	i = sp->fst_ray_print;
 	end = sp->last_ray_print;
 	while (i <= end)

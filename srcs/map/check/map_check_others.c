@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/07 12:10:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:37:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 16:18:38 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
 
-char	 *map_check_incorrect_inputs_before_indicator(char *line)
+char	*map_check_incorrect_inputs_before_indicator(char *line)
 {
 	int i;
 
@@ -29,7 +29,7 @@ char	 *map_check_incorrect_inputs_before_indicator(char *line)
 
 t_bool	map_check_end_file(int fd, char *line, t_mlx *mlx)
 {
-	int i ;
+	int i;
 
 	i = 0;
 	while (get_next_line(fd, &line))

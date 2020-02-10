@@ -6,17 +6,17 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/24 11:00:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 12:33:43 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 17:10:19 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool	sprites_tab_init(t_map *map, t_mlx *mlx)
+t_bool		sprites_tab_init(t_map *map, t_mlx *mlx)
 {
-	t_sprite 	*sprite_tab;
-	int 		sp_max;
+	t_sprite	*sprite_tab;
+	int			sp_max;
 
 	sp_max = map->nb_sprites;
 	if (!(sprite_tab = malloc(sizeof(t_sprite) * sp_max)))
