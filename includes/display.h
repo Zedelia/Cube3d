@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/09 14:41:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/04 11:47:06 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 11:39:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,8 +28,8 @@ t_bool		display_textured_walls(t_mlx *mlx);
 int			display_get_text_color_hz(t_img *img, t_rays r, t_mlx *mlx);
 
 t_bool		display_walls(t_mlx *mlx);
-t_bool		display_wall_hz(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x);
-t_bool		display_wall_vt(t_rays r, t_map *map, t_img img, t_mlx *mlx, int x);
+t_bool		display_wall_hz(t_rays r, t_img img, t_mlx *mlx, int x);
+t_bool		display_wall_vt(t_rays r, t_img img, t_mlx *mlx, int x);
 
 t_bool		display_sprite(t_mlx *mlx);
 

@@ -6,19 +6,19 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/08 11:25:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 11:26:55 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 13:04:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
+static t_bool	display_color_cub(t_mlx *mlx, int l, int c, int color)
 {
 	t_vect_int	index;
 	int 		tile_s;
 
-	tile_s = map->tile / MINI_MAP_SCALE;
+	tile_s = mlx->map->tile / MINI_MAP_SCALE;
 	index.y = 0;
 	while (index.y < tile_s)
 	{
@@ -26,7 +26,7 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 		while (index.x < tile_s)
 		{
 			mlx->img.data[((l * tile_s) + index.y)
-					* map->r_width + (index.x + c * tile_s)] = color;
+					* mlx->map->r_width + (index.x + c * tile_s)] = color;
 			index.x++;
 		}
 		index.y++;
@@ -35,26 +35,27 @@ t_bool display_color_cub(t_mlx *mlx, t_map *map, int l, int c, int color)
 }
 
 
-t_bool	display_mini_map(t_mlx *mlx, t_map *map)
+t_bool			display_mini_map(t_mlx *mlx, t_map *map)
 {
-	int l = 0;
-	int c = 0;
+	int l;
+	int c;
 
+	l = 0;
 	while (l < map->nb_lines)
 	{
-		while (c < map->nb_col )
+		c = 0;
+		while (c < map->nb_col)
 		{
 			if (map->tab[l][c] == 1)
-				display_color_cub(mlx, map, l, c, 0xffba33);
+				display_color_cub(mlx, l, c, 0xffba33);
 			if (map->tab[l][c] == 0)
-				display_color_cub(mlx, map, l, c, 0x33fff9);
+				display_color_cub(mlx, l, c, 0x33fff9);
 			if (map->tab[l][c] == 2)
-				display_color_cub(mlx, map, l, c, 0xff33fc);
+				display_color_cub(mlx, l, c, 0xff33fc);
 			if (map->tab[l][c] > 2)
-				display_color_cub(mlx, map, l, c, 0x79d4e7);
+				display_color_cub(mlx, l, c, 0x79d4e7);
 			c++;
 		}
-		c = 0;
 		l++;
 	}
 	ft_draw_pix(mlx, mlx->cam.pos, 5);

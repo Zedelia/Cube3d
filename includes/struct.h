@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/08 12:03:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 13:44:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -190,4 +190,39 @@ typedef struct	s_mlx
 	t_img		health;
 }				t_mlx;
 
+typedef struct __attribute__((packed))		s_fileheader
+{
+	unsigned char	signature[2];
+	unsigned int	filesize;
+	unsigned int	reserved;
+	unsigned int	fileoffset_to_pixelarray;
+}					t_fileheader;
+
+typedef struct __attribute__((packed))		s_imageheader
+{
+	unsigned int	dibheadersize;
+	unsigned int	width;
+	unsigned int	height;
+	int16_t			planes;
+	int16_t			bitsperpixel;
+	unsigned int	compression;
+	unsigned int	imagesize;
+	unsigned int	xpixelpermeter;
+	unsigned int	ypixelpermeter;
+	unsigned int	numcolorspallette;
+	unsigned int	mostimpcolor;
+}					t_imageheader;
+
+typedef struct __attribute__((packed))		s_bitmap
+{
+	t_fileheader	fileheader;
+	t_imageheader	imageheader;
+}					t_bitmap;
+
+typedef struct		s_bgr
+{
+	unsigned char	blue;
+	unsigned char	green;
+	unsigned char	red;
+}					t_bgr;
 #endif

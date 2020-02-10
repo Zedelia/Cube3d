@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/05 15:50:29 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/10 13:43:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,8 +25,8 @@
 # include <stdio.h>
 # include <errno.h>
 # include <string.h>
-
-// TODO : floor anf roof color
+# include <sys/stat.h>
+# include <stdint.h>
 
 # define WIN_WIDTH 5120 / 2
 # define WIN_HEIGHT 2880 / 2
@@ -44,9 +44,9 @@
 # define DIST_MAX 20.00
 # define BLACK 0x000000
 
-// # ifndef BUFFER_SIZE
-// #  define BUFFER_SIZE 8
-// # endif
+# define _XPIXELPERMETER 0xEC4
+# define _YPIXELPERMETER 0xEC4
+# define DPI 72
 
 typedef unsigned long long	t_uintmax;
 typedef unsigned char		t_uchar;
@@ -57,8 +57,6 @@ typedef unsigned char		t_uchar;
 # include "rays.h"
 # include "utils_c3d.h"
 # include "map.h"
-# include "camera.h"
-# include "move.h"
 # include "keys.h"
 # include "sprites.h"
 
