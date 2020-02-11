@@ -9,6 +9,7 @@ SRC_PATH = srcs
 
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_display.c \
+	img/img_print.c \
 	camera/camera_init.c \
 	camera/camera_printf.c \
 	camera/camera_get_pos.c \

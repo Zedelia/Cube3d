@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/27 18:11:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 17:22:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 14:41:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,7 +45,8 @@ t_bool	file_exists(const char *filename, t_mlx *mlx)
 			i++;
 		i--;
 		if (filename[i] == 'b' && filename[i - 1] == 'u'
-				&& filename[i - 2] == 'c')
+				&& filename[i - 2] == 'c' && filename[i - 3] == '.'
+				&& filename[i - 4])
 			return (True);
 	}
 	return (return_false(__func__, "[FAIL] Map doesn't exists", mlx));

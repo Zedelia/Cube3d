@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 18:28:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 14:11:25 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -47,6 +47,7 @@
 # define _XPIXELPERMETER 0xEC4
 # define _YPIXELPERMETER 0xEC4
 # define DPI 72
+# define IMG "img.bmp"
 
 # include "struct.h"
 # include "mlx_s.h"
@@ -56,6 +57,7 @@
 # include "map.h"
 # include "keys.h"
 # include "sprites.h"
+# include "print_image.h"
 
 typedef unsigned long long	t_uintmax;
 typedef unsigned char		t_uchar;
