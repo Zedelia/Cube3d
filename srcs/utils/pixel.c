@@ -6,21 +6,21 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:27:35 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 17:19:01 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:28:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	ft_pixel_put(t_mlx *mlx, int x, int y, int color)
+void	pixel_put(t_mlx *mlx, int x, int y, int color)
 {
 	if (x >= mlx->map->r_width || y >= mlx->map->r_height || x < 0 || y < 0)
 		return ;
 	mlx->img.data[y * mlx->map->r_width + x] = color;
 }
 
-int		ft_pixel_get_color(t_img img, int x, int y)
+int		get_pixel_color(t_img img, int x, int y)
 {
 	int color;
 
@@ -34,11 +34,11 @@ int		ft_pixel_get_color(t_img img, int x, int y)
 	return (color);
 }
 
-int		get_right_color(t_img img, t_mlx *mlx, t_vect offset, int y)
+int		get_correct_color(t_img img, t_mlx *mlx, t_vect offset, int y)
 {
 	int color;
 
-	if ((color = ft_pixel_get_color(img, offset.x, offset.y)) == -1)
-		return (ft_pixel_get_color(mlx->img, mlx->map->r_width / 2, y));
+	if ((color = get_pixel_color(img, offset.x, offset.y)) == -1)
+		return (get_pixel_color(mlx->img, mlx->map->r_width / 2, y));
 	return (color);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 14:11:25 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:36:26 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,10 +50,8 @@
 # define IMG "img.bmp"
 
 # include "struct.h"
-# include "mlx_s.h"
 # include "display.h"
 # include "rays.h"
-# include "utils_c3d.h"
 # include "map.h"
 # include "keys.h"
 # include "sprites.h"
@@ -61,5 +59,64 @@
 
 typedef unsigned long long	t_uintmax;
 typedef unsigned char		t_uchar;
+
+/*
+** MLX CAM init and Free
+*/
+
+t_bool		mlx_ft_init(t_mlx **mlx, char *file);
+void		mlx_free(t_mlx *mlx);
+
+void		cam_printf(t_cam *cam);
+t_bool		cam_init(t_mlx *mlx);
+void		cam_get_rotation_angle(t_cam *cam);
+void		cam_get_pos(t_cam *cam, t_map *map);
+
+t_bool		img_load_xpm(t_mlx *mlx, char *file, t_img *img);
+
+int			move_keydown(int key, t_mlx *mlx);
+t_bool		move_apply(t_move *move, t_mlx *mlx);
+
+/*
+** Return Functions
+*/
+
+t_bool		return_false(const char *namefc, char const *err_msg, t_mlx *mlx);
+t_bool		return_no_map();
+t_bool		file_exists(const char *filename, t_mlx *mlx);
+
+/*
+** Colors and pixel Functions
+*/
+
+t_color		int_to_color(int n);
+int			color_to_int(t_color c);
+int			shade_color(int color, double dist);
+int			get_correct_color(t_img img, t_mlx *mlx, t_vect offset, int y);
+int			get_pixel_color(t_img img, int x, int y);
+
+void		pixel_put(t_mlx *mlx, int x, int y, int color);
+
+/*
+** Str Functions used in parsing
+*/
+
+int			get_str_int_len(char *str);
+int			occur_in_str(char c, char *line);
+
+/*
+** Actions on vectors Functions
+*/
+
+t_vect		norm_vect(t_vect v);
+void		rotate_vect(t_vect *v, double angle);
+
+/*
+** Maths
+*/
+
+double		degrees_to_radian(double angle_in_degrees);
+double		dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist);
+double		ft_math_dist(double hit_x, double hit_y, t_mlx *mlx);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 18:16:25 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 11:46:59 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:28:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,7 +50,7 @@ t_bool			display_colored_walls(t_mlx *mlx)
 		while (y < h / 2 + h / mlx->cam.ray_tab[x].distance / 2)
 		{
 			color = give_wall_color(mlx->cam.ray_tab[x]);
-			ft_pixel_put(mlx, x, y, color);
+			pixel_put(mlx, x, y, color);
 			y++;
 		}
 		x++;

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 19:09:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 11:40:47 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:28:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,8 +29,8 @@ t_bool	display_wall_hz(t_rays r, t_img img, t_mlx *mlx, int x)
 	while (i < y.to)
 	{
 		offset.y = (i - y.from) * ((double)img.height / (y.to - y.from));
-		if ((color = get_right_color(img, mlx, offset, i)) != -1)
-			ft_pixel_put(mlx, x, i,
+		if ((color = get_correct_color(img, mlx, offset, i)) != -1)
+			pixel_put(mlx, x, i,
 					shade_color(color,
 					r.distance > DIST_MAX ? 1 : r.distance / DIST_MAX));
 		i++;
@@ -56,8 +56,8 @@ t_bool	display_wall_vt(t_rays r, t_img img, t_mlx *mlx, int x)
 	while (i < y.to)
 	{
 		offset.y = (i - y.from) * ((double)img.height / (y.to - y.from));
-		if ((color = get_right_color(img, mlx, offset, i)) != -1)
-			ft_pixel_put(mlx, x, i,
+		if ((color = get_correct_color(img, mlx, offset, i)) != -1)
+			pixel_put(mlx, x, i,
 					shade_color(color,
 					r.distance > DIST_MAX ? 1 : r.distance / DIST_MAX));
 		i++;

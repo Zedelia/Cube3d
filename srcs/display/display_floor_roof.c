@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/19 16:02:45 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 13:02:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:28:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,7 +24,7 @@ t_bool		display_roof(t_mlx *mlx)
 		y = 0;
 		while (y < mlx->map->r_height / 2)
 		{
-			ft_pixel_put(mlx, x, y,
+			pixel_put(mlx, x, y,
 					shade_color(mlx->map->cell, 1.50 * y / mlx->map->r_height));
 			y++;
 		}
@@ -46,7 +46,7 @@ t_bool		display_floor(t_mlx *mlx)
 		y = height / 2;
 		while (y < height)
 		{
-			ft_pixel_put(mlx, x, y,
+			pixel_put(mlx, x, y,
 					shade_color(mlx->map->floor,
 					1 - (1.50 * (y - height * 0.5) / height)));
 			y++;

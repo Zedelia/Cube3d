@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/10 13:18:30 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 17:22:41 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:24:18 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -72,5 +72,4 @@ void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 	fd = open(filename, O_RDWR);
 	write(fd, &bfh, 14);
 	ft_bitmap_image(mlx, fd, bih);
-	// ft_close(mlx, 1);
 }

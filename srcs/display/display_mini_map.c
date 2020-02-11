@@ -6,12 +6,32 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/08 11:25:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 16:10:45 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:34:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
+
+static void			draw_minimap_square(t_mlx *mlx, t_vect v, int size_obj)
+{
+	int y;
+	int x;
+	int tile;
+
+	tile = mlx->map->tile / MINI_MAP_SCALE;
+	y = -size_obj / 2;
+	while (y < size_obj / 2)
+	{
+		x = -size_obj / 2;
+		while (x < size_obj / 2)
+		{
+			pixel_put(mlx, (v.x) * tile + x, (v.y) * tile + y, 0x000000);
+			x++;
+		}
+		y++;
+	}
+}
 
 static t_bool	display_color_cub(t_mlx *mlx, int l, int c, int color)
 {
@@ -57,7 +77,7 @@ t_bool			display_mini_map(t_mlx *mlx, t_map *map)
 		}
 		l++;
 	}
-	ft_draw_pix(mlx, mlx->cam.pos, 5);
+	draw_minimap_square(mlx, mlx->cam.pos, 5);
 	display_rays(mlx, mlx->cam.ray_tab);
 	return (True);
 }

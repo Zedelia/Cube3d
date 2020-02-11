@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   utils_draw.c                                     .::    .:/ .      .::   */
+/*   vectors.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/26 17:21:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/07 15:11:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Created: 2020/02/11 17:37:28 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/11 17:37:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	ft_draw_pix(t_mlx *mlx, t_vect v, int size_obj)
+t_vect	norm_vect(t_vect v)
 {
-	int y;
-	int x;
-	int tile;
+	t_vect	v_norm;
+	double	v_size;
 
-	tile = mlx->map->tile / MINI_MAP_SCALE;
-	y = -size_obj / 2;
-	while (y < size_obj / 2)
-	{
-		x = -size_obj / 2;
-		while (x < size_obj / 2)
-		{
-			ft_pixel_put(mlx, (v.x) * tile + x, (v.y) * tile + y, 0x000000);
-			x++;
-		}
-		y++;
-	}
+	v_size = sqrt(v.y * v.y + v.x * v.x);
+	v_norm.x = v.x / v_size;
+	v_norm.y = v.y / v_size;
+	return (v_norm);
+}
+
+void	rotate_vect(t_vect *r, double angle)
+{
+	double c;
+
+	c = degrees_to_radian(angle);
+	r->x = r->x * cos(c) - r->y * sin(c);
+	r->y = r->x * sin(c) + r->y * cos(c);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/14 17:55:41 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 11:43:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:48:51 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,10 +19,10 @@ static t_bool	display_rays_vt(t_mlx *mlx, t_rays r, int color)
 	int i;
 
 	i = 0;
-	temp_y = mlx->cam.pos.y * (mlx->map->tile / 4);
-	while (i < r.distance * (mlx->map->tile / 4))
+	temp_y = mlx->cam.pos.y * (mlx->map->tile / MINI_MAP_SCALE);
+	while (i < r.distance * (mlx->map->tile / MINI_MAP_SCALE) && i < mlx->map->tile * 1)
 	{
-		ft_pixel_put(mlx, mlx->cam.pos.x * (mlx->map->tile / 4), temp_y, color);
+		pixel_put(mlx, mlx->cam.pos.x * (mlx->map->tile / MINI_MAP_SCALE), temp_y, color);
 		if (r.y > 0)
 			temp_y++;
 		else
@@ -38,10 +38,10 @@ static t_bool	display_rays_hz(t_mlx *mlx, t_rays r, int color)
 	int i;
 
 	i = 0;
-	temp_x = mlx->cam.pos.x * (mlx->map->tile / 4);
-	while (i < r.distance * (mlx->map->tile / 4))
+	temp_x = mlx->cam.pos.x * (mlx->map->tile / MINI_MAP_SCALE);
+	while (i < r.distance * (mlx->map->tile / MINI_MAP_SCALE) && i < mlx->map->tile * 1)
 	{
-		ft_pixel_put(mlx, temp_x, mlx->cam.pos.y * (mlx->map->tile / 4), color);
+		pixel_put(mlx, temp_x, mlx->cam.pos.y * (mlx->map->tile / MINI_MAP_SCALE), color);
 		if (r.x > 0)
 			temp_x++;
 		else
@@ -62,11 +62,11 @@ static t_bool	display_rays_y(t_mlx *mlx, t_rays r, int color)
 	if (!a)
 		return (True);
 	i = 0;
-	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / 4);
-	temp_y = mlx->cam.pos.y * (mlx->map->tile / 4);
-	while (i < r.distance * (mlx->map->tile / 4))
+	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / MINI_MAP_SCALE);
+	temp_y = mlx->cam.pos.y * (mlx->map->tile / MINI_MAP_SCALE);
+	while (i < r.distance * (mlx->map->tile / MINI_MAP_SCALE) && i < mlx->map->tile * 1)
 	{
-		ft_pixel_put(mlx, (temp_y - b) / a, temp_y, color);
+		pixel_put(mlx, (temp_y - b) / a, temp_y, color);
 		if (r.y > 0)
 			temp_y++;
 		else
@@ -84,12 +84,12 @@ static t_bool	display_rays_x(t_mlx *mlx, t_rays r, int color)
 	int		i;
 
 	a = r.y / r.x;
-	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / 4);
+	b = (mlx->cam.pos.y - a * mlx->cam.pos.x) * (mlx->map->tile / MINI_MAP_SCALE);
 	i = 0;
-	temp_x = mlx->cam.pos.x * (mlx->map->tile / 4);
-	while (i < r.distance * (mlx->map->tile / 4))
+	temp_x = mlx->cam.pos.x * (mlx->map->tile / MINI_MAP_SCALE);
+	while (i < r.distance * (mlx->map->tile / MINI_MAP_SCALE) && i < mlx->map->tile * 1)
 	{
-		ft_pixel_put(mlx, temp_x, (a * temp_x + b), color);
+		pixel_put(mlx, temp_x, (a * temp_x + b), color);
 		if (r.x > 0)
 			temp_x++;
 		else

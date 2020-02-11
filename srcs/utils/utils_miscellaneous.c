@@ -6,21 +6,12 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 15:28:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 17:17:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:37:06 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
-
-void	rotate_vect(t_vect *r, double angle)
-{
-	double c;
-
-	c = degrees_to_radian(angle);
-	r->x = r->x * cos(c) - r->y * sin(c);
-	r->y = r->x * sin(c) + r->y * cos(c);
-}
 
 int		get_str_int_len(char *str)
 {

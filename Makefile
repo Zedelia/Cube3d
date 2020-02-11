@@ -8,7 +8,6 @@ NAME = cube3d
 SRC_PATH = srcs
 
 SRCS_NAME = img/img_load_xpm.c \
-	img/img_display.c \
 	img/img_print.c \
 	camera/camera_init.c \
 	camera/camera_printf.c \
@@ -48,13 +47,11 @@ SRCS_NAME = img/img_load_xpm.c \
 	move/move_keydown.c \
 	utils/colors.c \
 	utils/angles.c \
-	utils/utils_draw.c \
 	utils/utils_miscellaneous.c \
 	utils/return_func.c \
 	utils/math_dist.c \
-	utils/ft_pixel.c \
-	utils/line_inter_line.c \
-	utils/norm_vect.c \
+	utils/pixel.c \
+	utils/vectors.c \
 	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \
@@ -74,6 +71,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	sprites/sprite_draw_column.c \
 	sprites/sprite_draw.c \
 	sprites/sprite_get_line_seg.c  \
+	sprites/sprite_draw_utils.c \
 
 
 
