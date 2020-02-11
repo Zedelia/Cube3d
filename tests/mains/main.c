@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	mlx_ft_init(&mlx, argv[1]);
 	display_update(mlx);
 	if (argv[2] && !ft_strcmp(argv[2], "save"))
-		print_image(mlx);
+		ft_save_bitmap("screen.bmp", mlx);
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 	display_exit_on_click(mlx);
 	mlx_hook(mlx->win, 2, 0, &move_keydown, mlx);

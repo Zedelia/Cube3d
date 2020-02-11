@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/10 13:18:38 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 14:55:30 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:19:08 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,47 +16,31 @@
 
 # include "cube3d.h"
 
-# define _XPIXELPERMETER 0xEC4
-# define _YPIXELPERMETER 0xEC4
-# define DPI 72
-
-int				print_image(t_mlx *mlx);
-
-typedef struct __attribute__((packed))		s_fileheader
+typedef struct		s_bpm
 {
-	unsigned char	signature[2];
-	unsigned int	filesize;
-	unsigned int	reserved;
-	unsigned int	fileoffset_to_pixelarray;
-}					t_fileheader;
+	unsigned char	bitmap_type[2];
+	int				file_size;
+	short			reserved1;
+	short			reserved2;
+	unsigned int	offset_bits;
+}					t_bpm;
 
-typedef struct __attribute__((packed))		s_imageheader
+typedef struct		s_bpm2
 {
-	unsigned int	dibheadersize;
+	unsigned int	size_header;
 	unsigned int	width;
 	unsigned int	height;
-	int16_t			planes;
-	int16_t			bitsperpixel;
+	short int		planes;
+	short int		bit_count;
 	unsigned int	compression;
-	unsigned int	imagesize;
-	unsigned int	xpixelpermeter;
-	unsigned int	ypixelpermeter;
-	unsigned int	numcolorspallette;
-	unsigned int	mostimpcolor;
-}					t_imageheader;
+	unsigned int	image_size;
+	unsigned int	ppm_x;
+	unsigned int	ppm_y;
+	unsigned int	clr_used;
+	unsigned int	clr_important;
+}					t_bpm2;
 
-typedef struct __attribute__((packed))		s_bitmap
-{
-	t_fileheader	fileheader;
-	t_imageheader	imageheader;
-}					t_bitmap;
-
-typedef struct		s_bgr
-{
-	unsigned char	blue;
-	unsigned char	green;
-	unsigned char	red;
-}					t_bgr;
+void			ft_save_bitmap(const char *filename, t_mlx *mlx);
 
 
 #endif

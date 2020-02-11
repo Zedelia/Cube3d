@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/10 13:18:30 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 15:05:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/11 17:22:41 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,96 +19,58 @@
 **	O_CREAT can create the image with the permissions after it
 */
 
-static void		fill_bmp_header(t_mlx *mlx, int fd)
+static void		ft_bitmap_image(t_mlx *mlx, int fd, t_bpm2 bih)
 {
-	t_bitmap bitmap;
+	int				x;
+	int				y;
+	int				ble;
+	unsigned char	color[3];
 
-	ft_memcpy(bitmap.fileheader.signature, "BM", 2);
-	bitmap.fileheader.filesize = mlx->img.width * mlx->img.height * 3 + sizeof(t_bitmap);
-	bitmap.fileheader.reserved = 0;
-	bitmap.fileheader.fileoffset_to_pixelarray = sizeof(t_bitmap);
-	bitmap.imageheader.dibheadersize = sizeof(t_imageheader);
-	bitmap.imageheader.width = mlx->img.width;
-	bitmap.imageheader.height = mlx->img.height;
-	bitmap.imageheader.planes = 1;
-	bitmap.imageheader.bitsperpixel = 24;
-	bitmap.imageheader.compression = 0;
-	bitmap.imageheader.imagesize = mlx->img.width * mlx->img.height;
-	bitmap.imageheader.ypixelpermeter = _YPIXELPERMETER;
-	bitmap.imageheader.xpixelpermeter = _XPIXELPERMETER;
-	bitmap.imageheader.numcolorspallette = 0;
-	bitmap.imageheader.mostimpcolor = 0;
-	write(fd, &bitmap.fileheader, 14);
-	write(fd, &bitmap.imageheader, sizeof(t_imageheader));
-}
-
-static int		init_rev_image(t_mlx *mlx, t_bgr **rev_image)
-{
-	int		cpy;
-	int		i;
-	int		j;
-	char	*image;
-
-	image = (char *)mlx->img.data;
-	if (!(*rev_image = malloc(mlx->img.width * mlx->img.height * sizeof(t_bgr))))
-		return (-1);
-	i = 0;
-	while (i < mlx->img.height)
+	write(fd, &bih, sizeof(bih));
+	y = mlx->map->r_height - 1;
+	while (y >= 0)
 	{
-		j = mlx->img.width - 1;
-		while (j >= 0)
+		x = 0;
+		while (x < mlx->map->r_width)
 		{
-			cpy = mlx->img.width * i + j;
-			(*rev_image)[cpy].blue = image[cpy * 4];
-			(*rev_image)[cpy].green = image[cpy * 4 + 1];
-			(*rev_image)[cpy].red = image[cpy * 4 + 2];
-			j--;
-				printf("coucou\n");
+			ble = mlx->img.data[y * mlx->map->r_width + x];
+			color[0] = ble % 256;
+			ble /= 256;
+			color[1] = ble % 256;
+			ble /= 256;
+			color[2] = ble % 256;
+			write(fd, &color, sizeof(color));
+			x++;
 		}
-		i++;
-	}
-	return (0);
-}
-
-static void		fill_image(t_mlx *mlx, t_bgr *rev_image, int fd)
-{
-	int		i;
-	int		remainder;
-	char	c_null;
-	char	c_huge;
-
-	c_null = 0;
-	c_huge = 0xFF;
-	i = mlx->map->r_height - 1;
-	while (i >= 0)
-	{
-		remainder = 4 - (mlx->img.width * sizeof(t_bgr)) % 4;
-		if (remainder == 4)
-			remainder = 0;
-		write(fd, rev_image + i * mlx->img.width, mlx->img.width * sizeof(t_bgr));
-		while (remainder > 1)
-			remainder -= write(fd, &c_null, 1);
-		write(fd, &c_huge, remainder);
-		i--;
+		y--;
 	}
 }
 
-int				print_image(t_mlx *mlx)
+void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 {
-	int		fd;
-	t_bgr	*rev_image;
+	int			fd;
+	t_bpm		bfh;
+	t_bpm2		bih;
 
-	fd = open(IMG, O_WRONLY | O_CREAT, 00755);
-	if (fd < 0)
-		return (return_false(__func__, "[FAIL] create img bmp", mlx));
-	fill_bmp_header(mlx, fd);
-	if (init_rev_image(mlx, &rev_image) == -1)
-	{
-		close(fd);
-		return (return_false(__func__, "[FAIL] create img bmp", mlx));
-	}
-	fill_image(mlx, rev_image, fd);
-	free(rev_image);
-	close(fd);
-	return (0);
+	ft_memcpy(&bfh.bitmap_type, "BM", 2);
+	bfh.file_size = mlx->map->r_width * mlx->map->r_height * 4 + 54;
+	bfh.reserved1 = 0;
+	bfh.reserved2 = 0;
+	bfh.offset_bits = 0;
+	bih.size_header = sizeof(bih);
+	bih.width = mlx->map->r_width ;
+	bih.height = mlx->map->r_height;
+	bih.planes = 1;
+	bih.bit_count = 24;
+	bih.compression = 0;
+	bih.image_size = mlx->map->r_width  * mlx->map->r_height * 4 + 54;
+	bih.ppm_x = 2;
+	bih.ppm_y = 2;
+	bih.clr_used = 0;
+	bih.clr_important = 0;
+	close(open(filename, O_RDONLY | O_CREAT, S_IRWXU));
+	fd = open(filename, O_RDWR);
+	write(fd, &bfh, 14);
+	ft_bitmap_image(mlx, fd, bih);
+	// ft_close(mlx, 1);
 }
