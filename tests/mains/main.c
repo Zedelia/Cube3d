@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	file_exists(argv[1], mlx);
 	mlx_ft_init(&mlx, argv[1]);
 	display_update(mlx);
-	if (argv[2] && !ft_strcmp(argv[2], "save"))
+	if (argv[2] && (!ft_strcmp(argv[2], "––save") || !ft_strcmp(argv[2], "–s")))
 		ft_save_bitmap("screen.bmp", mlx);
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 	display_exit_on_click(mlx);

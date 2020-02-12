@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 16:48:39 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 15:15:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/12 13:44:37 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,7 +33,7 @@ static t_bool		check_incorrect_inputs(char c, char *line, t_mlx *mlx)
 {
 	size_t	i;
 
-	i = 1;
+	i = 0;
 	while (line[i] && line[i] != c)
 		i++;
 	i++;

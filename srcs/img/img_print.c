@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/10 13:18:30 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 17:24:18 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/12 13:56:50 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,12 +58,12 @@ void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 	bfh.reserved2 = 0;
 	bfh.offset_bits = 0;
 	bih.size_header = sizeof(bih);
-	bih.width = mlx->map->r_width ;
+	bih.width = mlx->map->r_width;
 	bih.height = mlx->map->r_height;
 	bih.planes = 1;
 	bih.bit_count = 24;
 	bih.compression = 0;
-	bih.image_size = mlx->map->r_width  * mlx->map->r_height * 4 + 54;
+	bih.image_size = mlx->map->r_width * mlx->map->r_height * 4 + 54;
 	bih.ppm_x = 2;
 	bih.ppm_y = 2;
 	bih.clr_used = 0;

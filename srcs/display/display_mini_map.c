@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/08 11:25:20 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 17:34:11 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/12 13:57:07 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static void			draw_minimap_square(t_mlx *mlx, t_vect v, int size_obj)
+static void		draw_minimap_square(t_mlx *mlx, t_vect v, int size_obj)
 {
 	int y;
 	int x;

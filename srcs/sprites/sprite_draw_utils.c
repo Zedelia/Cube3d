@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   line_inter_line.c                                .::    .:/ .      .::   */
+/*   sprite_draw_utils.c                              .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/28 11:22:51 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 17:19:13 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/12 11:11:52 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,8 +30,8 @@ t_vect		line_inter_line(t_line l1, t_line l2)
 
 t_bool		is_inter_in_seg(t_vect inter, t_sprite *sp)
 {
-	return (((inter.x <= sp->p2.x && inter.x >= sp->p1.x) 		\
-				|| (inter.x <= sp->p1.x && inter.x >= sp->p2.x)) 	\
-			&& ((inter.y <= sp->p2.y && inter.y >= sp->p1.y) 		\
+	return (((inter.x <= sp->p2.x && inter.x >= sp->p1.x)
+				|| (inter.x <= sp->p1.x && inter.x >= sp->p2.x))
+			&& ((inter.y <= sp->p2.y && inter.y >= sp->p1.y)
 				|| (inter.y <= sp->p1.y && inter.y >= sp->p2.y)));
 }
