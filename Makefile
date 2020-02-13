@@ -126,7 +126,7 @@ R_UNDERLINE	=	\033[24m
 ## COMPIL SHORTCUT	##
 ##					##
 
-CC = gcc -g
+CC = gcc -g3
 CFLAGS = -Wall -Wextra -Werror
 DFLAGS = -fsanitize=address
 
@@ -151,7 +151,7 @@ makedir:
 
 
 ${NAME}: $(OBJ)
-	@$(COMPIL) tests/mains/main.c
+	@$(COMPIL) main.c
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<$(ERASE)"
 	@echo "\n\n$(YELLOW)| ->		$(NAME):" "$(RESET)|\033[42m     $(BOLD)L O A D I N G$(R_BOLD)     $(RESET)|\n\n" #| pv -qL 15
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
