@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:23:44 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 18:29:37 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/13 13:53:48 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,9 +15,6 @@
 # define RAYS_H
 
 # include "cube3d.h"
-
-// void	rays_printf_tab(t_mlx *mlx, t_rays *ray);
-// void	rays_printf(t_rays ray);
 
 /*
 ** Init rays tab and ray

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/10 13:18:38 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/11 17:19:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/13 13:53:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,7 +40,6 @@ typedef struct		s_bpm2
 	unsigned int	clr_important;
 }					t_bpm2;
 
-void			ft_save_bitmap(const char *filename, t_mlx *mlx);
-
+void				ft_save_bitmap(const char *filename, t_mlx *mlx);
 
 #endif

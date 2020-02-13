@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/22 15:29:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/12 16:37:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/13 13:50:01 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,7 +32,7 @@
 # define FOV_DEGREE 60.0
 # define TURN_SPEED 6
 # define WALK_SPEED 0.5
-# define MINI_MAP_SCALE 4
+# define MAP_SCALE 4
 
 # define MAP_INFOS "RNsWESFC"
 # define MAP_INPUTS "01NSEW"

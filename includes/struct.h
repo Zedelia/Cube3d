@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/25 10:50:40 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/10 18:23:12 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/13 13:40:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -62,6 +62,7 @@ typedef struct			s_utils
 	int					color;
 	double				dist_inter;
 	double				delta;
+	double				ratio;
 }						t_utils;
 
 /*

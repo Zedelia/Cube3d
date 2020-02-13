@@ -10,7 +10,6 @@ SRC_PATH = srcs
 SRCS_NAME = img/img_load_xpm.c \
 	img/img_print.c \
 	camera/camera_init.c \
-	camera/camera_printf.c \
 	camera/camera_get_pos.c \
 	camera/camera_get_rotation_angle.c \
 	display/display_exit.c \
@@ -26,7 +25,6 @@ SRCS_NAME = img/img_load_xpm.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
-	map/map_printf.c \
 	mlx/mlx_init.c \
 	mlx/mlx_free.c \
 	map/parsing/map_init_parsing.c \
@@ -52,7 +50,6 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/math_dist.c \
 	utils/pixel.c \
 	utils/vectors.c \
-	rays/rays_printf.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \
 	rays/ray_init.c \
@@ -138,7 +135,6 @@ REBUILD_DEPENDENCIES = includes/*.h
 
 COMPIL = $(CC) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
 
-
 ##					##
 ##		RULES		##
 ##					##
@@ -152,6 +148,7 @@ all : makedir libprintf libx $(NAME)
 
 makedir:
 	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
+
 
 ${NAME}: $(OBJ)
 	@$(COMPIL) tests/mains/main.c
