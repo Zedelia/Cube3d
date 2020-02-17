@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   img_print.c                                      .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/10 13:18:30 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/13 18:50:23 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   img_print.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/17 14:18:35 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/17 14:18:36 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
@@ -72,4 +71,5 @@ void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 	fd = open(filename, O_RDWR);
 	write(fd, &bfh, 14);
 	ft_bitmap_image(mlx, fd, bih);
+	exit(EXIT_SUCCESS);
 }
