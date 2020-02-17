@@ -3,7 +3,7 @@
 ##	 VARIABLES		##
 ##					##
 
-NAME = cub3d
+NAME = Cub3D
 
 SRC_PATH = srcs
 
