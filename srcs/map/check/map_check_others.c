@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/07 12:10:15 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/13 18:32:08 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/14 13:12:58 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,8 +42,7 @@ t_bool	map_check_end_file(int fd, char *line, t_mlx *mlx)
 		}
 		ft_memdel((void**)&line);
 	}
-	free(line);
-	line = NULL;
+	ft_memdel((void**)&line);
 	return (True);
 }
 

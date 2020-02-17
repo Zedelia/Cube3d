@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/13 18:31:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/14 13:01:45 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -63,8 +63,7 @@ void				map_free(t_map *map)
 		map_free_all_text(map);
 		if (map->lines)
 			map_free_lines(&(map)->lines);
-		if (map->sprite_tab)
-			ft_memdel((void **)&(map)->sprite_tab);
+		ft_memdel((void **)&(map)->sprite_tab);
 		ft_memdel((void **)&(map));
 	}
 }
