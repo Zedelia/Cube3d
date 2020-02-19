@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:23:02 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/19 18:06:15 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/19 18:55:34 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_bool		sprite_draw_column_from_start(t_sprite *sp, t_mlx *mlx, t_rays r)
 	{
 		pixget.y = (float)(utils.y - scrn_y.from)
 				* sp->img->height * utils.dist_inter / mlx->map->r_height;
-		if ((utils.color = get_pixel_color(*sp->img, pixget.x, pixget.y)) >= 0)
+		if ((utils.color = get_pixel_color(*sp->img, pixget.x, pixget.y)) > 0)
 			pixel_put(mlx, r.id, utils.y, utils.color);
 		utils.y++;
 	}
@@ -58,7 +58,7 @@ t_bool		sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r)
 		pixget.y = (float)(utils.y - scrn_y.from)
 				* sp->img->height * utils.dist_inter / mlx->map->r_height;
 		if ((utils.color = get_pixel_color(*sp->img,
-				sp->img->width - pixget.x, pixget.y)) >= 0)
+				pixget.x, pixget.y)) > 0)
 			pixel_put(mlx, r.id, utils.y, utils.color);
 		utils.y++;
 	}
