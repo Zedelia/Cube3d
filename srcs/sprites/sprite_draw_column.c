@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:23:02 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:23:04 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/19 18:06:15 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_bool		sprite_draw_column_from_start(t_sprite *sp, t_mlx *mlx, t_rays r)
 			ft_math_dist(r.inter_sprite.x, r.inter_sprite.y, mlx));
 	scrn_y.from = mlx->map->r_height * 0.5 - utils.ratio;
 	scrn_y.to = mlx->map->r_height * 0.5 + utils.ratio;
+	scrn_y.to = scrn_y.to > mlx->map->r_height ? mlx->map->r_height : scrn_y.to;
 	utils.y = scrn_y.from;
 	pixget.x = (float)(r.id - sp->fst_ray_print)
 			* sp->img->height * utils.dist_inter / mlx->map->r_height;
@@ -34,7 +35,6 @@ t_bool		sprite_draw_column_from_start(t_sprite *sp, t_mlx *mlx, t_rays r)
 			pixel_put(mlx, r.id, utils.y, utils.color);
 		utils.y++;
 	}
-	sp->start++;
 	return (True);
 }
 
@@ -49,6 +49,7 @@ t_bool		sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r)
 			ft_math_dist(r.inter_sprite.x, r.inter_sprite.y, mlx));
 	scrn_y.from = mlx->map->r_height * 0.5 - utils.ratio;
 	scrn_y.to = mlx->map->r_height * 0.5 + utils.ratio;
+	scrn_y.to = scrn_y.to > mlx->map->r_height ? mlx->map->r_height : scrn_y.to;
 	utils.y = scrn_y.from;
 	pixget.x = (float)(sp->last_ray_print - r.id)
 			* sp->img->height * utils.dist_inter / mlx->map->r_height;
@@ -61,6 +62,5 @@ t_bool		sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r)
 			pixel_put(mlx, r.id, utils.y, utils.color);
 		utils.y++;
 	}
-	sp->start++;
 	return (True);
 }

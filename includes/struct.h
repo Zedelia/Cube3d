@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 13:21:23 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 13:21:24 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/19 17:22:59 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,6 @@ typedef struct			s_sprite
 	int					y;
 	t_img				*img;
 	double				dist;
-	double				start;
 	t_vect				line_vect;
 	t_line				line_eq;
 	t_vect				line_norm_v;

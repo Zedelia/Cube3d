@@ -24,10 +24,10 @@ ERASE = \033[2K\r
 CFLAGS+= -DSTRINGPUTX11
 
 %.o: %.c
-	@gcc $(CFLAGS) -o $@ -c $<
+	@gcc $(CFLAGS) -Wno-deprecated -o $@ -c $<
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 %.o: %.m
-	@gcc $(CFLAGS) -o $@ -c $<
+	@gcc $(CFLAGS) -Wno-deprecated -o $@ -c $<
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 
 all: $(NOM)

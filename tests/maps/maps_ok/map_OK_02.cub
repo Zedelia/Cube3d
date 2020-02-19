@@ -6,7 +6,7 @@ SO ./textures/stone-collection/text-02.xpm
 C 						157,23,88
 EA ./textures/stone-collection/text-04.xpm
 
-S ./textures/sprite3.xpm
+S ./textures/lamp.xpm
 F 212, 238, 255
 WE ./textures/stone-collection/text-03.xpm
 

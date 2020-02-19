@@ -151,7 +151,7 @@ makedir:
 
 
 ${NAME}: $(OBJ)
-	@$(COMPIL) main.c
+	$(COMPIL) main.c
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<$(ERASE)"
 	@echo "\n\n$(YELLOW)| ->		$(NAME):" "$(RESET)|\033[42m     $(BOLD)L O A D I N G$(R_BOLD)     $(RESET)|\n\n" #| pv -qL 15
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"

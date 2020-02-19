@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:17:45 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:17:47 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/19 17:22:23 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	display_exit(void *mlx)
 {
-	(void)mlx;
 	exit(EXIT_SUCCESS);
+	mlx_free(mlx);
 }
 
 t_bool		display_exit_on_click(t_mlx *mlx)

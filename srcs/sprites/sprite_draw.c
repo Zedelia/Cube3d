@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:23:13 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:23:13 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/19 17:57:04 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
 	int i;
 
 	i = sp->r_fst_hit.id;
-	while (i <= sp->r_last_hit.id)
+	while (i < sp->r_last_hit.id - 1)
 	{
 		if (mlx->cam.ray_tab[i].distance > sp->dist)
 		{
@@ -52,7 +52,7 @@ static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 	mid = sp->fst_ray_print + (sp->last_ray_print - sp->fst_ray_print) * 0.5;
 	i = sp->fst_ray_print;
 	end = sp->last_ray_print;
-	while (i <= end)
+	while (i < end)
 	{
 		if (sp->r_before.distance < sp->dist)
 			sprite_draw_column_from_end(sp, mlx, mlx->cam.ray_tab[i]);
