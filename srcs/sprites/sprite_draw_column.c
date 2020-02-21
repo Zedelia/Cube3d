@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:23:02 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/19 18:55:34 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 11:13:42 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_bool		sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r)
 	utils.ratio = mlx->map->r_height / utils.dist_inter * 0.5;
 	utils.dist_inter = dist_correct_fish_eye(r, mlx,
 			ft_math_dist(r.inter_sprite.x, r.inter_sprite.y, mlx));
+
 	scrn_y.from = mlx->map->r_height * 0.5 - utils.ratio;
 	scrn_y.to = mlx->map->r_height * 0.5 + utils.ratio;
 	scrn_y.to = scrn_y.to > mlx->map->r_height ? mlx->map->r_height : scrn_y.to;
