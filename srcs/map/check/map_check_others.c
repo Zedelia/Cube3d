@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:19:00 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:19:01 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 10:47:24 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_bool	map_check_end_file(int fd, char *line, t_mlx *mlx)
 			if (line[i] > 32)
 				return (return_false(__func__,
 						"[FAIL] map isn't the EOF", mlx));
+			i++;
 		}
 		ft_memdel((void**)&line);
 	}

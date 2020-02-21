@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:23:13 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/19 18:50:04 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 10:48:26 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
 	end = sp->last_ray_print;
 	while (i < end)
 	{
-		// if (sp->p1.x <= mlx->map->r_width / 2 && sp->p2.x > mlx->map->r_width / 2)
-		// 	sprite_draw_column_from_end(sp, mlx, mlx->cam.ray_tab[i]);
 		if (sp->r_before.distance < sp->dist)
 			sprite_draw_column_from_end(sp, mlx, mlx->cam.ray_tab[i]);
 		else if (mid <= mlx->map->r_width / 2)
