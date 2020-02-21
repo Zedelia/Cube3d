@@ -1,22 +1,21 @@
-  R          500    250
+R 1280 720
       NO ./textures/pokemon-collection/text-01.xpm
       SO       ./textures/pokemon-collection/text-02.xpm
 WE        ./textures/pokemon-collection/text-03.xpm
   EA         ./textures/pokemon-collection/text-04.xpm
-
-        	       C   204, 1,  1
 
 
 
 
 S ./textures/lamp.xpm
 
-	  	F 0, 0, 0
-
-
+F 38, 80, 0
+C 0, 100, 255
 
 111111
-102001
+100201
+100001
+100001
 10N001
 111111
 

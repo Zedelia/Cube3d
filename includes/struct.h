@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 13:21:23 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/21 11:39:23 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/21 13:44:20 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,20 +131,20 @@ typedef struct			s_sprite
 {
 	int					x;
 	int					y;
+	t_vect				relapos;
 	t_img				*img;
 	double				dist;
-	t_vect				line_vect;
-	t_line				line_eq;
-	t_vect				line_norm_v;
-	t_vect				p1;
-	t_vect				p2;
-	t_rays				mid_ray;
+	int					h;
+	int					w;
+	t_fromto			fty;
+	t_fromto			ftx;
+	t_vect_int			pixget;
+	double				screenx;
+	t_vect				transform;
 	t_rays				r_fst_hit;
 	t_rays				r_last_hit;
 	t_rays				r_before;
 	t_rays				r_after;
-	int					fst_ray_print;
-	int					last_ray_print;
 	t_bool				visible;
 }						t_sprite;
 
