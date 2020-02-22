@@ -6,10 +6,11 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:48:31 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
+
 #ifndef STRUCT_H
 # define STRUCT_H
 
@@ -21,13 +22,6 @@ typedef struct			s_color
 	int					g;
 	int					b;
 }						t_color;
-
-typedef struct			s_line
-{
-	double				a;
-	double				b;
-	double				c;
-}						t_line;
 
 typedef struct			s_move
 {
@@ -98,7 +92,6 @@ typedef struct			s_rays
 	t_fst_hit			hz_fst_inter;
 	t_fst_hit			vt_fst_inter;
 	t_wall_hit			wall;
-	t_line				line_eq;
 	t_vect				inter_sprite;
 	t_bool				facing_up;
 	t_bool				facing_down;
@@ -142,8 +135,6 @@ typedef struct			s_sprite
 	t_vect_int			pixget;
 	double				screenx;
 	t_vect				tform;
-	t_rays				r_fst_hit;
-	t_rays				r_last_hit;
 	t_bool				visible;
 }						t_sprite;
 

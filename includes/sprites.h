@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sprites.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:21:18 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 13:21:19 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   sprites.h                                        .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:21:18 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:48:50 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef SPRITES_H
 # define SPRITES_H
 
@@ -41,6 +41,5 @@ t_bool		sprite_draw_column_from_end(t_sprite *sp, t_mlx *mlx, t_rays r);
 */
 
 t_bool		is_inter_in_seg(t_vect inter, t_sprite *sp);
-t_vect		line_inter_line(t_line l1, t_line l2);
 
 #endif

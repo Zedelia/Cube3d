@@ -50,6 +50,7 @@ SRCS_NAME = img/img_load_xpm.c \
 	utils/math_dist.c \
 	utils/pixel.c \
 	utils/vectors.c \
+	utils/print_map_infos.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \
 	rays/ray_init.c \

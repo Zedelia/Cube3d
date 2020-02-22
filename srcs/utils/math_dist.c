@@ -6,10 +6,11 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:24:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:33:53 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
+
 #include "../../includes/cube3d.h"
 
 double	dist_correct_fish_eye(t_rays r, t_mlx *mlx, double dist)

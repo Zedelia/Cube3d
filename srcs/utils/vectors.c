@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   vectors.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:24:19 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/21 11:40:58 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   vectors.c                                        .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:24:19 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:31:37 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 t_vect	norm_vect(t_vect v)
@@ -23,7 +23,7 @@ t_vect	norm_vect(t_vect v)
 	return (v_norm);
 }
 
-void	rotate_vect(t_vect *r, double angle)
+void	vect_rotate(t_vect *r, double angle)
 {
 	double c;
 	double temp;

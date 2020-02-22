@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:20:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:27:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:37:10 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -76,6 +76,8 @@ t_bool		img_load_xpm(t_mlx *mlx, char *file, t_img *img);
 int			move_keydown(int key, t_mlx *mlx);
 t_bool		move_apply(t_move *move, t_mlx *mlx);
 
+void		print_map_infos(t_mlx *mlx);
+
 /*
 ** Return Functions
 */
@@ -108,7 +110,7 @@ int			occur_in_str(char c, char *line);
 */
 
 t_vect		norm_vect(t_vect v);
-void		rotate_vect(t_vect *v, double angle);
+void		vect_rotate(t_vect *v, double angle);
 
 /*
 ** Maths
