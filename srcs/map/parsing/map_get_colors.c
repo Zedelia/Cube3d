@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_get_colors.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/26 20:06:28 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:19:34 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   map_get_colors.c                                 .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 21:32:36 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../../includes/cube3d.h"
 
 static t_bool	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
@@ -72,18 +72,18 @@ t_bool			map_parse_floor(t_map *map, char *line, t_mlx *mlx)
 	return (True);
 }
 
-t_bool			map_parse_cell(t_map *map, char *line, t_mlx *mlx)
+t_bool			map_parse_sky(t_map *map, char *line, t_mlx *mlx)
 {
 	t_color		colors;
 	int			i;
 
-	if (map->cell != -1)
+	if (map->sky != -1)
 		return (return_false(__func__, "[FAIL] several times same info", mlx));
 	i = 0;
 	colors = get_colors(line, mlx);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255
 				|| colors.r < 0 || colors.g < 0 || colors.b < 0)
-		return (return_false(__func__, "[FAIL] get RGB cell colors", mlx));
-	map->cell = color_to_int(colors);
+		return (return_false(__func__, "[FAIL] get RGB sky colors", mlx));
+	map->sky = color_to_int(colors);
 	return (True);
 }

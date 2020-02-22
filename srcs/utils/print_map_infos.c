@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/22 17:35:44 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:49:56 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 21:32:52 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 void	print_map_infos(t_mlx *mlx)
 {
 	t_color floor;
-	t_color	roof;
+	t_color	sky;
 
 	ft_printf("\n resolution	: %d * %d\n", mlx->map->W, mlx->map->H);
 	ft_printf("\n no texture 	: %s\n", mlx->map->north.file);
@@ -27,9 +27,9 @@ void	print_map_infos(t_mlx *mlx)
 	floor = int_to_color(mlx->map->floor);
 	ft_printf("\n Floor color	: R: %d | G: %d | B: %d\n",
 			floor.r, floor.g, floor.b);
-	roof = int_to_color(mlx->map->floor);
+	sky = int_to_color(mlx->map->floor);
 	ft_printf("\n Floor color	: R: %d | G: %d | B: %d\n",
-			roof.r, roof.g, roof.b);
+			sky.r, sky.g, sky.b);
 	ft_printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 	ft_printf("━━━━━━━━━━━━━━━━━━━━\n");
 	ft_printf("\t\t\tPARAMETERS COMPLETED\n");

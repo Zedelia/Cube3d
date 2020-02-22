@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_check_colors.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:18:43 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:18:44 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   map_check_colors.c                               .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:18:43 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 21:32:36 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../../includes/cube3d.h"
 
 static t_bool	map_check_colors_one(int color, t_mlx *mlx)
@@ -22,6 +22,6 @@ static t_bool	map_check_colors_one(int color, t_mlx *mlx)
 t_bool			map_check_colors(t_map *map, t_mlx *mlx)
 {
 	map_check_colors_one(map->floor, mlx);
-	map_check_colors_one(map->cell, mlx);
+	map_check_colors_one(map->sky, mlx);
 	return (True);
 }

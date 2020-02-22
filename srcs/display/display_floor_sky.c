@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   display_floor_roof.c                             .::    .:/ .      .::   */
+/*   display_floor_sky.c                             .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:17:51 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 21:32:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
+
 #include "../../includes/cube3d.h"
 
-t_bool		display_roof(t_mlx *mlx)
+t_bool		display_sky(t_mlx *mlx)
 {
 	int	x;
 	int	y;
@@ -24,7 +25,7 @@ t_bool		display_roof(t_mlx *mlx)
 		while (y < mlx->map->H / 2)
 		{
 			pixel_put(mlx, x, y,
-					shade_color(mlx->map->cell, 1.50 * y / mlx->map->H));
+					shade_color(mlx->map->sky, 1.50 * y / mlx->map->H));
 			y++;
 		}
 		x++;

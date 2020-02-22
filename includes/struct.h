@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:48:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 21:33:28 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -180,8 +180,9 @@ typedef struct			s_map
 	int					tile;
 	int					W;
 	int					H;
-	int					cell;
+	int					sky;
 	int					floor;
+	t_img				life;
 	t_img				north;
 	t_img				south;
 	t_img				west;

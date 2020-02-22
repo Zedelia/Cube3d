@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map.h                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:21:00 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 13:21:01 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   map.h                                            .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:21:00 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 21:33:28 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef MAP_H
 # define MAP_H
 
@@ -24,7 +24,8 @@ typedef enum
 	_ea,
 	_sp,
 	_floor,
-	_cell,
+	_sky,
+	_life,
 	t_size
 }	t_type_map;
 
@@ -63,7 +64,8 @@ t_bool				map_parse_we(t_map *map, char *line, t_mlx *mlx);
 t_bool				map_parse_ea(t_map *map, char *line, t_mlx *mlx);
 t_bool				map_parse_sp(t_map *map, char *line, t_mlx *mlx);
 t_bool				map_parse_floor(t_map *map, char *line, t_mlx *mlx);
-t_bool				map_parse_cell(t_map *map, char *line, t_mlx *mlx);
+t_bool				map_parse_sky(t_map *map, char *line, t_mlx *mlx);
+t_bool				map_parse_life(t_map *map, char *line, t_mlx *mlx);
 
 /*
 ** Check map infos

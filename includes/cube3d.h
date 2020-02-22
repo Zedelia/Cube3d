@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:20:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:37:10 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 22:40:59 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,15 +29,15 @@
 # define WIN_WIDTH 2560
 # define WIN_HEIGHT 1440
 # define FOV_DEGREE 60.0
-# define TURN_SPEED 5
-# define WALK_SPEED 0.5
+# define TURN_SPEED 3.5
+# define WALK_SPEED 0.2
 # define MAP_SCALE 5
 
-# define MAP_INFOS "RNsWESFC"
+# define MAP_INFOS "RNsWESFCL"
 # define MAP_INPUTS "01NSEW"
 # define SPRITES "2345"
 
-# define ROOF_COLOR 0x0F52BA
+# define sky_COLOR 0x0F52BA
 # define FLOOR_COLOR 0xFF007F
 
 # define DIST_MAX 20.00

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:20:37 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 21:35:58 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,6 +23,7 @@ void	map_init_text(t_map **map)
 	(*map)->east.file = NULL;
 	(*map)->north.file = NULL;
 	(*map)->south.file = NULL;
+	(*map)->life.file = NULL;
 }
 
 t_bool	map_init(t_map **map, char *map_file, t_mlx *mlx)
@@ -32,7 +33,7 @@ t_bool	map_init(t_map **map, char *map_file, t_mlx *mlx)
 	(*map)->map_file = map_file;
 	(*map)->W = -1;
 	(*map)->H = -1;
-	(*map)->cell = -1;
+	(*map)->sky = -1;
 	(*map)->floor = -1;
 	(*map)->nb_col = -1;
 	(*map)->nb_lines = -1;

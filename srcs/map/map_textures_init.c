@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_textures_init.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:20:47 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:20:48 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   map_textures_init.c                              .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:20:47 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 22:04:22 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 t_bool		map_textures_init(t_map *map, t_mlx *mlx)
@@ -30,5 +30,7 @@ t_bool		map_textures_init(t_map *map, t_mlx *mlx)
 		return (return_false(__func__, "[FAIL] init sp2 texture", mlx));
 	if (map->sp3.file && !img_load_xpm(mlx, map->sp3.file, &map->sp3))
 		return (return_false(__func__, "[FAIL] init sp3 texture", mlx));
+	if (map->life.file && !img_load_xpm(mlx, map->life.file, &map->life))
+		return (return_false(__func__, "[FAIL] init life texture", mlx));
 	return (True);
 }
