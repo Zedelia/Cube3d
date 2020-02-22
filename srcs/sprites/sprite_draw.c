@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:23:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 16:13:09 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:07:04 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -68,14 +68,18 @@ t_bool			sprite_draw(t_sprite *sp, t_mlx *mlx)
 	sp_get_info(sp, mlx);
 	sp_transform(sp, mlx);
 	x = sp->ftx.from;
-
 	while (x < sp->ftx.to)
 	{
+		if (mlx->cam.ray_tab[x].distance > sp->dist)
+		{
+			printf ("%f | %f \n",mlx->cam.ray_tab[x].distance, sp->ray[x] );
+			printf("%d\n\n", x);
 		sp->pixget.x = (int)(256 * (x - (-sp->w / 2 + sp->screenx)) * sp->img->width / sp->w) / 256;
 		if (sp->transform.y > 0 && x < mlx->map->r_width && sp->transform.y < 100)
 			sp_draw_column(sp, mlx, x);
+		}
 		x++;
 	}
-
+	sp->visible = False;
 	return (True);
 }

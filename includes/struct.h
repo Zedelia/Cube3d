@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 15:59:49 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 16:54:26 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -135,8 +135,8 @@ typedef struct			s_sprite
 	t_vect				relapos;
 	t_img				*img;
 	double				dist;
-	double					h;
-	double					w;
+	double				h;
+	double				w;
 	t_fromto			fty;
 	t_fromto			ftx;
 	t_vect_int			pixget;
@@ -144,8 +144,7 @@ typedef struct			s_sprite
 	t_vect				transform;
 	t_rays				r_fst_hit;
 	t_rays				r_last_hit;
-	t_rays				r_before;
-	t_rays				r_after;
+	double				ray[2560];
 	t_bool				visible;
 }						t_sprite;
 
