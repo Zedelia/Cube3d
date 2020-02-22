@@ -53,23 +53,16 @@ SRCS_NAME = img/img_load_xpm.c \
 	rays/rays_tab_init.c \
 	rays/ray_casting.c \
 	rays/ray_init.c \
-	rays/ray_get_distance.c \
 	rays/ray_get_intersections.c \
 	rays/ray_get_steps.c \
 	rays/ray_get_direction.c \
 	rays/ray_get_walls_hit.c \
 	rays/ray_rotate.c \
 	rays/ray_wall_detection.c \
+	rays/ray_get_distance.c \
 	sprites/sprites_init.c \
-	sprites/sprites_tab_init.c \
-	sprites/sprite_get_dist.c \
-	sprites/sprite_get_ray_hits.c \
 	sprites/sprite_sort_tab.c \
-	sprites/sprite_draw_column.c \
 	sprites/sprite_draw.c \
-	sprites/sprite_get_line_seg.c  \
-	sprites/sprite_draw_utils.c \
-
 
 
 MKDIR_LST = {img,map,mlx,rays,utils,render,camera,display,move,sprites}

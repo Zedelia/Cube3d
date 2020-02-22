@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 16:54:26 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -132,7 +132,7 @@ typedef struct			s_sprite
 	int					x;
 	int					y;
 	t_vect_int			temp_pos;
-	t_vect				relapos;
+	t_vect				pos;
 	t_img				*img;
 	double				dist;
 	double				h;
@@ -141,10 +141,9 @@ typedef struct			s_sprite
 	t_fromto			ftx;
 	t_vect_int			pixget;
 	double				screenx;
-	t_vect				transform;
+	t_vect				tform;
 	t_rays				r_fst_hit;
 	t_rays				r_last_hit;
-	double				ray[2560];
 	t_bool				visible;
 }						t_sprite;
 
@@ -158,7 +157,7 @@ typedef struct			s_cam
 	int					rotation_angle;
 	t_vect				direction;
 	t_rays				*ray_tab;
-	t_vect				plane;
+	t_vect				plan;
 }						t_cam;
 
 /*
@@ -188,8 +187,8 @@ typedef struct			s_map
 	int					nb_col;
 	int					nb_lines;
 	int					tile;
-	int					r_width;
-	int					r_height;
+	int					W;
+	int					H;
 	int					cell;
 	int					floor;
 	t_img				north;

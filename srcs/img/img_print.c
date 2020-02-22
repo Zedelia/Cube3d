@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   img_print.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:18:35 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:18:36 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   img_print.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:18:35 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 /*
@@ -26,13 +26,13 @@ static void		ft_bitmap_image(t_mlx *mlx, int fd, t_bpm2 bih)
 	unsigned char	color[3];
 
 	write(fd, &bih, sizeof(bih));
-	y = mlx->map->r_height - 1;
+	y = mlx->map->H - 1;
 	while (y >= 0)
 	{
 		x = 0;
-		while (x < mlx->map->r_width)
+		while (x < mlx->map->W)
 		{
-			ble = mlx->img.data[y * mlx->map->r_width + x];
+			ble = mlx->img.data[y * mlx->map->W + x];
 			color[0] = ble % 256;
 			ble /= 256;
 			color[1] = ble % 256;
@@ -52,17 +52,17 @@ void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 	t_bpm2		bih;
 
 	ft_memcpy(&bfh.bitmap_type, "BM", 2);
-	bfh.file_size = mlx->map->r_width * mlx->map->r_height * 4 + 54;
+	bfh.file_size = mlx->map->W * mlx->map->H * 4 + 54;
 	bfh.reserved1 = 0;
 	bfh.reserved2 = 0;
 	bfh.offset_bits = 0;
 	bih.size_header = sizeof(bih);
-	bih.width = mlx->map->r_width;
-	bih.height = mlx->map->r_height;
-	bih.planes = 1;
+	bih.width = mlx->map->W;
+	bih.height = mlx->map->H;
+	bih.plans = 1;
 	bih.bit_count = 24;
 	bih.compression = 0;
-	bih.image_size = mlx->map->r_width * mlx->map->r_height * 4 + 54;
+	bih.image_size = mlx->map->W * mlx->map->H * 4 + 54;
 	bih.ppm_x = 2;
 	bih.ppm_y = 2;
 	bih.clr_used = 0;

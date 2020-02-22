@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   print_image.h                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:21:07 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 13:21:08 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   print_image.h                                    .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:21:07 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:18:38 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef PRINT_IMAGE_H
 # define PRINT_IMAGE_H
 
@@ -29,7 +29,7 @@ typedef struct		s_bpm2
 	unsigned int	size_header;
 	unsigned int	width;
 	unsigned int	height;
-	short int		planes;
+	short int		plans;
 	short int		bit_count;
 	unsigned int	compression;
 	unsigned int	image_size;

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/08 20:19:11 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 11:04:52 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,8 +20,8 @@ t_bool	rays_casting(t_mlx *mlx)
 	i = 0;
 	r = mlx->cam.ray_tab;
 	sprites_init(mlx->map);
-	rotate_vect(&mlx->cam.plane, mlx->cam.rotation_angle);
-	while (i < mlx->map->r_width)
+	rotate_vect(&mlx->cam.plan, mlx->cam.rotation_angle);
+	while (i < mlx->map->W)
 	{
 		ray_rotate(&r[i], mlx->cam.rotation_angle);
 		ray_get_distance(&r[i], mlx);

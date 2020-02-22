@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:21:18 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 11:04:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,7 +61,7 @@ t_bool			move_apply(t_move *move, t_mlx *mlx)
 {
 	t_rays	mid;
 
-	mid = mlx->cam.ray_tab[mlx->map->r_width / 2];
+	mid = mlx->cam.ray_tab[mlx->map->W / 2];
 	if (move->r)
 		mlx->cam.rotation_angle = move->r * TURN_SPEED;
 	else if (move->y)
