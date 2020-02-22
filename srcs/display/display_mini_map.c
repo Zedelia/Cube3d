@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:17:56 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 18:02:02 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -68,7 +68,9 @@ t_bool			display_mini_map(t_mlx *mlx, t_map *map)
 				display_color_cub(mlx, l, c, 0xffba33);
 			if (map->tab[l][c] == 0)
 				display_color_cub(mlx, l, c, 0x33fff9);
-			if (map->tab[l][c] >= 2)
+			if (map->tab[l][c] >= 2 && map->tab[l][c] < 6)
+				display_color_cub(mlx, l, c, 0xC200AD);
+			if (map->tab[l][c] >= 5)
 				display_color_cub(mlx, l, c, 0x33fff9);
 			c++;
 		}

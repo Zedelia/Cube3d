@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:18:22 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:59:15 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,13 +15,13 @@
 static t_bool	walls_cases(t_rays temp, t_mlx *mlx, int x)
 {
 	if (temp.facing_up && temp.wall.hz)
-		display_wall_hz(temp, mlx->map->north, mlx, x);
-	else if (temp.facing_down && temp.wall.hz)
 		display_wall_hz(temp, mlx->map->south, mlx, x);
+	else if (temp.facing_down && temp.wall.hz)
+		display_wall_hz(temp, mlx->map->north, mlx, x);
 	else if (temp.facing_left && temp.wall.vt)
-		display_wall_vt(temp, mlx->map->west, mlx, x);
-	else if (temp.facing_right && temp.wall.vt)
 		display_wall_vt(temp, mlx->map->east, mlx, x);
+	else if (temp.facing_right && temp.wall.vt)
+		display_wall_vt(temp, mlx->map->west, mlx, x);
 	return (True);
 }
 

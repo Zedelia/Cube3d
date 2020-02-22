@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:23:13 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:35 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 17:57:24 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -56,7 +56,7 @@ void			sp_draw_column(t_sprite *sp, t_mlx *mlx, int x)
 		d = (y) * 256 - mlx->map->H * 128 + sp->h * 128;
 		sp->pixget.y = ((d * sp->img->height) / sp->h) / 256;
 		if ((color = get_pixel_color(*(sp->img),
-				sp->pixget.x, sp->pixget.y)) > 0)
+				sp->pixget.x, sp->pixget.y)) >= 0)
 			pixel_put(mlx, x, y, color);
 		y++;
 	}

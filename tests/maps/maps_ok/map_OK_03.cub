@@ -10,7 +10,7 @@ SO ./textures/blue-collection/text-03.xpm
 WE ./textures/blue-collection/text-04.xpm
 
 
-S ./textures/lamp.xpm
+S ./textures/sprite3.xpm
 F 0,79,131
 C 159,159,159
 
