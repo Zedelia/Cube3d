@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 21:33:28 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 22:59:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,6 +26,7 @@ typedef enum
 	_floor,
 	_sky,
 	_life,
+	_frame,
 	t_size
 }	t_type_map;
 
@@ -66,6 +67,7 @@ t_bool				map_parse_sp(t_map *map, char *line, t_mlx *mlx);
 t_bool				map_parse_floor(t_map *map, char *line, t_mlx *mlx);
 t_bool				map_parse_sky(t_map *map, char *line, t_mlx *mlx);
 t_bool				map_parse_life(t_map *map, char *line, t_mlx *mlx);
+t_bool				map_parse_frame(t_map *map, char *line, t_mlx *mlx);
 
 /*
 ** Check map infos

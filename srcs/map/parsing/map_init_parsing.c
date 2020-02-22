@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:19:56 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 21:34:04 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 23:07:14 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,4 +23,5 @@ void	init_map_parser_fct_tab(void)
 	g_map_parser_fct[_floor] = map_parse_floor;
 	g_map_parser_fct[_sky] = map_parse_sky;
 	g_map_parser_fct[_life] = map_parse_life;
+	g_map_parser_fct[_frame] = map_parse_frame;
 }

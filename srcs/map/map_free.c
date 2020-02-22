@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_free.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/26 14:52:00 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:20:31 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   map_free.c                                       .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/12/26 14:52:00 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 23:00:30 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 static void			map_free_tab(t_map *map)
@@ -38,6 +38,8 @@ static void			map_free_all_text(t_map *map)
 	ft_memdel((void**)&map->sp1.file);
 	ft_memdel((void**)&map->sp1.file);
 	ft_memdel((void**)&map->sp1.file);
+	ft_memdel((void**)&map->life.file);
+	ft_memdel((void**)&map->frame.file);
 }
 
 static void			map_free_lines(t_maparse **lines)

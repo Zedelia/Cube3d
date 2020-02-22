@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 21:32:36 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 23:04:40 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@ static t_bool	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
 {
 	int i;
 	int coma;
-
+(void)mlx;
 	i = 0;
 	coma = 0;
 	while (line[i])
@@ -25,9 +25,9 @@ static t_bool	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
 			coma += 1;
 		while (line[i] && end == False && ft_isdigit(line[i]))
 			i++;
-		if ((line[i] > 32 && !ft_isdigit(line[i]) && line[i] != ',')
-				|| coma > 1)
-			return (return_false(__func__, "[FAIL] incorrect colors", mlx));
+		// if ((line[i] > 33 && !ft_isdigit(line[i]) && line[i] != ',')
+		// 		|| coma > 1)
+		// 	return (return_false(__func__, "[FAIL] incorrect colors", mlx));
 		if (line[i])
 			i++;
 	}

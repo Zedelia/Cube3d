@@ -4,7 +4,7 @@
 WE        ./textures/gravity-collection/text-03.xpm
   EA         ./textures/gravity-collection/text-04.xpm
 
-               C   130, 0 , 255
+               C   130 , 0 , 255
 
 
 
@@ -13,9 +13,10 @@ S ./textures/sprite2.xpm
 S ./textures/sprite3.xpm
 
 L ./textures/life.xpm
+A ./textures/frame.xpm
 
 
-	  	F 0, 231, 87
+	  	F 0 , 231 , 87
 
 111111111111111111111111111111111111111111111111
 111111000000000000000000000000000000000000000011

@@ -22,14 +22,14 @@ SRCS_NAME = img/img_load_xpm.c \
 	display/display_sprite.c \
 	display/display_colored_walls.c \
 	display/display_sprite.c \
-	display/display_life.c \
+	display/display_bonus.c \
 	map/map_init.c \
 	map/map_free.c \
 	map/map_parser.c \
 	mlx/mlx_init.c \
 	mlx/mlx_free.c \
 	map/parsing/map_init_parsing.c \
-	map/parsing/map_get_life.c \
+	map/parsing/map_get_bonus.c \
 	map/parsing/map_get_text.c \
 	map/parsing/map_get_r.c \
 	map/parsing/map_get_colors.c \
@@ -136,7 +136,7 @@ COMPIL = $(CC) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
 ##					##
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
-	@$(CC) $(DFLAGS) $(INC_FLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
 	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<$(ERASE)"
 
 all : makedir libprintf libx $(NAME)

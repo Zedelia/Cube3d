@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:20:47 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 22:04:22 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/22 22:59:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,6 +31,8 @@ t_bool		map_textures_init(t_map *map, t_mlx *mlx)
 	if (map->sp3.file && !img_load_xpm(mlx, map->sp3.file, &map->sp3))
 		return (return_false(__func__, "[FAIL] init sp3 texture", mlx));
 	if (map->life.file && !img_load_xpm(mlx, map->life.file, &map->life))
+		return (return_false(__func__, "[FAIL] init life texture", mlx));
+	if (map->frame.file && !img_load_xpm(mlx, map->frame.file, &map->frame))
 		return (return_false(__func__, "[FAIL] init life texture", mlx));
 	return (True);
 }
