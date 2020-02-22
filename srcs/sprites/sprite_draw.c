@@ -1,76 +1,86 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sprite_draw.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:23:13 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/21 10:48:26 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   sprite_draw.c                                    .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:23:13 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:20:35 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
-static void		sprite_ray_create_line(t_rays *r, t_mlx *mlx)
+void			sp_get_info(t_sprite *sp, t_mlx *mlx)
 {
-	r->line_eq.a = r->y;
-	r->line_eq.b = -r->x;
-	r->line_eq.c = r->x * (mlx->cam.pos.y + 0.5)
-			- r->y * (mlx->cam.pos.x + 0.5);
+	sp->temp_pos.x = sp->y;
+	sp->temp_pos.y  = sp->x;
+	sp->pos.x = sp->temp_pos.x + 0.5 - mlx->cam.pos.y;
+	sp->pos.y = sp->temp_pos.y + 0.5 - mlx->cam.pos.x;
 }
 
-static void		get_fst_last_printed_rays(t_sprite *sp, t_mlx *mlx)
+void			sp_tform(t_sprite *sp, t_mlx *mlx)
 {
-	int i;
+	double		ratio;
+	t_rays		mid;
 
-	i = sp->r_fst_hit.id;
-	while (i < sp->r_last_hit.id - 1)
-	{
-		if (mlx->cam.ray_tab[i].distance > sp->dist)
-		{
-			sprite_ray_create_line(&mlx->cam.ray_tab[i], mlx);
-			mlx->cam.ray_tab[i].inter_sprite = line_inter_line(sp->line_eq,
-					mlx->cam.ray_tab[i].line_eq);
-			if (is_inter_in_seg(mlx->cam.ray_tab[i].inter_sprite, sp) == True)
-			{
-				if (sp->fst_ray_print == -1)
-					sp->fst_ray_print = mlx->cam.ray_tab[i].id;
-				sp->last_ray_print = mlx->cam.ray_tab[i].id;
-			}
-		}
-		i++;
-	}
+
+	mid = mlx->cam.ray_tab[mlx->map->W / 2];
+	ratio = 1.0 / (mlx->cam.plan.y * mid.x - mid.y * mlx->cam.plan.x);
+	sp->tform.x = ratio * (mid.x * sp->pos.x - mid.y * sp->pos.y);
+	sp->tform.y = ratio * (-mlx->cam.plan.x
+			* sp->pos.x + mlx->cam.plan.y * sp->pos.y);
+	sp->screenx = (int)((mlx->map->W / 2) * (1 + sp->tform.x / sp->tform.y));
+	sp->h = abs((int)(mlx->map->H / sp->tform.y));
+    sp->fty.from = -sp->h / 2 + mlx->map->H / 2;
+    sp->fty.from = sp->fty.from < 0 ? 0 : sp->fty.from;
+    sp->fty.to = sp->h / 2 + mlx->map->H / 2;
+    sp->fty.to = sp->fty.to >= mlx->map->H ? mlx->map->H - 1 : sp->fty.to;
+    sp->w = abs((int)(mlx->map->H / (sp->tform.y)));
+    sp->ftx.from = -sp->w / 2 + sp->screenx ;
+    sp->ftx.from = sp->ftx.from < 0 ? 0 : sp->ftx.from;
+    sp->ftx.to = sp->w / 2 + sp->screenx;
+    sp->ftx.to = sp->ftx.to >= mlx->map->W ? mlx->map->W - 1 : sp->ftx.to;
 }
 
-static t_bool	sprite_draw_columns(t_sprite *sp, t_mlx *mlx)
+void			sp_draw_column(t_sprite *sp, t_mlx *mlx, int x)
 {
-	int		i;
-	double	end;
-	double	mid;
+	int			d;
+	int 		y;
+	int 		color;
 
-	mid = sp->fst_ray_print + (sp->last_ray_print - sp->fst_ray_print) * 0.5;
-	i = sp->fst_ray_print;
-	end = sp->last_ray_print;
-	while (i < end)
+	y = sp->fty.from;
+	while (y < sp->fty.to)
 	{
-		if (sp->r_before.distance < sp->dist)
-			sprite_draw_column_from_end(sp, mlx, mlx->cam.ray_tab[i]);
-		else if (mid <= mlx->map->r_width / 2)
-			sprite_draw_column_from_end(sp, mlx, mlx->cam.ray_tab[i]);
-		else if (sp->r_after.distance < sp->dist)
-			sprite_draw_column_from_start(sp, mlx, mlx->cam.ray_tab[i]);
-		else if (mid > mlx->map->r_width / 2)
-			sprite_draw_column_from_start(sp, mlx, mlx->cam.ray_tab[i]);
-		i++;
+		d = (y) * 256 - mlx->map->H * 128 + sp->h * 128;
+		sp->pixget.y = ((d * sp->img->height) / sp->h) / 256;
+		if ((color = get_pixel_color(*(sp->img),
+				sp->pixget.x, sp->pixget.y)) > 0)
+			pixel_put(mlx, x, y, color);
+		y++;
 	}
-	return (True);
+
 }
 
 t_bool			sprite_draw(t_sprite *sp, t_mlx *mlx)
 {
-	sprite_get_line_seg(sp, mlx);
-	get_fst_last_printed_rays(sp, mlx);
-	sprite_draw_columns(sp, mlx);
+	int 		x;
+
+	sp_get_info(sp, mlx);
+	sp_tform(sp, mlx);
+	x = sp->ftx.from;
+	while (x < sp->ftx.to)
+	{
+		if (mlx->cam.ray_tab[x].distance > sp->dist)
+		{
+			sp->pixget.x = (int)(256 * (x - (-sp->w / 2 + sp->screenx))
+					* sp->img->width / sp->w) / 256;
+			if (sp->tform.y > 0 && x < mlx->map->W && sp->tform.y < 100)
+				sp_draw_column(sp, mlx, x);
+		}
+		x++;
+	}
+	sp->visible = False;
 	return (True);
 }

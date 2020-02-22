@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   cube3d.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:20:42 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/19 18:48:44 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   cube3d.h                                         .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:20:42 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:37:10 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef CUBE3D_H
 # define CUBE3D_H
 
@@ -29,7 +29,7 @@
 # define WIN_WIDTH 2560
 # define WIN_HEIGHT 1440
 # define FOV_DEGREE 60.0
-# define TURN_SPEED 7
+# define TURN_SPEED 5
 # define WALK_SPEED 0.5
 # define MAP_SCALE 5
 
@@ -76,6 +76,8 @@ t_bool		img_load_xpm(t_mlx *mlx, char *file, t_img *img);
 int			move_keydown(int key, t_mlx *mlx);
 t_bool		move_apply(t_move *move, t_mlx *mlx);
 
+void		print_map_infos(t_mlx *mlx);
+
 /*
 ** Return Functions
 */
@@ -108,7 +110,7 @@ int			occur_in_str(char c, char *line);
 */
 
 t_vect		norm_vect(t_vect v);
-void		rotate_vect(t_vect *v, double angle);
+void		vect_rotate(t_vect *v, double angle);
 
 /*
 ** Maths

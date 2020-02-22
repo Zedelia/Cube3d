@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   display_mini_map.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:17:56 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:17:58 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   display_mini_map.c                               .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:17:56 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 static void		draw_minimap_square(t_mlx *mlx, t_vect v, int size_obj)
@@ -45,7 +45,7 @@ static t_bool	display_color_cub(t_mlx *mlx, int l, int c, int color)
 		while (index.x < tile_s)
 		{
 			mlx->img.data[((l * tile_s) + index.y)
-					* mlx->map->r_width + (index.x + c * tile_s)] = color;
+					* mlx->map->W + (index.x + c * tile_s)] = color;
 			index.x++;
 		}
 		index.y++;

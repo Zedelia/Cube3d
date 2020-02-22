@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_get_r.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:19:43 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:19:45 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   map_get_r.c                                      .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:19:43 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../../includes/cube3d.h"
 
 static char			*check_between_digit(char *line)
@@ -54,20 +54,20 @@ t_bool				map_parse_r(t_map *map, char *line, t_mlx *mlx)
 {
 	size_t	i;
 
-	if (map->r_width != -1 || map->r_height != -1)
+	if (map->W != -1 || map->H != -1)
 		return (return_false(__func__, "[FAIL] info several times", mlx));
 	i = 0;
 	check_incorrect_inputs('R', line, mlx);
 	while (ft_isdigit(line[i]) == 0)
 		i++;
-	map->r_width = ft_atoi(&line[i]);
-	if (map->r_width > WIN_WIDTH)
-		map->r_width = WIN_WIDTH;
+	map->W = ft_atoi(&line[i]);
+	if (map->W > WIN_WIDTH)
+		map->W = WIN_WIDTH;
 	while (ft_isdigit(line[i]) == 1)
 		i++;
 	i++;
-	map->r_height = ft_atoi(&line[i]);
-	if (map->r_height > WIN_HEIGHT)
-		map->r_height = WIN_HEIGHT;
+	map->H = ft_atoi(&line[i]);
+	if (map->H > WIN_HEIGHT)
+		map->H = WIN_HEIGHT;
 	return (True);
 }

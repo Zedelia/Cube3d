@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   display_colored_walls.c                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:17:41 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:17:42 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   display_colored_walls.c                          .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:17:41 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 static int		give_wall_color(t_rays r)
@@ -42,8 +42,8 @@ t_bool			display_colored_walls(t_mlx *mlx)
 	int h;
 
 	x = 0;
-	h = mlx->map->r_height;
-	while (x < (mlx->map->r_width))
+	h = mlx->map->H;
+	while (x < (mlx->map->W))
 	{
 		y = h / 2 - h / mlx->cam.ray_tab[x].distance / 2;
 		while (y < h / 2 + h / mlx->cam.ray_tab[x].distance / 2)

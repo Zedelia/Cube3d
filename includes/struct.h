@@ -1,13 +1,14 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:21:23 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/19 17:22:59 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   struct.h                                         .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:48:31 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
@@ -21,13 +22,6 @@ typedef struct			s_color
 	int					g;
 	int					b;
 }						t_color;
-
-typedef struct			s_line
-{
-	double				a;
-	double				b;
-	double				c;
-}						t_line;
 
 typedef struct			s_move
 {
@@ -98,7 +92,6 @@ typedef struct			s_rays
 	t_fst_hit			hz_fst_inter;
 	t_fst_hit			vt_fst_inter;
 	t_wall_hit			wall;
-	t_line				line_eq;
 	t_vect				inter_sprite;
 	t_bool				facing_up;
 	t_bool				facing_down;
@@ -131,20 +124,17 @@ typedef struct			s_sprite
 {
 	int					x;
 	int					y;
+	t_vect_int			temp_pos;
+	t_vect				pos;
 	t_img				*img;
 	double				dist;
-	t_vect				line_vect;
-	t_line				line_eq;
-	t_vect				line_norm_v;
-	t_vect				p1;
-	t_vect				p2;
-	t_rays				mid_ray;
-	t_rays				r_fst_hit;
-	t_rays				r_last_hit;
-	t_rays				r_before;
-	t_rays				r_after;
-	int					fst_ray_print;
-	int					last_ray_print;
+	double				h;
+	double				w;
+	t_fromto			fty;
+	t_fromto			ftx;
+	t_vect_int			pixget;
+	double				screenx;
+	t_vect				tform;
 	t_bool				visible;
 }						t_sprite;
 
@@ -158,6 +148,7 @@ typedef struct			s_cam
 	int					rotation_angle;
 	t_vect				direction;
 	t_rays				*ray_tab;
+	t_vect				plan;
 }						t_cam;
 
 /*
@@ -187,8 +178,8 @@ typedef struct			s_map
 	int					nb_col;
 	int					nb_lines;
 	int					tile;
-	int					r_width;
-	int					r_height;
+	int					W;
+	int					H;
 	int					cell;
 	int					floor;
 	t_img				north;
@@ -212,7 +203,6 @@ typedef struct			s_mlx
 	t_img				img;
 	t_cam				cam;
 	t_map				*map;
-	t_img				health;
 }						t_mlx;
 
 #endif

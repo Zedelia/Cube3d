@@ -1,20 +1,30 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ray_wall_detection.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:22:50 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:22:52 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ray_wall_detection.c                             .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:22:50 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 17:07:15 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
+
+t_bool	sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i)
+{
+	double dist;
+
+	dist = dist_correct_fish_eye(*r, mlx, ft_math_dist(v.x, v.y, mlx));
+	if (dist > mlx->map->sprite_tab[i].dist)
+		mlx->map->sprite_tab[i].dist = dist;
+	return (True);
+}
 
 static void	ray_hit_sprite(t_rays *r, t_vect_int wall, t_mlx *mlx, t_vect v)
 {
-	int i;
+	int i;;
 
 	i = 0;
 	while (i < mlx->map->nb_sprites)
@@ -22,9 +32,8 @@ static void	ray_hit_sprite(t_rays *r, t_vect_int wall, t_mlx *mlx, t_vect v)
 		if (mlx->map->sprite_tab[i].x == wall.x
 				&& mlx->map->sprite_tab[i].y == wall.y)
 		{
-			mlx->map->sprite_tab[i].visible = True;
-			sprite_get_ray_hits(*r, mlx, i);
 			sprite_get_dist(r, mlx, v, i);
+			mlx->map->sprite_tab[i].visible = True;
 		}
 		i++;
 	}
