@@ -1,4 +1,4 @@
-R 1280 720
+R 1000 700
       NO ./textures/pokemon-collection/text-01.xpm
       SO       ./textures/pokemon-collection/text-02.xpm
 WE        ./textures/pokemon-collection/text-03.xpm

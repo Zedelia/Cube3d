@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:21:23 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/21 13:44:20 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   struct.h                                         .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 15:59:49 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef STRUCT_H
 # define STRUCT_H
 
@@ -131,11 +131,12 @@ typedef struct			s_sprite
 {
 	int					x;
 	int					y;
+	t_vect_int			temp_pos;
 	t_vect				relapos;
 	t_img				*img;
 	double				dist;
-	int					h;
-	int					w;
+	double					h;
+	double					w;
 	t_fromto			fty;
 	t_fromto			ftx;
 	t_vect_int			pixget;

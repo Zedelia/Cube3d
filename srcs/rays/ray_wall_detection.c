@@ -1,24 +1,25 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ray_wall_detection.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:22:50 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:22:52 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   ray_wall_detection.c                             .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:22:50 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 10:44:40 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 static void	ray_hit_sprite(t_rays *r, t_vect_int wall, t_mlx *mlx, t_vect v)
 {
-	int i;
+	int i;;
 
 	i = 0;
 	while (i < mlx->map->nb_sprites)
 	{
+		// printf("%d | sp x %d | sp y %d | wallx %d | wall y %d\n",j,mlx->map->sprite_tab[i].x, mlx->map->sprite_tab[i].y, wall.x, wall.y );
 		if (mlx->map->sprite_tab[i].x == wall.x
 				&& mlx->map->sprite_tab[i].y == wall.y)
 		{

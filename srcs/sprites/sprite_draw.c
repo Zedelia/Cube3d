@@ -1,27 +1,23 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sprite_draw.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:23:13 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/21 16:31:15 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   sprite_draw.c                                    .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 14:23:13 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/22 16:13:09 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 void			sp_get_info(t_sprite *sp, t_mlx *mlx)
 {
-	double temp;
-	temp = sp->x;
-	sp->x = sp->y ;
-	sp->y  = temp;
-	sp->relapos.x = (int)(sp->x + 0.5 - mlx->cam.pos.x);
-	sp->relapos.y = (int)(sp->y + 0.5 - mlx->cam.pos.y);
-	printf("%f | %f\n",sp->relapos.x, sp->relapos.y);
-	sp->dist = sqrt(sp->relapos.x * sp->relapos.x + sp->relapos.y * sp->relapos.y);
+	sp->temp_pos.x = sp->y;
+	sp->temp_pos.y  = sp->x;
+	sp->relapos.x = sp->temp_pos.x + 0.5 - mlx->cam.pos.y;
+	sp->relapos.y = sp->temp_pos.y + 0.5 - mlx->cam.pos.x;
 }
 
 void			sp_transform(t_sprite *sp, t_mlx *mlx)
@@ -35,7 +31,7 @@ void			sp_transform(t_sprite *sp, t_mlx *mlx)
 	sp->transform.x = invdet * (mid.x * sp->relapos.x - mid.y * sp->relapos.y);
 	sp->transform.y = invdet * (-mlx->cam.plane.x * sp->relapos.x + mlx->cam.plane.y * sp->relapos.y);
 	sp->screenx = (int)((mlx->map->r_width  / 2) * (1 + sp->transform.x / sp->transform.y));
-	sp->h = abs((int)(mlx->map->r_height / (sp->transform.y)));
+	sp->h = abs((int)(mlx->map->r_height / sp->transform.y));
     sp->fty.from = -sp->h / 2 + mlx->map->r_height / 2;
     sp->fty.from = sp->fty.from < 0 ? 0 : sp->fty.from;
     sp->fty.to = sp->h / 2 + mlx->map->r_height / 2;
@@ -58,8 +54,8 @@ void			sp_draw_column(t_sprite *sp, t_mlx *mlx, int x)
 	{
 		d = (y) * 256 - mlx->map->r_height * 128 + sp->h * 128;
 		sp->pixget.y = ((d * sp->img->height) / sp->h) / 256;
-		color = sp->img->data[sp->pixget.y * sp->img->width + sp->pixget.x];
-		pixel_put(mlx, x, y, color);
+		if ((color = get_pixel_color(*(sp->img), sp->pixget.x, sp->pixget.y)) > 0)
+			pixel_put(mlx, x, y, color);
 		y++;
 	}
 
@@ -72,6 +68,7 @@ t_bool			sprite_draw(t_sprite *sp, t_mlx *mlx)
 	sp_get_info(sp, mlx);
 	sp_transform(sp, mlx);
 	x = sp->ftx.from;
+
 	while (x < sp->ftx.to)
 	{
 		sp->pixget.x = (int)(256 * (x - (-sp->w / 2 + sp->screenx)) * sp->img->width / sp->w) / 256;
@@ -79,5 +76,6 @@ t_bool			sprite_draw(t_sprite *sp, t_mlx *mlx)
 			sp_draw_column(sp, mlx, x);
 		x++;
 	}
+
 	return (True);
 }
