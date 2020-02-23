@@ -44,7 +44,7 @@ Vous devez créer une représentation graphique 3D "réalistique" que nous po
 </tr>
 <tr>
 <td valign="top" height="30px">Make a step to the right</td>
-<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;D&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Rotate to the left</td>
