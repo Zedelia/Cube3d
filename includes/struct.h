@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:23 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 22:58:19 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:01:55 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -205,6 +205,8 @@ typedef struct			s_mlx
 	t_img				img;
 	t_cam				cam;
 	t_map				*map;
+	t_bool				bonus1;
+	t_bool				bonus2;
 }						t_mlx;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:20:42 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 23:05:15 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:22:27 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -83,6 +83,7 @@ void		print_map_infos(t_mlx *mlx);
 */
 
 t_bool		return_false(const char *namefc, char const *err_msg, t_mlx *mlx);
+void		return_success(t_mlx *mlx);
 t_bool		return_no_map();
 t_bool		file_exists(const char *filename, t_mlx *mlx);
 

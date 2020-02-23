@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 13:21:07 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:18:38 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:22:36 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,7 +29,7 @@ typedef struct		s_bpm2
 	unsigned int	size_header;
 	unsigned int	width;
 	unsigned int	height;
-	short int		plans;
+	short int		planes;
 	short int		bit_count;
 	unsigned int	compression;
 	unsigned int	image_size;
@@ -39,6 +39,6 @@ typedef struct		s_bpm2
 	unsigned int	clr_important;
 }					t_bpm2;
 
-void				ft_save_bitmap(const char *filename, t_mlx *mlx);
+void				img_print(const char *filename, t_mlx *mlx);
 
 #endif

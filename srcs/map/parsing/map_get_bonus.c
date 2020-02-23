@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/22 21:39:31 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 22:59:31 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:09:39 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,6 +24,7 @@ t_bool	map_parse_life(t_map *map, char *line, t_mlx *mlx)
 		start++;
 	if (!(map->life.file = strdup(&line[start])))
 		return (return_false(__func__, "[FAIL] strdup", mlx));
+	mlx->bonus2 = True;
 	return (True);
 }
 
@@ -38,5 +39,6 @@ t_bool	map_parse_frame(t_map *map, char *line, t_mlx *mlx)
 		start++;
 	if (!(map->frame.file = strdup(&line[start])))
 		return (return_false(__func__, "[FAIL] strdup", mlx));
+	mlx->bonus1 = True;
 	return (True);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:18:35 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:23:09 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,7 +45,7 @@ static void		ft_bitmap_image(t_mlx *mlx, int fd, t_bpm2 bih)
 	}
 }
 
-void			ft_save_bitmap(const char *filename, t_mlx *mlx)
+void			img_print(const char *filename, t_mlx *mlx)
 {
 	int			fd;
 	t_bpm		bfh;
@@ -59,7 +59,7 @@ void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 	bih.size_header = sizeof(bih);
 	bih.width = mlx->map->W;
 	bih.height = mlx->map->H;
-	bih.plans = 1;
+	bih.planes = 1;
 	bih.bit_count = 24;
 	bih.compression = 0;
 	bih.image_size = mlx->map->W * mlx->map->H * 4 + 54;
@@ -71,5 +71,5 @@ void			ft_save_bitmap(const char *filename, t_mlx *mlx)
 	fd = open(filename, O_RDWR);
 	write(fd, &bfh, 14);
 	ft_bitmap_image(mlx, fd, bih);
-	exit(EXIT_SUCCESS);
+	return_success(mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:21:02 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:03:11 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,6 +20,8 @@ t_bool	mlx_ft_init(t_mlx **mlx, char *file)
 	(*mlx)->cam.ray_tab = NULL;
 	if (!((*mlx)->ptr = mlx_init()))
 		return (return_false(__func__, "[FAIL] init mlx->ptr", *mlx));
+	(*mlx)->bonus1 = False;
+	(*mlx)->bonus2 = False;
 	map_init(&(*mlx)->map, file, *mlx);
 	cam_init(*mlx);
 	(*mlx)->win = mlx_new_window((*mlx)->ptr, (*mlx)->map->W,
