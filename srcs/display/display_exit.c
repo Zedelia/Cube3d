@@ -6,14 +6,14 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/02/17 14:17:45 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/23 12:34:03 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 14:23:44 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-static int	display_exit(void *mlx)
+int			display_exit(void *mlx)
 {
 	exit(EXIT_SUCCESS);
 	mlx_free(mlx);

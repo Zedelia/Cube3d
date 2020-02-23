@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   move_keydown.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 10:43:31 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:21:27 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   move_keydown.c                                   .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/01/09 10:43:31 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/23 14:24:20 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #include "../../includes/cube3d.h"
 
 int		move_keydown(int key, t_mlx *mlx)
@@ -20,7 +20,7 @@ int		move_keydown(int key, t_mlx *mlx)
 	move.y = 0;
 	move.r = 0;
 	if (key == K_ESC)
-		exit(EXIT_SUCCESS);
+		display_exit(mlx);
 	if (key == K_LEFT)
 		move.x--;
 	if (key == K_RIGHT)

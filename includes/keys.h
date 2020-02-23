@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   keys.h                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 13:20:55 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 13:20:56 by mbos             ###   ########lyon.fr   */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   keys.h                                           .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2020/02/17 13:20:55 by mbos         #+#   ##    ##    #+#       */
+/*   Updated: 2020/02/23 14:22:24 by mbos        ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 #ifndef KEYS_H
 # define KEYS_H
 
@@ -41,8 +41,8 @@
 #  define K_DOWN		1
 #  define K_LEFT		0
 #  define K_RIGHT		2
-#  define K_TURN_RIGHT 124
-#  define K_TURN_LEFT	 123
+#  define K_TURN_RIGHT 	124
+#  define K_TURN_LEFT	123
 #  define K_DIGIT_1		18
 #  define K_L			37
 
