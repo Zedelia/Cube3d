@@ -129,7 +129,7 @@ DFLAGS = -fsanitize=address
 INC_FLAGS = -I ${INC_PATH}
 REBUILD_DEPENDENCIES = includes/*.h
 
-COMPIL = $(CC) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
+COMPIL = $(CC) $(CFLAGS) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
 
 ##					##
 ##		RULES		##
@@ -137,20 +137,26 @@ COMPIL = $(CC) $(LIBFTPRINTF) $(LIBMINILIBX) $(LIBFT) $(INC_FLAGS) $^ -o $@
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(REBUILD_DEPENDENCIES)
 	@$(CC) $(CFLAGS) $(INC_FLAGS) -o $@ -c $<
-	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<$(ERASE)"
+	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
+
 
 all : makedir libprintf libx $(NAME)
-	@printf "$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
+	@printf "\n$(BLUE)> $(NAME) : $(YELLOW)Project ready !$(END)\n"
+
+bonus : all
+	@printf "$(BLUE)> $(NAME) : $(YELLOW)Bonus ready !$(END)\n\n"
+	@printf "$(CYAN)> Use $(YELLOW) L ./path_to_life_bar !$(END)\n"
+	@printf "$(CYAN)> Use $(YELLOW) L ./path_to_screen_frame !$(END)\n\n"
 
 makedir:
 	@mkdir -p $(OBJ_PATH) $(OBJ_PATH)/$(MKDIR_LST) $(OBJ_PATH)/map/parsing $(OBJ_PATH)/map/check
 
 
 ${NAME}: $(OBJ)
-	$(COMPIL) main.c
-	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<$(ERASE)"
-	@echo "\n\n$(YELLOW)| ->		$(NAME):" "$(RESET)|\033[42m     $(BOLD)L O A D I N G$(R_BOLD)     $(RESET)|\n\n" #| pv -qL 15
-	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN)Success !$(END)\n\n"
+	@$(COMPIL) main.c
+	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
+	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
+	@printf "\n\n$(YELLOW)| ->		$(NAME):" "$(RESET)|\033[42m     $(BOLD)L O A D I N G$(R_BOLD)     $(RESET)|\n\n" #| pv -qL 15
 	@rm -rf *.dSYM
 	@echo "\n$(BOLD)$(GREEN)	   _____________________________"
 	@echo "	|>                               <|"
@@ -165,6 +171,7 @@ ${NAME}: $(OBJ)
 
 tmap: $(OBJ)
 	@$(COMPIL) tests/mains/main-maps.c
+	@printf "$(ERASE)$(BLUE)> Compilation :$(END) $<"
 	@printf "$(ERASE)$(BLUE)> $@ : $(GREEN) SUCCESS !$(END)\n\n"
 	@rm -rf *.dSYM
 
@@ -181,13 +188,11 @@ libprintf :
 libx :
 	@make -C lib/minilibx_opengl
 
-
 # 	clean 	#
 
 clean:
 	@rm -rf *.dSYM
 	@make -C lib/Printf clean
-	@printf "$(BLUE)> Deleted : $(RED)lib .obj$(END)\n"
 	@rm -rf $(OBJ_PATH)
 	@rm -rf tmap tmlx
 	@printf "$(BLUE)> Deleted : $(RED)cube3d $(OBJ_PATH)$(END)\n"

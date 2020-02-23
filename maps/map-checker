@@ -24,8 +24,10 @@ maps_ok_checking() {
 		fi
 }
 
-MAPS_ERROR=maps/maps_error/*
-MAPS_OK=maps/maps_ok/*
+#insert path to maps error below
+MAPS_ERROR=path_to_map_error
+#insert path to maps ok below
+MAPS_OK=maps/path_yo_maps_ok
 
 for map in $MAPS_ERROR
 do
