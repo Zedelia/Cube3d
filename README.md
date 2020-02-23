@@ -6,7 +6,7 @@ Ce projet est inspiré du jeu éponyme mondialement connu, considéré comme
 Vous devez créer une représentation graphique 3D "réalistique" que nous pourrions avoir au sein d’un labyrinthe en utilisant une vue subjective. Vous devez créer cette représentation en utilisant les principes du ray-casting mentionnés plus tôt.
 <br/><br/>
 ## / HOW TO USE / ->
-- Télécharger le fichier
+- Télécharger le repo .git
 - Make
 - Lancer l'application avec une des maps figurant dans le dossier maps
 -> Exemple: ./Cub3D maps.cub
