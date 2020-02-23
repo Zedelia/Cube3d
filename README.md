@@ -32,25 +32,25 @@ Vous devez créer une représentation graphique 3D "réalistique" que nous po
 </tr>
 <tr>
 <td valign="top" height="30px">Make a step forward</td>
-<td valign="top" align="center"><kbd>&nbsp;▲&nbsp;</kbd> or <kbd>&nbsp;W&nbsp;</kbd></td>
+<td valign="top" align="center"> <kbd>&nbsp;W&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Make a step backward</td>
-<td valign="top" align="center"><kbd>&nbsp;▼&nbsp;</kbd> or <kbd>&nbsp;S&nbsp;</kbd></td>
+<td valign="top" align="center"> <kbd>&nbsp;S&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Make a step to the left</td>
-<td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd> or <kbd>&nbsp;A&nbsp;</kbd></td>
+<td valign="top" align="center"> <kbd>&nbsp;A&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Make a step to the right</td>
-<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd> or <kbd>&nbsp;D&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Rotate to the left</td>
-<td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd> or <kbd>&nbsp;<-&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Rotate to the right</td>
-<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd> or <kbd>&nbsp;->&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
