@@ -6,29 +6,32 @@
 /*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/26 20:06:28 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 23:04:40 by mbos        ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/02/23 12:55:06 by mbos        ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 #include "../../../includes/cube3d.h"
 
-static t_bool	check_incorrect_inputs(char *line, t_bool end, t_mlx *mlx)
+static t_bool	check_incorrect_inputs(char *line, t_mlx *mlx)
 {
 	int i;
 	int coma;
-(void)mlx;
+
 	i = 0;
 	coma = 0;
 	while (line[i])
 	{
 		if (line[i] == ',')
+		{
 			coma += 1;
-		while (line[i] && end == False && ft_isdigit(line[i]))
 			i++;
-		// if ((line[i] > 33 && !ft_isdigit(line[i]) && line[i] != ',')
-		// 		|| coma > 1)
-		// 	return (return_false(__func__, "[FAIL] incorrect colors", mlx));
-		if (line[i])
+		}
+		while (line[i] && ft_isdigit(line[i]))
+			i++;
+		if ((line[i] > 32 && !ft_isdigit(line[i]) && line[i] != ',')
+				|| coma > 2)
+			return (return_false(__func__, "[FAIL] incorrect colors", mlx));
+		if (line[i] && line[i] != ',')
 			i++;
 	}
 	return (True);
@@ -46,7 +49,7 @@ static t_color	get_colors(char *line, t_mlx *mlx)
 	while (ft_isincharset(line[i], MAP_INFOS) == False)
 		i++;
 	i++;
-	check_incorrect_inputs(&line[i], False, mlx);
+	check_incorrect_inputs(&line[i], mlx);
 	colors.r = ft_atoi(&line[i]);
 	i += get_str_int_len(&line[i]);
 	colors.g = ft_atoi(&line[i]);
@@ -67,7 +70,7 @@ t_bool			map_parse_floor(t_map *map, char *line, t_mlx *mlx)
 	colors = get_colors(line, mlx);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255
 				|| colors.r < 0 || colors.g < 0 || colors.b < 0)
-		return (return_false(__func__, "[FAIL] get RGB floor colors", mlx));
+		return (return_false(__func__, "[FAIL] floor: not RGB colors", mlx));
 	map->floor = color_to_int(colors);
 	return (True);
 }
@@ -83,7 +86,7 @@ t_bool			map_parse_sky(t_map *map, char *line, t_mlx *mlx)
 	colors = get_colors(line, mlx);
 	if (colors.r > 255 || colors.g > 255 || colors.b > 255
 				|| colors.r < 0 || colors.g < 0 || colors.b < 0)
-		return (return_false(__func__, "[FAIL] get RGB sky colors", mlx));
+		return (return_false(__func__, "[FAIL] Sky: not RGB colors", mlx));
 	map->sky = color_to_int(colors);
 	return (True);
 }

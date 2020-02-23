@@ -4,14 +4,14 @@
 WE        ./textures/silver-collection/text-03.xpm
   EA         ./textures/silver-collection/text-04.xpm
 
-        	       C   204, 1,  1
+        	       C 204,     1,1
 
 
 
 
 S ./textures/sprite2.xpm
 
-	  	F 0, 0, 0
+	  	F 0, 0 , 0
 
 
 
