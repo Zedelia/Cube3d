@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:18:12 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 11:54:32 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/24 17:33:24 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	display_update(t_mlx *mlx)
 	if (mlx->bonus2)
 		display_bonus(mlx, mlx->map->frame);
 	display_mini_map(mlx, mlx->map);
-	if (mlx->bonus2)
+	if (mlx->bonus1)
 		display_bonus(mlx, mlx->map->life);
 	mlx_put_image_to_window(mlx->ptr, mlx->win, mlx->img.ptr, 0, 0);
 }

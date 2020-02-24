@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:18:35 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 12:12:11 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/24 17:38:31 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 **	O_CREAT can create the image with the permissions after it
 */
 
-static void		ft_bitmap_image(t_mlx *mlx, int fd, t_bpm2 bih)
+static void		bitmap_image(t_mlx *mlx, int fd, t_bpm2 bih)
 {
 	int				x;
 	int				y;
@@ -70,6 +70,6 @@ void			img_print(const char *filename, t_mlx *mlx)
 	close(open(filename, O_RDONLY | O_CREAT, S_IRWXU));
 	fd = open(filename, O_RDWR);
 	write(fd, &bfh, 14);
-	ft_bitmap_image(mlx, fd, bih);
-	return_success(mlx);
+	bitmap_image(mlx, fd, bih);
+	exit(EXIT_SUCCESS);
 }

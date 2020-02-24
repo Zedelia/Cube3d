@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:24:10 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 12:41:32 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/24 17:33:13 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void		how_to_use(void)
 	ft_printf("━━━━━━━━━━━━━━━━━━━━\n");
 	ft_printf("\t\t\tCOMMENT L'UTILISER\n");
 	write(1, "\n\n", 2);
-	write(1, "  Exemple : ./wolf3d 'map'     \n", 32);
+	write(1, "  Exemple : ./Cub3D 'map'     \n", 32);
 	write(1, "\x1b[33m Choisis ta carte               \n", 38);
 	write(1, "\x1b[36m. 1 : maps/map_01_silver.cub       \n", 42);
 	write(1, ". 2 : maps/map_02_stone.cub       \n", 35);
