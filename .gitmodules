@@ -1,3 +1,0 @@
-[submodule "lib/Printf"]
-	path = lib/Printf
-	url = git@github.com:Zedelia/Printf.git
