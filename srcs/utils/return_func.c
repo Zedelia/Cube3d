@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:24:10 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 12:13:26 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/24 12:41:32 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ static void		how_to_use(void)
 	ft_printf("━━━━━━━━━━━━━━━━━━━━\n");
 }
 
-t_bool			return_false(const char *name, char const *error_msg, t_mlx *mlx)
+t_bool			return_false(const char *name, char const *err_msg, t_mlx *mlx)
 {
 	ft_printf(RED"");
 	perror(name);
-	if (error_msg)
-		ft_printf(RED"Error"RESET"\n-> %s\n\n", error_msg);
+	if (err_msg)
+		ft_printf(RED"Error"RESET"\n-> %s\n\n", err_msg);
 	mlx_free(mlx);
 	exit(EXIT_FAILURE);
 	how_to_use();
