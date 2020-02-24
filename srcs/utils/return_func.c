@@ -1,19 +1,18 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   return_func.c                                    .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/17 14:24:10 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/23 13:25:41 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   return_func.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/17 14:24:10 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/24 12:13:26 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
 
-void	how_to_use(void)
+static void		how_to_use(void)
 {
 	ft_printf("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 	ft_printf("━━━━━━━━━━━━━━━━━━━━\n");
@@ -33,10 +32,10 @@ void	how_to_use(void)
 	ft_printf("━━━━━━━━━━━━━━━━━━━━\n");
 }
 
-t_bool	return_false(const char *namefunc, char const *error_msg, t_mlx *mlx)
+t_bool			return_false(const char *name, char const *error_msg, t_mlx *mlx)
 {
 	ft_printf(RED"");
-	perror(namefunc);
+	perror(name);
 	if (error_msg)
 		ft_printf(RED"Error"RESET"\n-> %s\n\n", error_msg);
 	mlx_free(mlx);
@@ -45,13 +44,13 @@ t_bool	return_false(const char *namefunc, char const *error_msg, t_mlx *mlx)
 	return (False);
 }
 
-void	return_success(t_mlx *mlx)
+void			return_success(t_mlx *mlx)
 {
 	mlx_free(mlx);
 	exit(EXIT_SUCCESS);
 }
 
-t_bool	return_no_map(void)
+t_bool			return_no_map(void)
 {
 	ft_printf(RED"");
 	ft_printf(RED"Error"RESET"\n-> A map is needed\n\n");
@@ -60,7 +59,7 @@ t_bool	return_no_map(void)
 	return (False);
 }
 
-t_bool	file_exists(const char *filename, t_mlx *mlx)
+t_bool			file_exists(const char *filename, t_mlx *mlx)
 {
 	FILE		*file;
 	int			i;
@@ -79,5 +78,6 @@ t_bool	file_exists(const char *filename, t_mlx *mlx)
 				&& filename[i - 4])
 			return (True);
 	}
+	how_to_use();
 	return (return_false(__func__, s, mlx));
 }

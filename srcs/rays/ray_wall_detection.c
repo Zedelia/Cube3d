@@ -1,18 +1,18 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ray_wall_detection.c                             .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/17 14:22:50 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:07:15 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ray_wall_detection.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/17 14:22:50 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/24 11:39:51 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "../../includes/cube3d.h"
 
-t_bool	sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i)
+t_bool		sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i)
 {
 	double dist;
 
@@ -24,7 +24,7 @@ t_bool	sprite_get_dist(t_rays *r, t_mlx *mlx, t_vect v, int i)
 
 static void	ray_hit_sprite(t_rays *r, t_vect_int wall, t_mlx *mlx, t_vect v)
 {
-	int i;;
+	int i;
 
 	i = 0;
 	while (i < mlx->map->nb_sprites)

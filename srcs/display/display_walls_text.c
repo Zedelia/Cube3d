@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   display_walls_text.c                             .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/17 14:18:17 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:19:15 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_walls_text.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/17 14:18:17 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/24 12:12:11 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "../../includes/cube3d.h"
 
 t_bool	display_wall_hz(t_rays r, t_img img, t_mlx *mlx, int x)
@@ -20,8 +20,8 @@ t_bool	display_wall_hz(t_rays r, t_img img, t_mlx *mlx, int x)
 	int			color;
 
 	offset.x = ft_abs((r.wall.hz_hit.x - (int)r.wall.hz_hit.x) * img.width);
-	y.from = mlx->map->H * 0.5 - mlx->map->H / r.distance * 0.5;
-	y.to = mlx->map->H * 0.5 + mlx->map->H / r.distance * 0.5;
+	y.from = mlx->map->h * 0.5 - mlx->map->h / r.distance * 0.5;
+	y.to = mlx->map->h * 0.5 + mlx->map->h / r.distance * 0.5;
 	if (r.distance == 0 || y.to - y.from == 0)
 		return (return_false(__func__, "[FAIL] can't divide by 0", mlx));
 	i = y.from;
@@ -47,8 +47,8 @@ t_bool	display_wall_vt(t_rays r, t_img img, t_mlx *mlx, int x)
 	offset.x = ((r.wall.vt_hit.y - (int)r.wall.vt_hit.y) * img.width);
 	while ((offset.x = ft_abs(offset.x)) > img.width)
 		offset.x = img.height - offset.x;
-	y.from = mlx->map->H * 0.5 - mlx->map->H / r.distance * 0.5;
-	y.to = mlx->map->H * 0.5 + mlx->map->H / r.distance * 0.5;
+	y.from = mlx->map->h * 0.5 - mlx->map->h / r.distance * 0.5;
+	y.to = mlx->map->h * 0.5 + mlx->map->h / r.distance * 0.5;
 	if (r.distance == 0 || y.to - y.from == 0)
 		return (return_false(__func__, "[FAIL] can't divide by 0", mlx));
 	i = y.from;

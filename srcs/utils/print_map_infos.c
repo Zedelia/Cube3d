@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   print_map_infos.c                                .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/22 17:35:44 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 21:32:52 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_map_infos.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/22 17:35:44 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/24 12:12:11 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube3d.h"
@@ -18,7 +17,7 @@ void	print_map_infos(t_mlx *mlx)
 	t_color floor;
 	t_color	sky;
 
-	ft_printf("\n resolution	: %d * %d\n", mlx->map->W, mlx->map->H);
+	ft_printf("\n resolution	: %d * %d\n", mlx->map->w, mlx->map->h);
 	ft_printf("\n no texture 	: %s\n", mlx->map->north.file);
 	ft_printf("\n so texture	: %s\n", mlx->map->south.file);
 	ft_printf("\n ea texture	: %s\n", mlx->map->east.file);

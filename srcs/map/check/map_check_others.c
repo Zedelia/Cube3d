@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   map_check_others.c                               .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/17 14:19:00 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 21:21:55 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_check_others.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/17 14:19:00 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/24 11:53:17 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/cube3d.h"
@@ -37,8 +36,7 @@ t_bool	map_check_end_file(int fd, char *line, t_mlx *mlx)
 		while (line[i])
 		{
 			if (line[i] > 32)
-				return (return_false(__func__,
-						"[FAIL] map isn't the EOF", mlx));
+				return (return_false(__func__, "[FAIL] map isnt the EOF", mlx));
 			i++;
 		}
 		ft_memdel((void**)&line);

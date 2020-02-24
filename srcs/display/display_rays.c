@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   display_rays.c                                   .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mbos <mbos@student.le-101.fr>              +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/02/17 14:18:01 by mbos         #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/22 17:20:00 by mbos        ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_rays.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/17 14:18:01 by mbos              #+#    #+#             */
+/*   Updated: 2020/02/24 12:12:03 by mbos             ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include "../../includes/cube3d.h"
 
 static t_bool	display_rays_vt(t_mlx *mlx, t_rays r, int color)
@@ -106,7 +106,7 @@ t_bool			display_rays(t_mlx *mlx, t_rays *r)
 	int color;
 
 	color = 0x000000AA;
-	i = mlx->map->W / 2;
+	i = mlx->map->w / 2;
 	if (!r[i].x)
 		display_rays_vt(mlx, r[i], color);
 	else if (!r[i].y)
