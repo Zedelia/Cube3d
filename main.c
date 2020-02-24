@@ -6,13 +6,13 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 14:31:57 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 17:26:38 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/02/24 18:04:20 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/cube3d.h"
 
-int main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	t_mlx *mlx;
 
