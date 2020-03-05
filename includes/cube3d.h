@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 13:20:42 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 12:11:25 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 13:16:55 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define MAP_SCALE 5
 
 # define MAP_INFOS "RNsWESFCLA"
-# define MAP_INPUTS "01NSEW"
+# define INPUTS "01NSEW"
 # define SPRITES "2345"
 
 # define SKY_COLOR 0x0F52BA
@@ -104,7 +104,7 @@ void		pixel_put(t_mlx *mlx, int x, int y, int color);
 */
 
 int			get_str_int_len(char *str);
-int			occur_in_str(char c, char *line);
+int			occur(char c, char *line);
 
 /*
 ** Actions on vectors Functions

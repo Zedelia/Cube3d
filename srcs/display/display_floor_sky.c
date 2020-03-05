@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 11:54:56 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 12:12:11 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 13:18:12 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ t_bool		display_sky(t_mlx *mlx)
 		y = 0;
 		while (y < mlx->map->h / 2)
 		{
-			pixel_put(mlx, x, y,
-					shade_color(mlx->map->sky, 1.50 * y / mlx->map->h));
+			pixel_put(mlx, x, y, mlx->map->sky);
 			y++;
 		}
 		x++;
@@ -46,8 +45,7 @@ t_bool		display_floor(t_mlx *mlx)
 		while (y < height)
 		{
 			pixel_put(mlx, x, y,
-					shade_color(mlx->map->floor,
-					1 - (1.50 * (y - height * 0.5) / height)));
+					mlx->map->floor);
 			y++;
 		}
 		x++;

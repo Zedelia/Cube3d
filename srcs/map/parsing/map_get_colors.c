@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/26 20:06:28 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 11:42:07 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/05 15:05:37 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static t_color	get_colors(char *line, t_mlx *mlx)
 	colors.b = -1;
 	while (ft_isincharset(line[i], MAP_INFOS) == False)
 		i++;
+	if (line[i + 1] == '\0')
+		return (colors);
 	i++;
 	check_incorrect_inputs(&line[i], mlx);
 	colors.r = ft_atoi(&line[i]);

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:20:07 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:20:08 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 13:16:55 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void		parse_line(t_maparse *line, t_map *map, int y, t_mlx *mlx)
 			get_sprite_img(line->line[i], &map->sprite_tab[s], map, mlx);
 			s++;
 		}
-		if (ft_isincharset(line->line[i], MAP_INPUTS)
+		if (ft_isincharset(line->line[i], INPUTS)
 				|| ft_isincharset(line->line[i], SPRITES))
 			map->tab[y][x++] = line->line[i] - 48;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/27 20:11:04 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:19:39 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 13:16:55 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_bool	strlen_spcount(t_maparse *line, t_mlx *mlx)
 			line->sp++;
 			line->columns++;
 		}
-		else if (ft_isincharset(line->line[i], MAP_INPUTS))
+		else if (ft_isincharset(line->line[i], INPUTS))
 			line->columns++;
 		else if (line->line[i] > 32)
 			return (return_false(__func__, "[FAIL] wrong input in map", mlx));

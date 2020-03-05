@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:24:10 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 17:33:13 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/05 14:29:00 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_bool			return_false(const char *name, char const *err_msg, t_mlx *mlx)
 
 void			return_success(t_mlx *mlx)
 {
-	mlx_free(mlx);
+	(void)mlx;
 	exit(EXIT_SUCCESS);
 }
 

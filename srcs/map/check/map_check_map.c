@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:18:55 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/17 14:18:56 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/05 14:44:26 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,26 @@ static t_bool	map_check_integrity(t_maparse *lines, t_mlx *mlx)
 {
 	int			i;
 	int			pos;
-	t_maparse	*tmp;
+	t_maparse	*t;
 
-	tmp = lines;
+	t = lines;
 	pos = 0;
-	while (tmp)
+	while (t)
 	{
 		i = -1;
-		while (tmp->line[++i])
+		while (t->line[++i])
 		{
-			if (ft_isincharset(tmp->line[i], MAP_INPUTS) != 1
-					&& ft_isincharset(tmp->line[i], SPRITES) != 1
-					&& tmp->line[i] != ' ')
+			if (ft_isincharset(t->line[i], INPUTS) != 1
+			&& ft_isincharset(t->line[i], SPRITES) != 1 && t->line[i] != ' ')
 				return (return_false(__func__, "[FAIL] bad char in map", mlx));
+			if (t->line[i] == 'N' || t->line[i] == 'E'
+					|| t->line[i] == 'S' || t->line[i] == 'W')
+				pos++;
 		}
-		if ((occur_in_str('N', tmp->line) || occur_in_str('S', tmp->line)
-				|| occur_in_str('E', tmp->line)
-				|| occur_in_str('W', tmp->line)))
-			pos++;
-		tmp = tmp->next;
+		if (pos > 1)
+			return (return_false(__func__, "[FAIL] invalid cam position", mlx));
+		t = t->next;
 	}
-	if (pos != 1)
-		return (return_false(__func__, "[FAIL] invalid cam position", mlx));
 	return (True);
 }
 

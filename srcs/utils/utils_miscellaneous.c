@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 10:59:43 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 10:59:49 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 13:15:10 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		get_str_int_len(char *str)
 	return (j);
 }
 
-int		occur_in_str(char c, char *line)
+int		occur(char c, char *line)
 {
 	int	occur;
 	int i;

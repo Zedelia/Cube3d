@@ -6,7 +6,7 @@
 /*   By: mbos <mbos@student.le-101.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 14:21:02 by mbos              #+#    #+#             */
-/*   Updated: 2020/02/24 12:12:11 by mbos             ###   ########lyon.fr   */
+/*   Updated: 2020/03/02 13:10:50 by mbos             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ t_bool	mlx_ft_init(t_mlx **mlx, char *file)
 {
 	if (!(*mlx = malloc(sizeof(t_mlx))))
 		return (return_false(__func__, "[FAIL] malloc", *mlx));
-	(*mlx)->map = NULL;
-	(*mlx)->cam.ray_tab = NULL;
 	if (!((*mlx)->ptr = mlx_init()))
 		return (return_false(__func__, "[FAIL] init mlx->ptr", *mlx));
+	(*mlx)->map = NULL;
+	(*mlx)->cam.ray_tab = NULL;
 	(*mlx)->bonus1 = False;
 	(*mlx)->bonus2 = False;
 	map_init(&(*mlx)->map, file, *mlx);
